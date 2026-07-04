@@ -1,0 +1,11 @@
+[project]
+name = "data-processing"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "aiohttp[speedups]>=3.14.0",
+    "beautifulsoup4>=4.14.3",
+    "playwright>=1.60.0",
+]
