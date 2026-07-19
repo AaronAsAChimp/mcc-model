@@ -417,6 +417,7 @@ class TeamPlacementPredictor(torch.nn.Module):
         OUTPUT_SIZE = 16
 
         self.player_embeddings = torch.nn.Embedding(player_count, embedding_dim)
+        self.player_attention = torch.nn.Linear(OUTPUT_SIZE, 1)
         self.player_encoder = torch.nn.Sequential(
             torch.nn.LayerNorm(features_per_player),
             torch.nn.Linear(features_per_player, HIDDEN_LAYER_SIZE),
@@ -448,7 +449,10 @@ class TeamPlacementPredictor(torch.nn.Module):
         ) < team_sizes.unsqueeze(1)
         mask = mask.unsqueeze(-1).float()
 
-        team_encoded = (encoded * mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
+        attn_logits = self.player_attention(encoded)
+        attn_logits = attn_logits.squeeze(-1).masked_fill(~mask.squeeze(-1).bool(), float('-inf'))
+        player_attention = torch.softmax(attn_logits, dim=-1).unsqueeze(-1)
+        team_encoded = (encoded * player_attention).sum(dim=1)
 
         embeds = self.player_embeddings(player_ids)
         team_embed = (embeds * mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
