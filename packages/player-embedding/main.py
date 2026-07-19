@@ -6,28 +6,28 @@ import numpy as np
 import math
 import json
 import torch
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader, Dataset, Subset
 from torch.utils.data.dataset import random_split
 from torch.nn.utils.rnn import pad_sequence
 
 PLAYERS_PER_TEAM = 4
-FEATURES_PER_PLAYER = 13
+FEATURES_PER_PLAYER = 17
+COINS_SCALE = 35000
 FIRST_MCC_DATE = date.fromisoformat("2019-11-17")
 
 #   Feature Description
 # 1   win_rate    Fraction of events where their team placed 1st
 # 2   dodgebolt_rate  Fraction where their team made top 2
-# 3   avg_placement   1 - (mean placement-1)/9 (higher = better)
-# 4   best_placement  Best placement → inverted [0,1]
-# 5   worst_placement Worst placement
-# 6   placement_volatility    Std dev of placement (consistency)
-# 7   recent_trend    Placement slope over last 3 events
+# 3   avg_placement   1 - (mean coins-1)/9 (higher = better)
+# 4   best_coins Best coins → inverted [0,1]
+# 5   worst_coins Worst placement
+# 6   placement_volatility    Std dev of coins (consistency)
+# 7   recent_trend    Coins slope over last 3 events
 # 8   n_participations    Log-scaled event count
 # 9   time_since_first   log-scaled days since first mcc
 # 10   recency Events in the past year
-# 11  team_diversity  Unique teams / total participations
-# 12  avg_teammate_overlap    Mean Jaccard similarity with prior teammates
-# 13  is_returning_competitor 1 has played before, 0 is first time
+# 11  avg_teammate_overlap    Mean Jaccard similarity with prior teammates
+# 12  is_returning_competitor 1 has played before, 0 is first time
 
 
 def jaccard_similarity(a: set, b: set) -> float:
@@ -36,14 +36,57 @@ def jaccard_similarity(a: set, b: set) -> float:
     return len(intersection) / ((len(a) + len(b)) - len(intersection))
 
 
-def scale_placement(val: float, total_events: int) -> float:
-    return (1 - (val - 1) / 9) if total_events != 0 else 0
+def scale_coins(val: float, total_events: int) -> float:
+    return val / 35_000
+
+
+@dataclass
+class CoinStats:
+    min: int
+    max: int
+    mean: float
+    var: float
+
+    @classmethod
+    def from_list(cls, all_coins: list[int]):
+        n = len(all_coins)
+
+        if n == 0:
+            return cls(mean=0, var=0, max=0, min=0)
+
+        sum_team_coins = 0
+        max = -float("inf")
+        min = float("inf")
+
+        for coins in all_coins:
+            sum_team_coins += coins
+
+            if coins < min:
+                min = coins
+
+            if coins > max:
+                max = coins
+
+        mean_team_coins = 0
+        team_coin_variance = 0
+
+        if n > 1:
+            mean_team_coins = sum_team_coins / n
+            team_coin_variance = sum((x - mean_team_coins) ** 2 for x in all_coins) / (
+                n - 1
+            )
+
+        return cls(
+            mean=mean_team_coins, var=team_coin_variance, max=int(max), min=int(min)
+        )
 
 
 class PlayerTracker:
     event_count: int
+    team_coins: list[int]
     placements: list[int]
-    best_placement: int
+    best_team_coins: int
+    worst_team_coins: int
     events: list[date]
     sum_team_similarity: float
     previous_team: Optional[set[str]]
@@ -52,14 +95,21 @@ class PlayerTracker:
     def __init__(self):
         self.event_count = 0
         self.placements = []
-        self.best_placement = 0
-        self.worst_placement = 0
+        self.team_coins = []
+        self.player_coins = []
         self.events = []
         self.sum_team_similarity = 0
         self.previous_team = None
         self.current_team = None
 
-    def update(self, new_team: set[str], placement: int, event_date: date):
+    def update(
+        self,
+        new_team: set[str],
+        placement: int,
+        team_coins: int,
+        player_coins: int,
+        event_date: date,
+    ):
         self.previous_team = self.current_team
         self.current_team = new_team
 
@@ -73,12 +123,8 @@ class PlayerTracker:
 
         self.event_count += 1
         self.placements.append(placement)
-
-        if placement < self.best_placement:
-            self.best_placement = placement
-
-        if placement > self.worst_placement:
-            self.worst_placement = placement
+        self.team_coins.append(team_coins)
+        self.player_coins.append(player_coins)
 
         self.events.append(event_date)
 
@@ -99,9 +145,9 @@ class PlayerTracker:
         # Placement
         #
 
+        n = len(self.team_coins)
         wins = 0
         seconds = 0
-        sum_placements = 0
 
         for placement in self.placements:
             if placement == 1:
@@ -109,16 +155,12 @@ class PlayerTracker:
             elif placement == 2:
                 seconds += 1
 
-            sum_placements += placement
+        #
+        # Coins
+        #
 
-        n = len(self.placements)
-
-        mean_placement = 0
-        variance = 0
-
-        if n > 1:
-            mean_placement = sum_placements / n
-            variance = sum((x - mean_placement) ** 2 for x in self.placements) / (n - 1)
+        team_coin_stats = CoinStats.from_list(self.team_coins)
+        player_coin_stats = CoinStats.from_list(self.player_coins)
 
         #
         # Events
@@ -136,36 +178,52 @@ class PlayerTracker:
 
         recency = events_in_past_year / 12  # MCC is roughly monthly
 
-        placement_slope = 0
+        team_coins_slope = 0
+        player_coins_slope = 0
 
         if event_count > 3:
             event_2_back = self.events[-3]
             event_0_back = self.events[-1]
 
-            placement_2_back = self.placements[-3]
-            placement_0_back = self.placements[-1]
-
             time_between_events = (event_0_back - event_2_back).days
 
-            placement_slope = (
-                (placement_0_back - placement_2_back) / time_between_events
+            team_coins_2_back = self.team_coins[-3]
+            team_coins_0_back = self.team_coins[-1]
+
+            team_coins_slope = (
+                (team_coins_0_back - team_coins_2_back) / time_between_events
+                if time_between_events != 0
+                else 0
+            )
+
+            player_coins_2_back = self.player_coins[-3]
+            player_coins_0_back = self.player_coins[-1]
+
+            player_coins_slope = (
+                (player_coins_0_back - player_coins_2_back) / time_between_events
                 if time_between_events != 0
                 else 0
             )
 
         tensor[0] = (wins / n) if n != 0 else 0
         tensor[1] = ((wins + seconds) / n) if n != 0 else 0
-        tensor[2] = scale_placement(mean_placement, event_count)
-        tensor[3] = scale_placement(self.best_placement, event_count)
-        tensor[4] = scale_placement(self.worst_placement, event_count)
-        tensor[5] = math.sqrt(variance)
-        tensor[6] = placement_slope
-        tensor[7] = math.log(n) if n > 0 else 0
-        tensor[8] = time_since_first
-        tensor[9] = recency
-        tensor[10] = 0  # TODO
-        tensor[11] = self.sum_team_similarity / event_count if event_count > 0 else 0
-        tensor[12] = 1 if event_count > 0 else 0
+        tensor[2] = scale_coins(team_coin_stats.mean, event_count)
+        tensor[3] = scale_coins(team_coin_stats.max, event_count)
+        tensor[4] = scale_coins(team_coin_stats.min, event_count)
+        tensor[5] = math.sqrt(team_coin_stats.var)
+        tensor[6] = team_coins_slope
+
+        tensor[7] = scale_coins(player_coin_stats.mean, event_count)
+        tensor[8] = scale_coins(player_coin_stats.max, event_count)
+        tensor[9] = scale_coins(player_coin_stats.min, event_count)
+        tensor[10] = math.sqrt(player_coin_stats.var)
+        tensor[11] = player_coins_slope
+
+        tensor[12] = math.log(n) if n > 0 else 0
+        tensor[13] = time_since_first
+        tensor[14] = recency
+        tensor[15] = self.sum_team_similarity / event_count if event_count > 0 else 0
+        tensor[16] = 1 if event_count > 0 else 0
 
         return tensor
 
@@ -194,9 +252,11 @@ class PlayerDataset(Dataset):
 
                 event_date = date.fromisoformat(event.get("date"))
                 teams = event.get("teams")
+                player_coin_lookup = event.get("player_coins")
 
                 for team_name, team in teams.items():
                     placement = team.get("placement")
+                    team_coins = team.get("coins") / COINS_SCALE
                     players = team.get("players")
                     team_size = len(players)
 
@@ -207,11 +267,24 @@ class PlayerDataset(Dataset):
                         player_name = players[i]
                         player_tracker = tracker.get(player_name)
 
+                        # If the player doesn't exist in the player coins they
+                        # most likely are a new player.
+                        #
+                        # ... or something went terribly wrong in the data
+                        # processing step.
+                        player_coins = player_coin_lookup.get(player_name, 0)
+
                         if player_tracker is None:
                             player_tracker = PlayerTracker()
                             tracker[player_name] = player_tracker
 
-                        player_tracker.update(set(players), placement, event_date)
+                        player_tracker.update(
+                            set(players),
+                            placement,
+                            team_coins,
+                            player_coins,
+                            event_date,
+                        )
 
         self._players = [
             torch.empty(FEATURES_PER_PLAYER) for _ in range(self._player_count)
@@ -264,10 +337,12 @@ class TeamDataset(Dataset):
                 event = json.loads(json_line)
 
                 event_date = date.fromisoformat(event.get("date"))
+                player_coin_lookup = event.get("player_coins")
                 teams = event.get("teams")
 
                 for team_name, team in teams.items():
                     placement = team.get("placement")
+                    team_coins = team.get("coins") / COINS_SCALE
                     players = team.get("players")
                     team_size = len(players)
 
@@ -281,6 +356,10 @@ class TeamDataset(Dataset):
                         player_name = players[i]
                         player_names.append(player_name)
                         player_tracker = tracker.get(player_name)
+                        player_coins = player_coin_lookup.get(player_name)
+
+                        if player_coins is None:
+                            raise Exception(f"No coins for player {player_name}")
 
                         if player_tracker is None:
                             player_tracker = PlayerTracker()
@@ -288,10 +367,16 @@ class TeamDataset(Dataset):
 
                         team_tensor[i] = player_tracker.to_tensor(event_date)
 
-                        player_tracker.update(set(players), placement, event_date)
+                        player_tracker.update(
+                            set(players),
+                            placement,
+                            team_coins,
+                            player_coins,
+                            event_date,
+                        )
 
                     team_data.append(
-                        (team_tensor, player_names, torch.tensor(placement))
+                        (team_tensor, player_names, torch.tensor(team_coins))
                     )
 
         self._player_count = len(tracker)
@@ -302,11 +387,11 @@ class TeamDataset(Dataset):
             self._player_id_lookup[player_name] = next_id
             next_id += 1
 
-        for team_tensor, player_names, placement in team_data:
+        for team_tensor, player_names, team_coins in team_data:
             player_ids = torch.tensor(
                 [self._player_id_lookup[name] for name in player_names]
             )
-            self._players.append((team_tensor, player_ids, placement))
+            self._players.append((team_tensor, player_ids, team_coins))
 
     def __len__(self) -> int:
         return len(self._players)
@@ -325,13 +410,18 @@ class TeamDataset(Dataset):
 
 
 class TeamPlacementPredictor(torch.nn.Module):
-    def __init__(self, player_count: int, features_per_player=13, embedding_dim=12):
+    def __init__(self, player_count: int, features_per_player=FEATURES_PER_PLAYER, embedding_dim=12):
         super().__init__()
+
+        HIDDEN_LAYER_SIZE = round(FEATURES_PER_PLAYER * 2.5)
+        OUTPUT_SIZE = 16
+
         self.player_embeddings = torch.nn.Embedding(player_count, embedding_dim)
         self.player_encoder = torch.nn.Sequential(
-            torch.nn.Linear(features_per_player, 32),
+            torch.nn.LayerNorm(features_per_player),
+            torch.nn.Linear(features_per_player, HIDDEN_LAYER_SIZE),
             torch.nn.ReLU(),
-            torch.nn.Linear(32, 16),
+            torch.nn.Linear(HIDDEN_LAYER_SIZE, OUTPUT_SIZE),
             torch.nn.ReLU(),
         )
         combined_dim = embedding_dim + 16
@@ -371,7 +461,7 @@ def collate_teams(batch):
     """Custom collate for variable-size teams (4 or 5 players)."""
     features = [item[0] for item in batch]
     player_ids = [item[1] for item in batch]
-    placements = torch.stack([item[2] for item in batch])
+    coins = torch.stack([item[2] for item in batch])
 
     # Pad to the longest team in the batch
     features_padded = pad_sequence(features, batch_first=True)
@@ -380,12 +470,12 @@ def collate_teams(batch):
     # Actual team sizes for correct mean pooling
     team_sizes = torch.tensor([f.size(0) for f in features])
 
-    return features_padded, ids_padded, team_sizes, placements
+    return features_padded, ids_padded, team_sizes, coins
 
 
-EXTRACTS_FILENAME = "../../data/extracts.sorted.jsonl"
-MODEL_FILENAME = "./model/model.pt"
-CONFIG_FILENAME = "./model/config.json"
+EXTRACTS_FILENAME = "data/extracts.sorted.jsonl"
+MODEL_FILENAME = "packages/player-embedding/model/model.pt"
+CONFIG_FILENAME = "packages/player-embedding/model/config.json"
 
 
 def train():
@@ -394,18 +484,26 @@ def train():
     report_modulus = 8
     print("Hello from player-embedding!")
 
-    dataset = TeamDataset("../../data/extracts.sorted.jsonl")
+    dataset = TeamDataset(EXTRACTS_FILENAME)
 
     player_count = dataset.get_player_count()
     print(f"Players: {player_count}")
 
-    [train_set, test_set] = random_split(dataset, [0.80, 0.20])
+    dataset_size = len(dataset)
+    train_size = math.floor(dataset_size * 0.8)
+    test_size = dataset_size - train_size
+
+    print(f"Total size: {dataset_size}, Train size: {train_size}, Test size: {test_size}")
+
+    # [train_set, test_set] = random_split(dataset, [0.80, 0.20])
+    train_set = Subset(dataset, range(0, train_size))
+    test_set = Subset(dataset, range(train_size, train_size + test_size))
     total_test_batches = math.ceil(len(test_set) / batch_size)
 
     train_data = DataLoader(
-        train_set, batch_size=batch_size, shuffle=True, collate_fn=collate_teams
+        train_set, batch_size=batch_size, shuffle=False, collate_fn=collate_teams
     )
-    test_data = DataLoader(test_set, batch_size=16, collate_fn=collate_teams)
+    test_data = DataLoader(test_set, batch_size=batch_size, shuffle=False, collate_fn=collate_teams)
     model = TeamPlacementPredictor(player_count)
     loss_fn = torch.nn.MSELoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-4)
@@ -500,10 +598,11 @@ def run():
 
         results.append((team_name, outputs[0][0]))
 
-    results = sorted(results, key=lambda result: result[1])
+    results = sorted(results, reverse=True, key=lambda result: result[1])
 
     for i in range(len(results)):
-        print(f"{i + 1}: {results[i][0]} {results[i][1]}")
+        [team, coins] = results[i]
+        print(f"{i + 1}: { team } {coins * COINS_SCALE}")
 
 
 def main():

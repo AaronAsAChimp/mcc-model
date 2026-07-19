@@ -1,3 +1,5 @@
+import shared_core
+
 def main():
     print("Hello from mcc-model!")
 
