@@ -6,9 +6,10 @@ import numpy as np
 import math
 import json
 import torch
+from torch.nn.functional import one_hot
 from torch.utils.data import DataLoader, Dataset, Subset
-from torch.utils.data.dataset import random_split
 from torch.nn.utils.rnn import pad_sequence
+from games import GAME_IDS
 
 PLAYERS_PER_TEAM = 4
 FEATURES_PER_PLAYER = 17
@@ -321,14 +322,22 @@ class PlayerDataset(Dataset):
         return (team_tensor, player_ids_tensor, torch.tensor([team_size]))
 
 
+def games_to_tensor(games: list[str]) -> torch.Tensor:
+    game_ids = [GAME_IDS[game] for game in games if game != 'dodgebolt']
+    result = torch.zeros(len(GAME_IDS))
+    result[game_ids] = 1.
+
+    return result
+
+
 class TeamDataset(Dataset):
     _player_count: int
     _player_id_lookup: dict[str, int]
-    _players: list[tuple[torch.Tensor, torch.Tensor, torch.Tensor]]
+    _players: list[tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]]
 
     def __init__(self, extract_filename: str):
         self._players = []
-        team_data: list[tuple[torch.Tensor, list[str], torch.Tensor]] = []
+        team_data: list[tuple[torch.Tensor, list[str], torch.Tensor, torch.Tensor]] = []
 
         tracker: dict[str, PlayerTracker] = {}
 
@@ -339,6 +348,9 @@ class TeamDataset(Dataset):
                 event_date = date.fromisoformat(event.get("date"))
                 player_coin_lookup = event.get("player_coins")
                 teams = event.get("teams")
+                games = event.get("games")
+
+                game_ids = games_to_tensor(games)
 
                 for team_name, team in teams.items():
                     placement = team.get("placement")
@@ -376,7 +388,7 @@ class TeamDataset(Dataset):
                         )
 
                     team_data.append(
-                        (team_tensor, player_names, torch.tensor(team_coins))
+                        (team_tensor, player_names, game_ids, torch.tensor(team_coins))
                     )
 
         self._player_count = len(tracker)
@@ -387,16 +399,16 @@ class TeamDataset(Dataset):
             self._player_id_lookup[player_name] = next_id
             next_id += 1
 
-        for team_tensor, player_names, team_coins in team_data:
+        for team_tensor, player_names, game_ids, team_coins in team_data:
             player_ids = torch.tensor(
                 [self._player_id_lookup[name] for name in player_names]
             )
-            self._players.append((team_tensor, player_ids, team_coins))
+            self._players.append((team_tensor, player_ids, game_ids, team_coins))
 
     def __len__(self) -> int:
         return len(self._players)
 
-    def __getitem__(self, key: int) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    def __getitem__(self, key: int) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         return self._players[key]
 
     def get_player_count(self) -> int:
@@ -415,6 +427,8 @@ class TeamPlacementPredictor(torch.nn.Module):
 
         HIDDEN_LAYER_SIZE = round(FEATURES_PER_PLAYER * 2.5)
         OUTPUT_SIZE = 16
+        GAME_EMBEDDING_SIZE = len(GAME_IDS)
+        GAME_EMBEDDING_OUTPUT = 8
 
         self.player_embeddings = torch.nn.Embedding(player_count, embedding_dim)
         self.player_attention = torch.nn.Linear(OUTPUT_SIZE, 1)
@@ -422,13 +436,19 @@ class TeamPlacementPredictor(torch.nn.Module):
             torch.nn.LayerNorm(features_per_player),
             torch.nn.Linear(features_per_player, HIDDEN_LAYER_SIZE),
             torch.nn.ReLU(),
+            torch.nn.Dropout(0.2),
             torch.nn.Linear(HIDDEN_LAYER_SIZE, OUTPUT_SIZE),
             torch.nn.ReLU(),
+            # torch.nn.Dropout(0.2),
         )
-        combined_dim = embedding_dim + 16
+
+        self.game_embedding = torch.nn.Linear(GAME_EMBEDDING_SIZE, GAME_EMBEDDING_OUTPUT)
+
+        combined_dim = embedding_dim + 16 + GAME_EMBEDDING_OUTPUT
         self.predictor = torch.nn.Sequential(
             torch.nn.Linear(combined_dim, 64),
             torch.nn.ReLU(),
+            # torch.nn.Dropout(0.3),
             torch.nn.Linear(64, 1),
         )
 
@@ -437,6 +457,7 @@ class TeamPlacementPredictor(torch.nn.Module):
         team_features: torch.Tensor,
         player_ids: torch.Tensor,
         team_sizes: torch.Tensor,
+        games_multi_hot: torch.Tensor
     ) -> torch.Tensor:
         # Encode each player's feature vector: (batch, max_players, 16)
         encoded = self.player_encoder(team_features)
@@ -457,7 +478,9 @@ class TeamPlacementPredictor(torch.nn.Module):
         embeds = self.player_embeddings(player_ids)
         team_embed = (embeds * mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
 
-        combined = torch.cat([team_embed, team_encoded], dim=1)
+        game_embed = self.game_embedding(games_multi_hot)
+
+        combined = torch.cat([team_embed, team_encoded, game_embed], dim=1)
         return self.predictor(combined)
 
 
@@ -465,16 +488,18 @@ def collate_teams(batch):
     """Custom collate for variable-size teams (4 or 5 players)."""
     features = [item[0] for item in batch]
     player_ids = [item[1] for item in batch]
-    coins = torch.stack([item[2] for item in batch])
+    games_multi_hot = [item[2] for item in batch]
+    coins = torch.stack([item[3] for item in batch])
 
     # Pad to the longest team in the batch
     features_padded = pad_sequence(features, batch_first=True)
     ids_padded = pad_sequence(player_ids, batch_first=True, padding_value=0)
+    games_padded = pad_sequence(games_multi_hot, batch_first=True)
 
     # Actual team sizes for correct mean pooling
     team_sizes = torch.tensor([f.size(0) for f in features])
 
-    return features_padded, ids_padded, team_sizes, coins
+    return features_padded, ids_padded, team_sizes, games_padded, coins
 
 
 EXTRACTS_FILENAME = "data/extracts.sorted.jsonl"
@@ -520,13 +545,13 @@ def train():
         model.train(True)
 
         for data in train_data:
-            features, player_ids, team_sizes, labels = data
+            features, player_ids, team_sizes, games_multi_hot, labels = data
 
             batch += 1
 
             optimizer.zero_grad()
 
-            outputs = model(features, player_ids, team_sizes)
+            outputs = model(features, player_ids, team_sizes, games_multi_hot)
             loss = loss_fn(outputs, labels)
 
             loss.backward()
@@ -546,8 +571,8 @@ def train():
 
         with torch.no_grad():
             for vdata in test_data:
-                vfeatures, vplayer_ids, vteam_sizes, vlabels = vdata
-                voutputs = model(vfeatures, vplayer_ids, vteam_sizes)
+                vfeatures, vplayer_ids, vteam_sizes, vgame_multi_hot, vlabels = vdata
+                voutputs = model(vfeatures, vplayer_ids, vteam_sizes, vgame_multi_hot)
 
                 vloss = loss_fn(voutputs, vlabels)
                 running_vloss += vloss
@@ -569,6 +594,16 @@ def run():
     model.eval()
 
     event = {
+        "games": [
+            "buildmart",
+            "tgttosawaf",
+            "bingobutfast",
+            "parkourtag",
+            "meltdown",
+            "acerace",
+            "railroadrush",
+            "battlebox"
+        ],
         "teams": {
             # "placement": 1,
             "redrabbits": ["Feinberg", "Grian", "Shubble", "ZombieCleo"],
@@ -594,11 +629,12 @@ def run():
     }
 
     results = []
+    game_ids = games_to_tensor(event.get("games", [])).unsqueeze(0)
 
     for [team_name, team] in event["teams"].items():
         [team_tensor, player_ids, team_size] = player_dataset.get_team_data(team)
 
-        outputs = model(team_tensor, player_ids, team_size)
+        outputs = model(team_tensor, player_ids, team_size, game_ids)
 
         results.append((team_name, outputs[0][0]))
 
