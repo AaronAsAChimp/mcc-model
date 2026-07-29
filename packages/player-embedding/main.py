@@ -322,12 +322,15 @@ class PlayerDataset(Dataset):
         return (team_tensor, player_ids_tensor, torch.tensor([team_size]))
 
 
-def games_to_tensor(games: list[str]) -> torch.Tensor:
-    game_ids = [GAME_IDS[game] for game in games if game != 'dodgebolt']
-    result = torch.zeros(len(GAME_IDS))
-    result[game_ids] = 1.
+MAX_GAMES = 8  # excluding dodgebolt
 
-    return result
+
+def games_to_tensor(games: list[str]) -> torch.Tensor:
+    # Shift IDs by 1 so that padding value 0 doesn't collide with acerace (raw ID 0)
+    game_ids = [GAME_IDS[game] for game in games if game != 'dodgebolt']
+    padded = game_ids + [0] * (MAX_GAMES - len(game_ids))
+
+    return torch.tensor(padded, dtype=torch.long)
 
 
 class TeamDataset(Dataset):
@@ -350,6 +353,7 @@ class TeamDataset(Dataset):
                 teams = event.get("teams")
                 games = event.get("games")
 
+                # print('url:', event.get("wiki_url"))
                 game_ids = games_to_tensor(games)
 
                 for team_name, team in teams.items():
@@ -421,14 +425,22 @@ class TeamDataset(Dataset):
         }
 
 
+#
+# Coin multiplier schedules by event format.
+# Source: https://mcchampionship.fandom.com/wiki/Coin
+#
+COIN_MULTIPLIERS_6 = torch.tensor([1.0, 1.5, 2.0, 2.0, 2.5, 3.0, 0.0, 0.0])
+COIN_MULTIPLIERS_8 = torch.tensor([1.0, 1.5, 1.5, 2.0, 2.0, 2.5, 2.5, 3.0])
+
+
 class TeamPlacementPredictor(torch.nn.Module):
     def __init__(self, player_count: int, features_per_player=FEATURES_PER_PLAYER, embedding_dim=12):
         super().__init__()
 
         HIDDEN_LAYER_SIZE = round(FEATURES_PER_PLAYER * 2.5)
         OUTPUT_SIZE = 16
-        GAME_EMBEDDING_SIZE = len(GAME_IDS)
-        GAME_EMBEDDING_OUTPUT = 8
+        TOTAL_GAME_COUNT = len(GAME_IDS)
+        GAME_EMBEDDING_SIZE = 32
 
         self.player_embeddings = torch.nn.Embedding(player_count, embedding_dim)
         self.player_attention = torch.nn.Linear(OUTPUT_SIZE, 1)
@@ -439,16 +451,19 @@ class TeamPlacementPredictor(torch.nn.Module):
             torch.nn.Dropout(0.2),
             torch.nn.Linear(HIDDEN_LAYER_SIZE, OUTPUT_SIZE),
             torch.nn.ReLU(),
-            # torch.nn.Dropout(0.2),
         )
 
-        self.game_embedding = torch.nn.Linear(GAME_EMBEDDING_SIZE, GAME_EMBEDDING_OUTPUT)
+        self.game_id_embedding = torch.nn.Embedding(TOTAL_GAME_COUNT + 1, GAME_EMBEDDING_SIZE, padding_idx=0)
+        self.game_encoder = torch.nn.Sequential(
+            torch.nn.Linear(GAME_EMBEDDING_SIZE, GAME_EMBEDDING_SIZE),
+            torch.nn.ReLU()
+        )
 
-        combined_dim = embedding_dim + 16 + GAME_EMBEDDING_OUTPUT
+        combined_dim = embedding_dim + 16 + GAME_EMBEDDING_SIZE
         self.predictor = torch.nn.Sequential(
             torch.nn.Linear(combined_dim, 64),
             torch.nn.ReLU(),
-            # torch.nn.Dropout(0.3),
+            torch.nn.Dropout(0.3),
             torch.nn.Linear(64, 1),
         )
 
@@ -457,7 +472,7 @@ class TeamPlacementPredictor(torch.nn.Module):
         team_features: torch.Tensor,
         player_ids: torch.Tensor,
         team_sizes: torch.Tensor,
-        games_multi_hot: torch.Tensor
+        game_ids: torch.Tensor
     ) -> torch.Tensor:
         # Encode each player's feature vector: (batch, max_players, 16)
         encoded = self.player_encoder(team_features)
@@ -478,7 +493,22 @@ class TeamPlacementPredictor(torch.nn.Module):
         embeds = self.player_embeddings(player_ids)
         team_embed = (embeds * mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
 
-        game_embed = self.game_embedding(games_multi_hot)
+        game_embeds = self.game_id_embedding(game_ids)
+        game_mask = (game_ids != 0)  # (batch, max_games)
+
+        # Select the correct coin multiplier schedule per event, then
+        # zero out padding positions so they don't contribute to the sum.
+        num_games = game_mask.sum(dim=1)  # (batch,)
+        is_6_game = (num_games == 6).unsqueeze(1)  # (batch, 1)
+        weights = torch.where(
+            is_6_game,
+            COIN_MULTIPLIERS_6.to(device),
+            COIN_MULTIPLIERS_8.to(device),
+        )
+        weights = (weights * game_mask.float()).unsqueeze(-1)  # (batch, max_games, 1)
+
+        game_embed = (game_embeds * weights).sum(dim=1) / weights.sum(dim=1).clamp(min=1)
+        game_embed = self.game_encoder(game_embed)
 
         combined = torch.cat([team_embed, team_encoded, game_embed], dim=1)
         return self.predictor(combined)
@@ -488,24 +518,26 @@ def collate_teams(batch):
     """Custom collate for variable-size teams (4 or 5 players)."""
     features = [item[0] for item in batch]
     player_ids = [item[1] for item in batch]
-    games_multi_hot = [item[2] for item in batch]
+    game_ids = [item[2] for item in batch]
     coins = torch.stack([item[3] for item in batch])
 
     # Pad to the longest team in the batch
     features_padded = pad_sequence(features, batch_first=True)
-    ids_padded = pad_sequence(player_ids, batch_first=True, padding_value=0)
-    games_padded = pad_sequence(games_multi_hot, batch_first=True)
+    players_padded = pad_sequence(player_ids, batch_first=True, padding_value=0)
+
+    # Pad to the greatest number games in an event
+    games_padded = pad_sequence(game_ids, batch_first=True, padding_value=0)
 
     # Actual team sizes for correct mean pooling
     team_sizes = torch.tensor([f.size(0) for f in features])
 
-    return features_padded, ids_padded, team_sizes, games_padded, coins
+    return features_padded, players_padded, team_sizes, games_padded, coins
 
 
 EXTRACTS_FILENAME = "data/extracts.sorted.jsonl"
 MODEL_FILENAME = "packages/player-embedding/model/model.pt"
 CONFIG_FILENAME = "packages/player-embedding/model/config.json"
-
+TRAINING_LOG_FILENAME = "train-log.csv"
 
 def train():
     num_epochs = 1000
@@ -537,53 +569,57 @@ def train():
     loss_fn = torch.nn.MSELoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-4)
 
-    for epoch in range(0, num_epochs):
-        running_loss = 0
-        last_loss = 0
-        batch = 0
+    with open(TRAINING_LOG_FILENAME, 'w') as log_fd:
+        log_fd.write('batch,training loss,validation loss\n')
 
-        model.train(True)
+        for epoch in range(0, num_epochs):
+            running_loss = 0
+            last_loss = 0
+            batch = 0
 
-        for data in train_data:
-            features, player_ids, team_sizes, games_multi_hot, labels = data
+            model.train(True)
 
-            batch += 1
+            for data in train_data:
+                features, player_ids, team_sizes, games_multi_hot, labels = data
 
-            optimizer.zero_grad()
+                batch += 1
 
-            outputs = model(features, player_ids, team_sizes, games_multi_hot)
-            loss = loss_fn(outputs, labels)
+                optimizer.zero_grad()
 
-            loss.backward()
+                outputs = model(features, player_ids, team_sizes, games_multi_hot)
+                loss = loss_fn(outputs, labels)
 
-            optimizer.step()
+                loss.backward()
 
-            running_loss += loss.item()
+                optimizer.step()
 
-            if batch % report_modulus == 0:
-                last_loss = running_loss / report_modulus
-                print(f"  batch {epoch + 1} loss: {last_loss}")
-                running_loss = 0
+                running_loss += loss.item()
 
-        running_vloss = 0.0
+                if batch % report_modulus == 0:
+                    last_loss = running_loss / report_modulus
+                    print(f"  batch {epoch + 1} loss: {last_loss}")
+                    running_loss = 0
 
-        model.eval()
+            running_vloss = 0.0
 
-        with torch.no_grad():
-            for vdata in test_data:
-                vfeatures, vplayer_ids, vteam_sizes, vgame_multi_hot, vlabels = vdata
-                voutputs = model(vfeatures, vplayer_ids, vteam_sizes, vgame_multi_hot)
+            model.eval()
 
-                vloss = loss_fn(voutputs, vlabels)
-                running_vloss += vloss
+            with torch.no_grad():
+                for vdata in test_data:
+                    vfeatures, vplayer_ids, vteam_sizes, vgame_multi_hot, vlabels = vdata
+                    voutputs = model(vfeatures, vplayer_ids, vteam_sizes, vgame_multi_hot)
 
-        avg_vloss = running_vloss / total_test_batches
-        print(f"LOSS train {last_loss} valid {avg_vloss}")
+                    vloss = loss_fn(voutputs, vlabels)
+                    running_vloss += vloss
 
-        torch.save(model.state_dict(), MODEL_FILENAME)
+            avg_vloss = running_vloss / total_test_batches
+            print(f"LOSS train {last_loss} valid {avg_vloss}")
+            log_fd.write(f'{epoch + 1},{last_loss},{avg_vloss}\n')
 
-        with open(CONFIG_FILENAME, "w") as fd:
-            json.dump(dataset.get_config(), fd)
+            torch.save(model.state_dict(), MODEL_FILENAME)
+
+            with open(CONFIG_FILENAME, "w") as fd:
+                json.dump(dataset.get_config(), fd)
 
 
 def run():
