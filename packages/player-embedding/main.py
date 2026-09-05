@@ -12,12 +12,12 @@ from torch.nn.utils.rnn import pad_sequence
 from games import GAME_IDS
 
 PLAYERS_PER_TEAM = 4
-FEATURES_PER_PLAYER = 17
+FEATURES_PER_PLAYER = 19
 COINS_SCALE = 35000
 FIRST_MCC_DATE = date.fromisoformat("2019-11-17")
 
-#   Feature Description
-# 1   win_rate    Fraction of events where their team placed 1st
+#     Feature Description
+# 1    win_rate    Fraction of events where their team placed 1st
 # 2   dodgebolt_rate  Fraction where their team made top 2
 # 3   avg_placement   1 - (mean coins-1)/9 (higher = better)
 # 4   best_coins Best coins → inverted [0,1]
@@ -26,9 +26,11 @@ FIRST_MCC_DATE = date.fromisoformat("2019-11-17")
 # 7   recent_trend    Coins slope over last 3 events
 # 8   n_participations    Log-scaled event count
 # 9   time_since_first   log-scaled days since first mcc
-# 10   recency Events in the past year
+# 10  recency Events in the past year
 # 11  avg_teammate_overlap    Mean Jaccard similarity with prior teammates
 # 12  is_returning_competitor 1 has played before, 0 is first time
+# 13  age  log-scaled days
+# 14  age_available  1 age is available, 0 if not
 
 
 def jaccard_similarity(a: set, b: set) -> float:
@@ -81,6 +83,8 @@ class CoinStats:
             mean=mean_team_coins, var=team_coin_variance, max=int(max), min=int(min)
         )
 
+with open('data/players.json', 'r') as player_json:
+    PLAYER_DATA = json.load(player_json)
 
 class PlayerTracker:
     event_count: int
@@ -92,8 +96,9 @@ class PlayerTracker:
     sum_team_similarity: float
     previous_team: Optional[set[str]]
     current_team: Optional[set[str]]
+    birthday: Optional[date]
 
-    def __init__(self):
+    def __init__(self, name: str):
         self.event_count = 0
         self.placements = []
         self.team_coins = []
@@ -102,6 +107,11 @@ class PlayerTracker:
         self.sum_team_similarity = 0
         self.previous_team = None
         self.current_team = None
+
+        player_data = PLAYER_DATA.get(name, {})
+        birthday = player_data.get('birthday')
+
+        self.birthday = date.fromisoformat(birthday) if birthday is not None else None
 
     def update(
         self,
@@ -206,6 +216,15 @@ class PlayerTracker:
                 else 0
             )
 
+        #
+        # Age
+        # 
+
+        age = None
+
+        if self.birthday is not None:
+            age = math.log((now - self.birthday).days)
+
         tensor[0] = (wins / n) if n != 0 else 0
         tensor[1] = ((wins + seconds) / n) if n != 0 else 0
         tensor[2] = scale_coins(team_coin_stats.mean, event_count)
@@ -225,6 +244,9 @@ class PlayerTracker:
         tensor[14] = recency
         tensor[15] = self.sum_team_similarity / event_count if event_count > 0 else 0
         tensor[16] = 1 if event_count > 0 else 0
+
+        tensor[17] = age if age is not None else 0
+        tensor[18] = 1 if age is not None else 0
 
         return tensor
 
@@ -276,7 +298,7 @@ class PlayerDataset(Dataset):
                         player_coins = player_coin_lookup.get(player_name, 0)
 
                         if player_tracker is None:
-                            player_tracker = PlayerTracker()
+                            player_tracker = PlayerTracker(player_name)
                             tracker[player_name] = player_tracker
 
                         player_tracker.update(
@@ -378,7 +400,7 @@ class TeamDataset(Dataset):
                             raise Exception(f"No coins for player {player_name}")
 
                         if player_tracker is None:
-                            player_tracker = PlayerTracker()
+                            player_tracker = PlayerTracker(player_name)
                             tracker[player_name] = player_tracker
 
                         team_tensor[i] = player_tracker.to_tensor(event_date)
@@ -632,35 +654,36 @@ def run():
     event = {
         "games": [
             "buildmart",
-            "tgttosawaf",
+            "battlebox",
+            "parkourwarriorsurvivor",
             "bingobutfast",
-            "parkourtag",
-            "meltdown",
             "acerace",
-            "railroadrush",
-            "battlebox"
+            "skybattle",
+            "holeinthewall",
+            "survivalgames",
         ],
+
         "teams": {
             # "placement": 1,
-            "redrabbits": ["Feinberg", "Grian", "Shubble", "ZombieCleo"],
+            "redrabbits": ["aimsey", "bekyamon", "ghostiefruit", "hahhahxxrose"],
             # "placement": 5,
-            "orangeocelots": ["acho", "Cambam010", "CherriFire", "Roscumber"],
+            "orangeocelots": ["cubfan135", "ish13c", "Ph1Lza", "Seapeekay"],
             # "placement": 2,
-            "yellowyaks": ["InTheLittleWood", "Kara Corvus", "Purpled", "Snifferish"],
+            "yellowyaks": ["FalseSymmetry", "InTheLittleWood", "Kratzy", "PeteZahHutt"],
             # "placement": 10,
-            "limellamas": ["InfiniteDrift", "Mysticat", "Nukeri", "Shandrea"],
+            "limellamas": ["4CVIT", "Smajor1995", "Sneegsnag", "xChocoBars"],
             # "placement": 9,
-            "greengeckos": ["Graecie", "Legundo", "Mythical Sausage", "PrinceZam"],
+            "greengeckos": ["Feinberg", "GoodTimesWithScar", "impulseSV", "Tubbo"],
             # "placement": 3,
-            "cyancoyotes": ["CaptainSparklez", "ElainaExe", "GeminiTay", "4CVIT"],
+            "cyancoyotes": ["AntVenom", "ashswag", "SB737", "Shadoune666"],
             # "placement": 7,
-            "aquaaxolotls": ["PeteZahHutt", "SadMilkman", "TapL", "vintage_applesauce"],
+            "aquaaxolotls": ["Antfrost", "sleepy", "Shubble", "Steven Suptic"],
             # "placement": 6,
-            "bluebats": ["Antfrost", "guqqie", "Rainhoe", "vGumiho"],
+            "bluebats": ["CaptainSparkles", "ElainaExe", "fruitberries", "Kara Corvus"],
             # "placement": 8,
-            "purplepandas": ["apokuna", "Couriway", "KatieGoBrr", "LexieMariex"],
+            "purplepandas": ["Michaelmcchill", "PrinceZam", "Purpled", "Snifferish"],
             # "placement": 4,
-            "pinkparrots": ["jojosolos", "Maezes", "millkberry", "Smajor1995"],
+            "pinkparrots": ["Cambam", "FireBreathMan", "Grian", "Rendog"],
         }
     }
 
