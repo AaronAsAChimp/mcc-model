@@ -1,0 +1,34 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://mcc-model/schemas/players.json",
+	"title": "MCC Players",
+	"description": "Map of player names to optional metadata collected for each player.",
+	"type": "object",
+	"properties": {
+		"$schema": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": {
+		"type": "object",
+		"properties": {
+			"ign": {
+				"type": "string",
+				"description": "The name of their Minecraft player character"
+			},
+			"aliases": {
+				"type": "array",
+				"description": "A list of alternate names that will be used to normalize the player",
+				"contains": {
+					"type": "string"
+				}
+			},
+			"birthday": {
+				"type": "string",
+				"format": "date",
+				"description": "Player's date of birth in ISO 8601 (YYYY-MM-DD) format."
+			}
+		},
+		"additionalProperties": false
+	}
+}

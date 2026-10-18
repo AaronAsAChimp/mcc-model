@@ -39,6 +39,7 @@ PLAYER_ALIASES = {
     "ashswagg": "ashswag",
     "AvaKrisTyson": "Ava Tyson",
     "AvidMc_": "AvidMc",
+    "aimsey": "Aimsey",
     "BearsCancelle": "BearsCancelled",
     "Bedgar_": "Bedgar",
     "bigbst4tz2": "Bigbst4tz2",
@@ -52,6 +53,7 @@ PLAYER_ALIASES = {
     "BrryHrry": "Hrry",
     "Calcetin2": "Calce",
     "Calvin": "Cxlvxn",
+    "Cambam": "Cambam010",
     "CapitanGatoYT": "Capitan Gato",
     "Caramello_sb": "Caramello",
     "ChilledChaosYT": "ChilledChaos",
@@ -217,6 +219,10 @@ PLAYER_ALIASES = {
     "yammy_xox": "Yammyxox",
     "Zoeya": "Zoey Proasheck",
     "Zylush": "Zylus",
+    "yomikester238": "Yomikester238",
+    "xChocoBars": "XChocoBars",
+    "xBCrafted": "XBCrafted",
+    "watermunch": "Watermunch",
 }
 
 

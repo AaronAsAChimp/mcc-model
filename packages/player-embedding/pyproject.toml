@@ -9,3 +9,6 @@ dependencies = [
     "plotly>=5.24.0",
     "torch>=2.12.0",
 ]
+
+[tool.setuptools.packages.find]
+exclude = ["model*", "visualizations*"]

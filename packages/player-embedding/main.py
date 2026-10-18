@@ -5,6 +5,7 @@ from typing import Any, Optional
 import numpy as np
 import math
 import json
+from shared_core.data import PlayerDataFile
 import torch
 from torch.nn.functional import one_hot
 from torch.utils.data import DataLoader, Dataset, Subset
@@ -327,16 +328,21 @@ class PlayerDataset(Dataset):
         return self._player_count
 
     def get_team_data(
-        self, players: list[str]
+        self, players: list[str], player_data: PlayerDataFile
     ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         team_size = len(players)
         team_tensor = torch.empty([1, team_size, FEATURES_PER_PLAYER])
         player_ids_tensor = torch.empty([team_size], dtype=torch.int32)
 
         for i in range(team_size):
+            player_name = player_data.normalize_name(players[i])
+
+            if self._player_id_lookup.get(player_name) is None:
+                print(f'Missing data for player {player_name}')
+
             # the default of 0 is technically a existing player, but the the
             # is_returning_competitor should zero out everything.
-            player_id = self._player_id_lookup.get(players[i], 0)
+            player_id = self._player_id_lookup.get(player_name, 0)
             player_tensor = self._players[player_id]
             team_tensor[0][i] = player_tensor
             player_ids_tensor[i] = player_id
@@ -459,7 +465,7 @@ class TeamPlacementPredictor(torch.nn.Module):
     def __init__(self, player_count: int, features_per_player=FEATURES_PER_PLAYER, embedding_dim=12):
         super().__init__()
 
-        HIDDEN_LAYER_SIZE = round(FEATURES_PER_PLAYER * 2.5)
+        HIDDEN_LAYER_SIZE = round(features_per_player * 2.5)
         OUTPUT_SIZE = 16
         TOTAL_GAME_COUNT = len(GAME_IDS)
         GAME_EMBEDDING_SIZE = 32
@@ -690,12 +696,13 @@ def run():
     results = []
     game_ids = games_to_tensor(event.get("games", [])).unsqueeze(0)
 
-    for [team_name, team] in event["teams"].items():
-        [team_tensor, player_ids, team_size] = player_dataset.get_team_data(team)
+    with PlayerDataFile('data/players.json') as player_data:
+        for [team_name, team] in event["teams"].items():
+            [team_tensor, player_ids, team_size] = player_dataset.get_team_data(team, player_data)
 
-        outputs = model(team_tensor, player_ids, team_size, game_ids)
+            outputs = model(team_tensor, player_ids, team_size, game_ids)
 
-        results.append((team_name, outputs[0][0]))
+            results.append((team_name, outputs[0][0]))
 
     results = sorted(results, reverse=True, key=lambda result: result[1])
 

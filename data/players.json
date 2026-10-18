@@ -1,0 +1,709 @@
+{
+	"$schema": "./schemas/players.json",
+	"4CVIT": {
+		"birthday": "2003-11-17"
+	},
+	"5up": {
+		"birthday": "1999-10-27"
+	},
+	"AQUINO": {},
+	"AbolishRegret": {
+		"birthday": "2000-04-27"
+	},
+	"Aerington": {},
+	"Aimsey": {
+		"birthday": "2001-12-11"
+	},
+	"AlexTheRambler": {},
+	"Allrich": {},
+	"AnsiChan": {},
+	"AntVenom": {},
+	"Antfrost": {
+		"birthday": "1998-08-27"
+	},
+	"Anthony Toczek": {},
+	"Aphmau": {},
+	"ArtemisAblaze": {},
+	"Asnazum": {},
+	"Ava Tyson": {},
+	"AvidMc": {},
+	"AyChristene": {},
+	"BBPaws": {},
+	"BaboAbe": {},
+	"BadBoyHalo": {},
+	"BajanCanadian": {},
+	"BdoubleO100": {},
+	"BearsCancelled": {},
+	"Bedgar": {},
+	"Bekkiboom": {},
+	"Bekyamon": {
+		"birthday": "1997-10-31"
+	},
+	"Bigbst4tz2": {
+		"birthday": "1990-02-28"
+	},
+	"Binnish": {},
+	"Bitzel": {
+		"birthday": "2004-01-21"
+	},
+	"Block Facts": {},
+	"Blushi": {},
+	"BobaWitch": {},
+	"Boosfer": {
+		"birthday": "2001-10-16"
+	},
+	"Bouphe": {},
+	"BoxBox": {},
+	"Breeh": {},
+	"Brionykay": {},
+	"BrunoDanUy": {},
+	"Bubblebrooke": {},
+	"Calce": {},
+	"Calolinda": {},
+	"Cambam010": {
+		"birthday": "1998-11-18"
+	},
+	"Capitan Gato": {},
+	"CaptainPuffy": {
+		"birthday": "1998-09-18"
+	},
+	"CaptainSparklez": {
+		"birthday": "1992-02-10"
+	},
+	"Caramello": {},
+	"CastCrafter": {},
+	"Checkpoint": {},
+	"CherriFire": {},
+	"ChilledChaos": {
+		"birthday": "1991-05-30"
+	},
+	"ChippyGaming": {},
+	"Chunk Purse": {},
+	"CodeNeon": {},
+	"Cojomax99": {
+		"birthday": "1993-06-29"
+	},
+	"ConnorEatsPants": {},
+	"Conterstine": {},
+	"Couriway": {
+		"birthday": "1999-08-13"
+	},
+	"CozyCrafted": {},
+	"Craig Frost": {},
+	"CrankGameplays": {},
+	"Crisgreen": {
+		"birthday": "1995-11-25"
+	},
+	"Cubfan135": {
+		"birthday": "1989-08-20"
+	},
+	"Cxlvxn": {
+		"birthday": "1998-03-13"
+	},
+	"Cydonia": {
+		"birthday": "1994-11-14"
+	},
+	"Daltos": {},
+	"DanTDM": {
+		"birthday": "1991-11-08"
+	},
+	"DarkEyebrows": {},
+	"Defectt": {},
+	"Dethridge": {},
+	"Dev": {},
+	"Diffrent": {},
+	"DisguisedToast": {},
+	"Docm77": {
+		"birthday": "1977-07-05"
+	},
+	"Dr. Simon Clark": {},
+	"DrGluon": {},
+	"DraconiteDragon": {
+		"birthday": "1998-05-12"
+	},
+	"Dream": {
+		"birthday": "1999-08-12"
+	},
+	"Dtowncat": {},
+	"Duncan Jones": {
+		"birthday": "1987-03-01"
+	},
+	"Duncan Massink": {
+		"birthday": "1999-02-15"
+	},
+	"Duxo": {},
+	"Ejzar": {},
+	"ElainaExe": {
+		"birthday": "1998-11-05"
+	},
+	"Ellen Rose": {
+		"birthday": "1988-11-29"
+	},
+	"Eret": {
+		"birthday": "1999-01-09"
+	},
+	"EsVandal": {},
+	"Eskay": {},
+	"EthosLab": {},
+	"Etoiles": {
+		"birthday": "1996-08-02"
+	},
+	"F1NN5TER": {},
+	"Fabo": {},
+	"FairlyGab": {},
+	"Faister": {
+		"birthday": "2001-11-17"
+	},
+	"FalseSymmetry": {
+		"mc_player_name": "falsesymmetry"
+	},
+	"Farrantula": {},
+	"Feinberg": {
+		"birthday": "2002-10-18"
+	},
+	"Felikah": {},
+	"Fionn Riches": {},
+	"FireBreathMan": {
+		"birthday": "2000-08-13"
+	},
+	"FitMC": {},
+	"FlexVega": {},
+	"FlorianFunke": {},
+	"Foolish Gamers": {
+		"birthday": "1998-12-18"
+	},
+	"Fruitberries": {
+		"birthday": "2002-08-28"
+	},
+	"Fulham": {},
+	"Fundy": {
+		"birthday": "1999-10-10"
+	},
+	"Gee Nelly": {
+		"birthday": "1995-08-19"
+	},
+	"Geestar": {
+		"birthday": "1993-10-14"
+	},
+	"Gegy": {},
+	"GeminiTay": {
+		"birthday": "1996-05-22"
+	},
+	"GeorgeNotFound": {
+		"birthday": "1996-11-01"
+	},
+	"Ghostiefruit": {
+		"birthday": "2003-02-13"
+	},
+	"Gigithepuppy": {},
+	"Ginerous": {},
+	"GirlOfNox": {},
+	"GizzyGazza": {},
+	"GoldenGlare": {},
+	"Golemell": {},
+	"GoodTimesWithScar": {},
+	"Graaavel": {},
+	"Graecie": {
+		"mc_player_name": "heyGraecie"
+	},
+	"Gramajo": {},
+	"Graser10": {
+		"birthday": "1997-01-16"
+	},
+	"Grian": {
+		"birthday": "1993-08-09"
+	},
+	"Guggle": {},
+	"Guqqie": {
+		"birthday": "2001-09-14"
+	},
+	"Gussy": {},
+	"HBomb94": {
+		"birthday": "1994-01-04"
+	},
+	"HannahKate": {},
+	"Hannahxxrose": {
+		"birthday": "2000-02-28"
+	},
+	"HeySansi": {},
+	"HiImCC": {},
+	"Hrry": {
+		"birthday": "1995-10-25"
+	},
+	"Hydraticc": {},
+	"Illumina": {},
+	"ImaShep": {},
+	"InTheLittleWood": {
+		"birthday": "1990-04-07"
+	},
+	"Inditorias": {},
+	"InfiniteDrift": {},
+	"Ish13c": {
+		"birthday": "2001-09-27"
+	},
+	"ItsFunneh": {
+		"birthday": "1995-10-31"
+	},
+	"ItsJustOriah": {},
+	"ItzMasayoshi": {},
+	"JC The Caster": {},
+	"JHorse": {},
+	"JLTomy": {},
+	"JackManifoldTV": {
+		"birthday": "2002-08-14"
+	},
+	"JackSucksAtLife": {
+		"birthday": "1996-06-24"
+	},
+	"Jacksepticeye": {
+		"birthday": "1990-02-07"
+	},
+	"JamalMC": {},
+	"James Charles": {
+		"birthday": "1999-05-23"
+	},
+	"James Marriott": {},
+	"James Turner": {},
+	"Jameskii": {},
+	"Jane Douglas": {},
+	"Jeremy Frieser": {
+		"birthday": "1997-01-28"
+	},
+	"JeromeASF": {
+		"birthday": "1994-03-09"
+	},
+	"Jestanii": {},
+	"Joe Hickson": {},
+	"Joe Hills": {
+		"birthday": "1986-07-20"
+	},
+	"Joey Graceffa": {},
+	"Jojosolos": {
+		"birthday": "1999-09-09"
+	},
+	"JustNova": {},
+	"Kara Corvus": {},
+	"Karl Jacobs": {},
+	"Katherine Elizabeth": {},
+	"KatieGoBrr": {},
+	"KendoMurft": {},
+	"Keralis": {
+		"birthday": "1981-04-30"
+	},
+	"KhaosKorps": {},
+	"Kier": {},
+	"KingOfArchers": {},
+	"King_Burren": {},
+	"Kontuz": {},
+	"Kratzy": {
+		"birthday": "1999-08-17"
+	},
+	"KreekCraft": {
+		"birthday": "1997-01-28"
+	},
+	"Krinios": {
+		"birthday": "2001-12-19"
+	},
+	"Kristina": {},
+	"KryticZeuz": {},
+	"LDShadowLady": {},
+	"LOKIOLR": {},
+	"LaKitty101": {},
+	"LaosOneView": {},
+	"Laqqy": {},
+	"LaurenzSide": {},
+	"LazarBeam": {},
+	"Legundo": {},
+	"Leozaur": {},
+	"LetsHugo": {},
+	"Lewis Brindley": {},
+	"LexieMariex": {},
+	"LilyPichu": {
+		"birthday": "1991-11-20"
+	},
+	"Lincu": {},
+	"LinkTijger": {},
+	"Lucowskyx": {},
+	"Ludwig": {},
+	"LydRay18": {},
+	"LynxyLiam": {},
+	"M4NG0": {},
+	"Maezes": {},
+	"MakoInari": {},
+	"Mara Holmes": {},
+	"Marbar_x": {},
+	"Marielitai": {},
+	"Marki Sparki": {},
+	"Marma1ade": {},
+	"MathoX": {},
+	"MaxGGs": {
+		"birthday": "2005-10-22"
+	},
+	"Mefs": {},
+	"Mejoraas": {},
+	"MeowyNissi": {},
+	"Michaelmcchill": {
+		"birthday": "1996-08-04"
+	},
+	"Midmysticx": {
+		"birthday": "2004-04-23"
+	},
+	"Mike Channell": {},
+	"Mikecrack": {
+		"birthday": "1993-05-27"
+	},
+	"Mini Muka": {},
+	"Mishifu": {
+		"birthday": "2000-03-03"
+	},
+	"Mitzefy": {},
+	"Mizzrowe": {},
+	"Mogswamp": {
+		"birthday": "1996-06-25"
+	},
+	"Mousie": {},
+	"MrBeardstone": {},
+	"Mumbo Jumbo": {
+		"birthday": "1995-12-01"
+	},
+	"Muselk": {},
+	"Musicman1017": {},
+	"Mysticat": {
+		"birthday": "1998-01-19"
+	},
+	"Mythical Sausage": {
+		"birthday": "1990-08-09"
+	},
+	"NanoKim": {},
+	"NettyPlays": {
+		"birthday": "1987-11-07"
+	},
+	"Nicacola": {},
+	"Nihachu": {},
+	"Nina Serena": {},
+	"NomadOfTheWorld": {},
+	"Nominalgravy": {},
+	"NotNotBrock": {},
+	"Nukeri": {},
+	"Nuvia": {},
+	"OllieGamerz": {},
+	"Osiefish": {
+		"birthday": "1991-04-07"
+	},
+	"OwengeJuice": {
+		"birthday": "1997-06-16"
+	},
+	"PEARLBYTEZ": {},
+	"Paache": {},
+	"Paeadams": {
+		"birthday": "2006-04-29"
+	},
+	"Pangi": {
+		"birthday": "2004-09-10"
+	},
+	"PearlescentMoon": {
+		"birthday": "1996-06-13"
+	},
+	"Pedguin": {
+		"birthday": "1992-10-20"
+	},
+	"Peeporp": {},
+	"PeteZahHutt": {
+		"birthday": "1997-03-14"
+	},
+	"Ph1LzA": {
+		"birthday": "1988-03-01"
+	},
+	"Piso": {},
+	"Pixlriffs": {},
+	"Plumbella": {
+		"birthday": "1995-07-05"
+	},
+	"Plushy33": {},
+	"Pokimane": {
+		"birthday": "1996-05-14"
+	},
+	"Ponk": {},
+	"Pressea": {},
+	"PrestonPlayz": {
+		"birthday": "1994-05-04"
+	},
+	"PrinceZam": {
+		"birthday": "2004-04-14"
+	},
+	"Puji2": {},
+	"Punz": {},
+	"Purpled": {
+		"birthday": "2003-10-24"
+	},
+	"Pyroscythe": {},
+	"Quackity": {
+		"birthday": "2000-12-28"
+	},
+	"Quig": {},
+	"RAEHASRABIES": {},
+	"RIPmika": {},
+	"RTGame": {},
+	"Rafessor": {},
+	"Rainbows": {},
+	"Rainhoe": {},
+	"Ranboo": {},
+	"RaptorGamer": {},
+	"Ravs": {},
+	"Rendog": {},
+	"Rhiannon": {},
+	"Richard Thornton": {},
+	"Roguskii": {},
+	"Rosannatxt": {},
+	"Roscumber": {},
+	"RoseThunder": {},
+	"Rubik": {},
+	"Rubyco": {},
+	"Ryan Higa": {},
+	"Ryguyrocky": {},
+	"Rythian": {},
+	"SB737": {},
+	"SadMilkman": {},
+	"Saiiren": {},
+	"SandwichLord": {
+		"birthday": "2006-01-06"
+	},
+	"Sapnap": {},
+	"Sarahsera": {},
+	"Scot Griswold": {},
+	"Scuffed_Sushi": {},
+	"SeFirox": {
+		"birthday": "2005-11-14"
+	},
+	"Seapeekay": {
+		"birthday": "1992-05-01"
+	},
+	"Serpias": {
+		"birthday": "1999-02-18"
+	},
+	"SettingSunset": {},
+	"Shadoune666": {
+		"birthday": "1996-11-14"
+	},
+	"Shandrea": {},
+	"Shubble": {
+		"birthday": "1993-08-20"
+	},
+	"Simon Lane": {},
+	"Sinnabuns": {},
+	"Skeppy": {
+		"birthday": "2000-01-17"
+	},
+	"Skizzleman": {
+		"birthday": "1979-06-07"
+	},
+	"Skyyart": {},
+	"Slimecicle": {
+		"birthday": "1998-08-12"
+	},
+	"Smajor1995": {
+		"birthday": "1995-11-10"
+	},
+	"SmallAnt": {},
+	"Smallishbeans": {
+		"birthday": "1993-06-29"
+	},
+	"Sneegsnag": {
+		"birthday": "1996-09-26"
+	},
+	"Snifferish": {
+		"birthday": "2003-02-06"
+	},
+	"Soarinng": {},
+	"SolidarityGaming": {},
+	"SpeedSilver": {},
+	"Spelda": {},
+	"SpelledNik": {},
+	"Spifey": {},
+	"Sqaishey": {},
+	"SquidGaming": {},
+	"Squiddo": {},
+	"Stemister": {},
+	"Steph0sims": {},
+	"Steven Suptic": {},
+	"Strawburry17": {},
+	"SwitchBackMongo": {},
+	"Sykkuno": {},
+	"Sylvee": {},
+	"Taneesha": {},
+	"TangoTek": {},
+	"TankMatt": {},
+	"TapL": {
+		"birthday": "2001-05-07"
+	},
+	"Technoblade": {
+		"birthday": "1999-06-01"
+	},
+	"TheBlazer97": {},
+	"TheGuill84": {
+		"birthday": "1998-12-11"
+	},
+	"TheMagmaBoi": {},
+	"TheOrionSound": {
+		"birthday": "1995-07-11"
+	},
+	"TheSpiffingBrit": {},
+	"TibbyCaps": {},
+	"TinaKitten": {
+		"birthday": "1998-06-30"
+	},
+	"TinyCherry": {},
+	"Tom Hazell": {},
+	"TomatoBisqueSoup": {},
+	"TommyInnit": {
+		"birthday": "2004-04-09"
+	},
+	"ToxxxicSupport": {},
+	"Tubbo": {
+		"birthday": "2003-12-23"
+	},
+	"Ulraf": {},
+	"Valkyrae": {},
+	"Vapekit": {},
+	"VelvetIsCake": {},
+	"Vickypalami": {},
+	"VikingPilot": {
+		"mc_player_name": "VikingPilot"
+	},
+	"Vikkstar123": {
+		"birthday": "1995-08-02"
+	},
+	"VintageBeef": {},
+	"Vixella": {},
+	"VoiceoverPete": {},
+	"WadeBox": {},
+	"Wallibear": {},
+	"Watermunch": {},
+	"Welsknight": {
+		"birthday": "1989-10-27"
+	},
+	"WendyJr": {},
+	"Wichtiger": {
+		"birthday": "2005-09-16"
+	},
+	"Wilbur Soot": {},
+	"Wisp": {},
+	"WithMayX": {
+		"birthday": "2005-10-07"
+	},
+	"Wolfeei": {
+		"birthday": "2002-06-08"
+	},
+	"Wolv21": {},
+	"Wondernat": {},
+	"XBCrafted": {},
+	"XChocoBars": {
+		"birthday": "1994-11-05"
+	},
+	"Xilefian": {},
+	"Xisumavoid": {},
+	"Yammyxox": {},
+	"Yeetdaisie": {},
+	"YelloWool": {},
+	"Yomikester238": {},
+	"Yoshinom": {},
+	"Zedaph": {
+		"birthday": "1992-12-08"
+	},
+	"Zoey Proasheck": {},
+	"ZombieCleo": {},
+	"Zylus": {},
+	"aCookieGod": {},
+	"acho": {},
+	"aldo_geo": {},
+	"apokuna": {
+		"birthday": "2002-09-09"
+	},
+	"ashswag": {
+		"birthday": "2004-01-16"
+	},
+	"awesamdude": {},
+	"aypierre": {},
+	"bekyamon": {
+		"birthday": "1997-10-31"
+	},
+	"billzo": {
+		"birthday": "2004-08-15"
+	},
+	"blaustoise": {},
+	"buggy9000": {},
+	"caitees": {},
+	"coldified": {},
+	"cubfan135": {
+		"birthday": "1989-08-20"
+	},
+	"deusamir": {},
+	"fWhip": {},
+	"fanfan": {
+		"birthday": "2000-01-10"
+	},
+	"fruitberries": {
+		"birthday": "2002-08-28"
+	},
+	"garlicmint": {},
+	"ghostiefruit": {
+		"birthday": "2003-02-13"
+	},
+	"guqqie": {
+		"birthday": "2001-09-14"
+	},
+	"hannahxxrose": {},
+	"highkeyhateme": {
+		"birthday": "2002-06-20"
+	},
+	"hypnotizd": {},
+	"iHasCupquake": {},
+	"iJevin": {
+		"birthday": "1987-12-29"
+	},
+	"iiTzTimmy": {
+		"birthday": "2000-04-19"
+	},
+	"iicbunnyx": {},
+	"impulseSV": {
+		"birthday": "1981-03-09"
+	},
+	"ish13c": {
+		"birthday": "2001-09-27"
+	},
+	"iskall85": {
+		"birthday": "1985-12-30"
+	},
+	"jojosolos": {
+		"birthday": "1999-09-09"
+	},
+	"jvckk": {},
+	"kkatamina_": {
+		"birthday": "1995-11-09"
+	},
+	"lynrose": {},
+	"millkberry": {},
+	"mintsleaves": {},
+	"misfitclover": {},
+	"nooreax": {},
+	"olivesleepy": {},
+	"p_izzato": {},
+	"pearcups": {},
+	"queen_ov_drama": {},
+	"riiceandbeanss": {},
+	"roseriie": {},
+	"rusty_courage": {},
+	"shadowatnoon": {
+		"birthday": "1997-04-28"
+	},
+	"sinaheh": {},
+	"sleepy": {},
+	"soupforeloise": {},
+	"spoinkTV": {},
+	"starvtuber": {},
+	"vGumiho": {
+		"birthday": "1998-08-10"
+	},
+	"vintage_applesauce": {},
+	"xNestorio": {}
+}

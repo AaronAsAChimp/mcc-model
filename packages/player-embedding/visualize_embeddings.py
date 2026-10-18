@@ -16,6 +16,7 @@ from dataclasses import dataclass
 
 import numpy as np
 import plotly.graph_objects as go
+from shared_core.data import PlayerDataFile
 import torch
 
 from typing import Iterable, TypedDict
@@ -225,36 +226,40 @@ def build_views(
         ],
     }
 
-    index_by_name = {name: index for index, name in enumerate(player_names)}
+    with PlayerDataFile('data/players.json') as player_data:
+        index_by_name = {}
 
-    for group, members in GROUP_MEMBERS.items():
-        member_indices = [
-            index_by_name[name] for name in members if name in index_by_name
-        ]
-        member_set = set(member_indices)
-        accent = GROUP_COLORS[group]
-        colors = [
-            accent if index in member_set else NONMEMBER_COLOR
-            for index in range(len(player_names))
-        ]
-        sizes = [
-            9 if index in member_set else 5 for index in range(len(player_names))
-        ]
+        for index, name in enumerate(player_names):
+            index_by_name[player_data.normalize_name(name)] = index
 
-        views[group] = {
-            "title": group,
-            "marker": {
-                "size": sizes,
-                "color": colors,
-                "showscale": False,
-                "line": {"width": 0.6, "color": "#0d1117"},
-            },
-            "label_indices": member_indices,
-            "text": [
-                player_names[index] if index in member_set else ""
+        for group, members in GROUP_MEMBERS.items():
+            member_indices = [
+                index_by_name[player_data.normalize_name(name)] for name in members if name in index_by_name
+            ]
+            member_set = set(member_indices)
+            accent = GROUP_COLORS[group]
+            colors = [
+                accent if index in member_set else NONMEMBER_COLOR
                 for index in range(len(player_names))
-            ],
-        }
+            ]
+            sizes = [
+                9 if index in member_set else 5 for index in range(len(player_names))
+            ]
+
+            views[group] = {
+                "title": group,
+                "marker": {
+                    "size": sizes,
+                    "color": colors,
+                    "showscale": False,
+                    "line": {"width": 0.6, "color": "#0d1117"},
+                },
+                "label_indices": member_indices,
+                "text": [
+                    player_names[index] if index in member_set else ""
+                    for index in range(len(player_names))
+                ],
+            }
 
     return views
 
