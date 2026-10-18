@@ -618,7 +618,7 @@ def train():
 
                 optimizer.zero_grad()
 
-                outputs = model(features, player_ids, team_sizes, games_multi_hot)
+                outputs = model(features, player_ids, team_sizes, games_multi_hot).squeeze(-1)
                 loss = loss_fn(outputs, labels)
 
                 loss.backward()
@@ -639,7 +639,7 @@ def train():
             with torch.no_grad():
                 for vdata in test_data:
                     vfeatures, vplayer_ids, vteam_sizes, vgame_multi_hot, vlabels = vdata
-                    voutputs = model(vfeatures, vplayer_ids, vteam_sizes, vgame_multi_hot)
+                    voutputs = model(vfeatures, vplayer_ids, vteam_sizes, vgame_multi_hot).squeeze(-1)
 
                     vloss = loss_fn(voutputs, vlabels)
                     running_vloss += vloss
@@ -704,9 +704,9 @@ def run():
         for [team_name, team] in event["teams"].items():
             [team_tensor, player_ids, team_size] = player_dataset.get_team_data(team, player_data)
 
-            outputs = model(team_tensor, player_ids, team_size, game_ids)
+            outputs = model(team_tensor, player_ids, team_size, game_ids).squeeze(-1)
 
-            results.append((team_name, outputs[0][0]))
+            results.append((team_name, outputs[0]))
 
     results = sorted(results, reverse=True, key=lambda result: result[1])
 
