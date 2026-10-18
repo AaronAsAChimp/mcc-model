@@ -4,81 +4,167 @@
 		"birthday": "2003-11-17"
 	},
 	"5up": {
-		"birthday": "1999-10-27"
+		"birthday": "1999-10-27",
+		"aliases": [
+			"5uppps"
+		]
 	},
-	"AQUINO": {},
+	"AQUINO": {
+		"aliases": [
+			"AQUINOby02"
+		]
+	},
 	"AbolishRegret": {
 		"birthday": "2000-04-27"
 	},
 	"Aerington": {},
-	"Aimsey": {
-		"birthday": "2001-12-11"
+	"aimsey": {
+		"birthday": "2001-12-11",
+		"aliases": [
+			"Aimsey"
+		]
 	},
-	"AlexTheRambler": {},
+	"AlexTheRambler": {
+		"aliases": [
+			"Alex_the_Rambler"
+		]
+	},
 	"Allrich": {},
 	"AnsiChan": {},
 	"AntVenom": {},
 	"Antfrost": {
 		"birthday": "1998-08-27"
 	},
-	"Anthony Toczek": {},
+	"Anthony Toczek": {
+		"aliases": [
+			"Antoneemc"
+		]
+	},
 	"Aphmau": {},
 	"ArtemisAblaze": {},
 	"Asnazum": {},
-	"Ava Tyson": {},
-	"AvidMc": {},
+	"Ava Tyson": {
+		"aliases": [
+			"AvaKrisTyson"
+		]
+	},
+	"AvidMc": {
+		"aliases": [
+			"AvidMc_"
+		]
+	},
 	"AyChristene": {},
 	"BBPaws": {},
 	"BaboAbe": {},
 	"BadBoyHalo": {},
 	"BajanCanadian": {},
 	"BdoubleO100": {},
-	"BearsCancelled": {},
-	"Bedgar": {},
+	"BearsCancelled": {
+		"aliases": [
+			"BearsCancelle"
+		]
+	},
+	"Bedgar": {
+		"aliases": [
+			"Bedgar_"
+		]
+	},
 	"Bekkiboom": {},
 	"Bekyamon": {
 		"birthday": "1997-10-31"
 	},
 	"Bigbst4tz2": {
-		"birthday": "1990-02-28"
+		"birthday": "1990-02-28",
+		"aliases": [
+			"bigbst4tz2"
+		]
 	},
 	"Binnish": {},
 	"Bitzel": {
 		"birthday": "2004-01-21"
 	},
-	"Block Facts": {},
+	"Block Facts": {
+		"aliases": [
+			"Block_Facts"
+		]
+	},
 	"Blushi": {},
 	"BobaWitch": {},
 	"Boosfer": {
 		"birthday": "2001-10-16"
 	},
-	"Bouphe": {},
-	"BoxBox": {},
+	"Bouphe": {
+		"aliases": [
+			"bouphe"
+		]
+	},
+	"BoxBox": {
+		"aliases": [
+			"boxbox22"
+		]
+	},
 	"Breeh": {},
-	"Brionykay": {},
+	"Brionykay": {
+		"aliases": [
+			"brionykay"
+		]
+	},
 	"BrunoDanUy": {},
 	"Bubblebrooke": {},
-	"Calce": {},
+	"Calce": {
+		"aliases": [
+			"Calcetin2"
+		]
+	},
 	"Calolinda": {},
 	"Cambam010": {
-		"birthday": "1998-11-18"
+		"birthday": "1998-11-18",
+		"aliases": [
+			"Cambam"
+		]
 	},
-	"Capitan Gato": {},
+	"Capitan Gato": {
+		"aliases": [
+			"CapitanGatoYT"
+		]
+	},
 	"CaptainPuffy": {
 		"birthday": "1998-09-18"
 	},
 	"CaptainSparklez": {
-		"birthday": "1992-02-10"
+		"birthday": "1992-02-10",
+		"aliases": [
+			"KaptainSparklez"
+		]
 	},
-	"Caramello": {},
+	"Caramello": {
+		"aliases": [
+			"Caramello_sb"
+		]
+	},
 	"CastCrafter": {},
-	"Checkpoint": {},
+	"Checkpoint": {
+		"aliases": [
+			"SteveCP"
+		]
+	},
 	"CherriFire": {},
 	"ChilledChaos": {
-		"birthday": "1991-05-30"
+		"birthday": "1991-05-30",
+		"aliases": [
+			"ChilledChaosYT"
+		]
 	},
-	"ChippyGaming": {},
-	"Chunk Purse": {},
+	"ChippyGaming": {
+		"aliases": [
+			"ChippyGaming_"
+		]
+	},
+	"Chunk Purse": {
+		"aliases": [
+			"chunkpurse"
+		]
+	},
 	"CodeNeon": {},
 	"Cojomax99": {
 		"birthday": "1993-06-29"
@@ -89,7 +175,11 @@
 		"birthday": "1999-08-13"
 	},
 	"CozyCrafted": {},
-	"Craig Frost": {},
+	"Craig Frost": {
+		"aliases": [
+			"CraigMeUp"
+		]
+	},
 	"CrankGameplays": {},
 	"Crisgreen": {
 		"birthday": "1995-11-25"
@@ -98,10 +188,16 @@
 		"birthday": "1989-08-20"
 	},
 	"Cxlvxn": {
-		"birthday": "1998-03-13"
+		"birthday": "1998-03-13",
+		"aliases": [
+			"Calvin"
+		]
 	},
 	"Cydonia": {
-		"birthday": "1994-11-14"
+		"birthday": "1994-11-14",
+		"aliases": [
+			"CydoniaPM"
+		]
 	},
 	"Daltos": {},
 	"DanTDM": {
@@ -110,14 +206,30 @@
 	"DarkEyebrows": {},
 	"Defectt": {},
 	"Dethridge": {},
-	"Dev": {},
-	"Diffrent": {},
+	"Dev": {
+		"aliases": [
+			"Its_Dev_"
+		]
+	},
+	"Diffrent": {
+		"aliases": [
+			"Dlffrent"
+		]
+	},
 	"DisguisedToast": {},
 	"Docm77": {
 		"birthday": "1977-07-05"
 	},
-	"Dr. Simon Clark": {},
-	"DrGluon": {},
+	"Dr. Simon Clark": {
+		"aliases": [
+			"drsimonclark"
+		]
+	},
+	"DrGluon": {
+		"aliases": [
+			"Drgluon"
+		]
+	},
 	"DraconiteDragon": {
 		"birthday": "1998-05-12"
 	},
@@ -126,64 +238,123 @@
 	},
 	"Dtowncat": {},
 	"Duncan Jones": {
-		"birthday": "1987-03-01"
+		"birthday": "1987-03-01",
+		"aliases": [
+			"LividCoffee"
+		]
 	},
 	"Duncan Massink": {
-		"birthday": "1999-02-15"
+		"birthday": "1999-02-15",
+		"aliases": [
+			"DuncanMassink"
+		]
 	},
-	"Duxo": {},
+	"Duxo": {
+		"aliases": [
+			"Duxorethey"
+		]
+	},
 	"Ejzar": {},
 	"ElainaExe": {
 		"birthday": "1998-11-05"
 	},
 	"Ellen Rose": {
-		"birthday": "1988-11-29"
+		"birthday": "1988-11-29",
+		"aliases": [
+			"OX_Ellen"
+		]
 	},
 	"Eret": {
-		"birthday": "1999-01-09"
+		"birthday": "1999-01-09",
+		"aliases": [
+			"The_Eret"
+		]
 	},
 	"EsVandal": {},
-	"Eskay": {},
-	"EthosLab": {},
+	"Eskay": {
+		"aliases": [
+			"Eskay22"
+		]
+	},
+	"EthosLab": {
+		"aliases": [
+			"Etho"
+		]
+	},
 	"Etoiles": {
 		"birthday": "1996-08-02"
 	},
 	"F1NN5TER": {},
-	"Fabo": {},
+	"Fabo": {
+		"aliases": [
+			"TheFabo"
+		]
+	},
 	"FairlyGab": {},
 	"Faister": {
 		"birthday": "2001-11-17"
 	},
 	"FalseSymmetry": {
-		"mc_player_name": "falsesymmetry"
+		"ign": "falsesymmetry",
+		"aliases": [
+			"falsesymmetry"
+		]
 	},
-	"Farrantula": {},
+	"Farrantula": {
+		"aliases": [
+			"OX_Andy"
+		]
+	},
 	"Feinberg": {
 		"birthday": "2002-10-18"
 	},
 	"Felikah": {},
-	"Fionn Riches": {},
+	"Fionn Riches": {
+		"aliases": [
+			"Fiona_McGoats"
+		]
+	},
 	"FireBreathMan": {
 		"birthday": "2000-08-13"
 	},
-	"FitMC": {},
-	"FlexVega": {},
+	"FitMC": {
+		"aliases": [
+			"Fit"
+		]
+	},
+	"FlexVega": {
+		"aliases": [
+			"FleexVega"
+		]
+	},
 	"FlorianFunke": {},
 	"Foolish Gamers": {
-		"birthday": "1998-12-18"
+		"birthday": "1998-12-18",
+		"aliases": [
+			"FoolishG"
+		]
 	},
 	"Fruitberries": {
 		"birthday": "2002-08-28"
 	},
 	"Fulham": {},
 	"Fundy": {
-		"birthday": "1999-10-10"
+		"birthday": "1999-10-10",
+		"aliases": [
+			"ItsFundy"
+		]
 	},
 	"Gee Nelly": {
-		"birthday": "1995-08-19"
+		"birthday": "1995-08-19",
+		"aliases": [
+			"GeeNelly"
+		]
 	},
 	"Geestar": {
-		"birthday": "1993-10-14"
+		"birthday": "1993-10-14",
+		"aliases": [
+			"Geestargames"
+		]
 	},
 	"Gegy": {},
 	"GeminiTay": {
@@ -201,10 +372,21 @@
 	"GizzyGazza": {},
 	"GoldenGlare": {},
 	"Golemell": {},
-	"GoodTimesWithScar": {},
-	"Graaavel": {},
+	"GoodTimesWithScar": {
+		"aliases": [
+			"GoodTimeWithScar"
+		]
+	},
+	"Graaavel": {
+		"aliases": [
+			"graaavel"
+		]
+	},
 	"Graecie": {
-		"mc_player_name": "heyGraecie"
+		"ign": "heyGraecie",
+		"aliases": [
+			"heyGraecie"
+		]
 	},
 	"Gramajo": {},
 	"Graser10": {
@@ -213,31 +395,58 @@
 	"Grian": {
 		"birthday": "1993-08-09"
 	},
-	"Guggle": {},
+	"Guggle": {
+		"aliases": [
+			"Guggleino"
+		]
+	},
 	"Guqqie": {
 		"birthday": "2001-09-14"
 	},
-	"Gussy": {},
+	"Gussy": {
+		"aliases": [
+			"GussyGang_"
+		]
+	},
 	"HBomb94": {
 		"birthday": "1994-01-04"
 	},
-	"HannahKate": {},
+	"HannahKate": {
+		"aliases": [
+			"hannahhkatee"
+		]
+	},
 	"Hannahxxrose": {
 		"birthday": "2000-02-28"
 	},
-	"HeySansi": {},
+	"HeySansi": {
+		"aliases": [
+			"heySansi"
+		]
+	},
 	"HiImCC": {},
 	"Hrry": {
-		"birthday": "1995-10-25"
+		"birthday": "1995-10-25",
+		"aliases": [
+			"BrryHrry"
+		]
 	},
-	"Hydraticc": {},
+	"Hydraticc": {
+		"aliases": [
+			"hydraticc"
+		]
+	},
 	"Illumina": {},
 	"ImaShep": {},
 	"InTheLittleWood": {
 		"birthday": "1990-04-07"
 	},
 	"Inditorias": {},
-	"InfiniteDrift": {},
+	"InfiniteDrift": {
+		"aliases": [
+			"infinitedrift"
+		]
+	},
 	"Ish13c": {
 		"birthday": "2001-09-27"
 	},
@@ -246,159 +455,368 @@
 	},
 	"ItsJustOriah": {},
 	"ItzMasayoshi": {},
-	"JC The Caster": {},
-	"JHorse": {},
+	"JC The Caster": {
+		"aliases": [
+			"JCtheCaster"
+		]
+	},
+	"JHorse": {
+		"aliases": [
+			"JHorseMC"
+		]
+	},
 	"JLTomy": {},
 	"JackManifoldTV": {
 		"birthday": "2002-08-14"
 	},
 	"JackSucksAtLife": {
-		"birthday": "1996-06-24"
+		"birthday": "1996-06-24",
+		"aliases": [
+			"JackSucksAtMC"
+		]
 	},
 	"Jacksepticeye": {
-		"birthday": "1990-02-07"
+		"birthday": "1990-02-07",
+		"aliases": [
+			"septicbooper"
+		]
 	},
-	"JamalMC": {},
+	"JamalMC": {
+		"aliases": [
+			"JamalMC_"
+		]
+	},
 	"James Charles": {
-		"birthday": "1999-05-23"
+		"birthday": "1999-05-23",
+		"aliases": [
+			"jcharles"
+		]
 	},
-	"James Marriott": {},
-	"James Turner": {},
-	"Jameskii": {},
-	"Jane Douglas": {},
+	"James Marriott": {
+		"aliases": [
+			"JamesDoesMining"
+		]
+	},
+	"James Turner": {
+		"aliases": [
+			"Flabaliki",
+			"JamesTurner"
+		]
+	},
+	"Jameskii": {
+		"aliases": [
+			"James_Prime"
+		]
+	},
+	"Jane Douglas": {
+		"aliases": [
+			"OX_Jane"
+		]
+	},
 	"Jeremy Frieser": {
-		"birthday": "1997-01-28"
+		"birthday": "1997-01-28",
+		"aliases": [
+			"JeremyFrieser"
+		]
 	},
 	"JeromeASF": {
 		"birthday": "1994-03-09"
 	},
-	"Jestanii": {},
-	"Joe Hickson": {},
-	"Joe Hills": {
-		"birthday": "1986-07-20"
+	"Jestanii": {
+		"aliases": [
+			"Jestan"
+		]
 	},
-	"Joey Graceffa": {},
+	"Joe Hickson": {
+		"aliases": [
+			"QuirkyFace"
+		]
+	},
+	"Joe Hills": {
+		"birthday": "1986-07-20",
+		"aliases": [
+			"joehillssays"
+		]
+	},
+	"Joey Graceffa": {
+		"aliases": [
+			"JOEYGRACEFFA"
+		]
+	},
 	"Jojosolos": {
 		"birthday": "1999-09-09"
 	},
-	"JustNova": {},
-	"Kara Corvus": {},
-	"Karl Jacobs": {},
-	"Katherine Elizabeth": {},
+	"JustNova": {
+		"aliases": [
+			"JustNova111"
+		]
+	},
+	"Kara Corvus": {
+		"aliases": [
+			"KaraCorvus"
+		]
+	},
+	"Karl Jacobs": {
+		"aliases": [
+			"KarlJacobs"
+		]
+	},
+	"Katherine Elizabeth": {
+		"aliases": [
+			"katherineeliz"
+		]
+	},
 	"KatieB": {
 		"birthday": "2002-10-06",
-		"ign": "saucebxss"
+		"ign": "saucebxss",
+		"aliases": [
+			"saucebxss"
+		]
 	},
 	"KatieGoBrr": {},
 	"KendoMurft": {},
 	"Keralis": {
-		"birthday": "1981-04-30"
+		"birthday": "1981-04-30",
+		"aliases": [
+			"Keralis1"
+		]
 	},
 	"KhaosKorps": {},
-	"Kier": {},
+	"Kier": {
+		"aliases": [
+			"Kierrrr"
+		]
+	},
 	"KingOfArchers": {},
 	"King_Burren": {},
 	"Kontuz": {},
 	"Kratzy": {
-		"birthday": "1999-08-17"
+		"birthday": "1999-08-17",
+		"aliases": [
+			"Krtzy",
+			"Krtzyy"
+		]
 	},
 	"KreekCraft": {
-		"birthday": "1997-01-28"
+		"birthday": "1997-01-28",
+		"aliases": [
+			"Kreekcraft"
+		]
 	},
 	"Krinios": {
 		"birthday": "2001-12-19"
 	},
-	"Kristina": {},
-	"KryticZeuz": {},
+	"Kristina": {
+		"aliases": [
+			"KRISTlNA"
+		]
+	},
+	"KryticZeuz": {
+		"aliases": [
+			"KryticZeuZ"
+		]
+	},
 	"LDShadowLady": {},
 	"LOKIOLR": {},
 	"LaKitty101": {},
 	"LaosOneView": {},
 	"Laqqy": {},
-	"LaurenzSide": {},
-	"LazarBeam": {},
+	"LaurenzSide": {
+		"aliases": [
+			"laurenzside"
+		]
+	},
+	"LazarBeam": {
+		"aliases": [
+			"LazarCodeLazar"
+		]
+	},
 	"Legundo": {},
 	"Leozaur": {},
 	"LetsHugo": {},
-	"Lewis Brindley": {},
+	"Lewis Brindley": {
+		"aliases": [
+			"Xephos"
+		]
+	},
 	"LexieMariex": {},
 	"LilyPichu": {
-		"birthday": "1991-11-20"
+		"birthday": "1991-11-20",
+		"aliases": [
+			"LilyCraftChu"
+		]
 	},
 	"Lincu": {},
 	"LinkTijger": {},
-	"Lucowskyx": {},
-	"Ludwig": {},
+	"Lucowskyx": {
+		"aliases": [
+			"lucowskyx"
+		]
+	},
+	"Ludwig": {
+		"aliases": [
+			"ludwigahgren"
+		]
+	},
 	"LydRay18": {},
 	"LynxyLiam": {},
-	"M4NG0": {},
+	"M4NG0": {
+		"aliases": [
+			"_M4NG0_"
+		]
+	},
 	"Maezes": {},
 	"MakoInari": {},
-	"Mara Holmes": {},
-	"Marbar_x": {},
+	"Mara Holmes": {
+		"aliases": [
+			"SherlockHulmes"
+		]
+	},
+	"Marbar_x": {
+		"aliases": [
+			"marbar_x"
+		]
+	},
 	"Marielitai": {},
-	"Marki Sparki": {},
+	"Marki Sparki": {
+		"aliases": [
+			"Markisparki66"
+		]
+	},
 	"Marma1ade": {},
 	"MathoX": {},
 	"MaxGGs": {
-		"birthday": "2005-10-22"
+		"birthday": "2005-10-22",
+		"aliases": [
+			"MaxTLL"
+		]
 	},
 	"Mefs": {},
 	"Mejoraas": {},
-	"MeowyNissi": {},
+	"MeowyNissi": {
+		"aliases": [
+			"meowynissi"
+		]
+	},
 	"Michaelmcchill": {
 		"birthday": "1996-08-04"
 	},
 	"Midmysticx": {
 		"birthday": "2004-04-23"
 	},
-	"Mike Channell": {},
+	"Mike Channell": {
+		"aliases": [
+			"OX_Mike"
+		]
+	},
 	"Mikecrack": {
 		"birthday": "1993-05-27"
 	},
-	"Mini Muka": {},
+	"Mini Muka": {
+		"aliases": [
+			"MiniMuka"
+		]
+	},
 	"Mishifu": {
-		"birthday": "2000-03-03"
+		"birthday": "2000-03-03",
+		"aliases": [
+			"ElMishifu"
+		]
 	},
 	"Mitzefy": {},
-	"Mizzrowe": {},
+	"Mizzrowe": {
+		"aliases": [
+			"mizzrowe"
+		]
+	},
 	"Mogswamp": {
 		"birthday": "1996-06-25"
 	},
-	"Mousie": {},
+	"Mousie": {
+		"aliases": [
+			"Mousie_Mouse"
+		]
+	},
 	"MrBeardstone": {},
 	"Mumbo Jumbo": {
-		"birthday": "1995-12-01"
+		"birthday": "1995-12-01",
+		"aliases": [
+			"Mumbo"
+		]
 	},
 	"Muselk": {},
-	"Musicman1017": {},
+	"Musicman1017": {
+		"aliases": [
+			"musicman1017"
+		]
+	},
 	"Mysticat": {
-		"birthday": "1998-01-19"
+		"birthday": "1998-01-19",
+		"aliases": [
+			"mysticat_"
+		]
 	},
 	"Mythical Sausage": {
-		"birthday": "1990-08-09"
+		"birthday": "1990-08-09",
+		"aliases": [
+			"MythicalSausage"
+		]
 	},
-	"NanoKim": {},
+	"NanoKim": {
+		"aliases": [
+			"NanoSounds"
+		]
+	},
 	"NettyPlays": {
 		"birthday": "1987-11-07"
 	},
-	"Nicacola": {},
+	"Nicacola": {
+		"aliases": [
+			"Nicacolas"
+		]
+	},
 	"Nihachu": {},
-	"Nina Serena": {},
-	"NomadOfTheWorld": {},
+	"Nina Serena": {
+		"aliases": [
+			"NinaSerena"
+		]
+	},
+	"NomadOfTheWorld": {
+		"aliases": [
+			"NomadWorld"
+		]
+	},
 	"Nominalgravy": {},
 	"NotNotBrock": {},
-	"Nukeri": {},
-	"Nuvia": {},
+	"Nukeri": {
+		"aliases": [
+			"Nukerii"
+		]
+	},
+	"Nuvia": {
+		"aliases": [
+			"Nuvia_"
+		]
+	},
 	"OllieGamerz": {},
 	"Osiefish": {
-		"birthday": "1991-04-07"
+		"birthday": "1991-04-07",
+		"aliases": [
+			"osiefish"
+		]
 	},
 	"OwengeJuice": {
-		"birthday": "1997-06-16"
+		"birthday": "1997-06-16",
+		"aliases": [
+			"Owenge_Juice"
+		]
 	},
 	"PEARLBYTEZ": {},
-	"Paache": {},
+	"Paache": {
+		"aliases": [
+			"paache"
+		]
+	},
 	"Paeadams": {
 		"birthday": "2006-04-29"
 	},
@@ -409,7 +827,10 @@
 		"birthday": "1996-06-13"
 	},
 	"Pedguin": {
-		"birthday": "1992-10-20"
+		"birthday": "1992-10-20",
+		"aliases": [
+			"PedguinTV"
+		]
 	},
 	"Peeporp": {},
 	"PeteZahHutt": {
@@ -418,10 +839,17 @@
 	"Ph1LzA": {
 		"birthday": "1988-03-01"
 	},
-	"Piso": {},
+	"Piso": {
+		"aliases": [
+			"piso4"
+		]
+	},
 	"Pixlriffs": {},
 	"Plumbella": {
-		"birthday": "1995-07-05"
+		"birthday": "1995-07-05",
+		"aliases": [
+			"plumbella"
+		]
 	},
 	"Plushy33": {},
 	"Pokimane": {
@@ -430,7 +858,10 @@
 	"Ponk": {},
 	"Pressea": {},
 	"PrestonPlayz": {
-		"birthday": "1994-05-04"
+		"birthday": "1994-05-04",
+		"aliases": [
+			"TBNRfrags"
+		]
 	},
 	"PrinceZam": {
 		"birthday": "2004-04-14"
@@ -445,36 +876,101 @@
 		"birthday": "2000-12-28"
 	},
 	"Quig": {},
-	"RAEHASRABIES": {},
+	"RAEHASRABIES": {
+		"aliases": [
+			"Raebie"
+		]
+	},
 	"RIPmika": {},
-	"RTGame": {},
+	"RTGame": {
+		"aliases": [
+			"Magistrex"
+		]
+	},
 	"Rafessor": {},
-	"Rainbows": {},
-	"Rainhoe": {},
+	"PaintingRainbows": {
+		"aliases": [
+			"Rainbows"
+		]
+	},
+	"Rainhoe": {
+		"aliases": [
+			"RainhoeVT"
+		]
+	},
 	"Ranboo": {},
-	"RaptorGamer": {},
-	"Ravs": {},
-	"Rendog": {},
-	"Rhiannon": {},
-	"Richard Thornton": {},
+	"RaptorGamer": {
+		"aliases": [
+			"RaptorGamer24"
+		]
+	},
+	"Ravs": {
+		"aliases": [
+			"Ravsu"
+		]
+	},
+	"Rendog": {
+		"aliases": [
+			"rendog",
+			"Renthedog"
+		]
+	},
+	"Rhiannon": {
+		"aliases": [
+			"Weeannon"
+		]
+	},
+	"Richard Thornton": {
+		"aliases": [
+			"RichardThornton"
+		]
+	},
 	"Roguskii": {},
 	"Rosannatxt": {},
 	"Roscumber": {},
 	"RoseThunder": {},
-	"Rubik": {},
-	"Rubyco": {},
-	"Ryan Higa": {},
-	"Ryguyrocky": {},
+	"Rubik": {
+		"aliases": [
+			"Rusbik"
+		]
+	},
+	"Rubyco": {
+		"aliases": [
+			"RuByc0"
+		]
+	},
+	"Ryan Higa": {
+		"aliases": [
+			"rhiga"
+		]
+	},
+	"Ryguyrocky": {
+		"aliases": [
+			"Kryguyrocky",
+			"ryguyrocky"
+		]
+	},
 	"Rythian": {},
 	"SB737": {},
 	"SadMilkman": {},
 	"Saiiren": {},
 	"SandwichLord": {
-		"birthday": "2006-01-06"
+		"birthday": "2006-01-06",
+		"aliases": [
+			"SandwichLord_"
+		]
 	},
 	"Sapnap": {},
-	"Sarahsera": {},
-	"Scot Griswold": {},
+	"Sarahsera": {
+		"aliases": [
+			"sarahsera"
+		]
+	},
+	"Scot Griswold": {
+		"aliases": [
+			"MysterySalesman"
+		]
+	},
 	"Scuffed_Sushi": {},
 	"SeFirox": {
 		"birthday": "2005-11-14"
@@ -487,28 +983,50 @@
 	},
 	"SettingSunset": {},
 	"Shadoune666": {
-		"birthday": "1996-11-14"
+		"birthday": "1996-11-14",
+		"aliases": [
+			"Shadoune777"
+		]
 	},
 	"Shandrea": {},
 	"Shubble": {
-		"birthday": "1993-08-20"
+		"birthday": "1993-08-20",
+		"aliases": [
+			"ShubbleYT"
+		]
 	},
-	"Simon Lane": {},
-	"Sinnabuns": {},
+	"Simon Lane": {
+		"aliases": [
+			"Honeydew"
+		]
+	},
+	"Sinnabuns": {
+		"aliases": [
+			"Sinnabuns4"
+		]
+	},
 	"Skeppy": {
 		"birthday": "2000-01-17"
 	},
 	"Skizzleman": {
 		"birthday": "1979-06-07"
 	},
-	"Skyyart": {},
+	"Skyyart": {
+		"aliases": [
+			"SkyyartMC"
+		]
+	},
 	"Slimecicle": {
 		"birthday": "1998-08-12"
 	},
 	"Smajor1995": {
 		"birthday": "1995-11-10"
 	},
-	"SmallAnt": {},
+	"SmallAnt": {
+		"aliases": [
+			"Smallant1"
+		]
+	},
 	"Smallishbeans": {
 		"birthday": "1993-06-29"
 	},
@@ -521,21 +1039,62 @@
 	"Soarinng": {},
 	"SolidarityGaming": {},
 	"SpeedSilver": {},
-	"Spelda": {},
+	"Spelda": {
+		"aliases": [
+			"_Spelda_"
+		]
+	},
 	"SpelledNik": {},
-	"Spifey": {},
+	"Spifey": {
+		"aliases": [
+			"Spifeey"
+		]
+	},
 	"Sqaishey": {},
-	"SquidGaming": {},
-	"Squiddo": {},
+	"SquidGaming": {
+		"aliases": [
+			"BigLyds"
+		]
+	},
+	"Squiddo": {
+		"aliases": [
+			"TheRealSquiddo"
+		]
+	},
 	"Stemister": {},
-	"Steph0sims": {},
-	"Steven Suptic": {},
-	"Strawburry17": {},
+	"Steph0sims": {
+		"aliases": [
+			"steph0sims"
+		]
+	},
+	"Steven Suptic": {
+		"aliases": [
+			"stevesuptic",
+			"Stevesuptic_"
+		]
+	},
+	"Strawburry17": {
+		"aliases": [
+			"GamerBurry"
+		]
+	},
 	"SwitchBackMongo": {},
 	"Sykkuno": {},
-	"Sylvee": {},
-	"Taneesha": {},
-	"TangoTek": {},
+	"Sylvee": {
+		"aliases": [
+			"sylvee_"
+		]
+	},
+	"Taneesha": {
+		"aliases": [
+			"TaneeshaHogan"
+		]
+	},
+	"TangoTek": {
+		"aliases": [
+			"Tango"
+		]
+	},
 	"TankMatt": {},
 	"TapL": {
 		"birthday": "2001-05-07"
@@ -547,42 +1106,95 @@
 	"TheGuill84": {
 		"birthday": "1998-12-11"
 	},
-	"TheMagmaBoi": {},
+	"TheMagmaBoi": {
+		"aliases": [
+			"themagmaboi"
+		]
+	},
 	"TheOrionSound": {
-		"birthday": "1995-07-11"
+		"birthday": "1995-07-11",
+		"aliases": [
+			"OrionSound"
+		]
 	},
 	"TheSpiffingBrit": {},
-	"TibbyCaps": {},
-	"TinaKitten": {
-		"birthday": "1998-06-30"
+	"TibbyCaps": {
+		"aliases": [
+			"tibbycaps"
+		]
 	},
-	"TinyCherry": {},
-	"Tom Hazell": {},
-	"TomatoBisqueSoup": {},
+	"TinaKitten": {
+		"birthday": "1998-06-30",
+		"aliases": [
+			"TeanaKitten"
+		]
+	},
+	"TinyCherry": {
+		"aliases": [
+			"DraCherry"
+		]
+	},
+	"Tom Hazell": {
+		"aliases": [
+			"Amadeus_Fink"
+		]
+	},
+	"TomatoBisqueSoup": {
+		"aliases": [
+			"tomatobisque_"
+		]
+	},
 	"TommyInnit": {
 		"birthday": "2004-04-09"
 	},
 	"ToxxxicSupport": {},
 	"Tubbo": {
-		"birthday": "2003-12-23"
+		"birthday": "2003-12-23",
+		"aliases": [
+			"Tubbo_",
+			"Tubbo_Clone_"
+		]
 	},
 	"Ulraf": {},
-	"Valkyrae": {},
+	"Valkyrae": {
+		"aliases": [
+			"ItsValkyrae"
+		]
+	},
 	"Vapekit": {},
-	"VelvetIsCake": {},
-	"Vickypalami": {},
+	"VelvetIsCake": {
+		"aliases": [
+			"RedVelvetCake"
+		]
+	},
+	"Vickypalami": {
+		"aliases": [
+			"vickypalami"
+		]
+	},
 	"VikingPilot": {
-		"mc_player_name": "VikingPilot"
+		"ign": "VikingPilot"
 	},
 	"Vikkstar123": {
-		"birthday": "1995-08-02"
+		"birthday": "1995-08-02",
+		"aliases": [
+			"Vikkkkkstarrrrrr"
+		]
 	},
 	"VintageBeef": {},
 	"Vixella": {},
-	"VoiceoverPete": {},
+	"VoiceoverPete": {
+		"aliases": [
+			"VoiceoverPeteAce"
+		]
+	},
 	"WadeBox": {},
 	"Wallibear": {},
-	"Watermunch": {},
+	"watermunch": {
+		"aliases": [
+			"Watermunch"
+		]
+	},
 	"Welsknight": {
 		"birthday": "1989-10-27"
 	},
@@ -590,33 +1202,72 @@
 	"Wichtiger": {
 		"birthday": "2005-09-16"
 	},
-	"Wilbur Soot": {},
+	"Wilbur Soot": {
+		"aliases": [
+			"WilburSoot"
+		]
+	},
 	"Wisp": {},
 	"WithMayX": {
-		"birthday": "2005-10-07"
+		"birthday": "2005-10-07",
+		"aliases": [
+			"WithMay"
+		]
 	},
 	"Wolfeei": {
 		"birthday": "2002-06-08"
 	},
 	"Wolv21": {},
-	"Wondernat": {},
-	"XBCrafted": {},
-	"XChocoBars": {
-		"birthday": "1994-11-05"
+	"Wondernat": {
+		"aliases": [
+			"Wondernat_"
+		]
+	},
+	"xBCrafted": {
+		"aliases": [
+			"XBCrafted"
+		]
+	},
+	"xChocoBars": {
+		"birthday": "1994-11-05",
+		"aliases": [
+			"XChocoBars",
+			"xRizzBars"
+		]
 	},
 	"Xilefian": {},
-	"Xisumavoid": {},
-	"Yammyxox": {},
+	"Xisumavoid": {
+		"aliases": [
+			"Xisuma"
+		]
+	},
+	"Yammyxox": {
+		"aliases": [
+			"yammy_xox"
+		]
+	},
 	"Yeetdaisie": {},
 	"YelloWool": {},
-	"Yomikester238": {},
+	"yomikester238": {
+		"aliases": [
+			"Yomikester238"
+		]
+	},
 	"Yoshinom": {},
 	"Zedaph": {
 		"birthday": "1992-12-08"
 	},
-	"Zoey Proasheck": {},
+	"Zoey Proasheck": {
+		"aliases": [
+			"Zoeya"
+		]
+	},
 	"ZombieCleo": {},
-	"Zylus": {},
+	"Zylus": {
+		"aliases": [
+			"Zylush"
+		]
+	},
 	"aCookieGod": {},
 	"acho": {},
 	"aldo_geo": {},
@@ -624,7 +1275,10 @@
 		"birthday": "2002-09-09"
 	},
 	"ashswag": {
-		"birthday": "2004-01-16"
+		"birthday": "2004-01-16",
+		"aliases": [
+			"ashswagg"
+		]
 	},
 	"awesamdude": {},
 	"aypierre": {},
@@ -632,16 +1286,27 @@
 		"birthday": "1997-10-31"
 	},
 	"billzo": {
-		"birthday": "2004-08-15"
+		"birthday": "2004-08-15",
+		"aliases": [
+			"billzo_"
+		]
 	},
-	"blaustoise": {},
+	"blaustoise": {
+		"aliases": [
+			"blowstoise"
+		]
+	},
 	"buggy9000": {},
 	"caitees": {},
 	"coldified": {},
 	"cubfan135": {
 		"birthday": "1989-08-20"
 	},
-	"deusamir": {},
+	"deusamir": {
+		"aliases": [
+			"DeusAmir"
+		]
+	},
 	"fWhip": {},
 	"fanfan": {
 		"birthday": "2000-01-10"
@@ -663,10 +1328,16 @@
 	"hypnotizd": {},
 	"iHasCupquake": {},
 	"iJevin": {
-		"birthday": "1987-12-29"
+		"birthday": "1987-12-29",
+		"aliases": [
+			"IJevin"
+		]
 	},
 	"iiTzTimmy": {
-		"birthday": "2000-04-19"
+		"birthday": "2000-04-19",
+		"aliases": [
+			"Not_iiTzTimmy"
+		]
 	},
 	"iicbunnyx": {},
 	"impulseSV": {
@@ -681,15 +1352,30 @@
 	"jojosolos": {
 		"birthday": "1999-09-09"
 	},
-	"jvckk": {},
+	"jvckk": {
+		"aliases": [
+			"jvckbears"
+		]
+	},
 	"kkatamina_": {
-		"birthday": "1995-11-09"
+		"birthday": "1995-11-09",
+		"aliases": [
+			"KKatamina_"
+		]
 	},
 	"lynrose": {},
 	"millkberry": {},
 	"mintsleaves": {},
-	"misfitclover": {},
-	"nooreax": {},
+	"misfitclover": {
+		"aliases": [
+			"misfitclovers"
+		]
+	},
+	"nooreax": {
+		"aliases": [
+			"noooreax"
+		]
+	},
 	"olivesleepy": {},
 	"p_izzato": {},
 	"pearcups": {},
@@ -698,16 +1384,31 @@
 	"roseriie": {},
 	"rusty_courage": {},
 	"shadowatnoon": {
-		"birthday": "1997-04-28"
+		"birthday": "1997-04-28",
+		"aliases": [
+			"shadowatno0n"
+		]
 	},
 	"sinaheh": {},
-	"sleepy": {},
+	"sleepy": {
+		"aliases": [
+			"sleepai"
+		]
+	},
 	"soupforeloise": {},
 	"spoinkTV": {},
-	"starvtuber": {},
+	"starvtuber": {
+		"aliases": [
+			"starvtuberr"
+		]
+	},
 	"vGumiho": {
 		"birthday": "1998-08-10"
 	},
-	"vintage_applesauce": {},
+	"vintage_applesauce": {
+		"aliases": [
+			"vintageapples"
+		]
+	},
 	"xNestorio": {}
 }

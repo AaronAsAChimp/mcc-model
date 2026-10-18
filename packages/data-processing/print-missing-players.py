@@ -1,7 +1,7 @@
 import json
 
 from shared_core import ExtractsFile
-from main import PLAYER_ALIASES
+from shared_core.data import PlayerDataFile
 
 all_players = set()
 
@@ -29,11 +29,11 @@ with ExtractsFile("data/extracts.jsonl") as iter:
             print('Not in teams:')
             print(missing_in_teams)
 
-all_players = {PLAYER_ALIASES.get(player, player) for player in all_players}
+with PlayerDataFile("data/players.json") as player_data:
+    all_players = {player_data.normalize_name(player) for player in all_players}
 
-with open("data/players.json") as players_json:
-    player_data = json.load(players_json)
-    no_data = all_players.difference(player_data.keys())
+    with open("data/players.json") as players_json:
+        no_data = all_players.difference(json.load(players_json).keys())
 
-    if len(no_data) > 0:
-        print('No player data:', sorted(list(no_data), key=str.lower))
+        if len(no_data) > 0:
+            print('No player data:', sorted(list(no_data), key=str.lower))

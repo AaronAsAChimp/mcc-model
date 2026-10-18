@@ -336,13 +336,14 @@ class PlayerDataset(Dataset):
 
         for i in range(team_size):
             player_name = player_data.normalize_name(players[i])
+            player_id = self._player_id_lookup.get(player_name)
 
-            if self._player_id_lookup.get(player_name) is None:
+            if player_id is None:
                 print(f'Missing data for player {player_name}')
 
             # the default of 0 is technically a existing player, but the the
             # is_returning_competitor should zero out everything.
-            player_id = self._player_id_lookup.get(player_name, 0)
+            player_id = player_id if player_id is not None else 0
             player_tensor = self._players[player_id]
             team_tensor[0][i] = player_tensor
             player_ids_tensor[i] = player_id
@@ -366,7 +367,7 @@ class TeamDataset(Dataset):
     _player_id_lookup: dict[str, int]
     _players: list[tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]]
 
-    def __init__(self, extract_filename: str):
+    def __init__(self, extract_filename: str, player_data: PlayerDataFile):
         self._players = []
         team_data: list[tuple[torch.Tensor, list[str], torch.Tensor, torch.Tensor]] = []
 
@@ -397,7 +398,7 @@ class TeamDataset(Dataset):
                     player_names: list[str] = []
 
                     for i in range(team_size):
-                        player_name = players[i]
+                        player_name = player_data.normalize_name(players[i])
                         player_names.append(player_name)
                         player_tracker = tracker.get(player_name)
                         player_coins = player_coin_lookup.get(player_name)
@@ -572,8 +573,11 @@ def train():
     batch_size = 16
     report_modulus = 8
     print("Hello from player-embedding!")
+    dataset = None
 
-    dataset = TeamDataset(EXTRACTS_FILENAME)
+    with PlayerDataFile('data/players.json') as player_data:
+        dataset = TeamDataset(EXTRACTS_FILENAME, player_data)
+        print('abc', dataset)
 
     player_count = dataset.get_player_count()
     print(f"Players: {player_count}")

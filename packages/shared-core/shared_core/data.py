@@ -34,6 +34,7 @@ class ExtractsFile:
 
 class PlayerData(TypedDict):
     ign: NotRequired[Optional[str]]
+    aliases: NotRequired[list[str]]
     birthday: NotRequired[Optional[str]]
 
 class PlayerDataFile:
@@ -59,6 +60,9 @@ class PlayerDataFile:
 
             if ign is not None:
                 lookup[ign.casefold()] = name
+
+            for alias in data.get('aliases', []):
+                lookup[alias.casefold()] = name
 
         self._name_lookup = lookup
 

@@ -7,6 +7,7 @@ import time
 from typing import Optional, TextIO
 from playwright.async_api import Page, async_playwright
 from dataclasses import dataclass, asdict
+from shared_core.data import PlayerDataFile
 import logging
 import json
 
@@ -27,204 +28,6 @@ IGNORED_PAGES = set(
         "https://mcchampionship.fandom.com/wiki/MC_Championship_Scuffed",
     ]
 )
-
-PLAYER_ALIASES = {
-    "5uppps": "5up",
-    "_M4NG0_": "M4NG0",
-    "_Spelda_": "Spelda",
-    "Alex_the_Rambler": "AlexTheRambler",
-    "Amadeus_Fink": "Tom Hazell",
-    "Antoneemc": "Anthony Toczek",
-    "AQUINOby02": "AQUINO",
-    "ashswagg": "ashswag",
-    "AvaKrisTyson": "Ava Tyson",
-    "AvidMc_": "AvidMc",
-    "aimsey": "Aimsey",
-    "BearsCancelle": "BearsCancelled",
-    "Bedgar_": "Bedgar",
-    "bigbst4tz2": "Bigbst4tz2",
-    "BigLyds": "SquidGaming",
-    "billzo_": "billzo",
-    "Block_Facts": "Block Facts",
-    "blowstoise": "blaustoise",
-    "bouphe": "Bouphe",
-    "boxbox22": "BoxBox",
-    "brionykay": "Brionykay",
-    "BrryHrry": "Hrry",
-    "Calcetin2": "Calce",
-    "Calvin": "Cxlvxn",
-    "Cambam": "Cambam010",
-    "CapitanGatoYT": "Capitan Gato",
-    "Caramello_sb": "Caramello",
-    "ChilledChaosYT": "ChilledChaos",
-    "ChippyGaming_": "ChippyGaming",
-    "chunkpurse": "Chunk Purse",
-    "CraigMeUp": "Craig Frost",
-    "CydoniaPM": "Cydonia",
-    "DeusAmir": "deusamir",
-    "Dlffrent": "Diffrent",
-    "DraCherry": "TinyCherry",
-    "Drgluon": "DrGluon",
-    "drsimonclark": "Dr. Simon Clark",
-    "DuncanMassink": "Duncan Massink",
-    "Duxorethey": "Duxo",
-    "ElMishifu": "Mishifu",
-    "Eskay22": "Eskay",
-    "Etho": "EthosLab",
-    "falsesymmetry": "FalseSymmetry",
-    "Fiona_McGoats": "Fionn Riches",
-    "Fit": "FitMC",
-    "Flabaliki": "James Turner",
-    "FleexVega": "FlexVega",
-    "FoolishG": "Foolish Gamers",
-    "GamerBurry": "Strawburry17",
-    "GeeNelly": "Gee Nelly",
-    "GeeNelly": "Gee Nelly",
-    "Geestargames": "Geestar",
-    "GoodTimeWithScar": "GoodTimesWithScar",
-    "graaavel": "Graaavel",
-    "Guggleino": "Guggle",
-    "GussyGang_": "Gussy",
-    "hannahhkatee": "HannahKate",
-    "heyGraecie": "Graecie",
-    "heySansi": "HeySansi",
-    "Honeydew": "Simon Lane",
-    "hydraticc": "Hydraticc",
-    "IJevin": "iJevin",
-    "infinitedrift": "InfiniteDrift",
-    "Its_Dev_": "Dev",
-    "ItsFundy": "Fundy",
-    "ItsValkyrae": "Valkyrae",
-    "JackSucksAtMC": "JackSucksAtLife",
-    "JamalMC_": "JamalMC",
-    "James_Prime": "Jameskii",
-    "JamesDoesMining": "James Marriott",
-    "JamesTurner": "James Turner",
-    "jcharles": "James Charles",
-    "JCtheCaster": "JC The Caster",
-    "JeremyFrieser": "Jeremy Frieser",
-    "Jestan": "Jestanii",
-    "JHorseMC": "JHorse",
-    "joehillssays": "Joe Hills",
-    "JOEYGRACEFFA": "Joey Graceffa",
-    "JustNova111": "JustNova",
-    "jvckbears": "jvckk",
-    "KaptainSparklez": "CaptainSparklez",
-    "KaraCorvus": "Kara Corvus",
-    "KarlJacobs": "Karl Jacobs",
-    "katherineeliz": "Katherine Elizabeth",
-    "Keralis1": "Keralis",
-    "Kierrrr": "Kier",
-    "KKatamina_": "kkatamina_",
-    "Kreekcraft": "KreekCraft",
-    "KRISTlNA": "Kristina",
-    "Krtzy": "Kratzy",
-    "Krtzyy": "Kratzy",
-    "Kryguyrocky": "Ryguyrocky",
-    "KryticZeuZ": "KryticZeuz",
-    "laurenzside": "LaurenzSide",
-    "LazarCodeLazar": "LazarBeam",
-    "LilyCraftChu": "LilyPichu",
-    "LividCoffee": "Duncan Jones",
-    "lucowskyx": "Lucowskyx",
-    "ludwigahgren": "Ludwig",
-    "Magistrex": "RTGame",
-    "marbar_x": "Marbar_x",
-    "Markisparki66": "Marki Sparki",
-    "MaxTLL": "MaxGGs",
-    "meowynissi": "MeowyNissi",
-    "MiniMuka": "Mini Muka",
-    "misfitclovers": "misfitclover",
-    "mizzrowe": "Mizzrowe",
-    "Mousie_Mouse": "Mousie",
-    "Mumbo": "Mumbo Jumbo",
-    "musicman1017": "Musicman1017",
-    "MysterySalesman": "Scot Griswold",
-    "mysticat_": "Mysticat",
-    "MythicalSausage": "Mythical Sausage",
-    "NanoSounds": "NanoKim",
-    "Nicacolas": "Nicacola",
-    "NinaSerena": "Nina Serena",
-    "NomadWorld": "NomadOfTheWorld",
-    "noooreax": "nooreax",
-    "Not_iiTzTimmy": "iiTzTimmy",
-    "Nukerii": "Nukeri",
-    "Nuvia_": "Nuvia",
-    "OrionSound": "TheOrionSound",
-    "osiefish": "Osiefish",
-    "Owenge_Juice": "OwengeJuice",
-    "OX_Andy": "Farrantula",
-    "OX_Ellen": "Ellen Rose",
-    "OX_Jane": "Jane Douglas",
-    "OX_Mike": "Mike Channell",
-    "paache": "Paache",
-    "PaintingRainbows": "Rainbows",
-    "PedguinTV": "Pedguin",
-    "piso4": "Piso",
-    "plumbella": "Plumbella",
-    "QuirkyFace": "Joe Hickson",
-    "Raebie": "RAEHASRABIES",
-    "RainhoeVT": "Rainhoe",
-    "RaptorGamer24": "RaptorGamer",
-    "Ravsu": "Ravs",
-    "RedVelvetCake": "VelvetIsCake",
-    "rendog": "Rendog",
-    "Renthedog": "Rendog",
-    "rhiga": "Ryan Higa",
-    "RichardThornton": "Richard Thornton",
-    "RuByc0": "Rubyco",
-    "Rusbik": "Rubik",
-    "ryguyrocky": "Ryguyrocky",
-    "SandwichLord_": "SandwichLord",
-    "sarahsera": "Sarahsera",
-    "septicbooper": "Jacksepticeye",
-    "Shadoune777": "Shadoune666",
-    "shadowatno0n": "shadowatnoon",
-    "SherlockHulmes": "Mara Holmes",
-    "ShubbleYT": "Shubble",
-    "Sinnabuns4": "Sinnabuns",
-    "SkyyartMC": "Skyyart",
-    "sleepai": "sleepy",
-    "Smallant1": "SmallAnt",
-    "Spifeey": "Spifey",
-    "starvtuberr": "starvtuber",
-    "steph0sims": "Steph0sims",
-    "SteveCP": "Checkpoint",
-    "stevesuptic": "Steven Suptic",
-    "Stevesuptic_": "Steven Suptic",
-    "sylvee_": "Sylvee",
-    "TaneeshaHogan": "Taneesha",
-    "Tango": "TangoTek",
-    "TBNRfrags": "PrestonPlayz",
-    "TeanaKitten": "TinaKitten",
-    "The_Eret": "Eret",
-    "TheFabo": "Fabo",
-    "themagmaboi": "TheMagmaBoi",
-    "TheRealSquiddo": "Squiddo",
-    "tibbycaps": "TibbyCaps",
-    "tomatobisque_": "TomatoBisqueSoup",
-    "Tubbo_": "Tubbo",
-    "Tubbo_Clone_": "Tubbo",
-    "vickypalami": "Vickypalami",
-    "Vikkkkkstarrrrrr": "Vikkstar123",
-    "vintageapples": "vintage_applesauce",
-    "VoiceoverPeteAce": "VoiceoverPete",
-    "Weeannon": "Rhiannon",
-    "WilburSoot": "Wilbur Soot",
-    "WithMay": "WithMayX",
-    "Wondernat_": "Wondernat",
-    "Xephos": "Lewis Brindley",
-    "Xisuma": "Xisumavoid",
-    "xRizzBars": "xChocoBars",
-    "yammy_xox": "Yammyxox",
-    "Zoeya": "Zoey Proasheck",
-    "Zylush": "Zylus",
-    "yomikester238": "Yomikester238",
-    "xChocoBars": "XChocoBars",
-    "xBCrafted": "XBCrafted",
-    "watermunch": "Watermunch",
-}
-
 
 def json_serial(obj):
     """JSON serializer for objects not serializable by default json code"""
@@ -470,7 +273,9 @@ async def extract_sidebar_team(page: Page, source: str) -> Optional[MccTeamName]
     return None
 
 
-async def extract_teams(page: Page) -> dict[MccTeamName, MccTeam]:
+async def extract_teams(
+    page: Page, player_data: PlayerDataFile
+) -> dict[MccTeamName, MccTeam]:
     teams_table = await page.locator("#Teams").evaluate_all(
         """els => {
 		const rows = els
@@ -506,10 +311,7 @@ async def extract_teams(page: Page) -> dict[MccTeamName, MccTeam]:
         team = MccTeamName.from_str(team_name)
 
         for i in range(len(players)):
-            player = players[i]
-
-            if player in PLAYER_ALIASES:
-                players[i] = PLAYER_ALIASES[player]
+            players[i] = player_data.normalize_name(players[i])
 
         if len(players) != 4:
             logger.warning(
@@ -612,7 +414,9 @@ async def extract_team_coins(page: Page) -> dict[MccTeamName, int]:
     return result
 
 
-async def extract_player_coins(page: Page) -> dict[str, int]:
+async def extract_player_coins(
+    page: Page, player_data: PlayerDataFile
+) -> dict[str, int]:
     coins_data = await page.locator("#Final_Individual_Standings").evaluate_all(
         """els => {
         	const rows = els.map(el => {
@@ -678,16 +482,13 @@ async def extract_player_coins(page: Page) -> dict[str, int]:
                 print(f"No name {page.url}")
                 continue
 
-            if PLAYER_ALIASES.get(player_name) is not None:
-                player_name = PLAYER_ALIASES[player_name]
-
-            result[player_name] = coins
+            result[player_data.normalize_name(player_name)] = coins
 
     return result
 
 
 async def extract_mcc_event(
-    logger: logging.Logger, page: Page, url: str
+    logger: logging.Logger, page: Page, url: str, player_data: PlayerDataFile
 ) -> Optional[MccEvent]:
     logger.debug("loading page")
 
@@ -709,10 +510,10 @@ async def extract_mcc_event(
         extract_sidebar_team(page, "winner"),
         extract_sidebar_team(page, "runner-up"),
         extract_name(page),
-        extract_teams(page),
+        extract_teams(page, player_data),
         extract_games(page),
         extract_team_coins(page),
-        extract_player_coins(page),
+        extract_player_coins(page, player_data),
     )
 
     if event_date is None:
@@ -752,6 +553,7 @@ async def worker(
     results: Results,
     outfile: TextIO,
     page: Page,
+    player_data: PlayerDataFile,
 ):
     worker_logger = logger.getChild(f"Worker { worker_id }")
 
@@ -765,7 +567,7 @@ async def worker(
         try:
             worker_logger.debug("Getting content")
 
-            event = await extract_mcc_event(worker_logger, page, url)
+            event = await extract_mcc_event(worker_logger, page, url, player_data)
 
             if event is not None:
                 outfile.write(json.dumps(asdict(event), default=json_serial))
@@ -795,111 +597,112 @@ async def load_from_wiki():
                 if wiki_url is not None:
                     already_extracted.add(wiki_url)
 
-    async with async_playwright() as playwright:
-        with open(extracts_filename, "a") as outfile:
-            firefox = playwright.firefox
+    with PlayerDataFile("data/players.json") as player_data:
+        async with async_playwright() as playwright:
+            with open(extracts_filename, "a") as outfile:
+                firefox = playwright.firefox
 
-            browser = await firefox.launch()
-            page = await browser.new_page()
-            links = None
+                browser = await firefox.launch()
+                page = await browser.new_page()
+                links = None
 
-            try:
-                print("Loading page...")
+                try:
+                    print("Loading page...")
 
-                await page.goto(
-                    EVENTS_CATEGORY, wait_until="domcontentloaded", timeout=30_000
-                )
+                    await page.goto(
+                        EVENTS_CATEGORY, wait_until="domcontentloaded", timeout=30_000
+                    )
 
-                # print('Waiting for page...')
+                    # print('Waiting for page...')
 
-                # await page.wait_for_load_state('load')
+                    # await page.wait_for_load_state('load')
 
-                print("Getting links...")
+                    print("Getting links...")
 
-                links = await page.locator("a").evaluate_all(
-                    """
-					els => {
-						return els
-							.filter(link => link.classList.contains('category-page__member-link'))
-							.filter(link => {
-								const href = link.href;
+                    links = await page.locator("a").evaluate_all(
+                        """
+    					els => {
+    						return els
+    							.filter(link => link.classList.contains('category-page__member-link'))
+    							.filter(link => {
+    								const href = link.href;
 
-								return href.startsWith('https://mcchampionship.fandom.com/wiki/MC_Championship')
-									|| href === 'https://mcchampionship.fandom.com/wiki/The_Ender_Cup'
-									|| href === 'https://mcchampionship.fandom.com/wiki/Jingle_Jam_Championship';
-							})
-							.filter(link => !link.href.endsWith('(Series)'))
-							.map(link => link.href)
-					}
-				"""
-                )
+    								return href.startsWith('https://mcchampionship.fandom.com/wiki/MC_Championship')
+    									|| href === 'https://mcchampionship.fandom.com/wiki/The_Ender_Cup'
+    									|| href === 'https://mcchampionship.fandom.com/wiki/Jingle_Jam_Championship';
+    							})
+    							.filter(link => !link.href.endsWith('(Series)'))
+    							.map(link => link.href)
+    					}
+    				"""
+                    )
 
-                links = [
-                    lnk
-                    for lnk in links
-                    if lnk not in IGNORED_PAGES and lnk not in already_extracted
-                ][0:10]
-                print(links)
+                    links = [
+                        lnk
+                        for lnk in links
+                        if lnk not in IGNORED_PAGES and lnk not in already_extracted
+                    ][0:10]
+                    print(links)
 
-                await page.close()
+                    await page.close()
 
-                # queue: asyncio.Queue[str] = asyncio.Queue()
-                # tasks = []
-                results: Results = Results()
+                    # queue: asyncio.Queue[str] = asyncio.Queue()
+                    # tasks = []
+                    results: Results = Results()
 
-                # for i in range(min(len(links), MAX_WORKERS)):
-                # 	print(f'Booting worker {i}')
-                # 	page = await browser.new_page()
-                # 	task = asyncio.create_task(worker(i, queue, results, outfile, page))
-                # 	tasks.append(task)
+                    # for i in range(min(len(links), MAX_WORKERS)):
+                    # 	print(f'Booting worker {i}')
+                    # 	page = await browser.new_page()
+                    # 	task = asyncio.create_task(worker(i, queue, results, outfile, page))
+                    # 	tasks.append(task)
 
-                # for link in links:
-                # 	queue.put_nowait(link)
+                    # for link in links:
+                    # 	queue.put_nowait(link)
 
-                started_at = time.monotonic()
-                # await queue.join()
+                    started_at = time.monotonic()
+                    # await queue.join()
 
-                for url in links:
-                    page = await browser.new_page()
+                    for url in links:
+                        page = await browser.new_page()
 
-                    try:
-                        logger.debug("Getting content")
+                        try:
+                            logger.debug("Getting content")
 
-                        event = await extract_mcc_event(logger, page, url)
+                            event = await extract_mcc_event(logger, page, url, player_data)
 
-                        if event is not None:
-                            outfile.write(
-                                json.dumps(asdict(event), default=json_serial)
+                            if event is not None:
+                                outfile.write(
+                                    json.dumps(asdict(event), default=json_serial)
+                                )
+                                outfile.write("\n")
+
+                            results.successes += 1
+
+                            # worker_logger.debug('Event: %s', event)
+                        except Exception as e:
+                            results.failures.append(url)
+                            logger.exception(
+                                "Exception processing URL: %s", url, exc_info=e
                             )
-                            outfile.write("\n")
+                        finally:
+                            logger.debug("Task done")
+                            await page.close()
 
-                        results.successes += 1
+                        time.sleep(10)
 
-                        # worker_logger.debug('Event: %s', event)
-                    except Exception as e:
-                        results.failures.append(url)
-                        logger.exception(
-                            "Exception processing URL: %s", url, exc_info=e
-                        )
-                    finally:
-                        logger.debug("Task done")
-                        await page.close()
+                    total_slept_for = time.monotonic() - started_at
 
-                    time.sleep(10)
+                    # await asyncio.gather(*tasks)
 
-                total_slept_for = time.monotonic() - started_at
-
-                # await asyncio.gather(*tasks)
-
-                # print(f'{len(tasks)} workers took {total_slept_for:.2f} seconds to process {results.successes} successful results and { len(results.failures) } failures')
-                print(
-                    f"Took {total_slept_for:.2f} seconds to process {results.successes} successful results and { len(results.failures) } failures"
-                )
-                print("Failures:")
-                print(results.failures)
-            finally:
-                await page.close()
-                await browser.close()
+                    # print(f'{len(tasks)} workers took {total_slept_for:.2f} seconds to process {results.successes} successful results and { len(results.failures) } failures')
+                    print(
+                        f"Took {total_slept_for:.2f} seconds to process {results.successes} successful results and { len(results.failures) } failures"
+                    )
+                    print("Failures:")
+                    print(results.failures)
+                finally:
+                    await page.close()
+                    await browser.close()
 
 
 if __name__ == "__main__":
