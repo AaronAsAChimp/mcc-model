@@ -271,7 +271,8 @@ class PlayerTracker:
 class PlayerDataset(Dataset):
     _player_count: int
     _player_id_lookup: dict[str, int]
-    _players: list[torch.Tensor]
+    _players: torch.Tensor
+    _unknown_player: torch.Tensor
 
     def __init__(self, extract_filename: str, config_filename: str, now: date):
         with open(config_filename, "r") as fd:
@@ -326,9 +327,8 @@ class PlayerDataset(Dataset):
                             event_date,
                         )
 
-        self._players = [
-            torch.empty(FEATURES_PER_PLAYER) for _ in range(self._player_count)
-        ]
+        self._players = torch.empty(self._player_count, FEATURES_PER_PLAYER)
+        self._unknown_player = self._players.mean(dim=0)
 
         for [name, player] in tracker.items():
             id = self._player_id_lookup[name]
@@ -354,13 +354,15 @@ class PlayerDataset(Dataset):
             player_name = player_data.normalize_name(players[i])
             player_id = self._player_id_lookup.get(player_name)
 
-            if player_id is None:
+            if player_id is not None:
+                player_tensor = self._players[player_id]
+            else:
                 print(f'Missing data for player {player_name}')
-
-            # the default of 0 is technically a existing player, but the the
-            # is_returning_competitor should zero out everything.
-            player_id = player_id if player_id is not None else 0
-            player_tensor = self._players[player_id]
+                player_tensor = self._unknown_player
+                # the default of 0 is technically a existing player, but the the
+                # is_returning_competitor should zero out everything.
+                player_id = 0
+            
             team_tensor[0][i] = player_tensor
             player_ids_tensor[i] = player_id
 
@@ -688,37 +690,27 @@ def run():
 
     event = {
         "games": [
-            "buildmart",
-            "battlebox",
-            "parkourwarriorsurvivor",
-            "bingobutfast",
-            "acerace",
             "skybattle",
-            "holeinthewall",
-            "survivalgames",
+            "meltdown",
+            "battlebox",
+            "railroadrush",
+            "acerace",
+            "sandsoftime",
+            "rocketspleefrush",
+            "gridrunners"
         ],
 
         "teams": {
-            # "placement": 1,
-            "redrabbits": ["aimsey", "bekyamon", "ghostiefruit", "hahhahxxrose"],
-            # "placement": 5,
-            "orangeocelots": ["cubfan135", "ish13c", "Ph1Lza", "Seapeekay"],
-            # "placement": 2,
-            "yellowyaks": ["FalseSymmetry", "InTheLittleWood", "Kratzy", "PeteZahHutt"],
-            # "placement": 10,
-            "limellamas": ["4CVIT", "Smajor1995", "Sneegsnag", "xChocoBars"],
-            # "placement": 9,
-            "greengeckos": ["Feinberg", "GoodTimesWithScar", "impulseSV", "Tubbo"],
-            # "placement": 3,
-            "cyancoyotes": ["AntVenom", "ashswag", "SB737", "Shadoune666"],
-            # "placement": 7,
-            "aquaaxolotls": ["Antfrost", "sleepy", "Shubble", "Steven Suptic"],
-            # "placement": 6,
-            "bluebats": ["CaptainSparkles", "ElainaExe", "fruitberries", "Kara Corvus"],
-            # "placement": 8,
-            "purplepandas": ["Michaelmcchill", "PrinceZam", "Purpled", "Snifferish"],
-            # "placement": 4,
-            "pinkparrots": ["Cambam", "FireBreathMan", "Grian", "Rendog"],
+            "redrabbits": ["Feinberg", "heyGraecie", "PrinceZam", "Rendog"],
+            "orangeocelots": ["Cambam010", "DarkEyebrows", "Pangi", "ZombieCleo"],
+            "yellowyaks": ["4CVIT", "ashswag", "Mogswamp", "vGumiho"],
+            "limellamas": ["Legundo", "Shubble", "Smajor1995", "VikingPilot"],
+            "greengeckos": ["GeminiTay", "Purpled", "Roscumber", "TheOrionSound"],
+            "cyancoyotes": ["Grian", "InfiniteDrift", "PeteZahHutt", "soupforeloise"],
+            "aquaaxolotls": ["5up", "Couriway", "iJevin", "impulseSV"],
+            "bluebats": ["apokuna", "falsesymmetry", "Krinios", "Maezes"],
+            "purplepandas":  ["guqqie", "hannahxxrose", "ish13c", "Seapeekay"],
+            "pinkparrots": [ "aimsey", "jojosolos", "KatieB", "Ph1LzA"],
         }
     }
 
