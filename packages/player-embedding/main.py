@@ -715,10 +715,18 @@ def run():
         print(f"{i + 1}: { team } {coins * COINS_SCALE}")
 
 
-def main():
-    # train()
-    run()
-
-
 if __name__ == "__main__":
-    main()
+    from argparse import ArgumentParser
+
+    parser = ArgumentParser()
+    subparser = parser.add_subparsers(required=True)
+
+    train_parser = subparser.add_parser('train')
+    train_parser.set_defaults(func=train)
+
+    run_parser = subparser.add_parser('run')
+    run_parser.set_defaults(func=run)
+
+    args = parser.parse_args()
+
+    print(args.func())
