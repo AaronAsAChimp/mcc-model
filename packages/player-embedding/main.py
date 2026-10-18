@@ -17,6 +17,22 @@ FEATURES_PER_PLAYER = 19
 COINS_SCALE = 35000
 FIRST_MCC_DATE = date.fromisoformat("2019-11-17")
 
+
+def fg_color_rgb(r: int, g: int, b:int) -> str:
+    return f'\033[38;2;{r};{g};{b}m'
+
+def bg_color_rgb(r: int, g: int, b:int):
+    return f'\033[48;2;{r};{g};{b}m'
+
+def reset():
+    return "\033[0m"
+
+def console_color(text: str, fg: tuple[int, int, int] | None = None, bg: tuple[int, int, int] | None = None):
+    return (fg_color_rgb(*fg) if fg is not None else '') + \
+        (bg_color_rgb(*bg) if bg is not None else '') + \
+        text + \
+        (reset() if bg is not None or fg is not None else '')
+
 #     Feature Description
 # 1    win_rate    Fraction of events where their team placed 1st
 # 2   dodgebolt_rate  Fraction where their team made top 2
@@ -463,22 +479,26 @@ COIN_MULTIPLIERS_8 = torch.tensor([1.0, 1.5, 1.5, 2.0, 2.0, 2.5, 2.5, 3.0])
 
 
 class TeamPlacementPredictor(torch.nn.Module):
-    def __init__(self, player_count: int, features_per_player=FEATURES_PER_PLAYER, embedding_dim=12):
+    def __init__(self, player_count: int):
         super().__init__()
 
-        HIDDEN_LAYER_SIZE = round(features_per_player * 2.5)
-        OUTPUT_SIZE = 16
+        PLAYER_EMBEDDING_SIZE = 12
+        PLAYER_HIDDEN_SIZE = round(FEATURES_PER_PLAYER * 2.5)
+        PLAYER_ATTN_SIZE = 16
+
         TOTAL_GAME_COUNT = len(GAME_IDS)
         GAME_EMBEDDING_SIZE = 32
 
-        self.player_embeddings = torch.nn.Embedding(player_count, embedding_dim)
-        self.player_attention = torch.nn.Linear(OUTPUT_SIZE, 1)
+        PREDICTOR_SIZE = 64
+
+        self.player_embeddings = torch.nn.Embedding(player_count, PLAYER_EMBEDDING_SIZE)
+        self.player_attention = torch.nn.Linear(PLAYER_ATTN_SIZE, 1)
         self.player_encoder = torch.nn.Sequential(
-            torch.nn.LayerNorm(features_per_player),
-            torch.nn.Linear(features_per_player, HIDDEN_LAYER_SIZE),
+            torch.nn.LayerNorm(FEATURES_PER_PLAYER),
+            torch.nn.Linear(FEATURES_PER_PLAYER, PLAYER_HIDDEN_SIZE),
             torch.nn.ReLU(),
             torch.nn.Dropout(0.2),
-            torch.nn.Linear(HIDDEN_LAYER_SIZE, OUTPUT_SIZE),
+            torch.nn.Linear(PLAYER_HIDDEN_SIZE, PLAYER_ATTN_SIZE),
             torch.nn.ReLU(),
         )
 
@@ -488,12 +508,12 @@ class TeamPlacementPredictor(torch.nn.Module):
             torch.nn.ReLU()
         )
 
-        combined_dim = embedding_dim + 16 + GAME_EMBEDDING_SIZE
+        combined_dim = PLAYER_EMBEDDING_SIZE + PLAYER_ATTN_SIZE + GAME_EMBEDDING_SIZE
         self.predictor = torch.nn.Sequential(
-            torch.nn.Linear(combined_dim, 64),
+            torch.nn.Linear(combined_dim, PREDICTOR_SIZE),
             torch.nn.ReLU(),
             torch.nn.Dropout(0.3),
-            torch.nn.Linear(64, 1),
+            torch.nn.Linear(PREDICTOR_SIZE, 1),
         )
 
     def forward(
@@ -509,18 +529,18 @@ class TeamPlacementPredictor(torch.nn.Module):
         # Mask out padded positions for both paths
         batch_size, max_players = team_features.shape[:2]
         device = team_features.device
-        mask = torch.arange(max_players, device=device).unsqueeze(
+        player_mask = torch.arange(max_players, device=device).unsqueeze(
             0
         ) < team_sizes.unsqueeze(1)
-        mask = mask.unsqueeze(-1).float()
+        player_mask = player_mask.unsqueeze(-1).float()
 
         attn_logits = self.player_attention(encoded)
-        attn_logits = attn_logits.squeeze(-1).masked_fill(~mask.squeeze(-1).bool(), float('-inf'))
+        attn_logits = attn_logits.squeeze(-1).masked_fill(~player_mask.squeeze(-1).bool(), float('-inf'))
         player_attention = torch.softmax(attn_logits, dim=-1).unsqueeze(-1)
         team_encoded = (encoded * player_attention).sum(dim=1)
 
-        embeds = self.player_embeddings(player_ids)
-        team_embed = (embeds * mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
+        individual_player_embeds = self.player_embeddings(player_ids)
+        team_embed = (individual_player_embeds * player_mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
 
         game_embeds = self.game_id_embedding(game_ids)
         game_mask = (game_ids != 0)  # (batch, max_games)
@@ -577,7 +597,6 @@ def train():
 
     with PlayerDataFile('data/players.json') as player_data:
         dataset = TeamDataset(EXTRACTS_FILENAME, player_data)
-        print('abc', dataset)
 
     player_count = dataset.get_player_count()
     print(f"Players: {player_count}")
@@ -603,6 +622,7 @@ def train():
 
     with open(TRAINING_LOG_FILENAME, 'w') as log_fd:
         log_fd.write('batch,training loss,validation loss\n')
+        best_vloss = float('inf')
 
         for epoch in range(0, num_epochs):
             running_loss = 0
@@ -645,10 +665,15 @@ def train():
                     running_vloss += vloss
 
             avg_vloss = running_vloss / total_test_batches
-            print(f"LOSS train {last_loss} valid {avg_vloss}")
-            log_fd.write(f'{epoch + 1},{last_loss},{avg_vloss}\n')
+            improved = ''
 
-            torch.save(model.state_dict(), MODEL_FILENAME)
+            if avg_vloss < best_vloss:
+                best_vloss = avg_vloss
+                torch.save(model.state_dict(), MODEL_FILENAME)
+                improved = console_color(' ✓', fg=(0, 255, 0))
+
+            print(f"LOSS train {last_loss} valid {avg_vloss}{improved}")
+            log_fd.write(f'{epoch + 1},{last_loss},{avg_vloss}\n')
 
             with open(CONFIG_FILENAME, "w") as fd:
                 json.dump(dataset.get_config(), fd)
