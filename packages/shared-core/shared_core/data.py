@@ -78,7 +78,7 @@ class PlayerDataFile:
         if self._fd:
             self._fd.close()
 
-        return True
+        # return True
 
     def __getitem__(self, key: str) -> Optional[PlayerData]:
         return self._data[key]
