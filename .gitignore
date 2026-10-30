@@ -9,5 +9,10 @@ wheels/
 # Virtual environments
 .venv
 
+# Node
+node_modules
+.astro/
+
 # Visualization output
+.env
 packages/player-embedding/visualizations/

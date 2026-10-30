@@ -1,0 +1,57 @@
+---
+import "@fontsource/montserrat/latin.css";
+
+export interface Props {
+  title?: string;
+}
+
+const { title = "MCC Predictions" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <style is:global>
+    body {
+      font-family: "Montserrat";
+      line-height: 1.4;
+    }
+
+    h1, h2 {
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    a {
+      color: #c5a012;
+      font-weight: bold;
+      text-decoration: none;
+
+      &:hover {
+        color: #e7ba0f;
+      }
+    }
+
+    .page {
+      padding: 1.5rem;
+      max-width: 90rem;
+      margin-inline: auto;
+    }
+
+    @media (max-width: 34rem) {
+      .page {
+        padding: 1rem;
+      }
+    }
+    </style>
+  </head>
+  <body style="margin: 0;">
+    <div class="page">
+      <slot />
+    </div>
+  </body>
+</html>
