@@ -26,3 +26,15 @@ Run the web app:
 cd web
 npm run dev
 ```
+
+## License
+
+The code in this repository is [MIT licensed](LICENSE).
+
+The data in `data/` is **not** MIT licensed — it is derived from the
+[MCC wiki](https://mcchampionship.fandom.com/wiki/MC_Championship_Wiki) and
+remains [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). See
+[data/README.md](data/README.md) for the attribution requirement.
+
+Icons, fonts, and dependencies keep their original licenses; see
+[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).

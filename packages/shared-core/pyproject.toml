@@ -3,6 +3,9 @@ name = "shared-core"
 version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.14"
+license = "MIT"
+# hatchling won't bundle a license file from outside the project root, so the
+# wheel carries the SPDX expression only; the text lives at the repo root.
 dependencies = []
 
 [build-system]
