@@ -11,6 +11,8 @@ from shared_core.data import PlayerDataFile
 import logging
 import json
 
+from data_processing.player import populate_mcc_island_data, populate_player_igns, populate_player_uuids
+
 logging.basicConfig(
     level=logging.DEBUG, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
@@ -705,5 +707,33 @@ async def load_from_wiki():
                     await browser.close()
 
 
-if __name__ == "__main__":
+def gather_event_data():
     asyncio.run(load_from_wiki())
+
+def gather_player_data():
+    with open("data/players.json", 'r') as player_file:
+        player_mapping = json.load(player_file)
+
+    # UUIDs are looked up by IGN so populate those first.
+    # asyncio.run(populate_player_igns(player_mapping))
+    # asyncio.run(populate_player_uuids(player_mapping))
+    asyncio.run(populate_mcc_island_data(player_mapping))
+
+    with open("data/players.json", 'w') as player_file:
+        json.dump(player_mapping, player_file, indent='\t', sort_keys=True)
+
+if __name__ == "__main__":
+    from argparse import ArgumentParser
+
+    parser = ArgumentParser()
+    subparser = parser.add_subparsers(required=True)
+
+    train_parser = subparser.add_parser('events')
+    train_parser.set_defaults(func=gather_event_data)
+
+    run_parser = subparser.add_parser('players')
+    run_parser.set_defaults(func=gather_player_data)
+
+    args = parser.parse_args()
+    args.func()
+    

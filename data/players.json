@@ -1,1414 +1,3906 @@
 {
 	"$schema": "./schemas/players.json",
 	"4CVIT": {
-		"birthday": "2003-11-17"
+		"birthday": "2003-11-17",
+		"ign": "4CVIT",
+		"island": {
+			"battlebox": {
+				"games": 3207,
+				"wins": 1824
+			},
+			"lastupdate": "2026-10-25T15:56:41.211823+00:00",
+			"skybattle": {
+				"games": 643,
+				"wins": 69
+			},
+			"tgttos": {
+				"games": 287,
+				"wins": 41
+			}
+		},
+		"uuid": "7663199ff927422da38a065b0d26121f"
 	},
 	"5up": {
-		"birthday": "1999-10-27",
 		"aliases": [
 			"5uppps"
-		]
+		],
+		"birthday": "1999-10-27",
+		"ign": "5uppps",
+		"island": {
+			"lastupdate": "2026-10-25T15:56:41.211823+00:00"
+		},
+		"uuid": "0f5e0db013a04125a97ae9f8e872d521"
 	},
 	"AQUINO": {
 		"aliases": [
 			"AQUINOby02"
-		]
+		],
+		"ign": "AQUINOby02",
+		"island": {
+			"lastupdate": "2026-10-25T15:56:41.211823+00:00"
+		},
+		"uuid": "beb5958eb980402c8930785707f61282"
 	},
 	"AbolishRegret": {
-		"birthday": "2000-04-27"
+		"birthday": "2000-04-27",
+		"ign": "AbolishRegret",
+		"island": {
+			"lastupdate": "2026-10-25T15:56:41.211823+00:00"
+		},
+		"uuid": "04971d289aa34686ae90c732c562f4f4"
 	},
-	"Aerington": {},
-	"aimsey": {
-		"birthday": "2001-12-11",
-		"aliases": [
-			"Aimsey"
-		]
+	"Aerington": {
+		"ign": "Aerington",
+		"island": {
+			"lastupdate": "2026-10-25T15:56:41.211823+00:00"
+		},
+		"uuid": "0db45aab3d3d4400a651999e8420f279"
 	},
 	"AlexTheRambler": {
 		"aliases": [
 			"Alex_the_Rambler"
-		]
+		],
+		"ign": "Alex_the_Rambler",
+		"island": {
+			"lastupdate": "2026-10-25T15:56:41.211823+00:00"
+		},
+		"uuid": "3df53eb787ec428da1b27f03ab65c36b"
 	},
-	"Allrich": {},
-	"AnsiChan": {},
-	"AntVenom": {},
+	"Allrich": {
+		"ign": "Allrich",
+		"island": {
+			"lastupdate": "2026-10-25T15:56:41.211823+00:00"
+		},
+		"uuid": "d83d092c0fbe4d9f8a6bd9c58eaafa62"
+	},
+	"AnsiChan": {
+		"ign": "AnsiChan",
+		"island": {
+			"lastupdate": "2026-10-25T15:56:41.211823+00:00"
+		},
+		"uuid": "c5c2c2993fc94a09928efda5d535afe1"
+	},
+	"AntVenom": {
+		"ign": "AntVenom",
+		"island": {
+			"battlebox": {
+				"games": 982,
+				"wins": 538
+			},
+			"lastupdate": "2026-10-25T15:56:41.211823+00:00",
+			"skybattle": {
+				"games": 169,
+				"wins": 5
+			},
+			"tgttos": {
+				"games": 25,
+				"wins": 0
+			}
+		},
+		"uuid": "0c063bfd3521413da76650be1d71f00e"
+	},
 	"Antfrost": {
-		"birthday": "1998-08-27"
+		"birthday": "1998-08-27",
+		"ign": "Antfrost",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "0a28b1829fb34d6ebd96fabd2fe6648a"
 	},
 	"Anthony Toczek": {
 		"aliases": [
 			"Antoneemc"
-		]
+		],
+		"ign": "Antoneemc",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "bb9430b7e87c4128a873d1494881342b"
 	},
-	"Aphmau": {},
-	"ArtemisAblaze": {},
-	"Asnazum": {},
+	"Aphmau": {
+		"ign": "Aphmau",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "c82906afbdcf436c80c6216e5228763b"
+	},
+	"ArtemisAblaze": {
+		"ign": "ArtemisAblaze",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "011b7b40bfc745278fe54bde8cc908f3"
+	},
+	"Asnazum": {
+		"ign": "Asnazum",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "db334783ed1c4032b9643410d319fddf"
+	},
 	"Ava Tyson": {
 		"aliases": [
 			"AvaKrisTyson"
-		]
+		],
+		"ign": "AvaKrisTyson",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "96e1626019804c04892f7b57c799904e"
 	},
 	"AvidMc": {
 		"aliases": [
 			"AvidMc_"
-		]
+		],
+		"ign": "AvidMc_",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "c28992ec81854c8ea22efa3f07e42af2"
 	},
-	"AyChristene": {},
-	"BBPaws": {},
-	"BaboAbe": {},
-	"BadBoyHalo": {},
-	"BajanCanadian": {},
-	"BdoubleO100": {},
+	"AyChristene": {
+		"ign": "AyChristene",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "bbe749b919804a788dd0b8bfa54e9474"
+	},
+	"BBPaws": {
+		"ign": "BBPaws",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "6f01a3e1252a44cb951ec28ca1455d69"
+	},
+	"BaboAbe": {
+		"ign": "BaboAbe",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "d81d8db4443d4cafb19d90a377a6df02"
+	},
+	"BadBoyHalo": {
+		"ign": "BadBoyHalo",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "26bdff37fec848f1980f66bf69ee751c"
+	},
+	"BajanCanadian": {
+		"ign": "BajanCanadian",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "91b4b2d607ae47bba66f13c28c3d1842"
+	},
+	"BdoubleO100": {
+		"ign": "BdoubleO100",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "7163fbce39ac4a02b836a991c45d2dd1"
+	},
 	"BearsCancelled": {
 		"aliases": [
 			"BearsCancelle"
-		]
+		],
+		"ign": "BearCancelle",
+		"island": {
+			"battlebox": {
+				"games": 2617,
+				"wins": 1423
+			},
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00",
+			"skybattle": {
+				"games": 914,
+				"wins": 58
+			},
+			"tgttos": {
+				"games": 41,
+				"wins": 0
+			}
+		},
+		"uuid": "b992073ed13e4f0991a3a8f1305b02aa"
 	},
 	"Bedgar": {
 		"aliases": [
 			"Bedgar_"
-		]
+		],
+		"ign": "Bedgar_",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "aeafcb4429124c9481ea8ba5b84af459"
 	},
-	"Bekkiboom": {},
-	"Bekyamon": {
-		"birthday": "1997-10-31"
+	"Bekkiboom": {
+		"ign": "Bekkiboom",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "0fce6e5fc374412baf92f4c4534f5c37"
 	},
 	"Bigbst4tz2": {
-		"birthday": "1990-02-28",
 		"aliases": [
 			"bigbst4tz2"
-		]
+		],
+		"birthday": "1990-02-28",
+		"ign": "bigbst4tz2",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "05afae762df5443597f5d51cdb69a7dc"
 	},
-	"Binnish": {},
+	"Binnish": {
+		"ign": "Binnish",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "1055b80111524c75b041d5519fd7436e"
+	},
 	"Bitzel": {
-		"birthday": "2004-01-21"
+		"birthday": "2004-01-21",
+		"ign": "Bitzel",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "c105bf11c0ee497abeb28a131a33e9f1"
 	},
 	"Block Facts": {
 		"aliases": [
 			"Block_Facts"
-		]
+		],
+		"ign": "Block_Facts",
+		"island": {
+			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"uuid": "4e222be1c83b49ff91f5a08d0c74b250"
 	},
-	"Blushi": {},
-	"BobaWitch": {},
+	"Blushi": {
+		"ign": "Blushi",
+		"island": {
+			"lastupdate": "2026-10-25T15:59:49.226833+00:00"
+		},
+		"uuid": "e1dd9ea80c3f4721bcb0f7a1f9cda167"
+	},
+	"BobaWitch": {
+		"ign": "BobaWitch",
+		"island": {
+			"lastupdate": "2026-10-25T15:59:49.226833+00:00"
+		},
+		"uuid": "d497cc6361eb48129cc901f3a9576937"
+	},
 	"Boosfer": {
-		"birthday": "2001-10-16"
+		"birthday": "2001-10-16",
+		"ign": "Boosfer",
+		"island": {
+			"lastupdate": "2026-10-25T15:59:49.226833+00:00"
+		},
+		"uuid": "4232c61f56db4d4cbdc24dbd406a3575"
 	},
 	"Bouphe": {
 		"aliases": [
 			"bouphe"
-		]
+		],
+		"ign": "bouphe",
+		"island": {
+			"lastupdate": "2026-10-25T15:59:49.226833+00:00"
+		},
+		"uuid": "34f6be1abd854f82bb2bb2d3bf2eef62"
 	},
 	"BoxBox": {
 		"aliases": [
 			"boxbox22"
-		]
+		],
+		"ign": "boxbox22",
+		"island": {
+			"lastupdate": "2026-10-25T15:59:49.226833+00:00"
+		},
+		"uuid": "465f5e12f9af4573a4cafee72a97c414"
 	},
-	"Breeh": {},
+	"Breeh": {
+		"ign": "Breeh",
+		"island": {
+			"lastupdate": "2026-10-25T15:59:49.226833+00:00"
+		},
+		"uuid": "573a12d554024d95976ef8e6c1ff15ab"
+	},
 	"Brionykay": {
 		"aliases": [
 			"brionykay"
-		]
+		],
+		"ign": "brionykay",
+		"island": {
+			"lastupdate": "2026-10-25T15:59:49.226833+00:00"
+		},
+		"uuid": "0072c44a8d49495eacf8a701cefd3e6d"
 	},
-	"BrunoDanUy": {},
-	"Bubblebrooke": {},
+	"BrunoDanUy": {
+		"ign": "BrunoDanUy",
+		"island": {
+			"lastupdate": "2026-10-25T15:59:49.226833+00:00"
+		},
+		"uuid": "6b3e42d204d04c1a9b7b955fbba5909f"
+	},
+	"Bubblebrooke": {
+		"ign": "Bubblebrooke",
+		"island": {
+			"lastupdate": "2026-10-25T15:59:49.226833+00:00"
+		},
+		"uuid": "fa34ae684b3a40bfaa099b67b5500feb"
+	},
 	"Calce": {
 		"aliases": [
 			"Calcetin2"
-		]
+		],
+		"ign": "Calce",
+		"island": {
+			"lastupdate": "2026-10-25T15:59:49.226833+00:00"
+		},
+		"uuid": "b6c444a4d01841b48b5600e8d4371c19"
 	},
-	"Calolinda": {},
+	"Calolinda": {
+		"ign": "Calolinda",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "cbe6fa365dfd49068bde1fb25c335cfe"
+	},
 	"Cambam010": {
-		"birthday": "1998-11-18",
 		"aliases": [
 			"Cambam"
-		]
+		],
+		"birthday": "1998-11-18",
+		"ign": "Cambam010",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "8eb3fb13acc447819c226013ff3a60f7"
 	},
 	"Capitan Gato": {
 		"aliases": [
 			"CapitanGatoYT"
-		]
+		],
+		"ign": "CapitanGatoYT",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "135cde0abe8a46a6979c3a24a5c94ade"
 	},
 	"CaptainPuffy": {
-		"birthday": "1998-09-18"
+		"birthday": "1998-09-18",
+		"ign": "CaptainPuffy",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "1b5fc4e3d5a6424fa76130c38b363015"
 	},
 	"CaptainSparklez": {
-		"birthday": "1992-02-10",
 		"aliases": [
 			"KaptainSparklez"
-		]
+		],
+		"birthday": "1992-02-10",
+		"ign": "CaptainSparklez",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "5f820c3958834392b1743125ac05e38c"
 	},
 	"Caramello": {
 		"aliases": [
 			"Caramello_sb"
-		]
+		],
+		"ign": "Caramello_sb",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "8a000512b79a4f89b8510346f6ced4dc"
 	},
-	"CastCrafter": {},
+	"CastCrafter": {
+		"ign": "CastCrafter",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "459dbceed3ea4abc903cfdcae3065dd3"
+	},
 	"Checkpoint": {
 		"aliases": [
 			"SteveCP"
-		]
+		],
+		"ign": "SteveCP",
+		"uuid": "unresolvable"
 	},
-	"CherriFire": {},
+	"CherriFire": {
+		"ign": "CherriFire",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "cbfecae3f24f430aad78b85973df8b26"
+	},
 	"ChilledChaos": {
-		"birthday": "1991-05-30",
 		"aliases": [
 			"ChilledChaosYT"
-		]
+		],
+		"birthday": "1991-05-30",
+		"ign": "ChilledChaosYT",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "6c7e02e2a5144045a51e9b4f1e1cb10a"
 	},
 	"ChippyGaming": {
 		"aliases": [
 			"ChippyGaming_"
-		]
+		],
+		"ign": "ChippyGaming_",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "f9a0c41f283842388523cf9a128002f6"
 	},
 	"Chunk Purse": {
 		"aliases": [
 			"chunkpurse"
-		]
+		],
+		"ign": "chunkpurse",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "c435bc8c55f341dcb3b6f31a1072238e"
 	},
-	"CodeNeon": {},
+	"CodeNeon": {
+		"ign": "CodeNeon",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "896431383fff41d39be6d14ba4410814"
+	},
 	"Cojomax99": {
-		"birthday": "1993-06-29"
+		"birthday": "1993-06-29",
+		"ign": "Cojomax99",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "a6484c2fcd05460f81d136e92d8f8f9e"
 	},
-	"ConnorEatsPants": {},
-	"Conterstine": {},
+	"ConnorEatsPants": {
+		"ign": "ConnorEatsPants",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "519996d9dcc3433bb45b21ad82578205"
+	},
+	"Conterstine": {
+		"ign": "Conterstine",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "64e592bc2702494e961fa7af3af67729"
+	},
 	"Couriway": {
-		"birthday": "1999-08-13"
+		"birthday": "1999-08-13",
+		"ign": "Couriway",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "994f93763f8048bc9e72ee92f861911d"
 	},
-	"CozyCrafted": {},
+	"CozyCrafted": {
+		"ign": "CozyCrafted",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "17c7d92f875f433caaba4a937be0b45e"
+	},
 	"Craig Frost": {
 		"aliases": [
 			"CraigMeUp"
-		]
+		],
+		"ign": "CraigMeUp",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "83fa6b0ee26e48fba92af863d9d805eb"
 	},
-	"CrankGameplays": {},
+	"CrankGameplays": {
+		"ign": "CrankGameplays",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "e19baf57f1e34c19ad296d43174f5330"
+	},
 	"Crisgreen": {
-		"birthday": "1995-11-25"
-	},
-	"Cubfan135": {
-		"birthday": "1989-08-20"
+		"birthday": "1995-11-25",
+		"ign": "Crisgreen",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "9e51a086c3004c90b08c4abe75e16fe9"
 	},
 	"Cxlvxn": {
-		"birthday": "1998-03-13",
 		"aliases": [
 			"Calvin"
-		]
+		],
+		"birthday": "1998-03-13",
+		"ign": "Cxlvxn",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "5ed2a0ff69d94e4eb8f045d6d57adf26"
 	},
 	"Cydonia": {
-		"birthday": "1994-11-14",
 		"aliases": [
 			"CydoniaPM"
-		]
+		],
+		"birthday": "1994-11-14",
+		"ign": "CydoniaPM",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "56d8c6a8a00c45fba853129b3ecbb681"
 	},
-	"Daltos": {},
+	"Daltos": {
+		"ign": "Daltos",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "79db1c0ef54b45519f5404525fb2f415"
+	},
 	"DanTDM": {
-		"birthday": "1991-11-08"
+		"birthday": "1991-11-08",
+		"ign": "DanTDM",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "77cc85ae388a46eca5359e2ffef71b29"
 	},
-	"DarkEyebrows": {},
-	"Defectt": {},
-	"Dethridge": {},
+	"DarkEyebrows": {
+		"ign": "DarkEyebrows",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "e6b20ce1baf94891b0b201af0a14ccc6"
+	},
+	"Defectt": {
+		"ign": "Defectt",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "81c843aa1c2f40a490f73c87e524ffff"
+	},
+	"Dethridge": {
+		"ign": "dethridge",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "4ed2b8f8297c487b98870db53dd76764"
+	},
 	"Dev": {
 		"aliases": [
 			"Its_Dev_"
-		]
+		],
+		"ign": "Its_Dev_",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "60d988de3e76465a9802b4a7bb9a970a"
 	},
 	"Diffrent": {
 		"aliases": [
 			"Dlffrent"
-		]
+		],
+		"ign": "Dlffrent",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "b823aa920f244f03b609f04e2cb7999f"
 	},
-	"DisguisedToast": {},
+	"DisguisedToast": {
+		"ign": "DisguisedToast1",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "11f8c9a84a374f3db38298a9ca1c82aa"
+	},
 	"Docm77": {
-		"birthday": "1977-07-05"
+		"birthday": "1977-07-05",
+		"ign": "Docm77",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "05e88dce714d4218be77fade8b5dfa3c"
 	},
 	"Dr. Simon Clark": {
 		"aliases": [
 			"drsimonclark"
-		]
+		],
+		"ign": "Dr. Simon Clark",
+		"uuid": "unresolvable"
 	},
 	"DrGluon": {
 		"aliases": [
 			"Drgluon"
-		]
+		],
+		"ign": "Drgluon",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "eafd010423484d8282379c2dfb80a63f"
 	},
 	"DraconiteDragon": {
-		"birthday": "1998-05-12"
+		"birthday": "1998-05-12",
+		"ign": "DraconiteDragon",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "9f16bea3b96e4ef68aa427a288ebb72b"
 	},
 	"Dream": {
-		"birthday": "1999-08-12"
+		"birthday": "1999-08-12",
+		"ign": "Dream",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "ec70bcaf702f4bb8b48d276fa52a780c"
 	},
-	"Dtowncat": {},
+	"Dtowncat": {
+		"ign": "Dtowncat",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "8c7cbb6f4a89463ca171f143b071a7cc"
+	},
 	"Duncan Jones": {
-		"birthday": "1987-03-01",
 		"aliases": [
 			"LividCoffee"
-		]
+		],
+		"birthday": "1987-03-01",
+		"ign": "LividCoffee",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "7dd55e6bf16b48048df52f50f7191b2d"
 	},
 	"Duncan Massink": {
-		"birthday": "1999-02-15",
 		"aliases": [
 			"DuncanMassink"
-		]
+		],
+		"birthday": "1999-02-15",
+		"ign": "DuncanMassink",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "eb0d84ae8c124ffbb13a2f7c47cd98de"
 	},
 	"Duxo": {
 		"aliases": [
 			"Duxorethey"
-		]
+		],
+		"ign": "Duxorethey",
+		"island": {
+			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"uuid": "e064357d445b425ab426e3beed177ac5"
 	},
-	"Ejzar": {},
+	"Ejzar": {
+		"ign": "Ejzar",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "984e6cd5855646f6b54730548b24aeff"
+	},
 	"ElainaExe": {
-		"birthday": "1998-11-05"
+		"birthday": "1998-11-05",
+		"ign": "ElainaExe",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "a833b02234414eaa98e64b56c0e39afa"
 	},
 	"Ellen Rose": {
-		"birthday": "1988-11-29",
 		"aliases": [
 			"OX_Ellen"
-		]
+		],
+		"birthday": "1988-11-29",
+		"ign": "OX_Ellen",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "fe40aaa6792e418d858fbcb922f38471"
 	},
 	"Eret": {
-		"birthday": "1999-01-09",
 		"aliases": [
 			"The_Eret"
-		]
+		],
+		"birthday": "1999-01-09",
+		"ign": "The_Eret",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "de56a5270ea24202aeafc73f23871ebd"
 	},
-	"EsVandal": {},
+	"EsVandal": {
+		"ign": "EsVandal",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "49d219ef20be419ea09a953294078799"
+	},
 	"Eskay": {
 		"aliases": [
 			"Eskay22"
-		]
+		],
+		"ign": "Eskay22",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "4a65655b24104a92a154d2098252f148"
 	},
 	"EthosLab": {
 		"aliases": [
 			"Etho"
-		]
+		],
+		"ign": "Etho",
+		"island": {
+			"battlebox": {
+				"games": 38114,
+				"wins": 19936
+			},
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00",
+			"skybattle": {
+				"games": 148,
+				"wins": 4
+			},
+			"tgttos": {
+				"games": 549,
+				"wins": 14
+			}
+		},
+		"uuid": "93b459bece4f4700b457c1aa91b3b687"
 	},
 	"Etoiles": {
-		"birthday": "1996-08-02"
+		"birthday": "1996-08-02",
+		"ign": "Etoiles",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "ea2ff7e97f4345efa6e7493c656eaabf"
 	},
-	"F1NN5TER": {},
+	"F1NN5TER": {
+		"ign": "F1NN5TER",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "de867c485cd84cedbdc264d42b697b81"
+	},
 	"Fabo": {
 		"aliases": [
 			"TheFabo"
-		]
+		],
+		"ign": "TheFabo",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "55eccadf2bef41efb494099b56ca06b6"
 	},
-	"FairlyGab": {},
+	"FairlyGab": {
+		"ign": "FairlyGab",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "582b2f640757431b8f60c860b070c719"
+	},
 	"Faister": {
-		"birthday": "2001-11-17"
+		"birthday": "2001-11-17",
+		"ign": "Faister",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "5718618ee420460a8326cf96f0b21770"
 	},
 	"FalseSymmetry": {
-		"ign": "falsesymmetry",
 		"aliases": [
 			"falsesymmetry"
-		]
+		],
+		"ign": "falsesymmetry",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "87d915486f18491fa2677833caa5d7d8"
 	},
 	"Farrantula": {
 		"aliases": [
 			"OX_Andy"
-		]
+		],
+		"ign": "OX_Andy",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "ad383d07faf24721b4046a7f47c8c9ea"
 	},
 	"Feinberg": {
-		"birthday": "2002-10-18"
+		"birthday": "2002-10-18",
+		"ign": "Feinberg",
+		"island": {
+			"battlebox": {
+				"games": 3753,
+				"wins": 2658
+			},
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00",
+			"skybattle": {
+				"games": 1472,
+				"wins": 506
+			},
+			"tgttos": {
+				"games": 240,
+				"wins": 115
+			}
+		},
+		"uuid": "9a8e24df4c8549d696a6951da84fa5c4"
 	},
-	"Felikah": {},
+	"Felikah": {
+		"ign": "Felikah",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "45210472752b4ef1816e024c248abca8"
+	},
 	"Fionn Riches": {
 		"aliases": [
 			"Fiona_McGoats"
-		]
+		],
+		"ign": "Fionn_McGoat",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "0cac41b283f844cf976a1a009461cd7b"
 	},
 	"FireBreathMan": {
-		"birthday": "2000-08-13"
+		"birthday": "2000-08-13",
+		"ign": "FireBreathMan",
+		"island": {
+			"battlebox": {
+				"games": 5345,
+				"wins": 3517
+			},
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00",
+			"skybattle": {
+				"games": 4622,
+				"wins": 517
+			},
+			"tgttos": {
+				"games": 390,
+				"wins": 132
+			}
+		},
+		"uuid": "c3ef41ce0da54a23ae9484305de8d99b"
 	},
 	"FitMC": {
 		"aliases": [
 			"Fit"
-		]
+		],
+		"ign": "Fit",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "fdee323e7f0c4c158d1c0f277442342a"
 	},
 	"FlexVega": {
 		"aliases": [
 			"FleexVega"
-		]
+		],
+		"ign": "FleexVega",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "36a58f85b8b341338b070f47d4d23267"
 	},
-	"FlorianFunke": {},
+	"FlorianFunke": {
+		"ign": "FlorianFunke",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "4e927d61f89a4e5a8c3ddae5fdf2e115"
+	},
 	"Foolish Gamers": {
-		"birthday": "1998-12-18",
 		"aliases": [
 			"FoolishG"
-		]
+		],
+		"birthday": "1998-12-18",
+		"ign": "FoolishG",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "bf8b94aa32a244bf8ff3b86287ce2924"
 	},
-	"Fruitberries": {
-		"birthday": "2002-08-28"
+	"Fulham": {
+		"ign": "Fulham",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "04b71379daad40a1891fa1d49964d69d"
 	},
-	"Fulham": {},
 	"Fundy": {
-		"birthday": "1999-10-10",
 		"aliases": [
 			"ItsFundy"
-		]
+		],
+		"birthday": "1999-10-10",
+		"ign": "ItsFundy",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "a0e8e55dc5bd44b2bb5f5b666415b8dd"
 	},
 	"Gee Nelly": {
-		"birthday": "1995-08-19",
 		"aliases": [
 			"GeeNelly"
-		]
+		],
+		"birthday": "1995-08-19",
+		"ign": "GeeNelly",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "30b6edfaefca4f25b5ad904d2b1ca032"
 	},
 	"Geestar": {
-		"birthday": "1993-10-14",
 		"aliases": [
 			"Geestargames"
-		]
+		],
+		"birthday": "1993-10-14",
+		"ign": "Geestargames",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "f97ce87179ab4079897bf0742131a02d"
 	},
-	"Gegy": {},
+	"Gegy": {
+		"ign": "Gegy",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "c3ed4d52fb4f4964ba1b9cda2453741e"
+	},
 	"GeminiTay": {
-		"birthday": "1996-05-22"
+		"birthday": "1996-05-22",
+		"ign": "GeminiTay",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "5a1839d2cecc4c85aa08b346f9f772a1"
 	},
 	"GeorgeNotFound": {
-		"birthday": "1996-11-01"
+		"birthday": "1996-11-01",
+		"ign": "GeorgeNotFound",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "bd3dd5a404384699b2fd36f518154b41"
 	},
-	"Ghostiefruit": {
-		"birthday": "2003-02-13"
+	"Gigithepuppy": {
+		"ign": "Gigithepuppy",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "c805ba5971934069a4520309e6db9082"
 	},
-	"Gigithepuppy": {},
-	"Ginerous": {},
-	"GirlOfNox": {},
-	"GizzyGazza": {},
-	"GoldenGlare": {},
-	"Golemell": {},
+	"Ginerous": {
+		"ign": "Ginerous",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "c890a3066f0648d6bbbdf455592bbed7"
+	},
+	"GirlOfNox": {
+		"ign": "GirlOfNox",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "0e1cf500aa754d5c8e72f50456b7d79a"
+	},
+	"GizzyGazza": {
+		"ign": "GizzyGazza",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "ae278d141c7743b99383eef0523b0137"
+	},
+	"GoldenGlare": {
+		"ign": "GoldenGlare",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "dc74912d84b249c583de9a69044db1bd"
+	},
+	"Golemell": {
+		"ign": "Golemell",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "cfe8acd2c99d4f2ea161fc6024d767f6"
+	},
 	"GoodTimesWithScar": {
 		"aliases": [
 			"GoodTimeWithScar"
-		]
+		],
+		"ign": "GoodTimeWithScar",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "cae9554c31be47e2ba2b4b8867adacc5"
 	},
 	"Graaavel": {
 		"aliases": [
 			"graaavel"
-		]
+		],
+		"ign": "graaavel",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "8ad4fee037f84af39caa6b1c1a85bd2c"
 	},
 	"Graecie": {
-		"ign": "heyGraecie",
 		"aliases": [
 			"heyGraecie"
-		]
+		],
+		"ign": "heyGraecie",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "a6a6ea20086e4794b61027713cf1b8a1"
 	},
-	"Gramajo": {},
+	"Gramajo": {
+		"ign": "Gramajo",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "a0a1b99d2c4f46c28cc70f3b7951e430"
+	},
 	"Graser10": {
-		"birthday": "1997-01-16"
+		"birthday": "1997-01-16",
+		"ign": "Graser10",
+		"island": {
+			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"uuid": "5122efdbaee94c49bcdddceb168fb4c1"
 	},
 	"Grian": {
-		"birthday": "1993-08-09"
+		"birthday": "1993-08-09",
+		"ign": "Grian",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "5f8eb73b25be4c5aa50fd27d65e30ca0"
 	},
 	"Guggle": {
 		"aliases": [
 			"Guggleino"
-		]
-	},
-	"Guqqie": {
-		"birthday": "2001-09-14"
+		],
+		"ign": "Guggleino",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "c794dc38d7e947b98f007d1c30ef7737"
 	},
 	"Gussy": {
 		"aliases": [
 			"GussyGang_"
-		]
+		],
+		"ign": "GussyGang_",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "bb20e02353bc46ffbd627c6a6f379da1"
 	},
 	"HBomb94": {
-		"birthday": "1994-01-04"
+		"birthday": "1994-01-04",
+		"ign": "HBomb94",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "d974cbaee62b4e34a1b80175a2d41d9a"
 	},
 	"HannahKate": {
 		"aliases": [
 			"hannahhkatee"
-		]
-	},
-	"Hannahxxrose": {
-		"birthday": "2000-02-28"
+		],
+		"ign": "hannahhkatee",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "75144cf1514045b096387287dc53cd48"
 	},
 	"HeySansi": {
 		"aliases": [
 			"heySansi"
-		]
+		],
+		"ign": "heySansi",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "329ac5ad6652461387e7905fc00fd0a3"
 	},
-	"HiImCC": {},
+	"HiImCC": {
+		"ign": "HiImCC",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "015455598c144932b6a9cb0df192be18"
+	},
 	"Hrry": {
-		"birthday": "1995-10-25",
 		"aliases": [
 			"BrryHrry"
-		]
+		],
+		"birthday": "1995-10-25",
+		"ign": "BrryHrry",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "7bfc146016f0428a9fd8b82b663a2a2c"
 	},
 	"Hydraticc": {
 		"aliases": [
 			"hydraticc"
-		]
+		],
+		"ign": "hydraticc",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "262be77502414678b142976af36cfbb8"
 	},
-	"Illumina": {},
-	"ImaShep": {},
+	"Illumina": {
+		"ign": "Illumina",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "46405168e9ce40a099a40b989a912c77"
+	},
+	"ImaShep": {
+		"ign": "ImaShep",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "f86ac8e18ca9485391baa67e3f1cece6"
+	},
 	"InTheLittleWood": {
-		"birthday": "1990-04-07"
+		"birthday": "1990-04-07",
+		"ign": "InTheLittleWood",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "c9cf0c2e904c451986b12630828315c1"
 	},
-	"Inditorias": {},
+	"Inditorias": {
+		"ign": "Inditorias",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "dea2d77715664a5a90d8beefcf14062f"
+	},
 	"InfiniteDrift": {
 		"aliases": [
 			"infinitedrift"
-		]
-	},
-	"Ish13c": {
-		"birthday": "2001-09-27"
+		],
+		"ign": "infinitedrift",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "2907928a40a0453aa95396ce40862469"
 	},
 	"ItsFunneh": {
-		"birthday": "1995-10-31"
+		"birthday": "1995-10-31",
+		"ign": "ItsFunneh",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "4d4a82eb3fa74cce98dd5eda221f2192"
 	},
-	"ItsJustOriah": {},
-	"ItzMasayoshi": {},
+	"ItsJustOriah": {
+		"ign": "ItsJustOriah",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "6ef0925ce2c7410cb9d49b5c7ac0c7a5"
+	},
+	"ItzMasayoshi": {
+		"ign": "ItzMasayoshi",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "378c2b5f7d20495d92c136c56de7e859"
+	},
 	"JC The Caster": {
 		"aliases": [
 			"JCtheCaster"
-		]
+		],
+		"ign": "JC The Caster",
+		"uuid": "unresolvable"
 	},
 	"JHorse": {
 		"aliases": [
 			"JHorseMC"
-		]
+		],
+		"ign": "JHorseMC",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "b51de1b57b764f4ab4f0ab7bb35a2593"
 	},
-	"JLTomy": {},
+	"JLTomy": {
+		"ign": "JLTootmy",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "b97d77f7a1ac40e782e0294b63764baf"
+	},
 	"JackManifoldTV": {
-		"birthday": "2002-08-14"
+		"birthday": "2002-08-14",
+		"ign": "JackManifoldTV",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "91a5123aa3944e50a5af2006a341c8ab"
 	},
 	"JackSucksAtLife": {
-		"birthday": "1996-06-24",
 		"aliases": [
 			"JackSucksAtMC"
-		]
+		],
+		"birthday": "1996-06-24",
+		"ign": "JackSucksAtLife",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "7dc0849b676c44c2b23eb908743f1c6e"
 	},
 	"Jacksepticeye": {
-		"birthday": "1990-02-07",
 		"aliases": [
 			"septicbooper"
-		]
+		],
+		"birthday": "1990-02-07",
+		"ign": "septicbooper",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "8e7ee5fe99dd4e1887f52aa75b497742"
 	},
 	"JamalMC": {
 		"aliases": [
 			"JamalMC_"
-		]
+		],
+		"ign": "JamalMC",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "1a8e6ce71bab4b259d2a01c12883d760"
 	},
 	"James Charles": {
-		"birthday": "1999-05-23",
 		"aliases": [
 			"jcharles"
-		]
+		],
+		"birthday": "1999-05-23",
+		"ign": "James Charles",
+		"uuid": "unresolvable"
 	},
 	"James Marriott": {
 		"aliases": [
 			"JamesDoesMining"
-		]
+		],
+		"ign": "JamesDoesMining",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "9e54e82f9d254477bece05575256d46b"
 	},
 	"James Turner": {
 		"aliases": [
 			"Flabaliki",
 			"JamesTurner"
-		]
+		],
+		"ign": "JamesTurner",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "a0350f7227c34ee68f4370dcb1d44f27"
 	},
 	"Jameskii": {
 		"aliases": [
 			"James_Prime"
-		]
+		],
+		"ign": "Jameskii",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "df4f5d99a66646eda8d4b4b82372a12a"
 	},
 	"Jane Douglas": {
 		"aliases": [
 			"OX_Jane"
-		]
+		],
+		"ign": "OX_Jane",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "c20e0075bec94505bb36bb5e9cb38296"
 	},
 	"Jeremy Frieser": {
-		"birthday": "1997-01-28",
 		"aliases": [
 			"JeremyFrieser"
-		]
+		],
+		"birthday": "1997-01-28",
+		"ign": "JeremyFrieser",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "975e0f7987b4407b97b06cfa8d80cc1a"
 	},
 	"JeromeASF": {
-		"birthday": "1994-03-09"
+		"birthday": "1994-03-09",
+		"ign": "JeromeASF",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "135602356e7f47a29ff1ef7b39067185"
 	},
 	"Jestanii": {
 		"aliases": [
 			"Jestan"
-		]
+		],
+		"ign": "Jestan",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "0bb5c70bb6774c4db76ee268d6dd675d"
 	},
 	"Joe Hickson": {
 		"aliases": [
 			"QuirkyFace"
-		]
+		],
+		"ign": "QuirkyFace",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "0a72849b8c9548a99b1adaadbe548451"
 	},
 	"Joe Hills": {
-		"birthday": "1986-07-20",
 		"aliases": [
 			"joehillssays"
-		]
+		],
+		"birthday": "1986-07-20",
+		"ign": "joehillssays",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "53bae456dbbb4c2f8c799e8ec26c8382"
 	},
 	"Joey Graceffa": {
 		"aliases": [
 			"JOEYGRACEFFA"
-		]
-	},
-	"Jojosolos": {
-		"birthday": "1999-09-09"
+		],
+		"ign": "JOEYGRACEFFA",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "e5484a19e1fa4ea394a704bb6697ad33"
 	},
 	"JustNova": {
 		"aliases": [
 			"JustNova111"
-		]
+		],
+		"ign": "JustNova111",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "68db77faeb4f42e88b65988f001674cf"
 	},
 	"Kara Corvus": {
 		"aliases": [
 			"KaraCorvus"
-		]
+		],
+		"ign": "KaraCorvus",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "acb6258b2952498c9776e3c4a84731a4"
 	},
 	"Karl Jacobs": {
 		"aliases": [
 			"KarlJacobs"
-		]
+		],
+		"ign": "KarlJacobs",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "014c89d5701a43ae9d0dbf5568cb5286"
 	},
 	"Katherine Elizabeth": {
 		"aliases": [
 			"katherineeliz"
-		]
+		],
+		"ign": "katherineeliz",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "e624852b0ab646e3b61dc8a276f0ef7d"
 	},
 	"KatieB": {
-		"birthday": "2002-10-06",
-		"ign": "saucebxss",
 		"aliases": [
 			"saucebxss"
-		]
+		],
+		"birthday": "2002-10-06",
+		"ign": "saucebxss",
+		"island": {
+			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
+		},
+		"uuid": "16bcd4be2799494ebdf8ff4916b1a627"
 	},
-	"KatieGoBrr": {},
-	"KendoMurft": {},
+	"KatieGoBrr": {
+		"ign": "KatieGoBrr",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "2568b92e78c7435fa584308064e99f60"
+	},
+	"KendoMurft": {
+		"ign": "KendoMurft",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "1b7a3c4a48d9454890898b3363813b6a"
+	},
 	"Keralis": {
-		"birthday": "1981-04-30",
 		"aliases": [
 			"Keralis1"
-		]
+		],
+		"birthday": "1981-04-30",
+		"ign": "Keralis1",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "ed260cac54e44ee5b4ded289f197fa45"
 	},
-	"KhaosKorps": {},
+	"KhaosKorps": {
+		"ign": "KhaosKorps",
+		"island": {
+			"battlebox": {
+				"games": 17618,
+				"wins": 9263
+			},
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00",
+			"skybattle": {
+				"games": 475,
+				"wins": 30
+			},
+			"tgttos": {
+				"games": 174,
+				"wins": 1
+			}
+		},
+		"uuid": "404cd319cb294aafb0a9e0e7a2116ed3"
+	},
 	"Kier": {
 		"aliases": [
 			"Kierrrr"
-		]
+		],
+		"ign": "Kierrrr",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "5c22897fd31e4aa49c97a3ef0b5e0008"
 	},
-	"KingOfArchers": {},
-	"King_Burren": {},
-	"Kontuz": {},
+	"KingOfArchers": {
+		"ign": "KingOfArchery",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "41b1fc0ae3c04aa0ae3a547aa51fbd57"
+	},
+	"King_Burren": {
+		"ign": "King_Burren",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "2ccfd941c5d34e46b6274a8ce794ef46"
+	},
+	"Kontuz": {
+		"ign": "kontuz",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "2de1798d589f4f80815b51a7fd326bb7"
+	},
 	"Kratzy": {
-		"birthday": "1999-08-17",
 		"aliases": [
 			"Krtzy",
 			"Krtzyy"
-		]
+		],
+		"birthday": "1999-08-17",
+		"ign": "Krtzy",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "8e48e3a874e0412d9be6bcb49cb34a9e"
 	},
 	"KreekCraft": {
-		"birthday": "1997-01-28",
 		"aliases": [
 			"Kreekcraft"
-		]
+		],
+		"birthday": "1997-01-28",
+		"ign": "KreekCraft",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "9c1d87f86c15470bb6ce86d0be0e91cf"
 	},
 	"Krinios": {
-		"birthday": "2001-12-19"
+		"birthday": "2001-12-19",
+		"ign": "Krinios",
+		"island": {
+			"battlebox": {
+				"games": 553,
+				"wins": 342
+			},
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00",
+			"skybattle": {
+				"games": 122,
+				"wins": 11
+			},
+			"tgttos": {
+				"games": 30,
+				"wins": 0
+			}
+		},
+		"uuid": "2682cca069be4828b6efc4f08a2dda19"
 	},
 	"Kristina": {
 		"aliases": [
 			"KRISTlNA"
-		]
+		],
+		"ign": "KRISTlNA",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "25b910af46f7439088b66f43d26bd2c0"
 	},
 	"KryticZeuz": {
 		"aliases": [
 			"KryticZeuZ"
-		]
+		],
+		"ign": "KryticZeuZ",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "b7f04012db344f4a97458cdc5bc8132b"
 	},
-	"LDShadowLady": {},
-	"LOKIOLR": {},
-	"LaKitty101": {},
-	"LaosOneView": {},
-	"Laqqy": {},
+	"LDShadowLady": {
+		"ign": "LDShadowLady",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "751b090e012e4847974ea666cfc2603d"
+	},
+	"LOKIOLR": {
+		"ign": "LOKIOLR",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "58d7ec4d3c5f4183811cd0982d75bc48"
+	},
+	"LaKitty101": {
+		"ign": "LaKitty101",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "e54b429322834724ac473968e9fe8499"
+	},
+	"LaosOneView": {
+		"ign": "LaosOneView",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "91578310ebad4567a6f4750bc0b947c7"
+	},
+	"Laqqy": {
+		"ign": "Laqqy",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "40524d1ae8a0408c978103d4a40a9e71"
+	},
 	"LaurenzSide": {
 		"aliases": [
 			"laurenzside"
-		]
+		],
+		"ign": "laurenzside",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "7ffb6b29661d459198a473f0835d92e9"
 	},
 	"LazarBeam": {
 		"aliases": [
 			"LazarCodeLazar"
-		]
+		],
+		"ign": "LazarCodeLazar",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "bc7afcc9f9b1451ba4b83e5b4276cf3c"
 	},
-	"Legundo": {},
-	"Leozaur": {},
-	"LetsHugo": {},
+	"Legundo": {
+		"ign": "Legundo",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "a4cae4898554479d8dfb408366ef6781"
+	},
+	"Leozaur": {
+		"ign": "Leozaur",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "1c21dc5cdc3446c9824632e6ec801748"
+	},
+	"LetsHugo": {
+		"ign": "LetsHugo",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "046691d6a0ae452d9afd114900493469"
+	},
 	"Lewis Brindley": {
 		"aliases": [
 			"Xephos"
-		]
+		],
+		"ign": "Xephos",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "2c6d7b3d76744b188d86bb6a707ea8e4"
 	},
-	"LexieMariex": {},
+	"LexieMariex": {
+		"ign": "LexieMariex",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "7ed4675ef67a4cb99cb3e3035dec7ff1"
+	},
 	"LilyPichu": {
-		"birthday": "1991-11-20",
 		"aliases": [
 			"LilyCraftChu"
-		]
+		],
+		"birthday": "1991-11-20",
+		"ign": "LilyCraftChu",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "9d27b5bb86424a2d921e2126d352db37"
 	},
-	"Lincu": {},
-	"LinkTijger": {},
+	"Lincu": {
+		"ign": "Lincu",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "ac75784d8f904486ae54912beacf8233"
+	},
+	"LinkTijger": {
+		"ign": "LinkTijger",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "fd7fb38b78b543309749531b0e0a26f3"
+	},
 	"Lucowskyx": {
 		"aliases": [
 			"lucowskyx"
-		]
+		],
+		"ign": "lucowskyx",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "3cb76bfadd6d4f32800dca4a3bf30b84"
 	},
 	"Ludwig": {
 		"aliases": [
 			"ludwigahgren"
-		]
+		],
+		"ign": "ludwigahgren",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "37784d2d5c4a40a39b1389baa9eba0d7"
 	},
-	"LydRay18": {},
-	"LynxyLiam": {},
+	"LydRay18": {
+		"ign": "LydRay18",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "b0d6f075c8174722b6e538fedecd933d"
+	},
+	"LynxyLiam": {
+		"ign": "LynxyLiam",
+		"uuid": "unresolvable"
+	},
 	"M4NG0": {
 		"aliases": [
 			"_M4NG0_"
-		]
+		],
+		"ign": "_M4NG0_",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "fd12b032b849402890e4c75229e7a397"
 	},
-	"Maezes": {},
-	"MakoInari": {},
+	"Maezes": {
+		"ign": "Maezes",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "a3d6918f531d409697a01da58016ba6c"
+	},
+	"MakoInari": {
+		"ign": "MakoInari",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "469fdc6056a6439ca615e53b72b4e88f"
+	},
 	"Mara Holmes": {
 		"aliases": [
 			"SherlockHulmes"
-		]
+		],
+		"ign": "SherlockHulmes",
+		"uuid": "unresolvable"
 	},
 	"Marbar_x": {
 		"aliases": [
 			"marbar_x"
-		]
+		],
+		"ign": "marbar_x",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "49960fbcce684022b39787af98c7992d"
 	},
-	"Marielitai": {},
+	"Marielitai": {
+		"ign": "Marielitai",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "ad8a692b65384e93b4f6a33c7896cd0b"
+	},
 	"Marki Sparki": {
 		"aliases": [
 			"Markisparki66"
-		]
+		],
+		"ign": "Markisparki66",
+		"uuid": "unresolvable"
 	},
-	"Marma1ade": {},
-	"MathoX": {},
+	"Marma1ade": {
+		"ign": "Marma1ade",
+		"island": {
+			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
+		},
+		"uuid": "47ca94f6ea6443908005329fab44991d"
+	},
+	"MathoX": {
+		"ign": "MathoX",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "4c8b46f2df0c44179bc312a025fcca85"
+	},
 	"MaxGGs": {
-		"birthday": "2005-10-22",
 		"aliases": [
 			"MaxTLL"
-		]
+		],
+		"birthday": "2005-10-22",
+		"ign": "MaxTLL",
+		"uuid": "unresolvable"
 	},
-	"Mefs": {},
-	"Mejoraas": {},
+	"Mefs": {
+		"ign": "Mefs",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "d867c718264b4f389c3eed5e9b1d13f8"
+	},
+	"Mejoraas": {
+		"ign": "Mejoraas",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "0a5d3db40be94990918d3ddbcb47c349"
+	},
 	"MeowyNissi": {
 		"aliases": [
 			"meowynissi"
 		]
 	},
 	"Michaelmcchill": {
-		"birthday": "1996-08-04"
+		"birthday": "1996-08-04",
+		"ign": "Michaelmcchill",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "82cf070bcb394fcdbf8c50c125f6a9d1"
 	},
 	"Midmysticx": {
-		"birthday": "2004-04-23"
+		"birthday": "2004-04-23",
+		"ign": "Midmysticx",
+		"island": {
+			"battlebox": {
+				"games": 0,
+				"wins": 490
+			},
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00",
+			"skybattle": {
+				"games": 0,
+				"wins": 0
+			},
+			"tgttos": {
+				"games": 89,
+				"wins": 3
+			}
+		},
+		"uuid": "3c767588bfed4d789adeecf2d00f4b07"
 	},
 	"Mike Channell": {
 		"aliases": [
 			"OX_Mike"
-		]
+		],
+		"ign": "OX_Mike",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "5827fe00193b4ed4a31b988704430c7c"
 	},
 	"Mikecrack": {
-		"birthday": "1993-05-27"
+		"birthday": "1993-05-27",
+		"ign": "Mikecrack",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "35180160856c49a8be2be362027e8634"
 	},
 	"Mini Muka": {
 		"aliases": [
 			"MiniMuka"
-		]
+		],
+		"ign": "MiniMuka",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "60ab22bc6d2b4f73af6873c12990a5a0"
 	},
 	"Mishifu": {
-		"birthday": "2000-03-03",
 		"aliases": [
 			"ElMishifu"
-		]
+		],
+		"birthday": "2000-03-03",
+		"ign": "ElMishifu",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "bd1e53332a234d31b150d06d037a1e11"
 	},
-	"Mitzefy": {},
+	"Mitzefy": {
+		"ign": "Mitzefy",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "584ee35bd40f46c392174e250d9d728c"
+	},
 	"Mizzrowe": {
 		"aliases": [
 			"mizzrowe"
-		]
+		],
+		"ign": "mizzrowe",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "d858809aae1f4b6e9cd80e2ca5b13fad"
 	},
 	"Mogswamp": {
-		"birthday": "1996-06-25"
+		"birthday": "1996-06-25",
+		"ign": "Mogswamp",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "381bdb2c02b14ad78295d10c95dfc569"
 	},
 	"Mousie": {
 		"aliases": [
 			"Mousie_Mouse"
-		]
+		],
+		"ign": "Mousie_Mouse",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "547c744cb30349d594fe0e9654d1c1df"
 	},
-	"MrBeardstone": {},
+	"MrBeardstone": {
+		"ign": "MrBeardstone",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "a52d249c914e4f5988a10037604369cc"
+	},
 	"Mumbo Jumbo": {
-		"birthday": "1995-12-01",
 		"aliases": [
 			"Mumbo"
-		]
+		],
+		"birthday": "1995-12-01",
+		"ign": "Mumbo",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "ac224782efff4296b08cdbde8e47abdb"
 	},
-	"Muselk": {},
+	"Muselk": {
+		"ign": "MrMuselk",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "386d93440dbd45339d547482cf388d79"
+	},
 	"Musicman1017": {
 		"aliases": [
 			"musicman1017"
-		]
+		],
+		"ign": "musicman1017",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "968acd92e211497387c789d36f0b6816"
 	},
 	"Mysticat": {
-		"birthday": "1998-01-19",
 		"aliases": [
 			"mysticat_"
-		]
+		],
+		"birthday": "1998-01-19",
+		"ign": "mysticat_",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "569ee7f86632475b9f2ce615ea7e37b1"
 	},
 	"Mythical Sausage": {
-		"birthday": "1990-08-09",
 		"aliases": [
 			"MythicalSausage"
-		]
+		],
+		"birthday": "1990-08-09",
+		"ign": "MythicalSausage",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "49fb0ab6217749b8a35f7b16736cf480"
 	},
 	"NanoKim": {
 		"aliases": [
 			"NanoSounds"
-		]
+		],
+		"ign": "NanoSounds",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "01fac28e2ec347e0a80d691ed3b55f8d"
 	},
 	"NettyPlays": {
-		"birthday": "1987-11-07"
+		"birthday": "1987-11-07",
+		"ign": "NettyPlays",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "b24a0b59bceb42e2946043e241d5ca7d"
 	},
 	"Nicacola": {
 		"aliases": [
 			"Nicacolas"
-		]
+		],
+		"ign": "nicacola",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "332f1a05b6434bd0acb8053253e1fb44"
 	},
-	"Nihachu": {},
+	"Nihachu": {
+		"ign": "Nihachu",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "b125bcb1124b457eb8b015dfcbb23c0c"
+	},
 	"Nina Serena": {
 		"aliases": [
 			"NinaSerena"
-		]
+		],
+		"ign": "Nina Serena",
+		"uuid": "unresolvable"
 	},
 	"NomadOfTheWorld": {
 		"aliases": [
 			"NomadWorld"
-		]
+		],
+		"ign": "NomadWorld",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "61506f29e8ca4293a989f5d0d1dc03cc"
 	},
-	"Nominalgravy": {},
-	"NotNotBrock": {},
+	"Nominalgravy": {
+		"ign": "Nominalgravy",
+		"island": {
+			"battlebox": {
+				"games": 9253,
+				"wins": 5869
+			},
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00",
+			"skybattle": {
+				"games": 2203,
+				"wins": 247
+			},
+			"tgttos": {
+				"games": 476,
+				"wins": 40
+			}
+		},
+		"uuid": "d66c301e2485434ebe7cf9c5e8adcfe8"
+	},
+	"NotNotBrock": {
+		"ign": "NotNotBrock",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "c2ddd9791c3a4a6593982802b12d6891"
+	},
 	"Nukeri": {
 		"aliases": [
 			"Nukerii"
-		]
+		],
+		"ign": "Nukerii",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "595497d79a254d11896e68181cc757a1"
 	},
 	"Nuvia": {
 		"aliases": [
 			"Nuvia_"
-		]
+		],
+		"ign": "Nuvia_",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "cc9f7b744f6440e8b223b19ffb30e0d1"
 	},
-	"OllieGamerz": {},
+	"OllieGamerz": {
+		"ign": "OllieGamerz",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "08724344a5af428399fa5a7bfb39b137"
+	},
 	"Osiefish": {
-		"birthday": "1991-04-07",
 		"aliases": [
 			"osiefish"
-		]
+		],
+		"birthday": "1991-04-07",
+		"ign": "osiefish",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "de4878de3ed44553bc7c0ae6c42948b6"
 	},
 	"OwengeJuice": {
-		"birthday": "1997-06-16",
 		"aliases": [
 			"Owenge_Juice"
-		]
+		],
+		"birthday": "1997-06-16",
+		"ign": "OwengeJuice",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "54f9480caaa243578ecd1982bf90527b"
 	},
-	"PEARLBYTEZ": {},
+	"PEARLBYTEZ": {
+		"ign": "PEARLBYTEZ",
+		"uuid": "unresolvable"
+	},
 	"Paache": {
 		"aliases": [
 			"paache"
-		]
+		],
+		"ign": "paache",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "7b9cb5aa6d374914959255352ead07d6"
 	},
 	"Paeadams": {
-		"birthday": "2006-04-29"
+		"birthday": "2006-04-29",
+		"ign": "Paeadams",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "ed3fbb56edba4f2a98b93867336c5248"
+	},
+	"PaintingRainbows": {
+		"aliases": [
+			"Rainbows"
+		],
+		"ign": "PaintingRainbows",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "0316f66e252046fa8af9b006972509ca"
 	},
 	"Pangi": {
-		"birthday": "2004-09-10"
+		"birthday": "2004-09-10",
+		"ign": "Pangi",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "4f549297db6349bd87d6db4c4333c776"
 	},
 	"PearlescentMoon": {
-		"birthday": "1996-06-13"
+		"birthday": "1996-06-13",
+		"ign": "PearlescentMoon",
+		"island": {
+			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"uuid": "75c863aebb92486d911c53030c552be0"
 	},
 	"Pedguin": {
-		"birthday": "1992-10-20",
 		"aliases": [
 			"PedguinTV"
-		]
+		],
+		"birthday": "1992-10-20",
+		"ign": "PedguinTV",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "ec1291da73774ffea3b29fc08e4d72df"
 	},
-	"Peeporp": {},
+	"Peeporp": {
+		"ign": "Peeporp",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "e19aa539fd8a4f2d985245122badba31"
+	},
 	"PeteZahHutt": {
-		"birthday": "1997-03-14"
+		"birthday": "1997-03-14",
+		"ign": "PeteZahHutt",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "7ac3c39f23d5472aa7c924798265fa15"
 	},
 	"Ph1LzA": {
-		"birthday": "1988-03-01"
+		"birthday": "1988-03-01",
+		"ign": "Ph1LzA",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "84555089add149b1a26d8021270a40f0"
 	},
 	"Piso": {
 		"aliases": [
 			"piso4"
-		]
+		],
+		"ign": "piso4",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "10b78948838f4cf586c39aa84074daab"
 	},
-	"Pixlriffs": {},
+	"Pixlriffs": {
+		"ign": "Pixlriffs",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "76530193e1354f058f9c79fa28c054b8"
+	},
 	"Plumbella": {
-		"birthday": "1995-07-05",
 		"aliases": [
 			"plumbella"
-		]
+		],
+		"birthday": "1995-07-05",
+		"ign": "plumbella",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "f40af4726459419a837b987ccc3e8acf"
 	},
-	"Plushy33": {},
+	"Plushy33": {
+		"ign": "Plushy33",
+		"island": {
+			"battlebox": {
+				"games": 524,
+				"wins": 292
+			},
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00",
+			"skybattle": {
+				"games": 1127,
+				"wins": 122
+			},
+			"tgttos": {
+				"games": 88,
+				"wins": 21
+			}
+		},
+		"uuid": "431cdc388c0c40fca4ed0c58680fd32c"
+	},
 	"Pokimane": {
-		"birthday": "1996-05-14"
+		"birthday": "1996-05-14",
+		"ign": "pokiman3",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "bac4cbb8dc95425092b9b014e3895e98"
 	},
-	"Ponk": {},
-	"Pressea": {},
+	"Ponk": {
+		"ign": "Ponk",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "20748eb47d6e45ae83c2c6d262274540"
+	},
+	"Pressea": {
+		"ign": "Presssea",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "96687aad96d94bf0b13d99a357f81795"
+	},
 	"PrestonPlayz": {
-		"birthday": "1994-05-04",
 		"aliases": [
 			"TBNRfrags"
-		]
+		],
+		"birthday": "1994-05-04",
+		"ign": "TBNRfrags",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "101a273e00764fc9a4a2814c57d2817f"
 	},
 	"PrinceZam": {
-		"birthday": "2004-04-14"
+		"birthday": "2004-04-14",
+		"ign": "PrinceZam",
+		"island": {
+			"battlebox": {
+				"games": 965,
+				"wins": 578
+			},
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00",
+			"skybattle": {
+				"games": 397,
+				"wins": 34
+			},
+			"tgttos": {
+				"games": 66,
+				"wins": 2
+			}
+		},
+		"uuid": "cae282bbaf8e4b26822f556100c1d215"
 	},
-	"Puji2": {},
-	"Punz": {},
+	"Puji2": {
+		"ign": "Puji2",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "ee78a44f65a643c0a5761f7b0624851b"
+	},
+	"Punz": {
+		"ign": "Punz",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "c30ecb029c1342d28c08984f1acbd8bf"
+	},
 	"Purpled": {
-		"birthday": "2003-10-24"
+		"birthday": "2003-10-24",
+		"ign": "Purpled",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "1218cdf352bd4e18ba24d4b202ec85f3"
 	},
-	"Pyroscythe": {},
+	"Pyroscythe": {
+		"ign": "Pyroscythe",
+		"island": {
+			"battlebox": {
+				"games": 2081,
+				"wins": 1027
+			},
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00",
+			"skybattle": {
+				"games": 301,
+				"wins": 14
+			},
+			"tgttos": {
+				"games": 75,
+				"wins": 1
+			}
+		},
+		"uuid": "3a61cefe67fe4a5890082482da861c83"
+	},
 	"Quackity": {
-		"birthday": "2000-12-28"
+		"birthday": "2000-12-28",
+		"ign": "Quackity",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "26dd0066650149e891b5febedde19041"
 	},
-	"Quig": {},
+	"Quig": {
+		"ign": "Quig",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "15f154bec57642449ab286a4e92fa2d6"
+	},
 	"RAEHASRABIES": {
 		"aliases": [
 			"Raebie"
-		]
+		],
+		"ign": "Fyobie",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "f579569b14234d948d544269a6fa0201"
 	},
-	"RIPmika": {},
+	"RIPmika": {
+		"ign": "RIPmeeks",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "0bd03425aa4c42b190a65494141dd7a6"
+	},
 	"RTGame": {
 		"aliases": [
 			"Magistrex"
-		]
+		],
+		"ign": "Magistrex",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "3e6835f17344435a9a23c2f2441a002c"
 	},
-	"Rafessor": {},
-	"PaintingRainbows": {
-		"aliases": [
-			"Rainbows"
-		]
+	"Rafessor": {
+		"ign": "Rafessor",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "224625e246da436089f72fa21d38b332"
 	},
 	"Rainhoe": {
 		"aliases": [
 			"RainhoeVT"
-		]
+		],
+		"ign": "RainhoeVT",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "081a200f1e55498c9ca243bcb07391da"
 	},
-	"Ranboo": {},
+	"Ranboo": {
+		"ign": "Ranboo",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "284770fdd01a4507a0c947300c7d2b57"
+	},
 	"RaptorGamer": {
 		"aliases": [
 			"RaptorGamer24"
-		]
+		],
+		"ign": "RaptorGamer24",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "9c7d1ef4b7df4b7192bb99c0f0025c2f"
 	},
 	"Ravs": {
 		"aliases": [
 			"Ravsu"
-		]
+		],
+		"ign": "Ravsu",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "7f7458ef32294182885ace1efaf3c5ef"
 	},
 	"Rendog": {
 		"aliases": [
 			"rendog",
 			"Renthedog"
-		]
+		],
+		"ign": "Renthedog",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "2dd0cc3b08254c3ebd993bf07ef27447"
 	},
 	"Rhiannon": {
 		"aliases": [
 			"Weeannon"
-		]
+		],
+		"ign": "Weeannon",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "a9539500b4f94f4f93c0e331b0d27e23"
 	},
 	"Richard Thornton": {
 		"aliases": [
 			"RichardThornton"
-		]
+		],
+		"ign": "Richard Thornton",
+		"uuid": "unresolvable"
 	},
-	"Roguskii": {},
-	"Rosannatxt": {},
-	"Roscumber": {},
-	"RoseThunder": {},
+	"Roguskii": {
+		"ign": "Roguskii",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "2b9be7aaf7ff4180993a4f6bfd8510d4"
+	},
+	"Rosannatxt": {
+		"ign": "Rosannatxt",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "1ffd288f655d47e9997693828d9c5d03"
+	},
+	"Roscumber": {
+		"ign": "Roscumber",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "4556db48862c433aa3d746a79eaa2468"
+	},
+	"RoseThunder": {
+		"ign": "RoseThunder",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "93c2f98a2732414dbee447a9872d8690"
+	},
 	"Rubik": {
 		"aliases": [
 			"Rusbik"
-		]
+		],
+		"ign": "Rusbik",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "0d6e4ed7585e40278617cb9b124cc54e"
 	},
 	"Rubyco": {
 		"aliases": [
 			"RuByc0"
-		]
+		],
+		"ign": "Rubyco_",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "14b44344f2fd4fdc81145505e8e2df38"
 	},
 	"Ryan Higa": {
 		"aliases": [
 			"rhiga"
-		]
+		],
+		"ign": "rhiga",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "504a61571e82458aaf4490c87d8e81e7"
 	},
 	"Ryguyrocky": {
 		"aliases": [
 			"Kryguyrocky",
 			"ryguyrocky"
-		]
+		],
+		"ign": "ryguyrocky",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "0a641e3a6b1546948efb40f3e55e5e2c"
 	},
-	"Rythian": {},
-	"SB737": {},
-	"SadMilkman": {},
+	"Rythian": {
+		"ign": "Rythian",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "2696eceaf7734573890e0352995116ea"
+	},
+	"SB737": {
+		"ign": "SB737",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "98c0bece0232485e8e86fa604d78e62f"
+	},
+	"SadMilkman": {
+		"ign": "SadMilkman",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "50103f844b824b989558a566a009b6fc"
+	},
 	"Saiiren": {},
 	"SandwichLord": {
-		"birthday": "2006-01-06",
 		"aliases": [
 			"SandwichLord_"
-		]
+		],
+		"birthday": "2006-01-06",
+		"ign": "SandwichLord_",
+		"island": {
+			"battlebox": {
+				"games": 14621,
+				"wins": 11224
+			},
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00",
+			"skybattle": {
+				"games": 11324,
+				"wins": 3446
+			},
+			"tgttos": {
+				"games": 252,
+				"wins": 137
+			}
+		},
+		"uuid": "1e2bf44f122f4960a62d7da9609f52e7"
 	},
-	"Sapnap": {},
+	"Sapnap": {
+		"ign": "Sapnap",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "c66f7c8aed0c446990b0421d8ff7ca49"
+	},
 	"Sarahsera": {
 		"aliases": [
 			"sarahsera"
-		]
+		],
+		"ign": "sarahsera",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "d81a4f1608e74bbe8eedb788d5a57104"
 	},
 	"Scot Griswold": {
 		"aliases": [
 			"MysterySalesman"
-		]
+		],
+		"ign": "Scot Griswold",
+		"uuid": "unresolvable"
 	},
-	"Scuffed_Sushi": {},
+	"Scuffed_Sushi": {
+		"ign": "Scuffed_Sushi",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "355b78fc18844fe482eb35611a29a7de"
+	},
 	"SeFirox": {
 		"birthday": "2005-11-14"
 	},
 	"Seapeekay": {
-		"birthday": "1992-05-01"
+		"birthday": "1992-05-01",
+		"ign": "Seapeekay",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "be0cfbc2f626483580c3924268faf27b"
 	},
 	"Serpias": {
-		"birthday": "1999-02-18"
+		"birthday": "1999-02-18",
+		"ign": "Serpias",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "f4eb0da7f0ae41989e44ceeaa558ceed"
 	},
-	"SettingSunset": {},
+	"SettingSunset": {
+		"ign": "SettingSunset",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "45230a16a4954e97821addc50cd9204e"
+	},
 	"Shadoune666": {
-		"birthday": "1996-11-14",
 		"aliases": [
 			"Shadoune777"
-		]
+		],
+		"birthday": "1996-11-14",
+		"ign": "Shadoune777",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "f0f919e9e4e642ce8a139cdd6c33e706"
 	},
-	"Shandrea": {},
+	"Shandrea": {
+		"ign": "Shandrea",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "18ef65d48dc04bb689fa682edbd31132"
+	},
 	"Shubble": {
-		"birthday": "1993-08-20",
 		"aliases": [
 			"ShubbleYT"
-		]
+		],
+		"birthday": "1993-08-20",
+		"ign": "ShubbleYT",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "d79ba1cf79cf42eaa2f887cc2c5a899c"
 	},
 	"Simon Lane": {
 		"aliases": [
 			"Honeydew"
-		]
+		],
+		"ign": "Honeydew",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "8f9bc2ed1bb541ed91be02625c76bd7f"
 	},
 	"Sinnabuns": {
 		"aliases": [
 			"Sinnabuns4"
-		]
+		],
+		"ign": "Sinnabuns4",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "c7793aad0a9f423883201c471f4e246c"
 	},
 	"Skeppy": {
-		"birthday": "2000-01-17"
+		"birthday": "2000-01-17",
+		"ign": "Skeppy",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "8e176c5ac26d4c148efe77b598b8b3ea"
 	},
 	"Skizzleman": {
-		"birthday": "1979-06-07"
+		"birthday": "1979-06-07",
+		"ign": "Skizzleman",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "64de994da7074d8c8a483ffb786c9b99"
 	},
 	"Skyyart": {
 		"aliases": [
 			"SkyyartMC"
-		]
+		],
+		"ign": "SkyyartMC",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "bd309262135546559abae7330dc1605a"
 	},
 	"Slimecicle": {
-		"birthday": "1998-08-12"
+		"birthday": "1998-08-12",
+		"ign": "Slimecicle",
+		"island": {
+			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"uuid": "1a4b294c6c5f49dda5df554ab3cd381e"
 	},
 	"Smajor1995": {
-		"birthday": "1995-11-10"
+		"birthday": "1995-11-10",
+		"ign": "Smajor1995",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "32a8846755ed4ac7983882bf682b33bc"
 	},
 	"SmallAnt": {
 		"aliases": [
 			"Smallant1"
-		]
+		],
+		"ign": "Smallant1",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "869a141e59b5464fbd12d1329636f67f"
 	},
 	"Smallishbeans": {
-		"birthday": "1993-06-29"
+		"birthday": "1993-06-29",
+		"ign": "Smallishbeans",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "69b3107a6d034122b5677652fcc3cdb2"
 	},
 	"Sneegsnag": {
-		"birthday": "1996-09-26"
+		"birthday": "1996-09-26",
+		"ign": "Sneegsnag",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "7c59923124d348bd936cd81560d567a0"
 	},
 	"Snifferish": {
-		"birthday": "2003-02-06"
+		"birthday": "2003-02-06",
+		"ign": "Snifferish",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "902bbee4abf842d5a74bf5fb3c3b48f5"
 	},
-	"Soarinng": {},
-	"SolidarityGaming": {},
-	"SpeedSilver": {},
+	"Soarinng": {
+		"ign": "Soarinng",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "2627268ce8e1454a8c9d4d6f82ade81b"
+	},
+	"SolidarityGaming": {
+		"ign": "SolidarityGaming",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "dcdedb3cb8004414aa64414f17a179a2"
+	},
+	"SpeedSilver": {
+		"ign": "SpeedSilver",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "2efce67dd9bf47d888f474d016da278b"
+	},
 	"Spelda": {
 		"aliases": [
 			"_Spelda_"
-		]
+		],
+		"ign": "Spelda",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "c5a0b57f0474416eb36dd46b3420ba90"
 	},
-	"SpelledNik": {},
+	"SpelledNik": {
+		"ign": "SpelledNik",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "60c0573d57104a8c90e5e244d5e8a2c6"
+	},
 	"Spifey": {
 		"aliases": [
 			"Spifeey"
-		]
+		],
+		"ign": "Spifeey",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "f28b81a628fe4c74ab26f33c0fbaec03"
 	},
-	"Sqaishey": {},
+	"Sqaishey": {
+		"ign": "Sqaishey",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "89ac02970e1e47479aca221a3d0c89c4"
+	},
 	"SquidGaming": {
 		"aliases": [
 			"BigLyds"
-		]
+		],
+		"ign": "BigLyds",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "cb81369151c249c98758d2e4182c7a3c"
 	},
 	"Squiddo": {
 		"aliases": [
 			"TheRealSquiddo"
-		]
+		],
+		"ign": "TheRealSquiddo",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "d4bb44317daf4642bb14a1f8fe9ae101"
 	},
-	"Stemister": {},
+	"Stemister": {
+		"ign": "Stemister",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "90d1423906644bfe8288f18330d7bb11"
+	},
 	"Steph0sims": {
 		"aliases": [
 			"steph0sims"
-		]
+		],
+		"ign": "steph0sims",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "3cd25087aa7d4473bc5ed897cdea26ec"
 	},
 	"Steven Suptic": {
 		"aliases": [
 			"stevesuptic",
 			"Stevesuptic_"
-		]
+		],
+		"ign": "stevesuptic",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "7a848c3d0a68414788b58d45558e024a"
 	},
 	"Strawburry17": {
 		"aliases": [
 			"GamerBurry"
-		]
+		],
+		"ign": "GamerBurry",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "bfc4e0d052964ac7a40989aaf028697e"
 	},
-	"SwitchBackMongo": {},
-	"Sykkuno": {},
+	"SwitchBackMongo": {
+		"ign": "SwitchBackMongo",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "424583b03c4b49ec92fa2d6c9631c99c"
+	},
+	"Sykkuno": {
+		"ign": "Sykkuno",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "b20726ce96a6420592555329d91e7d9f"
+	},
 	"Sylvee": {
 		"aliases": [
 			"sylvee_"
-		]
+		],
+		"ign": "sylvee_",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "aec14d1e14e843cb89ed80d81153bc56"
 	},
 	"Taneesha": {
 		"aliases": [
 			"TaneeshaHogan"
-		]
+		],
+		"ign": "TaneeshaHogan",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "33350a0f13d14c0b8e031598ed9ee0ad"
 	},
 	"TangoTek": {
 		"aliases": [
 			"Tango"
-		]
+		],
+		"ign": "Tango",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "62fec5a318964beb94e036e34898c787"
 	},
-	"TankMatt": {},
+	"TankMatt": {
+		"ign": "TankMatt",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "45472b35a70740dea6c4d67aea361f5c"
+	},
 	"TapL": {
-		"birthday": "2001-05-07"
+		"birthday": "2001-05-07",
+		"ign": "TapL",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "2e12870c08ec4337bc2e8fbf54e79853"
 	},
 	"Technoblade": {
-		"birthday": "1999-06-01"
+		"birthday": "1999-06-01",
+		"ign": "Technoblade",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "b876ec32e396476ba1158438d83c67d4"
 	},
-	"TheBlazer97": {},
+	"TheBlazer97": {
+		"ign": "TheBlazer97",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "744f344f2f5a4610aa8fe30053312812"
+	},
 	"TheGuill84": {
-		"birthday": "1998-12-11"
+		"birthday": "1998-12-11",
+		"ign": "TheGuill84",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "6a6887fedd7c4f0498b1e358ce75c377"
 	},
 	"TheMagmaBoi": {
 		"aliases": [
 			"themagmaboi"
-		]
+		],
+		"ign": "themagmaboi",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "af38c349a46946a0b515f3d000b39ad3"
 	},
 	"TheOrionSound": {
-		"birthday": "1995-07-11",
 		"aliases": [
 			"OrionSound"
-		]
+		],
+		"birthday": "1995-07-11",
+		"ign": "OrionSound",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "2c3237c87b224d18a5fcc09066825947"
 	},
-	"TheSpiffingBrit": {},
+	"TheSpiffingBrit": {
+		"ign": "TheSpiffingBrit",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "b957f80f7cb3483aa37ebc9c66cada6e"
+	},
 	"TibbyCaps": {
 		"aliases": [
 			"tibbycaps"
-		]
+		],
+		"ign": "tibbycaps",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "43a2e3fdac9b4aafbbbb78a89a39652e"
 	},
 	"TinaKitten": {
-		"birthday": "1998-06-30",
 		"aliases": [
 			"TeanaKitten"
-		]
+		],
+		"birthday": "1998-06-30",
+		"ign": "TeanaKitten",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "57d77b5a531c4c22a42450190976b369"
 	},
 	"TinyCherry": {
 		"aliases": [
 			"DraCherry"
-		]
+		],
+		"ign": "DraCherry",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "57edc4ca1e5c40e1bf3d3daba66f8d5c"
 	},
 	"Tom Hazell": {
 		"aliases": [
 			"Amadeus_Fink"
-		]
+		],
+		"ign": "Amedeus_Fink",
+		"uuid": "unresolvable"
 	},
 	"TomatoBisqueSoup": {
 		"aliases": [
 			"tomatobisque_"
-		]
+		],
+		"ign": "TomatoBisqueSoup",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "3b3bd935c9bd466697cb647465b02674"
 	},
 	"TommyInnit": {
-		"birthday": "2004-04-09"
+		"birthday": "2004-04-09",
+		"ign": "TommyInnit",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "e80e8194323e414298515e1bcb8a3508"
 	},
-	"ToxxxicSupport": {},
+	"ToxxxicSupport": {
+		"ign": "ToxxxicSupport",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "18428829c4824927a6b71579e26e87ac"
+	},
 	"Tubbo": {
-		"birthday": "2003-12-23",
 		"aliases": [
 			"Tubbo_",
 			"Tubbo_Clone_"
-		]
+		],
+		"birthday": "2003-12-23",
+		"ign": "Tubbo_",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "06f7cd124f00434285f6956b1ca48d38"
 	},
-	"Ulraf": {},
+	"Ulraf": {
+		"ign": "Ulraf",
+		"island": {
+			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"uuid": "c7f794715f294c4a966645329d01e43c"
+	},
 	"Valkyrae": {
 		"aliases": [
 			"ItsValkyrae"
-		]
+		],
+		"ign": "ItsValkyrae",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "c65d85c527b44d9486c1c9440967ebaa"
 	},
-	"Vapekit": {},
+	"Vapekit": {
+		"ign": "Vapekit",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "31bb330f3baf43619044030ac80c9c69"
+	},
 	"VelvetIsCake": {
 		"aliases": [
 			"RedVelvetCake"
-		]
+		],
+		"ign": "RedVelvetCake",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "c99630c0ab2247e1a500667f0ae42b0f"
 	},
 	"Vickypalami": {
 		"aliases": [
 			"vickypalami"
-		]
+		],
+		"ign": "vickypalami",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "d7b8b76a697548809eeeb45901426d94"
 	},
 	"VikingPilot": {
-		"ign": "VikingPilot"
+		"ign": "VikingPilot",
+		"island": {
+			"battlebox": {
+				"games": 93,
+				"wins": 27
+			},
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00",
+			"skybattle": {
+				"games": 4,
+				"wins": 0
+			},
+			"tgttos": {
+				"games": 2,
+				"wins": 0
+			}
+		},
+		"uuid": "964456cbe0614be2b456d0bd8f97e395"
 	},
 	"Vikkstar123": {
-		"birthday": "1995-08-02",
 		"aliases": [
 			"Vikkkkkstarrrrrr"
-		]
+		],
+		"birthday": "1995-08-02",
+		"ign": "Vikkkkkstarrrrrr",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "a8e82141c62948aab24b45a51fcb79c7"
 	},
-	"VintageBeef": {},
-	"Vixella": {},
+	"VintageBeef": {
+		"ign": "VintageBeef",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "2f72315024de44ffaeee87c75f7c7a9e"
+	},
+	"Vixella": {
+		"ign": "Vixella",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "8325c0d8bf3c4db3990072bf6f567d83"
+	},
 	"VoiceoverPete": {
 		"aliases": [
 			"VoiceoverPeteAce"
-		]
+		],
+		"ign": "VoiceoverPeteAce",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "fbefb70c2fc848a4a54a044bc348dbc7"
 	},
-	"WadeBox": {},
-	"Wallibear": {},
-	"watermunch": {
-		"aliases": [
-			"Watermunch"
-		]
+	"WadeBox": {
+		"ign": "WadeBox",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "21a1c3954ac84c2fa69a4699a146fda5"
+	},
+	"Wallibear": {
+		"ign": "Wallibear",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "0f102fc922654de2b9391172cd942e39"
 	},
 	"Welsknight": {
-		"birthday": "1989-10-27"
+		"birthday": "1989-10-27",
+		"ign": "Welsknight",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "8fc22d294bac4abe84d47920ed4afe47"
 	},
-	"WendyJr": {},
+	"WendyJr": {
+		"ign": "WendyJr",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "6aed2fe46b1d4efd8e4f0bf533c254df"
+	},
 	"Wichtiger": {
-		"birthday": "2005-09-16"
+		"birthday": "2005-09-16",
+		"ign": "Wichtiger",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "0508c8d83cba46c39275db20d2d99ceb"
 	},
 	"Wilbur Soot": {
 		"aliases": [
 			"WilburSoot"
-		]
+		],
+		"ign": "WilburSoot",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "d6ebd3e3c0ef4e5a80db6ee537115a17"
 	},
-	"Wisp": {},
+	"Wisp": {
+		"ign": "Wisp",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "5529ca0671ce49369c485cd0e55ed3b6"
+	},
 	"WithMayX": {
-		"birthday": "2005-10-07",
 		"aliases": [
 			"WithMay"
-		]
+		],
+		"birthday": "2005-10-07",
+		"ign": "WithMayX",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "144b1f9deb59419591ee50db951ea274"
 	},
 	"Wolfeei": {
-		"birthday": "2002-06-08"
+		"birthday": "2002-06-08",
+		"ign": "Wolfeei",
+		"island": {
+			"battlebox": {
+				"games": 7331,
+				"wins": 4239
+			},
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00",
+			"skybattle": {
+				"games": 842,
+				"wins": 68
+			},
+			"tgttos": {
+				"games": 121,
+				"wins": 9
+			}
+		},
+		"uuid": "2a932fbde2454dcf89679ae596f22fb1"
 	},
-	"Wolv21": {},
+	"Wolv21": {
+		"ign": "Wolv21",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "fd6de33e3a2343b294493c3749e88499"
+	},
 	"Wondernat": {
 		"aliases": [
 			"Wondernat_"
-		]
+		],
+		"ign": "WonderNat",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "5eecd6c805634bc0a1f1b0fe9c9f4ad3"
 	},
-	"xBCrafted": {
-		"aliases": [
-			"XBCrafted"
-		]
+	"Xilefian": {
+		"ign": "Xilefian",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "50c14e90747844bfadee55fb0196efd5"
 	},
-	"xChocoBars": {
-		"birthday": "1994-11-05",
-		"aliases": [
-			"XChocoBars",
-			"xRizzBars"
-		]
-	},
-	"Xilefian": {},
 	"Xisumavoid": {
 		"aliases": [
 			"Xisuma"
-		]
+		],
+		"ign": "Xisuma",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "21ef397c3a764eb7aa17a99d3fc658e2"
 	},
 	"Yammyxox": {
 		"aliases": [
 			"yammy_xox"
-		]
+		],
+		"ign": "yammy_xox",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "ddac881340eb45e09ed8e7bd2d86e128"
 	},
-	"Yeetdaisie": {},
-	"YelloWool": {},
-	"yomikester238": {
-		"aliases": [
-			"Yomikester238"
-		]
+	"Yeetdaisie": {
+		"ign": "yeetdaisie",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "619af51e90ae48b8a9959c237d5df212"
 	},
-	"Yoshinom": {},
+	"YelloWool": {
+		"ign": "YelloWool",
+		"island": {
+			"battlebox": {
+				"games": 0,
+				"wins": 22
+			},
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00",
+			"skybattle": {
+				"games": 0,
+				"wins": 0
+			},
+			"tgttos": {
+				"games": 10,
+				"wins": 3
+			}
+		},
+		"uuid": "35b74283d9d44998aa24a9964c0f088e"
+	},
+	"Yoshinom": {
+		"ign": "Yoshinom",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "885b2f8e13164ef4a3b93bd9ade2764a"
+	},
 	"Zedaph": {
-		"birthday": "1992-12-08"
+		"birthday": "1992-12-08",
+		"ign": "Zedaph",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "f9c3c385f403403cb5b7867e012e9660"
 	},
 	"Zoey Proasheck": {
 		"aliases": [
 			"Zoeya"
-		]
+		],
+		"ign": "zoeya",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "7bf5078c16424e1592bfea8ad00dd7ef"
 	},
-	"ZombieCleo": {},
+	"ZombieCleo": {
+		"ign": "ZombieCleo",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "a3075fa7ec1349a2aa476529e8b7daf2"
+	},
 	"Zylus": {
 		"aliases": [
 			"Zylush"
-		]
+		],
+		"ign": "Zylus",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "6d76ce6035eb4196a9e883299109e976"
 	},
-	"aCookieGod": {},
-	"acho": {},
-	"aldo_geo": {},
+	"aCookieGod": {
+		"ign": "aCookieGod",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "e6b69bb608264073a61b13137b5dc8f1"
+	},
+	"acho": {
+		"ign": "acho",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "562ad2cf58154fdbad94a8eabd22bd08"
+	},
+	"aimsey": {
+		"aliases": [
+			"Aimsey"
+		],
+		"birthday": "2001-12-11",
+		"ign": "aimsey",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "dd25fe9f186546678fe9eacb18d01d31"
+	},
+	"aldo_geo": {
+		"ign": "aldo_geo",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "1306e8d763414f11b49e9fc3869dbf2c"
+	},
 	"apokuna": {
-		"birthday": "2002-09-09"
+		"birthday": "2002-09-09",
+		"ign": "apokuna",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "aa0df59fb1ef46139a7003a7f9573cc3"
 	},
 	"ashswag": {
-		"birthday": "2004-01-16",
 		"aliases": [
 			"ashswagg"
-		]
+		],
+		"birthday": "2004-01-16",
+		"ign": "ashswagg",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "909b156ff022491bbd0adf41cb88041d"
 	},
-	"awesamdude": {},
-	"aypierre": {},
+	"awesamdude": {
+		"ign": "awesamdude",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "4777615aa8394b8fa8fbe57996b1e3d9"
+	},
+	"aypierre": {
+		"ign": "aypierre",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "6c4ea7ffb834408c9368fbd2a164ee0c"
+	},
 	"bekyamon": {
-		"birthday": "1997-10-31"
+		"aliases": [
+			"Bekyamon"
+		],
+		"birthday": "1997-10-31",
+		"ign": "bekyamon",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "2bbb5709ebd448388cd7466efc42db11"
 	},
 	"billzo": {
-		"birthday": "2004-08-15",
 		"aliases": [
 			"billzo_"
-		]
+		],
+		"birthday": "2004-08-15",
+		"ign": "billzo_",
+		"island": {
+			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"uuid": "0638d540576e42c0baaddea5805c7e43"
 	},
 	"blaustoise": {
 		"aliases": [
 			"blowstoise"
-		]
+		],
+		"ign": "blowstoise",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "0fa8842dc36246bcb7f14a8f743647da"
 	},
-	"buggy9000": {},
-	"caitees": {},
-	"coldified": {},
+	"buggy9000": {
+		"ign": "buggy9000",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "9c11c54aa4b74b4abf3f15329fcce9f5"
+	},
+	"caitees": {
+		"ign": "caitees",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "f2e938dad3a543448797d302c4600c4e"
+	},
+	"coldified": {
+		"ign": "coldified",
+		"island": {
+			"battlebox": {
+				"games": 182,
+				"wins": 141
+			},
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00",
+			"skybattle": {
+				"games": 1378,
+				"wins": 443
+			},
+			"tgttos": {
+				"games": 4,
+				"wins": 0
+			}
+		},
+		"uuid": "7e8a77cadaf14224ae1d2df8bab1eccb"
+	},
 	"cubfan135": {
-		"birthday": "1989-08-20"
+		"aliases": [
+			"Cubfan135"
+		],
+		"birthday": "1989-08-20",
+		"ign": "cubfan135",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "88e2afec6f2e4a34a96ade61730bd3ca"
 	},
 	"deusamir": {
 		"aliases": [
 			"DeusAmir"
-		]
+		],
+		"ign": "AmirShuek",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "e4eaab33fbc44145984c6cb527d1894b"
 	},
-	"fWhip": {},
+	"fWhip": {
+		"ign": "fWhip",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "ca2eb47eef664f6391e0939b76047f27"
+	},
 	"fanfan": {
-		"birthday": "2000-01-10"
+		"birthday": "2000-01-10",
+		"ign": "issfanfan",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "8e45c3bf40bb48b1947a87017e381e92"
 	},
 	"fruitberries": {
-		"birthday": "2002-08-28"
+		"aliases": [
+			"Fruitberries"
+		],
+		"birthday": "2002-08-28",
+		"ign": "fruitberries",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "4d2eb01544af45ae9a2ca6a7bcbae7a4"
 	},
-	"garlicmint": {},
+	"garlicmint": {
+		"ign": "garlicmint",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "2a7fc364c5b541ba8fd272c899609c57"
+	},
 	"ghostiefruit": {
-		"birthday": "2003-02-13"
+		"aliases": [
+			"Ghostiefruit"
+		],
+		"birthday": "2003-02-13",
+		"ign": "ghostiefruit",
+		"island": {
+			"battlebox": {
+				"games": 3065,
+				"wins": 1858
+			},
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00",
+			"skybattle": {
+				"games": 2608,
+				"wins": 190
+			},
+			"tgttos": {
+				"games": 90,
+				"wins": 2
+			}
+		},
+		"uuid": "8c3d406f950e4761a7f10cf3202be59b"
 	},
 	"guqqie": {
-		"birthday": "2001-09-14"
+		"birthday": "2001-09-14",
+		"ign": "guqqie",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "9516b763ed04462bb73017a355778f69"
 	},
-	"hannahxxrose": {},
+	"hannahxxrose": {
+		"aliases": [
+			"Hannahxxrose"
+		],
+		"birthday": "2000-02-28",
+		"ign": "hannahxxrose",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "5237b4b75eed421da43f0e4968e69207"
+	},
 	"highkeyhateme": {
-		"birthday": "2002-06-20"
+		"birthday": "2002-06-20",
+		"ign": "highkeyoli",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "bad1560ec4934ca5982a4c6997f243bc"
 	},
-	"hypnotizd": {},
-	"iHasCupquake": {},
+	"hypnotizd": {
+		"ign": "hypnotizd",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "b0015b938a5d461d99913cfa23e3296f"
+	},
+	"iHasCupquake": {
+		"ign": "ihasCupquake",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "d0c203d5a5054d298009c872b55fe6c0"
+	},
 	"iJevin": {
-		"birthday": "1987-12-29",
 		"aliases": [
 			"IJevin"
-		]
+		],
+		"birthday": "1987-12-29",
+		"ign": "iJevin",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "3f28c55908984be19f209fd37ca9cd22"
 	},
 	"iiTzTimmy": {
-		"birthday": "2000-04-19",
 		"aliases": [
 			"Not_iiTzTimmy"
-		]
+		],
+		"birthday": "2000-04-19",
+		"ign": "Not_iiTzTimmy",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "9493b7c63fb9495cb891abed99498fc0"
 	},
-	"iicbunnyx": {},
+	"iicbunnyx": {
+		"ign": "nils_kills",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "afa4f9a3c11b4a6284da6d73c0b9fd1e"
+	},
 	"impulseSV": {
-		"birthday": "1981-03-09"
+		"birthday": "1981-03-09",
+		"ign": "impulseSV",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "f6fe2200609d4fe688b6529d59ee5b71"
 	},
 	"ish13c": {
-		"birthday": "2001-09-27"
+		"aliases": [
+			"Ish13c"
+		],
+		"birthday": "2001-09-27",
+		"ign": "ish13c",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "28d048bd0fc54283ade3f9b3e7676cd4"
 	},
 	"iskall85": {
-		"birthday": "1985-12-30"
+		"birthday": "1985-12-30",
+		"ign": "iskall85",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "7ed3587be656468990d608e11daaf907"
 	},
 	"jojosolos": {
-		"birthday": "1999-09-09"
+		"aliases": [
+			"Jojosolos"
+		],
+		"birthday": "1999-09-09",
+		"ign": "jojosolos",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "d96b2fdf3ffd42d1a1ed3b26b3d5e173"
 	},
 	"jvckk": {
 		"aliases": [
 			"jvckbears"
-		]
+		],
+		"ign": "jvckbears",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "7be472db4f2e43eca049e77be7bfd1f4"
 	},
 	"kkatamina_": {
-		"birthday": "1995-11-09",
 		"aliases": [
 			"KKatamina_"
-		]
+		],
+		"birthday": "1995-11-09",
+		"ign": "Kkatamina_",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "dc30a2c3eb784914b5fd28afb2d6accb"
 	},
-	"lynrose": {},
-	"millkberry": {},
-	"mintsleaves": {},
+	"lynrose": {
+		"ign": "lynrose",
+		"island": {
+			"battlebox": {
+				"games": 34058,
+				"wins": 21314
+			},
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00",
+			"skybattle": {
+				"games": 4866,
+				"wins": 460
+			},
+			"tgttos": {
+				"games": 839,
+				"wins": 100
+			}
+		},
+		"uuid": "a00847ed51a74d4c80e8dc46e3994cb4"
+	},
+	"millkberry": {
+		"ign": "millkberry",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "5a5e6692a5db4a35b4152a9247ec8c70"
+	},
+	"mintsleaves": {
+		"ign": "mintsleaves",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "2220afcd7b4a4287a7b80880672dc37b"
+	},
 	"misfitclover": {
 		"aliases": [
 			"misfitclovers"
-		]
+		],
+		"ign": "misfitclover",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "8aa771dd73f44fe9a3f87f2e8da389d3"
 	},
 	"nooreax": {
 		"aliases": [
 			"noooreax"
-		]
+		],
+		"ign": "noooreax",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "80ecb9ba6b274a25ae5a22bc78030ae2"
 	},
-	"olivesleepy": {},
-	"p_izzato": {},
-	"pearcups": {},
-	"queen_ov_drama": {},
-	"riiceandbeanss": {},
-	"roseriie": {},
-	"rusty_courage": {},
+	"olivesleepy": {
+		"ign": "olivesleepy",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "be28effff4dc4c5c8717910bcbb8afbc"
+	},
+	"p_izzato": {
+		"ign": "p_izzato",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "b834b23017fa47e6af5a2fd9303a6c0c"
+	},
+	"pearcups": {
+		"ign": "pearcups",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "8338de2e935549639d218c6f6a20368d"
+	},
+	"queen_ov_drama": {
+		"ign": "queen_ov_drama",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "9500ab2e678c43c689b9d00ebbf220eb"
+	},
+	"riiceandbeanss": {
+		"ign": "riiceandbeanss",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "27008b635a2f4cbe896382da5766899e"
+	},
+	"roseriie": {
+		"ign": "roseriie",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "0361ec6cb52040ce9da0eca35209743a"
+	},
+	"rusty_courage": {
+		"ign": "rusty_courage",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "60ba04986d064910aacb7edbb666d8bd"
+	},
 	"shadowatnoon": {
-		"birthday": "1997-04-28",
 		"aliases": [
 			"shadowatno0n"
-		]
+		],
+		"birthday": "1997-04-28",
+		"ign": "shadowatno0n",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "c47d9f46947e456796926f4eb9f928c8"
 	},
-	"sinaheh": {},
+	"sinaheh": {
+		"ign": "sinaheh",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "bcd5d8c8fd6f4179a04176b5513c2f75"
+	},
 	"sleepy": {
 		"aliases": [
 			"sleepai"
-		]
+		],
+		"ign": "sleepai",
+		"island": {
+			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"uuid": "f9cac06540f24421af2c051ed943dc23"
 	},
-	"soupforeloise": {},
-	"spoinkTV": {},
+	"soupforeloise": {
+		"ign": "soupforeloise",
+		"island": {
+			"lastupdate": "2026-10-25T17:47:30.373988+00:00"
+		},
+		"uuid": "db7ecf6f52b643eaa764d8362c45e5f8"
+	},
+	"spoinkTV": {
+		"ign": "spoinkTV",
+		"island": {
+			"lastupdate": "2026-10-25T17:47:30.373988+00:00"
+		},
+		"uuid": "6958a3f323a843bc8fdff23d83a77ea1"
+	},
 	"starvtuber": {
 		"aliases": [
 			"starvtuberr"
-		]
+		],
+		"ign": "starvtuberr",
+		"island": {
+			"lastupdate": "2026-10-25T17:47:30.373988+00:00"
+		},
+		"uuid": "ae2322b071d54cdfa5457085a9e91de1"
 	},
 	"vGumiho": {
-		"birthday": "1998-08-10"
+		"birthday": "1998-08-10",
+		"ign": "vGumiho",
+		"island": {
+			"lastupdate": "2026-10-25T17:47:30.373988+00:00"
+		},
+		"uuid": "5724e7d575844870892095b0ba159846"
 	},
 	"vintage_applesauce": {
 		"aliases": [
 			"vintageapples"
-		]
+		],
+		"ign": "vintageapples",
+		"island": {
+			"lastupdate": "2026-10-25T17:47:30.373988+00:00"
+		},
+		"uuid": "924775065bbb408b988da834ccfc9d08"
 	},
-	"xNestorio": {}
+	"watermunch": {
+		"aliases": [
+			"Watermunch"
+		],
+		"ign": "watermunch",
+		"island": {
+			"lastupdate": "2026-10-25T17:47:30.373988+00:00"
+		},
+		"uuid": "8e700fb889774553ae41aff33c2afb15"
+	},
+	"xBCrafted": {
+		"aliases": [
+			"XBCrafted"
+		],
+		"ign": "xBCrafted",
+		"island": {
+			"lastupdate": "2026-10-25T17:47:30.373988+00:00"
+		},
+		"uuid": "826cdcffccb042c59104fcd4bb4e7f73"
+	},
+	"xChocoBars": {
+		"aliases": [
+			"XChocoBars",
+			"xRizzBars"
+		],
+		"birthday": "1994-11-05",
+		"ign": "xRizzBars",
+		"island": {
+			"lastupdate": "2026-10-25T17:47:30.373988+00:00"
+		},
+		"uuid": "e2629117f3b5488587d3673fda4f71e1"
+	},
+	"xNestorio": {
+		"ign": "xNestorio",
+		"island": {
+			"lastupdate": "2026-10-25T17:47:30.373988+00:00"
+		},
+		"uuid": "4d2ec0c2f6bc4b6fa2f7b23e8c6ad8d9"
+	},
+	"yomikester238": {
+		"aliases": [
+			"Yomikester238"
+		],
+		"ign": "yomikester238",
+		"island": {
+			"lastupdate": "2026-10-25T17:47:30.373988+00:00"
+		},
+		"uuid": "7ea5b20ea04c41669a323d9ee682e339"
+	}
 }

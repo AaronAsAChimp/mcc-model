@@ -16,6 +16,10 @@
 				"type": "string",
 				"description": "The name of their Minecraft player character"
 			},
+			"uuid": {
+				"type": "string",
+				"description": "The player's Minecraft UUID, or \"unresolvable\" if the player's IGN could not be resolved to a UUID."
+			},
 			"aliases": {
 				"type": "array",
 				"description": "A list of alternate names that will be used to normalize the player",
@@ -27,8 +31,45 @@
 				"type": "string",
 				"format": "date",
 				"description": "Player's date of birth in ISO 8601 (YYYY-MM-DD) format."
+			},
+			"island": {
+				"type": "object",
+				"description": "MCC Island stats to use as a prior in the case of missing or incomplete data.",
+				"properties": {
+					"lastupdate": {
+						"type": "string",
+						"format": "date",
+						"description": "The last time this players MCC Island stats were updated as an ISO 8601 formatted date"
+					},
+					"battlebox": {
+						"$ref": "#/$defs/islandgame"
+					},
+					"tgttos": {
+						"$ref": "#/$defs/islandgame"
+					},
+					"skybattle": {
+						"$ref": "#/$defs/islandgame"
+					}
+				}
 			}
 		},
 		"additionalProperties": false
+	},
+	"$defs": {
+		"islandgame": {
+			"type": "object",
+			"properties": {
+				"games": {
+					"type": "integer",
+					"description": "The number of times the player has played this game.",
+					"minimum": 0
+				},
+				"wins": {
+					"type": "integer",
+					"description": "The number of times the player has won this game.",
+					"minimum": 0
+				}
+			}
+		}
 	}
 }

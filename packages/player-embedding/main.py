@@ -5,7 +5,7 @@ from typing import Any, Optional
 import numpy as np
 import math
 import json
-from shared_core.data import PlayerDataFile
+from shared_core.data import MccIslandGame, MccIslandStats, PlayerDataFile, mcci_win_percentage
 import torch
 from torch.nn.functional import one_hot
 from torch.utils.data import DataLoader, Dataset, Subset
@@ -13,7 +13,7 @@ from torch.nn.utils.rnn import pad_sequence
 from games import GAME_IDS
 
 PLAYERS_PER_TEAM = 4
-FEATURES_PER_PLAYER = 19
+FEATURES_PER_PLAYER = 23
 COINS_SCALE = 35000
 FIRST_MCC_DATE = date.fromisoformat("2019-11-17")
 
@@ -114,8 +114,9 @@ class PlayerTracker:
     previous_team: Optional[set[str]]
     current_team: Optional[set[str]]
     birthday: Optional[date]
+    island: MccIslandStats | None
 
-    def __init__(self, name: str):
+    def __init__(self, name: str, island: MccIslandStats | None):
         self.event_count = 0
         self.placements = []
         self.team_coins = []
@@ -124,6 +125,7 @@ class PlayerTracker:
         self.sum_team_similarity = 0
         self.previous_team = None
         self.current_team = None
+        self.island = island
 
         player_data = PLAYER_DATA.get(name, {})
         birthday = player_data.get('birthday')
@@ -136,7 +138,7 @@ class PlayerTracker:
         placement: int,
         team_coins: int,
         player_coins: int,
-        event_date: date,
+        event_date: date
     ):
         self.previous_team = self.current_team
         self.current_team = new_team
@@ -242,6 +244,22 @@ class PlayerTracker:
         if self.birthday is not None:
             age = math.log((now - self.birthday).days)
 
+        #
+        # MCC Island
+        #
+        
+        mcci_battlebox_wins = None
+        mcci_skybattle_wins = None
+        mcci_tgttos_wins = None
+
+        if self.island is not None:
+            mcci_battlebox = self.island.get('battlebox')
+            mcci_battlebox_wins = mcci_win_percentage(mcci_battlebox) if mcci_battlebox else None
+            mcci_skybattle = self.island.get('skybattle')
+            mcci_skybattle_wins = mcci_win_percentage(mcci_skybattle) if mcci_skybattle else None
+            mcci_tgttos = self.island.get('tgttos')
+            mcci_tgttos_wins = mcci_win_percentage(mcci_tgttos) if mcci_tgttos else None
+
         tensor[0] = (wins / n) if n != 0 else 0
         tensor[1] = ((wins + seconds) / n) if n != 0 else 0
         tensor[2] = scale_coins(team_coin_stats.mean, event_count)
@@ -259,11 +277,16 @@ class PlayerTracker:
         tensor[12] = math.log(n) if n > 0 else 0
         tensor[13] = time_since_first
         tensor[14] = recency
-        tensor[15] = self.sum_team_similarity / event_count if event_count > 0 else 0
+        tensor[15] = self.sum_team_similarity / (event_count - 1) if event_count > 1 else 0
         tensor[16] = 1 if event_count > 0 else 0
 
         tensor[17] = age if age is not None else 0
         tensor[18] = 1 if age is not None else 0
+
+        tensor[19] = mcci_battlebox_wins if mcci_battlebox_wins else 0
+        tensor[20] = mcci_skybattle_wins if mcci_skybattle_wins else 0
+        tensor[21] = mcci_tgttos_wins if mcci_tgttos_wins else 0
+        tensor[22] = 1 if mcci_battlebox_wins is not None and mcci_skybattle_wins is not None and mcci_tgttos_wins is not None else 0
 
         return tensor
 
@@ -274,7 +297,7 @@ class PlayerDataset(Dataset):
     _players: torch.Tensor
     _unknown_player: torch.Tensor
 
-    def __init__(self, extract_filename: str, config_filename: str, now: date):
+    def __init__(self, extract_filename: str, config_filename: str, now: date, player_data: PlayerDataFile):
         with open(config_filename, "r") as fd:
             config = json.load(fd)
 
@@ -313,10 +336,10 @@ class PlayerDataset(Dataset):
                         #
                         # ... or something went terribly wrong in the data
                         # processing step.
-                        player_coins = player_coin_lookup.get(player_name, 0)
+                        player_coins = player_coin_lookup.get(player_name, 0) / COINS_SCALE
 
                         if player_tracker is None:
-                            player_tracker = PlayerTracker(player_name)
+                            player_tracker = PlayerTracker(player_name, player_data[player_name].get('island'))
                             tracker[player_name] = player_tracker
 
                         player_tracker.update(
@@ -419,13 +442,13 @@ class TeamDataset(Dataset):
                         player_name = player_data.normalize_name(players[i])
                         player_names.append(player_name)
                         player_tracker = tracker.get(player_name)
-                        player_coins = player_coin_lookup.get(player_name)
+                        player_coins = player_coin_lookup.get(player_name) / COINS_SCALE
 
                         if player_coins is None:
                             raise Exception(f"No coins for player {player_name}")
 
                         if player_tracker is None:
-                            player_tracker = PlayerTracker(player_name)
+                            player_tracker = PlayerTracker(player_name, player_data[player_name].get('island'))
                             tracker[player_name] = player_tracker
 
                         team_tensor[i] = player_tracker.to_tensor(event_date)
@@ -682,42 +705,42 @@ def train():
 
 
 def run():
-    player_dataset = PlayerDataset(EXTRACTS_FILENAME, CONFIG_FILENAME, date.today())
-
-    model = TeamPlacementPredictor(player_dataset.get_player_count())
-    model.load_state_dict(torch.load(MODEL_FILENAME, weights_only=True))
-    model.eval()
-
-    event = {
-        "games": [
-            "skybattle",
-            "meltdown",
-            "battlebox",
-            "railroadrush",
-            "acerace",
-            "sandsoftime",
-            "rocketspleefrush",
-            "gridrunners"
-        ],
-
-        "teams": {
-            "redrabbits": ["Feinberg", "heyGraecie", "PrinceZam", "Rendog"],
-            "orangeocelots": ["Cambam010", "DarkEyebrows", "Pangi", "ZombieCleo"],
-            "yellowyaks": ["4CVIT", "ashswag", "Mogswamp", "vGumiho"],
-            "limellamas": ["Legundo", "Shubble", "Smajor1995", "VikingPilot"],
-            "greengeckos": ["GeminiTay", "Purpled", "Roscumber", "TheOrionSound"],
-            "cyancoyotes": ["Grian", "InfiniteDrift", "PeteZahHutt", "soupforeloise"],
-            "aquaaxolotls": ["5up", "Couriway", "iJevin", "impulseSV"],
-            "bluebats": ["apokuna", "falsesymmetry", "Krinios", "Maezes"],
-            "purplepandas":  ["guqqie", "hannahxxrose", "ish13c", "Seapeekay"],
-            "pinkparrots": [ "aimsey", "jojosolos", "KatieB", "Ph1LzA"],
-        }
-    }
-
-    results = []
-    game_ids = games_to_tensor(event.get("games", [])).unsqueeze(0)
-
     with PlayerDataFile('data/players.json') as player_data:
+        player_dataset = PlayerDataset(EXTRACTS_FILENAME, CONFIG_FILENAME, date.today(), player_data)
+
+        model = TeamPlacementPredictor(player_dataset.get_player_count())
+        model.load_state_dict(torch.load(MODEL_FILENAME, weights_only=True))
+        model.eval()
+
+        event = {
+            "games": [
+                "skybattle",
+                "meltdown",
+                "battlebox",
+                "railroadrush",
+                "acerace",
+                "sandsoftime",
+                "rocketspleefrush",
+                "gridrunners"
+            ],
+
+            "teams": {
+                "redrabbits": ["Feinberg", "heyGraecie", "PrinceZam", "Rendog"],
+                "orangeocelots": ["Cambam010", "DarkEyebrows", "Pangi", "ZombieCleo"],
+                "yellowyaks": ["4CVIT", "ashswag", "Mogswamp", "vGumiho"],
+                "limellamas": ["Legundo", "Shubble", "Smajor1995", "VikingPilot"],
+                "greengeckos": ["GeminiTay", "Purpled", "Roscumber", "TheOrionSound"],
+                "cyancoyotes": ["Grian", "InfiniteDrift", "PeteZahHutt", "soupforeloise"],
+                "aquaaxolotls": ["5up", "Couriway", "iJevin", "impulseSV"],
+                "bluebats": ["apokuna", "falsesymmetry", "Krinios", "Maezes"],
+                "purplepandas":  ["guqqie", "hannahxxrose", "ish13c", "Seapeekay"],
+                "pinkparrots": [ "aimsey", "jojosolos", "KatieB", "Ph1LzA"],
+            }
+        }
+
+        results = []
+        game_ids = games_to_tensor(event.get("games", [])).unsqueeze(0)
+
         for [team_name, team] in event["teams"].items():
             [team_tensor, player_ids, team_size] = player_dataset.get_team_data(team, player_data)
 

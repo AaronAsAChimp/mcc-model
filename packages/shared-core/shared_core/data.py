@@ -1,5 +1,5 @@
 import json
-from typing import NotRequired, Optional, TextIO, TypedDict
+from typing import Mapping, NotRequired, Optional, TextIO, TypedDict
 
 
 class ExtractsFile:
@@ -32,15 +32,36 @@ class ExtractsFile:
 
         return True
 
+class MccIslandGame(TypedDict):
+    games: NotRequired[int | None]
+    wins: NotRequired[int | None]
+
+def mcci_win_percentage(stat: MccIslandGame):
+    games = float(stat.get('games', 0))
+    wins = float(stat.get('wins', 0))
+
+    return wins / games if games != 0 else 0
+
+class MccIslandStats(TypedDict):
+    lastupdate: str
+    battlebox: NotRequired[MccIslandGame | None]
+    tgttos: NotRequired[MccIslandGame | None]
+    skybattle: NotRequired[MccIslandGame | None]
+
+
 class PlayerData(TypedDict):
     ign: NotRequired[Optional[str]]
+    uuid: NotRequired[Optional[str]]
     aliases: NotRequired[list[str]]
     birthday: NotRequired[Optional[str]]
+    island: NotRequired[Optional[MccIslandStats]]
+
+PlayerMapping = Mapping[str, PlayerData]
 
 class PlayerDataFile:
     _filename: str
     _fd: Optional[TextIO]
-    _data: dict[str, PlayerData]
+    _data: PlayerMapping
     _name_lookup: dict[str, str]
 
     def __init__(self, filename: str):
@@ -56,7 +77,7 @@ class PlayerDataFile:
             if name == '$schema':
                 continue
 
-            ign = data.get('mc_player_name')
+            ign = data.get('ign')
 
             if ign is not None:
                 lookup[ign.casefold()] = name

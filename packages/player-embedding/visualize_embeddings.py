@@ -35,6 +35,8 @@ NONMEMBER_COLOR = "#3a4150"
 GROUP_COLORS = {
     "Hermitcraft": "#e3b341",
     "Dream SMP": "#4fa3ff",
+    "Life series": "#c83235",
+    "Lifesteal SMP": "#ce1818",
 }
 
 
@@ -69,6 +71,61 @@ GROUP_MEMBERS = {
         "Seapeekay", "Skeppy", "Slimecicle", "Technoblade", "TinaKitten",
         "TommyInnit", "Tubbo", "Vikkstar123", "Wilbur Soot",
     },
+    "Life series": {
+        "BdoubleO100", "Bigbst4tz2", "EthosLab", "GeminiTay",
+        "GoodTimesWithScar", "Grian", "impulseSV", "InTheLittleWood",
+        "LDShadowLady", "MumboJumbo", "PearlescentMoon", "Rendog", "Skizzleman",
+        "Smajor1995", "SmallishBeans", "Solidarity", "TangoTek", "ZombieCleo"
+    },
+    "Lifesteal SMP": {
+        # Current
+        "4CVIT",
+        "ashswagg",
+        "baconnwaffles0",
+        "BranzyCraft",
+        "CHIEFXD",
+        "ClownPierce",
+        "CookieBunsquat",
+        "Derapchu",
+        "Dtowncat",
+        "ECorridor",
+        "Epaxialfx",
+        "Flowtives",
+        "fruitberries",
+        "hannahxxrose",
+        "Infume",
+        "Jaden_MAN",
+        "Jepexx",
+        "jojosolos",
+        "JumperWho",
+        "KatieGoBrr",
+        "leekleek",
+        "Leow0ok",
+        "loppezz",
+        "LuigiToan",
+        "Mapicc",
+        "MinuteTech",
+        "MrCube6",
+        "Only_A_Squid",
+        "Pangi",
+        "Peentar",
+        "Poafa",
+        "PrinceZam",
+        "Reddoons",
+        "rekrap2",
+        "roshambogames",
+        "SB737",
+        "Spepticle",
+        "Spongs",
+        "TheRealSquiddo",
+        "TheTerrain",
+        "Vitalasy",
+        "Vort3xDragon",
+        "WithMayX",
+        "Woogiex",
+        "Yeah_Jaron",
+        "yungyx",        
+    }
 }
 
 GAME_TYPE = {

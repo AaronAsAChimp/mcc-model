@@ -1,0 +1,112 @@
+{
+  "acerace": {
+    "id": 1,
+    "name": "Ace Race",
+    "status": "current"
+  },
+  "battlebox": {
+    "id": 2,
+    "name": "Battle Box",
+    "status": "current"
+  },
+  "buildmart": {
+    "id": 3,
+    "name": "Big Sales at Build Mart",
+    "status": "current"
+  },
+  "bingobutfast": {
+    "id": 4,
+    "name": "Bingo but Fast",
+    "status": "current"
+  },
+  "gridrunners": {
+    "id": 5,
+    "name": "Grid Runners",
+    "status": "current"
+  },
+  "holeinthewall": {
+    "id": 6,
+    "name": "Hole in the Wall",
+    "status": "current"
+  },
+  "meltdown": {
+    "id": 7,
+    "name": "Meltdown",
+    "status": "current"
+  },
+  "parkourtag": {
+    "id": 8,
+    "name": "Parkour Tag",
+    "status": "current"
+  },
+  "parkourwarrior": {
+    "id": 9,
+    "name": "Parkour Warrior",
+    "status": "current"
+  },
+  "railroadrush": {
+    "id": 10,
+    "name": "Railroad Rush",
+    "status": "current"
+  },
+  "rocketspleefrush": {
+    "id": 11,
+    "name": "Rocket Spleef Rush",
+    "status": "current"
+  },
+  "sandsoftime": {
+    "id": 12,
+    "name": "Sands of Time",
+    "status": "current"
+  },
+  "skybattle": {
+    "id": 13,
+    "name": "Sky Battle",
+    "status": "current"
+  },
+  "survivalgames": {
+    "id": 14,
+    "name": "Survival Games",
+    "status": "current"
+  },
+  "tgttosawaf": {
+    "id": 15,
+    "name": "TGTTOSAWAF",
+    "status": "current"
+  },
+  "footrace": {
+    "id": 16,
+    "name": "Foot Race",
+    "status": "retired"
+  },
+  "lockoutbingo": {
+    "id": 17,
+    "name": "Lockout Bingo",
+    "status": "retired"
+  },
+  "parkourwarriororig": {
+    "id": 18,
+    "name": "Parkour Warrior (Original)",
+    "status": "retired"
+  },
+  "rocketspleef": {
+    "id": 19,
+    "name": "Rocket Spleef",
+    "status": "retired"
+  },
+  "skyblockle": {
+    "id": 20,
+    "name": "Skyblockle",
+    "status": "retired"
+  },
+  "parkourwarriorsurvivor": {
+    "id": 21,
+    "name": "Parkour Warrior Survivor",
+    "status": "special"
+  },
+  "buildmartirl": {
+    "id": 22,
+    "name": "Build Mart IRL",
+    "status": "special"
+  }
+}
