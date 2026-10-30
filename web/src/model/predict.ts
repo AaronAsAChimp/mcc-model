@@ -1,5 +1,6 @@
 import type { InferenceSession } from 'onnxruntime-web';
 import wasmUrl from 'onnxruntime-web/ort-wasm-simd-threaded.wasm?url';
+import { siteUrl } from '../lib/base-url';
 
 const COINS_SCALE = 35_000;
 const MAX_GAMES = 8;
@@ -53,7 +54,7 @@ async function loadSession() {
 			ort.env.wasm.numThreads = 1;
 			ort.env.wasm.wasmPaths = { wasm: wasmUrl };
 
-			return ort.InferenceSession.create(`${import.meta.env.BASE_URL}model/model.onnx`, {
+			return ort.InferenceSession.create(siteUrl('model/model.onnx'), {
 				executionProviders: ['wasm']
 			});
 		})().catch(error => {
@@ -67,7 +68,7 @@ async function loadSession() {
 
 async function loadFeatures() {
 	if (!featuresPromise) {
-		featuresPromise = fetch(`${import.meta.env.BASE_URL}model/player-features.json`)
+		featuresPromise = fetch(siteUrl('model/player-features.json'))
 			.then(response => {
 				if (!response.ok) {
 					throw new Error(`Could not load player features (${response.status}).`);

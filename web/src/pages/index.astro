@@ -1,5 +1,6 @@
 ---
 import Document from '../layouts/Document.astro';
+import { siteUrl } from '../lib/base-url';
 import { FantasyEvent } from '../components/fantasy-event/index.tsx';
 ---
 <Document>
@@ -7,7 +8,7 @@ import { FantasyEvent } from '../components/fantasy-event/index.tsx';
     <h1>Fantasy MCC</h1>
     <div class="intro">
       <p>Build your own event by choosing eight games and filling the ten teams, then run the prediction model. It all runs in your browser, nothing gets set to our servers. Like... I don't even have servers.</p>
-      <a href="/about">How it works</a>
+      <a href={siteUrl("about")}>How it works</a>
     </div>
     <FantasyEvent client:load />
   </main>

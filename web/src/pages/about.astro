@@ -1,9 +1,10 @@
 ---
 import Document from '../layouts/Document.astro';
+import { siteUrl } from '../lib/base-url';
 ---
 <Document>
   <nav>
-    <a href="/">Fantasy MCC</a>
+    <a href={siteUrl()}>Fantasy MCC</a>
   </nav>
   <div>
     <h1>How it works</h1>

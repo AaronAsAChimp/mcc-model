@@ -13,6 +13,7 @@ wheels/
 node_modules
 .astro/
 
-# Visualization output
+# App stuff
 .env
 packages/player-embedding/visualizations/
+train-log.csv

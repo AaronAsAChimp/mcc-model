@@ -1,0 +1,1241 @@
+
+pytorch2.12.0:Ç´
+›
+
+player_idsval_3node_Shape_3"Shape*
+
+end *
+start J„
+	namespacew_empty_nn_module_stack_from_metadata_hook: _empty_nn_module_stack_from_metadata_hook/sym_size_int_10: aten.sym_size.intJd
+pkg.torch.onnx.class_hierarchyB['_empty_nn_module_stack_from_metadata_hook', 'aten.sym_size.int']J”
+pkg.torch.onnx.fx_nodez%sym_size_int_10 : [num_users=3] = call_function[target=torch.ops.aten.sym_size.int](args = (%player_ids, 1), kwargs = {})J^
+pkg.torch.onnx.name_scopes@['_empty_nn_module_stack_from_metadata_hook', 'sym_size_int_10']Js
+pkg.torch.onnx.stack_traceUFile "torch/fx/passes/runtime_assert.py", line 24, in insert_deferred_runtime_asserts
+
+val_3sym_size_int_10node_sym_size_int_10"SqueezeJ„
+	namespacew_empty_nn_module_stack_from_metadata_hook: _empty_nn_module_stack_from_metadata_hook/sym_size_int_10: aten.sym_size.intJd
+pkg.torch.onnx.class_hierarchyB['_empty_nn_module_stack_from_metadata_hook', 'aten.sym_size.int']J”
+pkg.torch.onnx.fx_nodez%sym_size_int_10 : [num_users=3] = call_function[target=torch.ops.aten.sym_size.int](args = (%player_ids, 1), kwargs = {})J^
+pkg.torch.onnx.name_scopes@['_empty_nn_module_stack_from_metadata_hook', 'sym_size_int_10']Js
+pkg.torch.onnx.stack_traceUFile "torch/fx/passes/runtime_assert.py", line 24, in insert_deferred_runtime_asserts
+ú
+
+team_features
+player_encoder.0.weight
+player_encoder.0.bias
+layer_normnode_layer_norm"LayerNormalization*
+
+stash_type *
+epsilon¬Å'7 *
+axisÿÿÿÿÿÿÿÿÿ JÀ
+	namespace²: main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.0: torch.nn.modules.normalization.LayerNorm/layer_norm: aten.layer_norm.defaultJ²
+pkg.torch.onnx.class_hierarchy['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.normalization.LayerNorm', 'aten.layer_norm.default']Jà
+pkg.torch.onnx.fx_nodeÅ%layer_norm : [num_users=1] = call_function[target=torch.ops.aten.layer_norm.default](args = (%team_features, [23], %p_player_encoder_0_weight, %p_player_encoder_0_bias, 1e-05, False), kwargs = {})JV
+pkg.torch.onnx.name_scopes8['', 'player_encoder', 'player_encoder.0', 'layer_norm']J˜
+pkg.torch.onnx.stack_traceùFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 552, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/normalization.py", line 228, in forward
+    return F.layer_norm(
+Ï	
+
+layer_norm
+val_8val_9node_MatMul_7"MatMulJ®
+	namespace : main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.1: torch.nn.modules.linear.Linear/linear: aten.linear.defaultJ¤
+pkg.torch.onnx.class_hierarchy['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']JÁ
+pkg.torch.onnx.fx_node¦%linear : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%layer_norm, %p_player_encoder_1_weight, %p_player_encoder_1_bias), kwargs = {})JR
+pkg.torch.onnx.name_scopes4['', 'player_encoder', 'player_encoder.1', 'linear']J«
+pkg.torch.onnx.stack_traceŒFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 552, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+Ö	
+val_9
+player_encoder.1.biaslinearnode_linear"AddJ®
+	namespace : main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.1: torch.nn.modules.linear.Linear/linear: aten.linear.defaultJ¤
+pkg.torch.onnx.class_hierarchy['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']JÁ
+pkg.torch.onnx.fx_node¦%linear : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%layer_norm, %p_player_encoder_1_weight, %p_player_encoder_1_bias), kwargs = {})JR
+pkg.torch.onnx.name_scopes4['', 'player_encoder', 'player_encoder.1', 'linear']J«
+pkg.torch.onnx.stack_traceŒFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 552, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+û
+linearrelu	node_relu"ReluJ¬
+	namespace: main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.2: torch.nn.modules.activation.ReLU/relu: aten.relu.defaultJ¤
+pkg.torch.onnx.class_hierarchy['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Jƒ
+pkg.torch.onnx.fx_nodei%relu : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%linear,), kwargs = {})JP
+pkg.torch.onnx.name_scopes2['', 'player_encoder', 'player_encoder.2', 'relu']J«
+pkg.torch.onnx.stack_traceŒFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 552, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+Ì	
+relu
+val_10val_11node_MatMul_9"MatMulJ°
+	namespace¢: main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.4: torch.nn.modules.linear.Linear/linear_1: aten.linear.defaultJ¤
+pkg.torch.onnx.class_hierarchy['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J¾
+pkg.torch.onnx.fx_node£%linear_1 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%clone, %p_player_encoder_4_weight, %p_player_encoder_4_bias), kwargs = {})JT
+pkg.torch.onnx.name_scopes6['', 'player_encoder', 'player_encoder.4', 'linear_1']J«
+pkg.torch.onnx.stack_traceŒFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 552, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+Ü	
+val_11
+player_encoder.4.biaslinear_1node_linear_1"AddJ°
+	namespace¢: main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.4: torch.nn.modules.linear.Linear/linear_1: aten.linear.defaultJ¤
+pkg.torch.onnx.class_hierarchy['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J¾
+pkg.torch.onnx.fx_node£%linear_1 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%clone, %p_player_encoder_4_weight, %p_player_encoder_4_bias), kwargs = {})JT
+pkg.torch.onnx.name_scopes6['', 'player_encoder', 'player_encoder.4', 'linear_1']J«
+pkg.torch.onnx.stack_traceŒFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 552, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+‰	
+linear_1relu_1node_relu_1"ReluJ®
+	namespace : main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.5: torch.nn.modules.activation.ReLU/relu_1: aten.relu.defaultJ¤
+pkg.torch.onnx.class_hierarchy['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']J‡
+pkg.torch.onnx.fx_nodem%relu_1 : [num_users=2] = call_function[target=torch.ops.aten.relu.default](args = (%linear_1,), kwargs = {})JR
+pkg.torch.onnx.name_scopes4['', 'player_encoder', 'player_encoder.5', 'relu_1']J«
+pkg.torch.onnx.stack_traceŒFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 552, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+–
+val_13
+sym_size_int_10
+val_15arangenode_arange"RangeJF
+	namespace9: main.TeamPlacementPredictor/arange: aten.arange.defaultJX
+pkg.torch.onnx.class_hierarchy6['main.TeamPlacementPredictor', 'aten.arange.default']J¯
+pkg.torch.onnx.fx_node”%arange : [num_users=1] = call_function[target=torch.ops.aten.arange.default](args = (%sym_size_int_10,), kwargs = {device: cpu, pin_memory: False})J,
+pkg.torch.onnx.name_scopes['', 'arange']JÔ
+pkg.torch.onnx.stack_traceµFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 557, in forward
+    player_mask = torch.arange(max_players, device=device).unsqueeze(
+û
+arange
+val_16	unsqueezenode_unsqueeze"	UnsqueezeJL
+	namespace?: main.TeamPlacementPredictor/unsqueeze: aten.unsqueeze.defaultJ[
+pkg.torch.onnx.class_hierarchy9['main.TeamPlacementPredictor', 'aten.unsqueeze.default']J
+pkg.torch.onnx.fx_nodeu%unsqueeze : [num_users=1] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%arange, 0), kwargs = {})J/
+pkg.torch.onnx.name_scopes['', 'unsqueeze']JÔ
+pkg.torch.onnx.stack_traceµFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 557, in forward
+    player_mask = torch.arange(max_players, device=device).unsqueeze(
+ç
+
+team_sizes
+val_17unsqueeze_1node_unsqueeze_1"	UnsqueezeJN
+	namespaceA: main.TeamPlacementPredictor/unsqueeze_1: aten.unsqueeze.defaultJ[
+pkg.torch.onnx.class_hierarchy9['main.TeamPlacementPredictor', 'aten.unsqueeze.default']J•
+pkg.torch.onnx.fx_node{%unsqueeze_1 : [num_users=1] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%team_sizes, 1), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'unsqueeze_1']J®
+pkg.torch.onnx.stack_traceFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 559, in forward
+    ) < team_sizes.unsqueeze(1)
+Ñ
+	unsqueeze
+unsqueeze_1ltnode_lt"LessJ=
+	namespace0: main.TeamPlacementPredictor/lt: aten.lt.TensorJS
+pkg.torch.onnx.class_hierarchy1['main.TeamPlacementPredictor', 'aten.lt.Tensor']J
+pkg.torch.onnx.fx_nodet%lt : [num_users=1] = call_function[target=torch.ops.aten.lt.Tensor](args = (%unsqueeze, %unsqueeze_1), kwargs = {})J(
+pkg.torch.onnx.name_scopes
+['', 'lt']JÔ
+pkg.torch.onnx.stack_traceµFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 557, in forward
+    player_mask = torch.arange(max_players, device=device).unsqueeze(
+ì
+lt
+val_18unsqueeze_2node_unsqueeze_2"	UnsqueezeJN
+	namespaceA: main.TeamPlacementPredictor/unsqueeze_2: aten.unsqueeze.defaultJ[
+pkg.torch.onnx.class_hierarchy9['main.TeamPlacementPredictor', 'aten.unsqueeze.default']J
+pkg.torch.onnx.fx_nodet%unsqueeze_2 : [num_users=1] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%lt, -1), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'unsqueeze_2']JÂ
+pkg.torch.onnx.stack_trace£File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 560, in forward
+    player_mask = player_mask.unsqueeze(-1).float()
+ü
+unsqueeze_2_to_copynode__to_copy"Cast*	
+to JJ
+	namespace=: main.TeamPlacementPredictor/_to_copy: aten._to_copy.defaultJZ
+pkg.torch.onnx.class_hierarchy8['main.TeamPlacementPredictor', 'aten._to_copy.default']J¥
+pkg.torch.onnx.fx_nodeŠ%_to_copy : [num_users=2] = call_function[target=torch.ops.aten._to_copy.default](args = (%unsqueeze_2,), kwargs = {dtype: torch.float32})J.
+pkg.torch.onnx.name_scopes['', '_to_copy']JÂ
+pkg.torch.onnx.stack_trace£File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 560, in forward
+    player_mask = player_mask.unsqueeze(-1).float()
+°
+relu_1
+val_19val_20node_MatMul_18"MatMulJy
+	namespacel: main.TeamPlacementPredictor/player_attention: torch.nn.modules.linear.Linear/linear_2: aten.linear.defaultJz
+pkg.torch.onnx.class_hierarchyX['main.TeamPlacementPredictor', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J¿
+pkg.torch.onnx.fx_node¤%linear_2 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%relu_1, %p_player_attention_weight, %p_player_attention_bias), kwargs = {})JB
+pkg.torch.onnx.name_scopes$['', 'player_attention', 'linear_2']J€
+pkg.torch.onnx.stack_traceáFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 562, in forward
+    attn_logits = self.player_attention(encoded)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+½
+val_20
+player_attention.biaslinear_2node_linear_2"AddJy
+	namespacel: main.TeamPlacementPredictor/player_attention: torch.nn.modules.linear.Linear/linear_2: aten.linear.defaultJz
+pkg.torch.onnx.class_hierarchyX['main.TeamPlacementPredictor', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J¿
+pkg.torch.onnx.fx_node¤%linear_2 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%relu_1, %p_player_attention_weight, %p_player_attention_bias), kwargs = {})JB
+pkg.torch.onnx.name_scopes$['', 'player_attention', 'linear_2']J€
+pkg.torch.onnx.stack_traceáFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 562, in forward
+    attn_logits = self.player_attention(encoded)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+‚
+linear_2
+val_18squeezenode_squeeze"SqueezeJD
+	namespace7: main.TeamPlacementPredictor/squeeze: aten.squeeze.dimJU
+pkg.torch.onnx.class_hierarchy3['main.TeamPlacementPredictor', 'aten.squeeze.dim']JŠ
+pkg.torch.onnx.fx_nodep%squeeze : [num_users=1] = call_function[target=torch.ops.aten.squeeze.dim](args = (%linear_2, -1), kwargs = {})J-
+pkg.torch.onnx.name_scopes['', 'squeeze']Jô
+pkg.torch.onnx.stack_traceÕFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 563, in forward
+    attn_logits = attn_logits.squeeze(-1).masked_fill(~player_mask.squeeze(-1).bool(), float('-inf'))
+Œ
+_to_copy
+val_18	squeeze_1node_squeeze_1"SqueezeJF
+	namespace9: main.TeamPlacementPredictor/squeeze_1: aten.squeeze.dimJU
+pkg.torch.onnx.class_hierarchy3['main.TeamPlacementPredictor', 'aten.squeeze.dim']JŒ
+pkg.torch.onnx.fx_noder%squeeze_1 : [num_users=1] = call_function[target=torch.ops.aten.squeeze.dim](args = (%_to_copy, -1), kwargs = {})J/
+pkg.torch.onnx.name_scopes['', 'squeeze_1']Jô
+pkg.torch.onnx.stack_traceÕFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 563, in forward
+    attn_logits = attn_logits.squeeze(-1).masked_fill(~player_mask.squeeze(-1).bool(), float('-inf'))
+±
+	squeeze_1
+_to_copy_1node__to_copy_1"Cast*	
+to	 JL
+	namespace?: main.TeamPlacementPredictor/_to_copy_1: aten._to_copy.defaultJZ
+pkg.torch.onnx.class_hierarchy8['main.TeamPlacementPredictor', 'aten._to_copy.default']J¢
+pkg.torch.onnx.fx_node‡%_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%squeeze_1,), kwargs = {dtype: torch.bool})J0
+pkg.torch.onnx.name_scopes['', '_to_copy_1']Jô
+pkg.torch.onnx.stack_traceÕFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 563, in forward
+    attn_logits = attn_logits.squeeze(-1).masked_fill(~player_mask.squeeze(-1).bool(), float('-inf'))
+£
+
+_to_copy_1bitwise_notnode_bitwise_not"NotJP
+	namespaceC: main.TeamPlacementPredictor/bitwise_not: aten.bitwise_not.defaultJ]
+pkg.torch.onnx.class_hierarchy;['main.TeamPlacementPredictor', 'aten.bitwise_not.default']J•
+pkg.torch.onnx.fx_node{%bitwise_not : [num_users=1] = call_function[target=torch.ops.aten.bitwise_not.default](args = (%_to_copy_1,), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'bitwise_not']Jô
+pkg.torch.onnx.stack_traceÕFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 563, in forward
+    attn_logits = attn_logits.squeeze(-1).masked_fill(~player_mask.squeeze(-1).bool(), float('-inf'))
+Å
+bitwise_not
+val_22
+squeezemasked_fillnode_masked_fill"WhereJO
+	namespaceB: main.TeamPlacementPredictor/masked_fill: aten.masked_fill.ScalarJ\
+pkg.torch.onnx.class_hierarchy:['main.TeamPlacementPredictor', 'aten.masked_fill.Scalar']J¥
+pkg.torch.onnx.fx_nodeŠ%masked_fill : [num_users=1] = call_function[target=torch.ops.aten.masked_fill.Scalar](args = (%squeeze, %bitwise_not, -inf), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'masked_fill']Jô
+pkg.torch.onnx.stack_traceÕFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 563, in forward
+    attn_logits = attn_logits.squeeze(-1).masked_fill(~player_mask.squeeze(-1).bool(), float('-inf'))
+ø
+masked_fillsoftmaxnode_softmax"Softmax*
+axisÿÿÿÿÿÿÿÿÿ JD
+	namespace7: main.TeamPlacementPredictor/softmax: aten.softmax.intJU
+pkg.torch.onnx.class_hierarchy3['main.TeamPlacementPredictor', 'aten.softmax.int']J
+pkg.torch.onnx.fx_nodes%softmax : [num_users=1] = call_function[target=torch.ops.aten.softmax.int](args = (%masked_fill, -1), kwargs = {})J-
+pkg.torch.onnx.name_scopes['', 'softmax']JÖ
+pkg.torch.onnx.stack_trace·File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 564, in forward
+    player_attention = torch.softmax(attn_logits, dim=-1).unsqueeze(-1)
+Š
+softmax
+val_18unsqueeze_3node_unsqueeze_3"	UnsqueezeJN
+	namespaceA: main.TeamPlacementPredictor/unsqueeze_3: aten.unsqueeze.defaultJ[
+pkg.torch.onnx.class_hierarchy9['main.TeamPlacementPredictor', 'aten.unsqueeze.default']J“
+pkg.torch.onnx.fx_nodey%unsqueeze_3 : [num_users=1] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%softmax, -1), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'unsqueeze_3']JÖ
+pkg.torch.onnx.stack_trace·File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 564, in forward
+    player_attention = torch.softmax(attn_logits, dim=-1).unsqueeze(-1)
+Ö
+relu_1
+unsqueeze_3mul_40node_mul_40"MulJB
+	namespace5: main.TeamPlacementPredictor/mul_40: aten.mul.TensorJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.mul.Tensor']J
+pkg.torch.onnx.fx_nodev%mul_40 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%relu_1, %unsqueeze_3), kwargs = {})J,
+pkg.torch.onnx.name_scopes['', 'mul_40']JÉ
+pkg.torch.onnx.stack_traceªFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 565, in forward
+    team_encoded = (encoded * player_attention).sum(dim=1)
+†
+mul_40
+val_17sum_1
+node_sum_1"	ReduceSum*
+noop_with_empty_axes  *
+keepdims  JF
+	namespace9: main.TeamPlacementPredictor/sum_1: aten.sum.dim_IntListJY
+pkg.torch.onnx.class_hierarchy7['main.TeamPlacementPredictor', 'aten.sum.dim_IntList']J‹
+pkg.torch.onnx.fx_nodeq%sum_1 : [num_users=1] = call_function[target=torch.ops.aten.sum.dim_IntList](args = (%mul_40, [1]), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'sum_1']JÉ
+pkg.torch.onnx.stack_traceªFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 565, in forward
+    team_encoded = (encoded * player_attention).sum(dim=1)
+Í
+player_embeddings.weight
+
+player_ids	embeddingnode_embedding"Gather*
+axis  J
+	namespacet: main.TeamPlacementPredictor/player_embeddings: torch.nn.modules.sparse.Embedding/embedding: aten.embedding.defaultJ€
+pkg.torch.onnx.class_hierarchy^['main.TeamPlacementPredictor', 'torch.nn.modules.sparse.Embedding', 'aten.embedding.default']J®
+pkg.torch.onnx.fx_node“%embedding : [num_users=1] = call_function[target=torch.ops.aten.embedding.default](args = (%p_player_embeddings_weight, %player_ids), kwargs = {})JD
+pkg.torch.onnx.name_scopes&['', 'player_embeddings', 'embedding']Jö
+pkg.torch.onnx.stack_trace×File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 567, in forward
+    individual_player_embeds = self.player_embeddings(player_ids)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/sparse.py", line 189, in forward
+    return F.embedding(
+‚
+	embedding
+_to_copymul_49node_mul_49"MulJB
+	namespace5: main.TeamPlacementPredictor/mul_49: aten.mul.TensorJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.mul.Tensor']J
+pkg.torch.onnx.fx_nodev%mul_49 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%embedding, %_to_copy), kwargs = {})J,
+pkg.torch.onnx.name_scopes['', 'mul_49']Jõ
+pkg.torch.onnx.stack_traceÖFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 568, in forward
+    team_embed = (individual_player_embeds * player_mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
+²
+mul_49
+val_17sum_2
+node_sum_2"	ReduceSum*
+noop_with_empty_axes  *
+keepdims  JF
+	namespace9: main.TeamPlacementPredictor/sum_2: aten.sum.dim_IntListJY
+pkg.torch.onnx.class_hierarchy7['main.TeamPlacementPredictor', 'aten.sum.dim_IntList']J‹
+pkg.torch.onnx.fx_nodeq%sum_2 : [num_users=1] = call_function[target=torch.ops.aten.sum.dim_IntList](args = (%mul_49, [1]), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'sum_2']Jõ
+pkg.torch.onnx.stack_traceÖFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 568, in forward
+    team_embed = (individual_player_embeds * player_mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
+¹
+unsqueeze_1
+_to_copy_2node__to_copy_2"Cast*	
+to JL
+	namespace?: main.TeamPlacementPredictor/_to_copy_2: aten._to_copy.defaultJZ
+pkg.torch.onnx.class_hierarchy8['main.TeamPlacementPredictor', 'aten._to_copy.default']J§
+pkg.torch.onnx.fx_nodeŒ%_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%unsqueeze_4,), kwargs = {dtype: torch.float32})J0
+pkg.torch.onnx.name_scopes['', '_to_copy_2']Jõ
+pkg.torch.onnx.stack_traceÖFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 568, in forward
+    team_embed = (individual_player_embeds * player_mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
+ï
+sum_2
+
+_to_copy_2divnode_div"DivJ?
+	namespace2: main.TeamPlacementPredictor/div: aten.div.TensorJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.div.Tensor']J‹
+pkg.torch.onnx.fx_nodeq%div : [num_users=1] = call_function[target=torch.ops.aten.div.Tensor](args = (%sum_2, %_to_copy_2), kwargs = {})J)
+pkg.torch.onnx.name_scopes['', 'div']Jõ
+pkg.torch.onnx.stack_traceÖFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 568, in forward
+    team_embed = (individual_player_embeds * player_mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
+Ç
+game_id_embedding.weight
+game_idsembedding_1node_embedding_1"Gather*
+axis  Jƒ
+	namespacev: main.TeamPlacementPredictor/game_id_embedding: torch.nn.modules.sparse.Embedding/embedding_1: aten.embedding.defaultJ€
+pkg.torch.onnx.class_hierarchy^['main.TeamPlacementPredictor', 'torch.nn.modules.sparse.Embedding', 'aten.embedding.default']J±
+pkg.torch.onnx.fx_node–%embedding_1 : [num_users=1] = call_function[target=torch.ops.aten.embedding.default](args = (%p_game_id_embedding_weight, %game_ids, 0), kwargs = {})JF
+pkg.torch.onnx.name_scopes(['', 'game_id_embedding', 'embedding_1']Jç
+pkg.torch.onnx.stack_traceÈFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 570, in forward
+    game_embeds = self.game_id_embedding(game_ids)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/sparse.py", line 189, in forward
+    return F.embedding(
+º
+game_ids
+val_13val_26node_Equal_24"EqualJ=
+	namespace0: main.TeamPlacementPredictor/ne: aten.ne.ScalarJS
+pkg.torch.onnx.class_hierarchy1['main.TeamPlacementPredictor', 'aten.ne.Scalar']J‚
+pkg.torch.onnx.fx_nodeh%ne : [num_users=2] = call_function[target=torch.ops.aten.ne.Scalar](args = (%game_ids, 0), kwargs = {})J(
+pkg.torch.onnx.name_scopes
+['', 'ne']JÄ
+pkg.torch.onnx.stack_trace¥File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 571, in forward
+    game_mask = (game_ids != 0)  # (batch, max_games)
+¤
+val_26nenode_ne"NotJ=
+	namespace0: main.TeamPlacementPredictor/ne: aten.ne.ScalarJS
+pkg.torch.onnx.class_hierarchy1['main.TeamPlacementPredictor', 'aten.ne.Scalar']J‚
+pkg.torch.onnx.fx_nodeh%ne : [num_users=2] = call_function[target=torch.ops.aten.ne.Scalar](args = (%game_ids, 0), kwargs = {})J(
+pkg.torch.onnx.name_scopes
+['', 'ne']JÄ
+pkg.torch.onnx.stack_trace¥File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 571, in forward
+    game_mask = (game_ids != 0)  # (batch, max_games)
+ğ
+neconvert_element_type_default!node_convert_element_type_default"Cast*	
+to Jk
+	namespace^: main.TeamPlacementPredictor/convert_element_type_default: prims.convert_element_type.defaultJg
+pkg.torch.onnx.class_hierarchyE['main.TeamPlacementPredictor', 'prims.convert_element_type.default']J»
+pkg.torch.onnx.fx_node %convert_element_type_default : [num_users=1] = call_function[target=torch.ops.prims.convert_element_type.default](args = (%ne,), kwargs = {dtype: torch.int64})JB
+pkg.torch.onnx.name_scopes$['', 'convert_element_type_default']J¿
+pkg.torch.onnx.stack_trace File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 575, in forward
+    num_games = game_mask.sum(dim=1)  # (batch,)
+©
+convert_element_type_default
+val_17sum_3
+node_sum_3"	ReduceSum*
+noop_with_empty_axes  *
+keepdims  JF
+	namespace9: main.TeamPlacementPredictor/sum_3: aten.sum.dim_IntListJY
+pkg.torch.onnx.class_hierarchy7['main.TeamPlacementPredictor', 'aten.sum.dim_IntList']J¢
+pkg.torch.onnx.fx_node‡%sum_3 : [num_users=1] = call_function[target=torch.ops.aten.sum.dim_IntList](args = (%convert_element_type_default, [1]), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'sum_3']J¿
+pkg.torch.onnx.stack_trace File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 575, in forward
+    num_games = game_mask.sum(dim=1)  # (batch,)
+¿
+sum_3
+val_28eq_59
+node_eq_59"EqualJ@
+	namespace3: main.TeamPlacementPredictor/eq_59: aten.eq.ScalarJS
+pkg.torch.onnx.class_hierarchy1['main.TeamPlacementPredictor', 'aten.eq.Scalar']J‚
+pkg.torch.onnx.fx_nodeh%eq_59 : [num_users=1] = call_function[target=torch.ops.aten.eq.Scalar](args = (%sum_3, 6), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'eq_59']JÊ
+pkg.torch.onnx.stack_trace«File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 576, in forward
+    is_6_game = (num_games == 6).unsqueeze(1)  # (batch, 1)
+ù
+eq_59
+val_17unsqueeze_5node_unsqueeze_5"	UnsqueezeJN
+	namespaceA: main.TeamPlacementPredictor/unsqueeze_5: aten.unsqueeze.defaultJ[
+pkg.torch.onnx.class_hierarchy9['main.TeamPlacementPredictor', 'aten.unsqueeze.default']J
+pkg.torch.onnx.fx_nodev%unsqueeze_5 : [num_users=1] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%eq_59, 1), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'unsqueeze_5']JÊ
+pkg.torch.onnx.stack_trace«File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 576, in forward
+    is_6_game = (num_games == 6).unsqueeze(1)  # (batch, 1)
+í
+unsqueeze_5
+lifted_tensor_0
+lifted_tensor_1where
+node_where"WhereJA
+	namespace4: main.TeamPlacementPredictor/where: aten.where.selfJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.where.self']J¯
+pkg.torch.onnx.fx_node”%where : [num_users=1] = call_function[target=torch.ops.aten.where.self](args = (%unsqueeze_5, %c_lifted_tensor_0, %c_lifted_tensor_1), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'where']J©
+pkg.torch.onnx.stack_traceŠFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 577, in forward
+    weights = torch.where(
+“
+ne
+_to_copy_3node__to_copy_3"Cast*	
+to JL
+	namespace?: main.TeamPlacementPredictor/_to_copy_3: aten._to_copy.defaultJZ
+pkg.torch.onnx.class_hierarchy8['main.TeamPlacementPredictor', 'aten._to_copy.default']J
+pkg.torch.onnx.fx_nodeƒ%_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%ne,), kwargs = {dtype: torch.float32})J0
+pkg.torch.onnx.name_scopes['', '_to_copy_3']Já
+pkg.torch.onnx.stack_traceÂFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 582, in forward
+    weights = (weights * game_mask.float()).unsqueeze(-1)  # (batch, max_games, 1)
+ê
+where
+
+_to_copy_3mul_67node_mul_67"MulJB
+	namespace5: main.TeamPlacementPredictor/mul_67: aten.mul.TensorJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.mul.Tensor']J
+pkg.torch.onnx.fx_nodet%mul_67 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%where, %_to_copy_3), kwargs = {})J,
+pkg.torch.onnx.name_scopes['', 'mul_67']Já
+pkg.torch.onnx.stack_traceÂFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 582, in forward
+    weights = (weights * game_mask.float()).unsqueeze(-1)  # (batch, max_games, 1)
+“
+mul_67
+val_18unsqueeze_6node_unsqueeze_6"	UnsqueezeJN
+	namespaceA: main.TeamPlacementPredictor/unsqueeze_6: aten.unsqueeze.defaultJ[
+pkg.torch.onnx.class_hierarchy9['main.TeamPlacementPredictor', 'aten.unsqueeze.default']J’
+pkg.torch.onnx.fx_nodex%unsqueeze_6 : [num_users=2] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%mul_67, -1), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'unsqueeze_6']Já
+pkg.torch.onnx.stack_traceÂFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 582, in forward
+    weights = (weights * game_mask.float()).unsqueeze(-1)  # (batch, max_games, 1)
+û
+embedding_1
+unsqueeze_6mul_72node_mul_72"MulJB
+	namespace5: main.TeamPlacementPredictor/mul_72: aten.mul.TensorJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.mul.Tensor']J•
+pkg.torch.onnx.fx_node{%mul_72 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%embedding_1, %unsqueeze_6), kwargs = {})J,
+pkg.torch.onnx.name_scopes['', 'mul_72']Jä
+pkg.torch.onnx.stack_traceÅFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 584, in forward
+    game_embed = (game_embeds * weights).sum(dim=1) / weights.sum(dim=1).clamp(min=1)
+¡
+mul_72
+val_17sum_4
+node_sum_4"	ReduceSum*
+noop_with_empty_axes  *
+keepdims  JF
+	namespace9: main.TeamPlacementPredictor/sum_4: aten.sum.dim_IntListJY
+pkg.torch.onnx.class_hierarchy7['main.TeamPlacementPredictor', 'aten.sum.dim_IntList']J‹
+pkg.torch.onnx.fx_nodeq%sum_4 : [num_users=1] = call_function[target=torch.ops.aten.sum.dim_IntList](args = (%mul_72, [1]), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'sum_4']Jä
+pkg.torch.onnx.stack_traceÅFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 584, in forward
+    game_embed = (game_embeds * weights).sum(dim=1) / weights.sum(dim=1).clamp(min=1)
+«
+unsqueeze_6
+val_17sum_5
+node_sum_5"	ReduceSum*
+noop_with_empty_axes  *
+keepdims  JF
+	namespace9: main.TeamPlacementPredictor/sum_5: aten.sum.dim_IntListJY
+pkg.torch.onnx.class_hierarchy7['main.TeamPlacementPredictor', 'aten.sum.dim_IntList']J
+pkg.torch.onnx.fx_nodev%sum_5 : [num_users=1] = call_function[target=torch.ops.aten.sum.dim_IntList](args = (%unsqueeze_6, [1]), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'sum_5']Jä
+pkg.torch.onnx.stack_traceÅFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 584, in forward
+    game_embed = (game_embeds * weights).sum(dim=1) / weights.sum(dim=1).clamp(min=1)
+…
+sum_5
+scalar_tensor_defaultclamp
+node_clamp"MaxJC
+	namespace6: main.TeamPlacementPredictor/clamp: aten.clamp.TensorJV
+pkg.torch.onnx.class_hierarchy4['main.TeamPlacementPredictor', 'aten.clamp.Tensor']J›
+pkg.torch.onnx.fx_node€%clamp : [num_users=1] = call_function[target=torch.ops.aten.clamp.Tensor](args = (%sum_5, %scalar_tensor_default), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'clamp']Jä
+pkg.torch.onnx.stack_traceÅFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 584, in forward
+    game_embed = (game_embeds * weights).sum(dim=1) / weights.sum(dim=1).clamp(min=1)
+Ş
+sum_4
+clampdiv_1
+node_div_1"DivJA
+	namespace4: main.TeamPlacementPredictor/div_1: aten.div.TensorJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.div.Tensor']Jˆ
+pkg.torch.onnx.fx_noden%div_1 : [num_users=1] = call_function[target=torch.ops.aten.div.Tensor](args = (%sum_4, %clamp), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'div_1']Jä
+pkg.torch.onnx.stack_traceÅFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 584, in forward
+    game_embed = (game_embeds * weights).sum(dim=1) / weights.sum(dim=1).clamp(min=1)
+¢
+
+div_1
+game_encoder.0.weight
+game_encoder.0.biaslinear_3node_linear_3"Gemm*
+beta  €? *
+transB *
+alpha  €? *
+transA  J¬
+	namespace: main.TeamPlacementPredictor/game_encoder: torch.nn.modules.container.Sequential/game_encoder.0: torch.nn.modules.linear.Linear/linear_3: aten.linear.defaultJ¤
+pkg.torch.onnx.class_hierarchy['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']Jº
+pkg.torch.onnx.fx_nodeŸ%linear_3 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%div_1, %p_game_encoder_0_weight, %p_game_encoder_0_bias), kwargs = {})JP
+pkg.torch.onnx.name_scopes2['', 'game_encoder', 'game_encoder.0', 'linear_3']J©
+pkg.torch.onnx.stack_traceŠFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 585, in forward
+    game_embed = self.game_encoder(game_embed)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+ÿ
+linear_3relu_2node_relu_2"ReluJª
+	namespaceœ: main.TeamPlacementPredictor/game_encoder: torch.nn.modules.container.Sequential/game_encoder.1: torch.nn.modules.activation.ReLU/relu_2: aten.relu.defaultJ¤
+pkg.torch.onnx.class_hierarchy['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']J‡
+pkg.torch.onnx.fx_nodem%relu_2 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%linear_3,), kwargs = {})JN
+pkg.torch.onnx.name_scopes0['', 'game_encoder', 'game_encoder.1', 'relu_2']J©
+pkg.torch.onnx.stack_traceŠFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 585, in forward
+    game_embed = self.game_encoder(game_embed)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+ë
+div
+sum_1
+relu_2catnode_cat"Concat*
+axis J@
+	namespace3: main.TeamPlacementPredictor/cat: aten.cat.defaultJU
+pkg.torch.onnx.class_hierarchy3['main.TeamPlacementPredictor', 'aten.cat.default']J“
+pkg.torch.onnx.fx_nodey%cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%div, %sum_1, %relu_2], 1), kwargs = {})J)
+pkg.torch.onnx.name_scopes['', 'cat']JÖ
+pkg.torch.onnx.stack_trace·File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 587, in forward
+    combined = torch.cat([team_embed, team_encoded, game_embed], dim=1)
+û	
+cat
+predictor.0.weight
+predictor.0.biaslinear_4node_linear_4"Gemm*
+beta  €? *
+transB *
+alpha  €? *
+transA  J¦
+	namespace˜: main.TeamPlacementPredictor/predictor: torch.nn.modules.container.Sequential/predictor.0: torch.nn.modules.linear.Linear/linear_4: aten.linear.defaultJ¤
+pkg.torch.onnx.class_hierarchy['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J²
+pkg.torch.onnx.fx_node—%linear_4 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%cat, %p_predictor_0_weight, %p_predictor_0_bias), kwargs = {})JJ
+pkg.torch.onnx.name_scopes,['', 'predictor', 'predictor.0', 'linear_4']J
+pkg.torch.onnx.stack_traceÿFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 588, in forward
+    return self.predictor(combined)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+è
+linear_4relu_3node_relu_3"ReluJ¤
+	namespace–: main.TeamPlacementPredictor/predictor: torch.nn.modules.container.Sequential/predictor.1: torch.nn.modules.activation.ReLU/relu_3: aten.relu.defaultJ¤
+pkg.torch.onnx.class_hierarchy['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']J‡
+pkg.torch.onnx.fx_nodem%relu_3 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%linear_4,), kwargs = {})JH
+pkg.torch.onnx.name_scopes*['', 'predictor', 'predictor.1', 'relu_3']J
+pkg.torch.onnx.stack_traceÿFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 588, in forward
+    return self.predictor(combined)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+ÿ	
+relu_3
+predictor.3.weight
+predictor.3.biascoinsnode_linear_5"Gemm*
+beta  €? *
+transB *
+alpha  €? *
+transA  J¦
+	namespace˜: main.TeamPlacementPredictor/predictor: torch.nn.modules.container.Sequential/predictor.3: torch.nn.modules.linear.Linear/linear_5: aten.linear.defaultJ¤
+pkg.torch.onnx.class_hierarchy['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J¶
+pkg.torch.onnx.fx_node›%linear_5 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%clone_1, %p_predictor_3_weight, %p_predictor_3_bias), kwargs = {})JJ
+pkg.torch.onnx.name_scopes,['', 'predictor', 'predictor.3', 'linear_5']J
+pkg.torch.onnx.stack_traceÿFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 588, in forward
+    return self.predictor(combined)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+main_graph*—¡­Bplayer_embeddings.weightJğ z
+¾vi>,ì×=7¥½†”½ìLŸ¾BµA>N½ÕøQ¾é;»¼' >™;†=¶5½q»»<¿K¦;Éˆ=>p`½HEÆ=ÂÌ½:)½R‘<E½MÚø½şƒ<;š”<"($=I4€<ÄÃÂ½„øÖ½<ß¾Dt‰=›Ğÿ½)Q”>}æ¾0N´½İ€>”:¢=4îœ<¥g<=ıÌ½Ã¡P=lM='bÏ=¢ç½ÈM×:-#ˆ=*€ü½4£s½n’k½Ùx=Ö>ùˆß=‚ ¿½@hL>à="j$½X>e+ç½»'M>ƒ²¬>¼¶ ¼šË|<6×<‚¿£»òOÍ¼SÏ›<û\B<ª÷“<¼Òb=…8­<+Õ“¼Âô[½’/ú=¾=>½üÄ‚=.´¼ííC=æ¯<Ğš–¼Tit=no»<h£<ÃA;öÙQ<#Ñ—=\¼ÌP|=/›F=|ê–½m€Æ=q%‘½Ÿ›“>`I=Na¥=‹Q€½!Fğ½‰Å¾]J=‡i¾TGº½wå¸½)˜6<)óA=RA¾,)Â=Çdù½Ñˆ¾àJ¼‰ÃÎ<œÓ#=´gÊ=zş°¼ü‰Œ½=P*<"	{=¿4Í=5Ô6=áİÖ¼©÷½Ö¡½•…½a¡8¼E½‘s>&Å=dã¾f]3¾Î6¼ôId¾Ë”±¾ç¾÷{%<>Ø—¼˜C¾CÜã=í >h1Ü=_tJ<§oˆ>ÍÏ‚½èË·=—Î>¾?‰=ÓÛû=5ø<`¾Ÿú<¬ò»GŸ¾Úâ•=X<½ñG¾/ı=¹x=ø=º<¦<Re½m÷öº#z<sw<Û×¤¼¯Øô»¨)€=V¿Ÿ½y4=§)=oò>Nš½XÑú»)®:½Šş<ˆU;çw¼Ï¹¼ñë1¼¢@$½¶°¼{ü‡<|®¼g;½Û²ú»	ü8½x‹ş<ü„;ÎÆz¼ğs¼î1¼¡Ç½ª†¼v"‡<F‰A= w¾çê/½P˜´½ÔkW=â€É=/°2½•Ä<>—¾d‘¼_Ğ%¾œî=)¹>vìÇ¾²*ä¼€½¾É#×½{V>¤ø¾èd™=)IÙ>ìà½=Ñ¸½Á,>üa»ãm=F*Â½št#¾ëŒ =†Øe>KRv¼¸x”=>µ¦°>2.‚½Ša»ƒé½Œ´À»Ú=D_i<»4<íÌœ½b	Q;axå¼Ôõ«=6·=rv6=åìÕ;¦€½á[­<€Ü9<Z…<[ëşº¦';òåM<Q¾B;Š­<€¯<¡b‚<Ğ¼?±¼Ö}‡½ô¢›½9í=ôVÕ½'eµ½jk«¼Cp·=7=¼V5¾gàà¼6¶¾ÌpÊ½¯.'¼ªÆk½_òç¾[œ‰=;Ìô¾6½ó¼!Ç–½
+º­¼ñøÛ½?„û½’@À½ÙÇk¾Éµ­<Ü9<¾ƒ<Uqüº­L$;B¶M<ÓÌD;Í<|¯<˜`‚<ş'¼g2Í¼¼æd<íE9<t
+=ë§»ñ´µ¼è„q<ipC<,ít<òô3=ošb<ğ«¼(M½Øv:6v·»(R<‘pM;6s¼4)¼(Vß;Qµ9;–ñ=< "ˆ¼Í@f<.ƒ¼h|d<`I9<íj
+=`,§»µµ¼š„q<}ë?<‰ít<	4=0{b<h«¼WM½$O=l€¥=
+A=)	A½¿¤º:W4½Â:=¡G1¾ßuª=»à›=‰‚…½ß»P;‘š±=nÒl¼şNÓ¼ka}½CHİ<C÷6=º%°<Š5ã½˜xÄ½O,x¼ı¤Î½f]‡<³(<1›A<½ø/=}´¼B¶5¼fÅW=+0½Ìò2=ßn†=sš½<Î‹K½>b½ïé<pÁ.¼Áç1>cÍ\½±F½õà=_Öş<y_·¼Â¾¼¬:Û•–¼~i‚¾yVK½ùˆ™=º5>ÿb'¾à³8¾¨Â¬=±B¦½9^’=r“R=ÓÜ=0ó¾Fí½4r×½ª|,>1f¿½ˆ”k½Îî=	È¨=uå„½÷!«=À·Ê=3$¤=ã
+µ;«±‰½VR*¾Í[i¾ık£>+A•=ÏÅÚ¾Şó¾–o¯¼åhÑ¾VÁ;èp¼ş+l½\—W=í^Q¼-m»ì»£½:Ô=hs=‘jš=‡âœ=Qƒ¾s…¤½	u¾%ğ=A/==·È½ËÅx=e¸½úŒ½]«m»vs*½ÀS=k¾¸E¾rèó¼<M4=9#ú½lô:ÿ®;A¤»+9#<GO<Ä!:*µ*<´²‹¼´P¶:K¥:Ã–»ÜÀE»|è:…®;şŒ»Ü#<O<º
+:o¬*<’xŠ¼°!;¡"¥:K$–»!şF»f0F¼©’'>“<¾6äÊ<—½F >Åw	¾+ã=»P¼°½³?N½Ï-Ë½Óg:îH®;11»Ñ#<B!O<uø!:Úv*<J´‹¼ö-·:ùì¢:Ï–»X,E»u°>·¾
+¾ä¯†¾Dç=àœ>ëT=³Å;¡½İ Â½º‘½PzäºæÃ >¤˜2>ña½ æI=âğõ=Å_>©›¨< …;½ƒÙ¾8b5½P#: ¼ÔÇ¼?jŸ=?í<Èûò=–d²=h×+½AÏ”=ë†=-<Ò½Ò=6×<'~ª¼*1¾Ç<£¼<€B=ŞğB½lO»µk=>
+½ú =©d½’‘¼´à‰<†¦½rí=£ì<=º
+‰½Zv®¾r[û=N_=÷¸¬½ç€¼ÙA¾€ ¿=<cn¾Âì:ÈÎˆ½íÕ¼Ãë=Š=õÂ< ca½GàT<x»T),¼öm=ñQ¼;A½j%Ù½áô=£æ'<e„=L'<}C½¹R=mÄ¶¼å³‡=ÓŠ=y=U=´ -:ÏâŒ½İª=¼À¼=¡’F;ZLN½ª»Z½ìY¡=PL½ZÎ;>â^z<›^)<M7½V=g»¤ò”=+D5>õ™K½q¯'¾š²§={ÊXºÊ=&gK>‘¶=ôQ–½¯+o¾ ¦†<Ê«»<€-s>“ÎO¾Lğ>DŒÜ½ 6¾.Th=ñ¹‚¼äGw½¡É½Ç«>Æ»A	=,ùV>Öe4>Q­¼Éñ±»šÄ–½¥ª=™óö=Û›¼³ì'<Ò‹;½o-±<|úá<ÓY¡=<;ÊÂˆ½…şC=_ã¼ã‚=nŞÃ=g[=÷¬Æ¼YÜ½¹}€¼­×[=ka2=0Ş<§äŠ½Æíe=En!½ÁÒ=<Ò=©ƒ=©Ã]½Š"Ì½ƒC=uºn½şÀ>šó:},>X·Â< ß«=ŸüÓ=À£=Åè%½9C='lî=öË»˜)ä<b…Ñ=bÿa;™ÛG¾u»=ã½®¼8>:<>øP‚=£À…½öR¾ß¹:G
+E=»¢;µŠ»	Â»á¯<A1¼ö‘¥;ó==£,ş<áê½mŒt½srJ=€Á¼%´
+>ÄÎ½2I#½½¾¼pİ=YmG½ã¾˜Ù<¤Ã.½D%j½O„¡;§q¼7”b<ii™<ßé:Ûjİ;¢š;‡uU<CŒ	¼mZ7;á½G<¡3<ºÏ\Ô»Dˆ=á„>+Ğô¼OÊ½½—Ş	=:é­<´½¬=N’÷=ê–=M½RÌ¾ï ê=ªÅá=#>>7Ôõ½5ß¾„©V:eïÊ<M¾¦ˆİ=¯…:>ŒN‘=ê>>‹½–×(=[Çš¼y*È<0¾Ö~,=ø_W½iE~½w^F=ŞW>˜‚¼õ£›¼—Cï½UVH=†uû½ÎY<Ó_À;ö`’½TÄB½_aŒ=İ.…;KäÉ½‘ÿš=ìZ=’§Á<šËº	)ò=U­¼;È¾³Ü±=‚”³½Ëé= ’>|1ú<7Ø‚½½±+¾9åó¼Ä÷İ<²
+Ÿ¼Ó	=ãú,½<Ö¦:d¬[½¹]í=Ö£=;WN=}S<Uˆ™¼õı¼ô‹úº”"½ñ&Â:zô=J«Ù¼+†r<—=½ĞÖ2½ã*=¼<s€<5=÷ï
+=…«#>7ë½]Ps»Â§¼$D>6(=&<)>NM½ıÕ‰=,f2½1Èœ=9û¼ÍRj»›±¼×»y÷U<×“û¼ó¸=×v–½½3'½\–:½®¿›»²A>¼Êu=ÎnK<Î!i=wù»ÂY®¼]d=Èg<Ş@-<ñ¼=;Š¢<Ïd½ÄO•½TÏ½GíÜ½²•¾ŞÌ=÷/¡=à‰½ã+¼`“Ğ¼íh[¾ŠÏ½¶£È¼Õ—×¼€ø½±ê?¼|—¾#>[E=w»=9¹¾äŠ.¼İş=ŠÆ÷¼jI<ÔÍ@='Ş^>àm¥½˜_>¨É½•a>zF¼E€=J%¥=\h ¼6İ=ÀGô<Ş I8º¼%½LV={\ğ½fÛ¹½òÆC=j¤ï=“¾ô;çÆ¼îQ	>+p¾¨¬½\ç=ì²,;e¶Ò½%á=ÊF=yx>¼u²…¼^fd=ûˆ!;N4=¾”˜<#Û‹=Ò=}Ä'¾€ ¾¨sN=00ô½,šÔ>)©D½àˆª¾%m¾PÙ%¾…o¼»qy„>ê`=B¿½İ%¾Ã%n=]=Ú·^½dÚ¼–b½…¹¾Ê¹$¾ï"£=‘ô:>±f=KÖ—¼,–=`»oc‡½$Ît=²	[½È~ê=íl“=Aß=èH–¼“·™½Bk¾Ë{½h6¾cL=Í)X<ì}Û½x €¼IUƒ>Y¯ÿ½êüS½Cõõ=³Wî<=ƒ->:w½V/İ;l¹<¬3	>ké¼kì¼‰ ¼ö_<¾E{¡=ìfm>"–Î=&ÿµ½„/=²xsºòêˆ¼gi½Ç>f!Ğ½Ú:@>K‡‹½‡hM>9ıĞ;Ãå¾¿Å><èRÛ½öè5>óy±½!×h¼yn‹½A0<|&w»²71º·a€=*r…<¥*Ü¼7v<ºÚY½UiÌ<Ş7p:­Á9öê¡8T!´»Uj=W×ó<Ï]3½È›Z¼’Ë•<<|‡<'¤¶=xÙw=)$Î<õ^²=Í:e¼ß¾G½:_â=ì$t=Ëœ}½Ä5á½N=Œ<	BG=s3>² ½Bå¾òŒ=pRÇ<…·=…R>N3„=ÆŸS½î'u¾°HË<t¡<k'=Ù3»dŒç¼fÒ<¥i¼3Ä=ñB-=Ù·<±­º»é“;½®EË<ˆr<sj'=jOF»˜¡ç¼˜Ò<òr¼+À=Ø’-=ˆ·<Mº»N;½ú-Ë<‡§<Ìh'=”.F»1'ç¼‡–Ò<Ó[¼lÅ=@á-=Ü·<¶®Ã»’¦;½AHË<K“<gj'=L:F»ïŠç¼ŠÒ<ß¶¼Å=AÈ-=Ù·<gtº»Ç‚;½Â =‰Îÿ¼ÁÖ‡=!<óÃ†½µn>=z&ƒ½áÀÉ=@p=ÙŠƒ<ÿ¾<‹Zƒ½XÂ =+Áÿ¼9È‡=!&<xi‡½§>=OKƒ½"ÛÉ=]Ap=õ_ƒ<4l<¬!…½Â =àÿ¼§Ö‡=ûŞ'<õÃ†½K‡>=TKƒ½ÄÖÉ=RAp=`ƒ<<¬½%Â =1áÿ¼XÖ‡=	Í&<Ã†½H—>=OKƒ½DyÂ=ur=ë`ƒ<½<¢½n´¼ ‹:<iL¼&=jK³<ó°=üK„=hCê½ƒ<°ë-<	½„Ó(=ß¤´»qGl¼Àé£=!'¯¼À¹½@R=BÅ ¼Zœ="-œ=G$`¼ZT½ˆ›Ë½º=‡õÈ¼Áæ>Cé¤»m*Ğ=Ø…`½jÖÕ»iî
+=‚0=iâ[¼a*„=òTÕ¼1Õ:;ò&7=‡½Cõr½­ô»&{=×	¿¼8^=hÙ(¼(´'½§cœ½ì4F=_©E¼Ò*‚=ñ²½–Ìå<¹'=O=Àv¾ş8¼'½¤v	¾®ú¾Ÿù·=IªÂ½½½jÏ¾`#n>Lß½,© >6Ñ¾Û2H¾Î¾{t“=Kºç=›xü½ğ”½=}x¾!½q¼=Ï¾,¾Kå¼=ì4ÿ¼uĞ½ş…<¢ö½e×~>¤·ş¼vÅi½/¾Mæ2<€•‰=b°‘½‘3æ:´!ğ¼£¾˜l†½/;=£ >Ğş¼0Äi½DÔ¾R¢7<Íf‰=Ú_‘½JŠæ:Ïğ¼Ú¾Ê,†½êk;=Ô;$>­´<)†<ş;c:˜<rµ”»Nô»™›y</	<ß¹<,mº;åEÇ¹±¼TÃ³<R<m! <Ì9˜<Sj”»?ñ»VŸy<ÁŠ<ø0º<CTº;&ù³¹îF‹¼´<<ş;ª+˜<–“»yê»š¢y<C†<0º<„ø·;o¹¹A
+Œ¼Í´<ä <Åúş;Dı—<æ{”»YÒ»$šy<ìt<±¯<ù¿¸;Jğ³¹¥sŒ¼Ã_‡¼¤é”<ÜöÑ¼¥ÛÈ<<q„<O¼å’+=a#½·Ìk8Ft©ºŞÔ»£öü;%"Š¼B(<\f«¼€Äİ< óÈ;AŸ¼dğ<MÓü¼’É»%'"¼ÎÜÇ»|Õh<Oú‰¼œş<³»¼³«İ<™È;úM¼a`ğ<5ü¼É»ê,"¼¯&È»Øİk<ú‰¼¨Ê<{6¸¼ÔFİ<‡¥È;ü¼‹fğ<.;ü¼â<w;>"¼*OÈ»œïh<´¿™»%B¿¼‡²+½½õ<ïúJ<—¬¼}ä*;ŞXA;‰ö»¼fœ¼ƒ ª<°C=Ÿš»aC¿¼ß+½Ë§õ<«ÑK< ÏG¼Sæ1;¿”A;„÷»¼¿kœ¼V•ª<Ğ1B=®š»”D¿¼Üİ+½’©õ<ËúJ<ù–¬¼÷+;ŠA;;İ»¼ñkœ¼5ù©<+ZB=¡â¦;ÚÓo<pœÏ<rih<•á²¼Õ€c<ªÔR;T+<»Ì=xÆ,<½ <Ô½e‰¦;P¡o<}Ï<ÚRo<pø²¼€ad<pÓR;€$<lÅ=æÉ,<ª¾<Ûì½M‰¦;CÆo<é…Ï<ê/o<6³¼)”b<EÛR;•ğE<ÿ=NÆ,<G2
+<É½Â¡¦;ƒÜo<ešÏ<xm<ºğ²¼ôc<ËÔR;¶MC<0Å=†Æ,<×<	Ê
+½¹A<Å´<4ZÊ¹cÆõ<];v»ï·Á<˜šĞ»áì‰<Û;¦]ñ»£5,¼ÁOB<k´<$~Ê¹–°õ<¿];£|»g¸Á<5QĞ»·”‰<Â¥é;Ì˜ö»Ã*¼a1B<´<dñ¾ºÈaõ<-];"U»o¸Á<;Ğ»eı‹<@ñÚ;<¥ö»,¼¡º?<c³<ÀsÊ¹¶õ<n\;ár»s¸Á<PNĞ»eÇˆ<ºÛ;rªö»Ã*¼–ñ¬<òÉÌº@=âà®:kÄÒ¼
+À<VkÅ¼/9L=h2=fôõ<q4¯;?R½ŠT«<Ê˜Ìº3=›¸¾:nöÒ¼»7À<¢jÅ¼{ˆI=C3=&=õ<-¥·;şì½iW«<–Éºªã=‹ù¾:ÈJÓ¼°Ã<…XÅ¼¸•I=‚2=:'ö<Æ¸;cX½T«<CáÌº÷’=t"¾:iÄå¼ƒ
+À<ëµ¼µ•I=÷2=~¢õ<É¸;<D½c”’¼&ı;#½‰f+<õ¸œ<u“?¼q‘Ö<Ç1½é¹À¼ã–Í»“R¼ß¥=Û•’¼´/;!r½HC+<CØœ<³?¼%Ÿ×<Ê1½·ÊÅ¼—Ï»‚“R¼##=l’¼–ö;½Òb+<“½œ<JqB¼Ÿ×<È1½Š¬Ã¼ßéÍ»İYR¼É?Ó<ğ#Äºİ¼{<:<¨ªD¼ŠªŸ¼W±Ö; ˆ©»ßd<ÂV=KÁ<<Èèì¼Å^½IÃºŠÀ{<¥<è©D¼¨Gš¼§¶Ö;A©»J:€<ø|ş<ô<ºèì¼A¹½ê#¹ëŒ#<IŒ*:
+k<%y¼\A•»ú*`:ßr#<Y$ğ<‰#v»¾ÔÕ»î¡¼7c<°•¸´¥=Æ_ì¼à½?+¯<¼4[¼ì…=˜= 0E<¤(¼jJ½„m<3›Š¸P[1=5_ì¼a½Ä(¯<ÎİZ¼Æ¦==ÍYH<Ó'¼KPJ½÷j<öVQ<¾µ	=Uå¹<æın¼K1<(Û;“ã¹<+_g=%Ó<¹’p;v¦8½R<MÂŸ¸cu1=ºıë¼¡\½÷Y¯<v;[¼m6=€2=¿°F<u'¼fK½™£b¼ìoŞ<qG=xuÃ¼Ø%A½m?£<®eB=0’°¼™Ö„=¢Àş<M±7½G3½|[=ıe< ¤=4 ¸<©½##=5˜·¼˜ˆ=q~e=‹e=Ÿ†¼&p‹½ós¾½¯ap=şÙ½’Ùî½†õ":†ä™½#í½¸%Z=4µ½¼vT>7)Ÿ½ÍíJ¼X‚€=å­»Óúñ=V¢º<¼ŠÚ¼ÎÛ>>ª‘Ğ»ü ˜=­<E½¾C]>H#¾ ©Ò½à†½³ ¾à8=^ó<F<Â½Áˆˆ<Uä¼½N…/¾±
+¾Ã¾=ĞLE>[	P=arÒ¼#sk=^ş9»v.½n¦`=sàœ½î8
+>< †=„¥=&#‰<æƒ½ôP=,rÒ¼?åi=°A:»“Œ½m{a=éÈœ½‹¿>SÉ†=¦u£=é ‰<•äƒ½vP=àWÒ¼qRe=ïú9»àÒŒ½N¡a=ß¶œ½¯Ü>Ÿ†=#Ñµ=‹ìˆ<6˜ƒ½­lO=}qÒ¼şj=u!<»a©Œ½5yb=àœ½![$>›Ù†=zí¥=³‰<BÉƒ½k¯ş<p“”¼nÕ/=¡1¦»ÅO½(c<@Q½ôY•=]D==Ï=‘<î‘ »¹úa½~ş<½¢“¼–a-=Z—§»#:G½­bg<… ½xV¦=ÓK=“™’<s »¯b½¯ş<#á”¼Â-=ä¦»¶ÍG½ÚU`<$½JY =ĞŸO=RI’<Ùƒ »4êa½ÿ<›P”¼Ç30=Nø¥»†lG½(Æh<h,½ã=DL=Óí¦<‰h»ºûa½8A¼Â~Ô<Àş<-q¥;C$½³`ø<xx1½ã!µ=ˆo¬=«T=.1¼©q£½(X3½,$=´Æv¼/k<ãıé¼{ã»&gŠ»Å<LúÕ<T"U<,(¡¼"ıÅ¼¬<¬=Ã°Ú½L>xq¸½@ò<HëC=¹ù= 
+'¾å½ÖÖ¾Á<=©
+Q=?Hı¼Ÿ<îD¼†Òâ;äóÚ¼Ô¹ä;ÃÁ•;xûÛ» ¬¶<˜<Ã…½Oé½Ô/u=K×Â½İ\¼,	w=0>Åç“½óÙ=Q¾m'¾9¸¼©Ëä=Ëc>Ö5É<İ.= í=;Å×½ï¸Ñ=pC±½Èü¿< !=tîŸ:,a=Û¾ÙY>şq/=”ø;-?=à]\='½ta=_aJ½ô™Û=ú«Š=>pŒ=bm·¼é{S½í(ş½eÏ@= ¦"¼İŸM=PÛ¥½ô]^¾º8N¾<…<ã;µ½º½ÆF³=ó >Ô^Ê=íL$½¥^Ö=AM<»‡½<À’=|ñ=Æ4¾EnÂ=áûs½¡ŞŠ=«8å½ªdï=8›´=*ª§= °½dß5=Fäk=@W…=Ş\w<vs¾,k`=²'¼Ag2¾Ã%{=`µV¼ØÃŞ<CÛ,¼ks5=IŸ½Ï§½]ØB=Úx=¼û,Ø¼UTÎ=tK/=5—™¼İ—N¼ö€½â)¦½£“×¼  ñ½…åî:Wõ•=šõ½§\_½Û[¢=UÙ!¾³¦»;€@<]
+ğ<·§;¼¼0Øj<ôÛ;vC.<;>=˜Óf<¬ûÿ»Z;½Ç¤»;d‹B<¢\ò<;ÑÜ»¼˜Ùj<W›;éC.<d= ;f<EÈı»2)½‘¾»;Y#@<œÊö<\';/¼¼'Új<P;¡d.<Ë=|v`<êş»Lb½°ª»;<ı@<m=ò<`;M¼¼Øj< ;>@.<"+=oÓf<Èı»æá½ü3=#Ìc=»×>ÿ=½P½?Êˆ=¯‚=ï­¹½nÕ>¤«»çİº½T”@¾Ío´¼Î=g"Ë½sñ.>z½Ì­x<—9 <qô=ŞHÃ=ë>½²ş”<é›G;É›E=<ñ‚½S¶Ü¼‹‹Æ=5O=LD-=–K=¶?œ=Òt½ÃÜm=8h±=]gé=EMa½B+¼¹sù½{Ñ.¼tUÉ=¹†½Èè<È?É½˜Ëõ½8	{½Ó¡o<°üÿ=ı3à<ÁrÙ¼/ôS=n®®»ã€l½&5'=ŠZR½é÷³=ZK=‹<“ˆ<¼êqU½óà<¢Ù¼Ë/T=©p®»xl½_f'=|YR½nğ³=Â“K=<'<k<¼ÍV½ÏBà<?iÙ¼ºéS=8œ»±zl½t5'=ÜR½ŸÚ±=JyK=²<pŒ<¼&rU½çà<šÙ¼ßS=÷®»¢zl½<'=óXR½…Ş³=IxK=<bH<¼úwU½éê3;„d~<6j<|K¤;%¤»ŸŸ;üL‘<e²-<g¶È<¯ÆH<¥ú¼“ Õ¼®";2İ<3Æg<¾1ƒ;·’£»>˜Ÿ;ğr‘<xäÙ»é×Å<Ü½H<m¼/Ô¼›°";¾<98j<2£;›c™»9˜Ÿ;õJ‘<U¦Ó»¹Ô<f]H<÷ø	¼.RÕ¼¬’";ˆ~</j<w¼¤;ˆ£»^˜Ÿ;K‘<,uÓ»êÊ<›]H<ß ¼SRÕ¼
+»p½«Nc=yÿá=m%½"K=<Ôš<×‘½œñp¾8tô¼‡|»w•~<~Ó°<7˜¼o ’;V¶¼ã½ß»ìÈ³<}‡¼2¿<«Ô¼Î8¼É©º×®:Ï™€<Óy•=qp;¥³=(Z(»€Ä½#›¤=|¼(<r*=Êy´=$c‡=ËÕ‰½ó¾…B¼ç,’;k¶¼ÿÖf»T¶<±=†¼Ñ<İÔÔ¼®#8¼Ù^©ºØ®:ê%š<«Qk½7ìe¼vùª½–Å³ºâÊ=Qù‘½¨Pº¼Ì6¼Qã½h×O½{_=«>Kïl½$nf¼/¸»½»R±ºgÈ=ó’½Nº¼³5¼}Œâ½ŒP½3_=|>Jck½+f¼•»½sß·ºmÇ=Ôé“½1Pº¼¤5¼7â½‹P½t_=ê>jÜk½jëe¼é|¹½!»·º/É=Û’½DQº¼A9¼¾Xì½³P½5ú^=6ü=©“¿¼¸&<\Ï¼å˜Œ;sKº<†…¿¼0eƒ<˜£ë¼Õƒ¼½³eºÎÓò;¾%¡<ï“¿¼"ø<§)Ï¼‰h‰;ûMº<‰v¿¼Õ0†<R¦ë¼ş%¼%eº{ªó;|«<³¿¼[ò< Í¼€$Œ;ı½µ<ûs¿¼c0†<…wë¼l&ƒ¼›e`ºfó;Ù¿<üw½6ğØ=[¼mh<·<4	ƒ=<Ë½Ø89=][=ø>>Œ;³¼Ø.¾”ª£¼ìpË¼ğÜ;½ƒËı;Ô9¬<"Ø¶¼òrº]q”¼{>t½=ôº¼gdr<qy=Y…£¼vsË¼º =½n”ø;¥9¬<ë¶¼ó¼º…”¼x¨t½^ğº¼“_r<ôÆz=nˆ£¼vsË¼])=½ÍKû;<¬<~Ü¶¼dºƒ”¼Şu½µğº¼K•r<“èy=Í‰£¼ğuË¼/H½s0û;7A¬<(×¶¼Nïpº‡”¼ëDw½ ñº¼ ^r<rJz=(l’<×Hç:×š=€Ig;š/½Æ<(çš¼&A&=êİ=cÑ’<$Êºãé½¢‰’<póÍ:l¬=ÆÒh;8,½—Æ<ÏÑš¼.ˆ$=bÜ=‹Í’<ƒìÉº3
+½Õm’<pç:š¿=F¡h;º5½Æ<çš¼s†$=aÜ=ÓÙ’<<Ñºíé½l’<—ç:‘«=Yh;r+½"Æ<WŞš¼zˆ$=[Ü=ZÚ’<JÎº!›½Ó±2½Øé™=ˆ„¾¨¢—¼İ>ä<¼ˆ½/-@=mĞy½g|½º (=Ñ$>šŸ=>¥R½·ë¼şÄ¹½>«c;D[="“½`½wâ½¶ÉÛ½BÂ€½&Aq=è>pœS½ô†ë¼õ±»½c¬b;Ú[=Xø’½·,½È¦½»ïÙ½b¾€½œAq=Fë>‚N¾üš¶=?	>v÷™½q™½•Ş¼“<ı;õK¼½ 6Q;Zæ¼Sã¼½ËYm=ßq[=­@<*[½¦\´¼Ù‹=Ÿ.<s†á=¬á½è66=:Ûr=ÛÌ}½ÍŠ.=;>zp¯½Nm½QêB¾›Á>;W»d	2>^öT¾c²„½sÕù¼•õ¾“Ä=ü•¼f‹q¼õÈ·»hç„¼Pı«¹)¥t»Ìö”;9¼ª¼£Mdºûx³»=y¼ a	¼ë’x=ø}½doĞ½ğa¹=a­ >í­¯<ó=â=¢ó½ÖŸ4¼ iC¼p~S=»©>½í‹½Ó®=ô`Õ=vs>°óÎ=EÆ=I¿_¼Ï4½¶ÖÂ>= Î¼Ãô<’—½GFÛ=òŸ=õI¥½,È(>üí½äù›¼Ï.=ï[Ÿ=|öÆºŒq<„¾ğ¸Ô=Ò,m½Ï¯>àœç=•hÊ¼¬3Ä¼‰Ôn½ 1‚¼Cg4>\ì¥½¾?˜=ºÇB<àaW¼ä1¤¼<"É½ŠÃ0¼_¶I="¯©½×P<e}K=q0¾Icm=ªÓ‘=‰‚»ÔÃ=aôá»0¤Ñ=‡äŒ¼m6_½jè’=›W½Iá>õı=‹=²íÜ;qÀ·½éCİ;Lèø¼î…a¼—š¹E'¼õù:q<T¼ø˜Ï<A;5Ö=ˆ-ú;³ª;¼õÄ=qV¡¼°yÄ<D¾<˜hC¼#=ÊVj¼Û'­=@*Š=qò¤=ëPñ¼ÓT‡½ƒªş;h<:±>òîŒ¼>
+á<6«‡=}š‹»$­È½oå½M!½4¯%<rB|½‡2:=•¶<Ä‹=ä]N»oI½Ğaa=æñh¼¹¬=hÆ¸=J=QU†¼Âÿ¨½4’==Ì1¶<Ò=ü8F»÷Ò
+½¶na=±ïh¼}ã=v#º=z	J=ŸR…¼Ä…©½UÚq=j¡5»ïV>Ëp¼Ÿ¡À=üCÕ»˜d5<íå< ½Ô»0½¨Ø»½ms>Iš¦=Jo’½¾æ=¤›½Ñ¿Ä¼µSz=	¸=x½lP=r=«48½Lf7½ùÅš=²¼R<\Ğs;ïÓ¤=;jk»ß=â½>‰ş¼Ğ„<„‰'=‚=«Ü»ùŞ3<2Af;¿È›:ßßB¼ˆğº$C»;Và»C¥<ĞJT<Éû°»ëÚŸ¼ôN÷¼ÔÅ»úrÂ½l—<Ñ”=«yh½–Ù†</8½[¿º½¨Ÿ¼ıø<‡tŞ=V^½ˆ´I½dçø½–—¼õË¯=Yo½GÍ/=k¾{¾/Jç½8RÌ<¥Ÿ*>°¶.¼ö@R¼eäÈ¼…¹…»§Š•<^<¼¾Ş÷;«ûÆ¼š°¼ô»Ÿ¼ìæò;jtß<Ø2<¿Ï<¼ƒ’<mñL½ÑšºÛTç»:ã¤<È„µ»çXÁ<¿úE<õ›½]¿û¼U0¼°jR¼óÈ¼põ…»…•<×ı¼õÉõ;©ŒÇ¼à:°¼¶Ÿ¼Óêò;İæë<¿%O½oªÑ<.šü½çÌ=%¨ã=Êï½hB•=©½ùüG¾r‚½›€>>|8s½î»<6¶Ò¼Bßï¼N–7<)	ë¼3TL½EÿÜ:nıw½êU'=²±=L¡=YGş»Î”½@ÆQ=8I½Aá}¼c½œøÄ½Å=A¼#b½k‘;¼Ê&Z½Igì<ù*”½ùÈ½£Ä=Ã¹=ôz[½‡Ø<bÎ§½GK¾Ç-x½‚²	=Ëm>ët½E¿a¼k£½0ƒJ=Ï¨±<GÁ¼–§¼6G§¼R™$½ee¬¼NB#<šY=ë»8=o‰=Sí<Ú€¨½âQ=ñ?½u¾ˆ=Ög·=PãJ=K^½hNÜ½ër>½óz¥=ª.;=L!<­:¼²<<÷Q¹ˆ%ñ¼Åb[=¤¯Ô<0û½Ö ™½;–`>Ô„
+¾Ÿô´<r¥–<XA¿= &D=ÜÕ=R?ö=C+×½f€í:™:¨=½>ş¼|zó<˜_[;ÓìÎ<JL½ø³=ÎÿE½×tm=y‡=œl;=Ú7ˆ¼¬g½âÌ¼!4 ;æ==ßJ>-lb½ÄóB=N¥;zÁ<xVn=ø„=ÀÎT=¯d?¼êÿÃ=äR7¼_É—=ğªô:,"½Ë›=ª­^;9“š=”Ì÷=®£=vŸ‚½QÜá½‚Ûã¹QB=¡­X=Ã«ã;^:½"”§<é6Ô¼D“=‘¢=ìµ•=XÔ=¼
+·µ½»ã¼ç<\Š¼ˆ<ŸÖ<¼¼8;@©§»ÒJº;ˆ<ısE<¨Ôm¼’|¼Ó3C=äÆ½.:_½“!<¼|ô‹=«†o½"$½<	Æı¼¢¨÷½UéÕ½Ğ|=¶ºø=­è³;@Î)¼²B;<Ï—-½0o!=Ñ.j¼E?<'R½û«“½ê±€¼%!Y<#«<=ßµË<C(÷¼ğ'9=<ò±ºÑÕV½Å!=0÷#½…{=®m@=7{(<Ó¤¼¬Å…½·+=1;ı“=?*‚¼¥×L½"Y=>—Ç¼hù±=‹‡=lã=@è<¼±½îw:&;†<nI{<µ¬:¼Ìaó»Šx!¹è‚<tâ»ş¥<.4<éÚ6¼:ò¼ê(Z:5ƒ…<dI{<¡¬:¼\ó»9Í¹T‚<n¾ó»ÏD«;5;4<ÄŞ6¼fXî¼#w:9i…<>5{<ö°:¼ç é»€Ñ¹£ï<î¼P¢<	s3<Jß6¼Zî¼q¿»U’<~‘E=]½Z½*˜Œ<N-ƒ:ö¹:…áÈ<nL><¿çØ¼
+èl½L»]Û<$E=Œ6½B”½ÿ<%¶s:×ÇË:RØÚ<_ô=<BØ¼B,p½E»:—<½E=â½ó½¦¿Œ<x–t:Ş–Ã:¯ñÚ<K?<òóØ¼s½À»H¹<£”E=³®½Ë½ª¾Œ<ëÔs:âÉ:(ØÚ< ><XîØ¼q½¾eâºQT<Âfú¹@÷Ñ;"ôõ;´§ÈºË<’D'¼Î–\<!ï%<c¤»}:R¼¯]4;¥†<`†#¼»|=ük§<‹ıT¼ú…R<=Us¼‚=<³òù»Ä“ƒ<:é»:ÖEV¼Ø ô¼J"Q½K­»•=fPÚ¼Ô\Ì»
+B¹¼‡
+½†¹½	.É<ŸAœ=kFV¼‰Òó¼†aW½
+)­»÷•=Õ¤Ù¼_¦È»q?¹¼U½ì¼½àÉ<‘!œ=ÆSV¼dÒó¼ÔiQ½2r¬»n•=Ó¡Ù¼‡’Í»Ñ<¹¼À	½Æ½EÉ<qeœ=ÎÅW¼£Üó¼İQ½İH­»í=8¦Ù¼ÿ]Í»[>¹¼gÛ½,‡½EÉ<9)›=»ËO:Ú‹<eb=nÿq½Ó½.±'<?ş›:(D<ÏS­<æÔ;\¯½'Š…½yïP:¯Š<ÂÉb=q•t½¡Ñ½#,'<¶	›:×<2­<a\Ö;³½“F†½‚’4:,Š<­Ëb=ylr½ıÕ½vz'<tş›:O<ö2­<X”Õ;Å¹½J2”½¦9º9ÆŠ<ÉÏb=ºr½kŞ½?6'<5â—:Ã?<qg­<‹Ö;®='½Q†…½'”Ó»6!½
+Sˆ½¢Ÿ9;Bş#=õâ¼§i=¼­Ì÷¼›í¦½€8½”vÓ<È¶=™ Ó»!½´<‹½hgœ;üú#=â¼·`=¼´­÷¼*î¦½8½ÒxÓ<Ü¶=ÓÓ»‚!½xtˆ½Íå?;@ş#=h â¼…i=¼ÕË÷¼™D§½´8½:wÓ<îùµ=šÓ»iç!½'Óˆ½‹5>;ş#=Hıá¼¥i=¼Î÷¼Š¥½ùn8½İuÓ<^å²=šGÓ»€²"<U„Á;ó´õ;Çš;Ùë:ûˆ<!g–¼›`<wèf;¸FÚ;\ ~¼JKÓ»Îô"<¦ÊÂ;ûbô;ˆ–;>	:…$<¡‚–¼Uœ`<úf;	Û;*9g¼7QÓ»É³"<rˆÁ;¸úô;Æb–;h©»h2<Ay–¼1œ`<^ìf;ÕÛ;ü6¼ÛQÓ»Á³"<„Á;Íğ;Ëˆ–;SÌ:@p< ‚–¼[â`<õğf;ÅÛ; ¹¼©…¼-á¼]ö9½Ûˆ¶ºØõÊ<HBå¼”"ò»G„X¼Aìy½1 ã¼&Ì<+tƒ=Ë°…¼ á¼ÄF=½Ş’´º¼íÊ<m?å¼:(ò»2„X¼,v½_{â¼Y.Ì<È‡=W«…¼Lïà¼¡r=½<¶º÷Ê<xMå¼§ôñ»}…X¼ëøt½Íã¼C%Ì<~c†=V³…¼½õà¼‘7:½èµº¼òÊ<L5å¼+ò»ˆX¼¡ày½N ã¼{oË<Ÿf†=[Ï»6éè;ı¯:<];Œáè¹fs9¹Z¥ <wÅ–»ö{™<ÎP€;Š:lÁ¼Â»Nßè;çá<¬E;' %»´£u¹0 <—»	b™<ù};Fâ‰:"Å¼\Ğ»Qyé;¢¦:<%Q;~A&»i=r¹a <¡À–»b™<pw~;ëû‰:t­¼H‰»¾üè;¦:<úJ;|‘%»v#l¹ì <ğ—»2{™<r ~;mŠ:CûÀ¼<{ ½ƒ^¼„Š¼&$ı¼Ó†_<Ùé¼üa½ê¿=¼é”½mé¿¼¿!f<á¡8=·Àæ¼Ånï¼G\f½äš«;{jô<‚c½Nø®»à¹¼špŠ½½Hş<ßèŸ=íğÉ¼Kr)½¹d½m3=¢aê<:K½ZÅ»>ß¼dÊ}½ÏÌj½·7‡<«‚§=µæ¼b³ï¼"àf½A¬;üAô<d½G·»š‡¹¼îGÆ½õ½\³ÿ<´=üWS=aôª<#Ï=§0¼;#+b½úıG=Š“ü¼ˆß>0“«=·c­=­ås;Ä@½"N={¾½£ğí½á=éŸê=nšÊ½Ò >MÍl»“`(¾¾ªV½¥&>–îM>gL§=õZ‰<@›¼©ñæ¼½s=º_½ê»š>qd°<O˜:>‹†‹=¥+<I ½Î¯;7Š{¼_ë‚=Zî½ÜÎ;<Ò‰$½Y¡a=å·´<“@&=ív¶<ƒÛqºQûa¼ÑHé¼¸‘/½(Ø¡;=Àø¼]º^=)Tµ½÷8ˆ½²si½´	£<şeŸ=“‚=S§¼'‘=8Kã»»em½Şö=ÚH+½‡s²=ëÓ„=!1Í<¼’¸(b¡½»ğ==ºÎš¼Õ>éêÄ<¡&½½sİ¤= =É½iL>ûÍ9=w¼[„<ÊÌ½6à(<²¼:»ÂÊ »Mİu<=»?<Í¤ò;9DK¼²<Qø:ÛŸ<©}¬<t‰<zOö=àúĞ;İ3ç=·Ğ» NA¼:]=Š•¢¼ ¹>úz¡=ıA£=ããr=ç©½|ùè<™ñ†;Uz=y˜¼E]½AˆÈ<^;”¼TF[=wn=8 É<ÚqY¼´º†½KŞç<Oô†;‹²u=³—¼ÙŸ½8'¼<]f”¼NcH=ï¤i=ªÈ<ˆ§X¼JS“½xú²;°¨ê9¢·‡;AÇ—»#»Tb
+º|sÿ9ºç;Ş;(ÏºÔİ8¤Z°»û²;,Ÿá9U.‰;†o›»
+b#»^
+º4}ÿ9g»ç;ÖŒ;,EÃºÙº9@6°»Ù¾y=¤bX=˜œ>ì=Oà¾Æ†ß=÷Ac½†pG>%ê6>ex!>9<ï ¾ª‚‹:4$<{|;‘/å;á*–;’”K;0©<;(¼¯_<ß<„–º ¼x:$<ƒ|;k ò;Â{—;Ê€O;QQ<K(¼àÂ<xŞ<S]ºÆ8¼øîŠ:ã‘$<)¦\;óßñ;o{—;ª¡L;ñM<ÖZ(¼’X<èï<ìmºZ¼Ş¢›;­|Á¼N¼¦’ú»6ˆ;êµ;í}¬¼ÀØ¶<g×¬¼ìÜÂ:f<ÉÌ¯<P_á¼ïÑ»ç1‡½®2;;j2=İÈ¼í\ˆ<Ã…s½ã…½¯¼qX¦;µnš=‹b¼,Ä¹<,£<;×ûh<D½‰Ó<P:½.V1=1`>=px}<İn½P¹r½ñÈ¼¼
+¯'=tBÃ<J`<Ké*½¬d)<y‹¤¼g÷=ùµ>=;¤<PMÕ¼Eaš½=‹<RAÒ;b°´</r!¼Ğ2öº‹„¼ıBÂ;÷å;‘9p<áq¼¤ì/»~½pÜĞ»¿" ;K'¦¼Šú <¯Ç<èwë»Æ—<îÖÒ¼D¼ûn»_Áü:•<H|»ÂÚ,;u¼¼I:œïÈ<¿­»¹Â;*Ì¼±[Ñ¼n²×ºs»cë<<¢»æô+;_Dî¼’l:ùñÈ<¶õª»ôÒ¿;BòË¼¤Ãm¼À~Ùº0¡»•Ìæ< z»~-;£ûÙ¼	µj:×kÈ<öw­»ÎÔ¿;…ÙÌ¼(MÓ¼ÊÂ×º{:»†óç<¿fÔ<-°;Ğµ=ÌĞP;DÜ½R«Ù<}Ù½ş=Ã=8§=m5=–…P;ø¦Õ½±Y†<ÌŸ¼»8Í<\3Å;,}´¼5i<«åÊ¼Ù%!=²—<\	<ae;ÛD¸¼º9 qû;ÀèÆ9}á»»‹Û;’bË»üÿš;Ò4¼²÷g»`\~;Íù;RÜºÿ4.=[1Ú<ñ¥ˆ=ù:²&½ìjı<¿ Ğ¼?a—=u€=YJ=	=;ä½Ê1!<AœA<êaÛ<Rê¹:za¼2%<ª4;êg<ã%å<igU<Ú.»Ö½+-!<¼kB<+fÛ<®úğ¹pza¼õ<>êŠ;g<¬å< hU<ˆ±»&½h1!<}›A<8YÛ<‰Mì¹@Ra¼;%<„‹;Ìég<ìå<¡T<Î3»6/½o-!<öŸA<j©Û<%Ôî¹Åya¼$<yŒ;8äg<øå<qU<k.»{/½+Ì<ã!<\ùƒ<ƒC;¥î¼»àmÔ;ÚÅp;\W'<<„™<–Æ*<³…9†Ô¤¼c3<s!<wùƒ<p;“½»§ûÔ;T²;ùÕ(<@°™<é’-<\YŸ9±R¯¼ıV<U <vùƒ<ÜT;aã¼»yÔ;ê¯;
+
+)<:°™<Rƒ-<Ùÿ”9nÔ¤¼8¯<Ì½ <oøƒ<0¢;†Û¼»üAÕ;¢$°;6)<@¥™<E‘-<ÒUŸ9aÔ¤¼G¶ö;*¾;ÙU¼!º<rî‹<´5º{#Ëºz2,»'û>¼'û¡;´r<'<Æ¯ö;<¾;;Ò¼Ëp<&ò‹<uBº¤jÇº|ƒ,»Iÿ>¼2€¡;‰<*?<¥¢ö;`;¾;)E¼lD<[FŒ<Êºâ-:o6.»·ş>¼È¡;z‰<
+<<¦¦ö;<¾;nB¼ù€<±(Œ<†º|är¹'M,»Åş>¼Ö¢;²r<R7<š—<’íÄ;Fáş<MºoÓÀ¼.h<pìş»ˆ<â|
+=&¾$<Y6»)œ½Èš<”DĞ;ãş<}ÿŒº3ÒÀ¼1˜h<‡¼K|ˆ<}
+=–¿$<<P6».œ½;ë<ÈíÄ;Iãş<ûŒºA¸À¼Úh<¿ùø»Âˆ<ú|
+=;®$<ˆ_6»,œ½=< Å;Oãş<ÑºqÓÀ¼}ãh<-2ñ»ä€ˆ<¹|
+=™$<ÇV6»Ñ`½ŒÃ<ô<¼ê#=œhK»İ8ù¼ìÜ¦<ƒÌ<¼Åâÿ<uş=È´<}™ÿ»“49½JÆ<ú9<‡"=#¢J»8ù¼z§<:o?¼T²ÿ<òş=í{²<;¥ÿ»®49½>Å<éN<È}"=ÿ'R»_8ù¼¾<§<ba@¼u =(ÿ=C™µ<Š™ÿ»¬49½@)Å<óÜ<ç}"=:îZ»o8ù¼C‰¦<
+î?¼¯ =òş=œ}³<æ»ÿ»ª49½©å;l¾F;`;“Ì×;®;º¿„:³´¼;6¥;ñ9;0k¼;±Î“;ÿ›:™«å; ‰F;W:;ÛFÓ;Ô;{²„:Lm¼;yH¥;–î9;k¼;sÆ“;ìòv¹{«å;ñğE;ƒ$;U¶×;’;“²„:%½;|§¤;†_2;«¼;Í	“;*l—¹‡ã;ñE;W$;Ü+Ô;[;OK…:YÿÂ;^H¥; â9;N¬¼;¡È“;PHº¹(‡;¨V¥;ÇğT<İÊ;xx»•5;|H<Doí¸–~˜<Šö;#:Ñ:™i¼•:0J¦;èòC<²ãÉ;9¦x»ÂA;;Ì—<4Çğ¸P~˜<Üô;RîÕ:#®¼<&Œ:„©;ÌÎC<¥%Ê;ÂÙx»ßq1;Ö<w¹~˜<·õ;‘Ñ:.Ş¼'¾Š:ãx¥;¿úC<9Ê;¹{x».è7;R¼ <.n¹~˜<Á õ;ïÕ:)Õ¼s¾,¼"á	½¨bI½‹Të;±üÅ<_v¼[S»2Ô¼˜›½!RÁ¼§­x<µ³==ç-¼Ê¶	½&zH½»Ôì;ìüÅ<Óu¼3[S»ÈÍ¼—e½gNÁ¼çx<ºı= :-¼ä¹	½’kH½uÊï;r9Æ<	u¼g>_»†Ï¼á%½*NÁ¼|„x<À¹=³,¼(¸	½ZaH½9yë;¯
+Æ<6u¼:TS»—ó¼Èe½[XÁ¼ì±x<p‘=Ç»Ù¦¾9İo‰=.ñ–½äX½Ï<9¦¼ÑÂœ<¹e¾<È¢“ºJT½fÃ—½³jĞ»ˆtú9n‰=ğ–½ï¨X½ôöÎ<pş¥¼â¨›<0d¾<“¢“º‡T½ÒÆ—½Mİ»Ì9V…‰=ñ–½òŒX½ŒÏ<:¦¼ƒŠœ<Ve¾<¦*˜º3 T½£¥˜½Ç»2x9-u‰=¿ğ–½“X½‚Ï<Îÿ¥¼_Ûœ<m¾<`”º¥ T½­g—½©­»HŸš»ƒF´¼Hu;ùöE<¥¸ ¼ÄVe9"ôƒ»Diğ¼Æ„»…â<“È
+=ùÒ®»û_œ»E´¼D€;¸ÌZ<;¨¼ }94Õy»?ñ¼± …»ê˜<äÉ
+=‘–­»£‡š»ªµ¼2u;i[<Ñ¸ ¼2e‡9İ“»Èñ¼íê…»'/<"?
+=P–­»ú'»ïø¶¼$u;{¬Z<K× ¼YŠ9îµy»ùßë¼QÃ†»ÿ|<9}
+=©üÔ¼ä2=¤ç=2hF<Äm½ úÜ<Õ÷O½j’=ó˜‡=*]=š^ ½úy«½™Ü»Ò=Æ¼–(²¼ÇÕ1=è;‚<¶ûõ»‡‹TºP#¼FÓ½`Ñ'½û\=¦>i=’¶=]0½V6J¼|ÍÌ¼÷=*Bˆ;–	<C­¼^š‡½É§ë¼æ­¯;€=d|¼k'Î<E]’<’uS»4Ó|»/¹<Ø¯•¼U~‰<¢w‰¼ğ¿<h\ü»×û¼˜à¼õÌ<¸]’<±™S»Ò|»rõ¸<ÙÚ•¼tÈ‰<0‰¼S¿<õ*ı»åê¼ƒj–¼† =d“q¼~ü<ò~@»1<<Ên¼<zú<¦<ä©'=x ”¼…¡»Ù<X¸$¼K#ª;$=
+Å‘¼9[Ä<…İÖ»X›‚<”¤<D×<V”E;L·V¼ÏÏ<ûXE;|<T=0Â¼½E¯½<Ï©¼”+P=®K=¦Å<ÈØX¼¿x½îÎ<,E;~“T=İY”¼•]½Zbà<H©¼§ÖN=ÏÈY=i}å<VMa¼áqz½=ĞBd¼˜ºh=Tz=¼HN3½ë1=S½QÕ=:-H=vjË<BX8;Al½¡YÒ:ö;†µ%<vÕ¡:¢³¼JC3;…Rm;$go;Ã<ÎíÌ»7bÌ»|	ƒ¼µÎ¦<yÕ¹é‚=ÁO »=ğO½ì~ı<;ˆ¼fl=	g=¥-Œ<V*ô»s…½šéê;Šr
+;»!
+ºZ¦ó»|eúºZÁ;ò]»å~;Ñs„»àDd;?†b»ê`;³82€–éĞê€­!€rq4®a?€¬·<‘=€§' Ò” €,mA ¦F) 2y 4¦·>$  k	 3ÕA&{Œ Š; a_ »A€Ôg7€¶~v®Tb7€”U Ùf÷k
+ ‰ kK[§í!€½ €(E€ô@¶ ø€¥zú±î	 Ã8 "ê”m	 yI 	 D/€{r#
+B	€è& ˆ& R$ Lñ ÒÓ !Ÿ	€r —z( E8 Òe€º
+ 0y< )BI kG Ø€	€Š;!Ğ×• Ï=€â”FE," ³;; Ü@ ÅR:ŒJr  )€O|  ûIÀ®!0 £Ó€‹u3 !(3€%k"€¸àÑ°X#€íë ;ø€˜Á…Îz€Ã é%	 ‘ |ÓC¤ØY€çË+6x-€²Ç€˜ù€"¿ +A¹2²ì&€%>€n`©ş¾Š.…@ Öu ™=!€†!€Q	€ª§
+ ³½ €nÊ€Aæ ğæ¤§2T0 Xƒ©…!ı=0¹5€¢ —:€°¥ ¶²:€ Ë+ €·€à“€ÿfw£>
+€ À”²G® ¾ç •· k  €ô  6€ãÂª#Å W?.€FO áİ™®¶€#-€@¦ ,\6 ”«M“;€Öâ&)€ÛÁ0 *a  z:€„( !'I€!€UOzˆá '.yÄ€ˆÃ;€j€. fß€G~€KP* 3{  @N wÈ´:ëğ"€ë â°€Hå Ç¦ ]¦‚À  úeü¤#Ï€Ò›>€@  )¤³“‡Ù€¥Ò ¢ó†8Ş­ä' „¾ o+x¶ş0 !€“_;€Ë±€D82€ ¶ |Á€éI€š~ |K «y€ŒI2€¬3€-B QIj™Ş ÕmC›NT€p‘ O. ¤Ü¯É& ·ù‡š®9€‰V*“ı €ÇJ ¦~€V.2 ãÜ CD€—Ô€×õ ¿Ô X~+ Ï\¥’—J ,Â1€:‰&ƒ€€™Ù‰šÚ²+ š€ˆÔ1€¬Š M›å€ È®€&” ‡==Ø b: È€Tc# Á¯o“ ÷ıªÙ: ¿ + ”€$ VcÔª*ìZ%¸l€Cl'­îÈx„¥&E€5U8 Ó€kä-0ğ8€-b%€o»	 a °Å7 ÿ&€ûL  8 iÆ ÍEµ+C™Õ€UÕ š“	v' U: Q& © £'V´ø8 sI€ÊãF€- êÌÖ& t ï[€39€¬ŒL€´ •	#€ÄŞ µ ‡©f ‚ó€‘}ƒ <€Ú^ ®€ Q€±½% K‘ ¯é §x/€ÿ
+ ñh€{(€—€µ®,€O˜T›4\€ÄøM‰û<z™şá)¶iK f:€V@€\8z?€±€Åë€Çñ 	€ úm ¡ ¥9 &5ƒ©‘4­ÿ" .Ø6 Ü%8€›Úg‰ÿl•€ùj €æ¼=¯ÒË€.D–d w@ ”=€~ê†f@ • |/K'q L€S;;€}S ­± €¦¬€Õtr^9€¢! ÕÜ€ÆÆ2‰Ï `ƒ) ó#?¥C“ğ<
+e:ç©5€¬o»±â|€0Î¶¥À&€ß*€ü0; Ù”8ä€O.€:”­´«6;²º¶1éB 4í€c _¡9E¹%}î €«û€¦+ ¦4< ¯ ßƒZà–…‘ >L]„¹»€÷e±Ÿ(F5 m·€‹¹E P@ 9Ó. %·)€VK÷’ÕX Û°6€—`¬¢,  hù ô
+Pm@ RÛë‚€|I l €¹€4G1D€€>€ãQC Üh& h34 Ä_>–‹€Hµˆ%û*3€Á ²Çæ€Bt-€ò ØX1€¦Z€Úƒ ´³ª°{5€\@¦‘P²"€Oi$ 4ñ1 )|ˆ62€@U€ƒË> ôº€İ&€ÁE=€P(€df€Z³€Áa€hùŠRøl ß Lé =I%€vğ€éH€Ò!"€È €hˆÃpê °$$€TH(zº ¤,€³1€@™¼«š 	‡€dÁ€V
+€'¦¿¸1€~±§	i÷ˆK–ÖI€áüC€¥P# 6™ ÷€ÁÏb™+3P<' €%>£—‚-€âB€^ş€ô”i.=è& "(«?pE ¶Ğ§ 4p÷ á€´ˆ5 ò2€4Î€Æ¹+€š7€W`H zğ€ìØ¡.L€¾uü—ÿ1€âú  Ä<€˜(€íQ7€{A1€- ;ĞJ€í¥K€zq/°ğ€xB€ğï€0N€æ“"€3}€¸"* ®ÿ€®İ‰¤<É Iì8 L‚  „€) <€¾# (ê (;€Ï,% ]€ÆL â™G 
+*4 %= ¬C2€åC€¾€‰åÎ#€‚¦%–Éª.z¨[·Z„Cû1 wI€½â ±	5€}U€,JC€Õß€š5î®¨¿	 ûB K% C€Jş §ğ €_$ öË€¥€âƒ€0Š_®ŸN€õ^ mà€’â ³O€ƒ >yÅ«ª¡á,€ z€1Ö  / VF< 6€¶ ÊÍ—µ¡o «İ"€l€IüD Ã*€[Ñ€z, Ü‘€µ Æ]€zc€?ü¹3Ğ 4†Î€Æš€a€€ÖöC ÉÁ"ñ0„U! nEú$sƒ€ÜáÖ¨%Š8 p\n34€g
+Ô€{Ô( Äİ ƒ„n……¿-€km ¼}€No Ÿ:@  n+€‚ €T  Ãø€|	€‰p ëÊ€ë9. ©B_¹ø hÒ€ß Zp€ÊÇ/ t ‰S Úí {Í ğ( 50‚ŒÏ€Ÿ0* ŸÏ¥µ Np ö8¢D2 aŠ€(ZÎ¥Ä‘  Ç Ù'€ú
+ FK òÒ"}59€å¥B 7w€ DT€ú}®²ïÿ0 Ş3 ‚>( ”É€)6 ©—k7R{€LB î­-€=ÍS §|)€A!ß Ì 9] :ZÖ˜ôö µW S¡"€:1 fx°
+)•€ƒm€Ø3)€
+€ÿ« ‡?€òÚ fM€ù/ –` ¸'A€¼ú(3€E æNƒç l8'€’è-   m‘5’ ŸS) U* Ì×€öÈ Âï€V_/€+; KP n?q1ˆş l= Ü: ÷;€ÓU.
+’–„õ =©|ºg”+”.¬f yä€Ä³ ·Ó2 Üƒ€AÔ	T} €ª2€4N  Ñ|(É}€:°d2±B€ë€Œ·4 9}šb| ùÒ€Ùw€<ÅêÑ° "/A fJ
+ ÜÓ§„áD ë  ê«"Ø€y42€}-€ì²	€d(F€]õ€[Ô( N×H€Ò"1 €¾% t3 _v 4(}¼€<ú€òÇJ ‘-¤±¡.€Oµ 	¸(€+	# Ş<2€Ğ€„ù€·€~p “( n	€ô0ÍªÉŞ 0€aÙW–å †/€aD€yÖ>€æš= ‰ö9€@1 »lK m@' şô CfüŸ$8 ¼ñ€+>0 ¦¡É4ŞÊÙ©”Ò S± ª°<€1O ¨Öñ0 áåA$Šd ­‡G 7ã£™ AL€b8 Hª<€™²& ãU€áX4©‘$ ‘Ç^¼D€KMu–½*€7æ ü€´‡€S°	€÷œÚš)€µ Í ò‰îşP€g–8€z ? &ğ æ
+  ¸ğ"=8”¸ï"€ê¢&*E
+A ˜a'€
+ pW4Œ4l åÖ9 µÆ •«ú·Á€ Äª÷3I )ˆ  ¸„ ¥àK % ‰Ğ% \ï€Œ²€*q€”ÿ€F'm"r;>«j­A¼&€jZ ²
+ lÚ±„mU€“¶¦o;€ò %aI°p *!Bplayer_attention.biasJÿfô³*{Bplayer_encoder.0.weightJ\¡P²µhÕ[: ;ifd9Ô˜µ&'3¤hÊ9¯97–Õú7‘+9³z‰7‚[•3@/½>‰à–:)Ğ8ñÕí0¶S5>¦N#?\Y©úÔw8C¢0E‡/5Ål:*yBplayer_encoder.0.biasJ\,v8|m^»„‹;~U}:^³µRÉ4 iè:N>8\k9X”R:ô‰ñ8Üá‡´óéµ¼0· º¸»è)€3ˆz»`½«¼Ã‰8«pÆ²96J3¾P®59ş9*†:Bplayer_encoder.1.biasJè~Ó^¸íV·FŠãºmFÑ; 6=Œ`Ÿ®HEœ®·ã³”×—:×Â°7N5P=— ¾»sƒ<`Şº¾ª€»×*-ª˜ÖŞ¶ĞtÔ;˜ä<ëİ»8Æê;N{»’ûÈ8~Îa»ÌÁï»p˜Õµõå¯jmî;Â™õ²Ò%s»œ	ø¶>J¤9\Ñ»…o$:m“¤=A··¶v=·½@‹ÊºÍuó¹D¿o¹zø»XD0=·w»¾º¬¨½‘åy¼Qæº´ıkšx¡»½9›±4u»,àù²Ä¨Ãµ._ä¸Œ!…»5N‚ºEø.=*]Bplayer_encoder.4.biasJ@.·¹¼†¼ÉÒ¡=•9¹tGH¶œ¿¹ÊÊÚ»7	ı¼ë»b¤ïœHfÙ»Äj—½‚ˆº™,¨5 ¿»é)¼*¥ Bgame_id_embedding.weightJ€                                                                                                                                ç‡a=Ao½«¤æ=6ÍO>Ëƒ¾àEÅ>¼Ô>G‰å½£{¼]u>Â ²;™™„=
+Z¼á,~=¦Ğ>¨?*³¾°œÛ>ƒ—*<wùÇ½—…>x i>è‚°¾OäÃ>qÇJ½Äûô» è?- ¾ g>*~>zªš½å.ù=EA?>Ï¦=R	Î½;ªœ>ÎRµ>·y’¾ÅIa½:?öãC¾Ì¨Ø;Ú|4>Y;ˆ>”à˜¾`z‡¾·¬¿qxŞ¾ş#,>W+Ô>Ûì[¾Lq'½iR“>¨eÏ½Ê9¿A‚½¶›?Ãı¿¾¦1<]Ï‡>³öÕ½Š­¼Äıú>®w2¿É)¾F¸°=„½/½Tñ0¾íÕ=‹R!¾]¿|&>x2]¾Ê>½4c%=!	±¾ñ¾9OÉ½…=<â[¿hòÕ¼˜Î=5-½×„e¾S¼æ½‹“»½2=éÏ>D¯z½]¦Å>‰Åv>$¶=üÑò=#9>"À¸»*2/>&lY=Ì=­ó€>°Q¾Á>LöÃ>¾/C=ÒÍ*¾áô¾t˜½I97¾G,H=òH½‰ˆ¾kµ>C?x3=ìŸ½=¿Í=/ãw¾-ä’=ëÇw=ªò¼ Tw=Š>MtÚ½•Ãß¾kü>ÿ•»½!d½ƒÓÓ>Øˆ¾ğµî½nñm½–»±¼é¯®¾ßmâ=9Ø©<B"ˆ>ä4„;Ñÿ>>éû‚»J¼¬eM>q\g>q>/]‹½ì‹>xˆ¾3#½oÜ(¾H—ß=ªº?	Ô%½qó=3Th>RÜ:º¦tx=†l;°X>kÆ’»`ÑO¾êƒ^>±ÁÆ½«}V>ûéª½¯Ï½Tµ'½¤Ï>¿0ÒŒ¾ÛÕå¾gFŠ¾Î¾ív=»u%>Bù²¾ö€0>ƒŒã=Œ4Î¾j$‹¾¥ø¾¼]¿‡¿S=úê=>üG½²I$=âûÆ>S‚V¿6-5¾`¾~\Å>_ ½!¸ƒ¾‹£<a®t¾íÿÃ=Rn'¾ô¯½VÍ<½/k¾> Š=öİ=ûu>”‰Á½A¹c>5}½ã¾íY&>VX/=JX½O¥@¾Š=á= |>"¼×ó“¾>Û<>Ï*}¾íì»Il½o°¿<àmô¼I“>OÆ‡¾7)>¿ï	½í˜À¾k¾£FÍ>>Ø<íà‹½`½EÉ+>ŞÀ>g¼¾Ê_±>Òò½Ä“ö¼NŞ‰¾şH¾¬¾€Ñ\?>wÒe¾YÀœ=ÏäÈ=€sG½u€/½KŸ¾!ò‡¾)éd¾ÙéE<jü=6f=¾¯>¬eğ=kk!¾Ëå¾İX§¾WÈ> &Ò<˜»Ùl´¼Š
+=€¼ëas=¿ÚŠ¼WNu=_»¢ÎX<%jg¼:N®»[Fx<çk_=ÿŠ´<îŞ½›N»ÁÓº¼rùh¼æ-N=0nM½…2Š½ZÍ=Ã7½}»{< úí<*A¡¼<™U½Ø½aV‹½Ìˆ½÷è"=KS€<ç@ê¼æX=íZ$½-s¼ğºLÑÑ=m·¾¸Wd=üb6<ªÎ»¾4;"Çå;„<‹»Á=$¿É=À|=1øü=şÛ]=eÉ¬½%½d­Ã<±ö&½0',=·ˆˆ¼To#>¼TÎ=NéÕ½&¸Ú=7QŒ<Š½‘ˆ7½…Eê<3¯½E™½£Y¦½-9o¾Ûæ=%Ğ˜½ş¼öù<©«=Ìh<¡né=J-=÷Ø>ä¿>™¢¿!­=ÚÁ-=Ù+•=ö >ö·k¾ÕŸ¡½£À,=¦İ½½¸*†;/qÆ>ä=÷=z½¾ßÉ=©¦¯½N7½(Õ=ny'¼‚‰…=x¸=òC ?ˆL>öuş>s«<XU>yÇ ¾ y=·Ä·>øl>’ª>è¾#¿†ç>}Zz¾¿.=•éğ½.‡=ç?´®­¾1¾7?`·¾‰ =MnÍ>”ªÒ¾pÂà¾ÓÄ)¾'J|¼Ñ®¾¡œQ=zë=¾ÊğU½×Ì»:L¾]SÓ=î“½ê“”>_(¾½¿á‘>‡Í‡½\\=Œw‹>û$È½[!¬=62û>­zˆ>{Ë<åL>`Å=ÚT¿™Í¾‚q÷<µ°ã½lãª=‚A”¼<Š>7¹š>µR9>Ô±’<N†s;>†>>G¿<GZB¾Rin¼'¾s&>†IA>P•¹<F5¯>^EÜ½Jc•>Ú¶]:?oÖ>‰ûM¾drÕ½Ù“V¾º½.¢]¾÷2™=Í0¾¨{£=º¼8º¦=ŞŞ	¾œ@b½« Z¾Á\@<¯k«>òk¶¾Ğt/½Í=Z¢=Vß™>õ• >G·1¾£¶»®ò½²vk=SÊ–½@`=¡>á>h	=b>ú¾Ú½p7¿=æü6=1{¾|N>{‡®¾÷ñ_¾"†¡=Š]å;€\Ú<	N‹½¨Ì…<G¬0>ŸYg¾tU¾ãËø¾åÕò>5>Ô>á¾i•]=OiÄ½1Í¾ÛD ½Jÿ½ò”m=Ãlİ¼¤ÙÆ½J‚N¼ÚÅõ=úYz¾[7=5¼ëúù¼…†Ä=mB=Õ‰9=`>S÷{¾ÌÔÌ;•p–=)¢#=~u½gL&>I,€=ÉÅC½d’=)&ƒ½5í>âa£<ln½½f^>èv®<¥4÷<¿Ì¤¼>Ñö9ş{g»ÈÅ;†xş»ˆ—<Ÿò¯<Úàÿ<•é*=§ô’<˜Ø»Kùş;‰î=±I<ãM9<y°d<g¯‰¼=Qá7àÇ¨<¼MÉç»Î¯¼ís¼&¤(<Ò¸’<µ!Á:Z—x<<ãë»1±¼l*Ù¼Få¼3eæ»ë›»¢”‡<Q¸¼JE=$Ç[½K9U¾ır²½A™0=xÒ•¾tªå<}K»vÖÚ=Á²Ÿ=ZŸò<n4¼…¢>-2r=ÍŸå<vŞR<êç·=~±$½Š'>µäè="Í@¾z˜ñ¼©€}½ğÛ<'ç½í«¼üG}=l0™=„·o=ªs@½ÊMS½œUF½–‘
+>'ü[½ÇL¾2Î ;İ_>X+©¾Mû<‘ô¼	½¯=ƒi>K>¼ºB=k—ƒ>£×d¾#ä=u¶½Fl‘=`À÷=ÏÃ=]Èà=„½Â`T½´Ü¡½²£T=®Ï½a½òÇ-> [ººâñ‰¼ ,·½N‘È<òÊ:jš<œxÙ¼#¼^r¼Æ^=òt³=´Y-¼L5v¼|„÷»z9ºÙ=Ó<-¶9(ÀC½ƒSY;JxÆ;™Dh½ébŞ¼üOà<x»(<p
+¼ãÅØ<ş7½ ½n:QLG½=½¢¶<½¼œV½…X»…c‰;‘h);«r›ºÅY<¬¼Ô;? »×ï9²5:}¼=J¼mpR»æ’€8ğR•»¬E†<t2·¼?æ­;ä/‰<˜ò;•ÊK¼I§Ì;®rÓ<PS²;ÛdR<è$5<Àb®º§tŠ;`6<J¼$«O»¿4Ğ<|×D;x¯»d7½;UY«<É¼¼	J¼l‘½
+0A¼#Õ»©e¦»¹.
+:çƒ;š¡½#ûI¼·9„¼gî¹<h4àºëU=	˜9­¬É<5¼;Q½ÑØ¼À·<İ)»»ªÂÈ;?B»áJ®;Ba=İ¬½¸ç¼të<·Íí¼f´¢9p *¢   Bgame_encoder.0.weightJ€ nĞ‚¼¦rÅ»š²ç»ô##¼4~)=¢Ñ=ˆù^=L\¼{¶Ë<Mñ<6„½æF=˜©W¼b°?=Â3“=
+»Â»38°<êaì;Áø;!A›¼vğv¼½Òƒ½>˜¼¤°º¼<ëÃ<X…¯¼•K¼AM½»
+a—¼…¼^Œ?¼'¼6ú¥»…ò‹=~ë=Úf¹½é]`¼ÀG½]Ë¹½ÙĞ!½yËö¼~‘À<É’½ÙŞR=Öh½>«=ógÿ<‹#8'_Œ½˜Ë„<ÔÃ=¸¤=C±>Í+@;yP`<İâ½r¥Å½h…@¾ˆW½ğ“=bÖÓ=Ü`ª»’ =•M::uèŠ9w„;@Œ¼ÜÊ]¼Aš,¼é1p: “…¼x)–ºİí»Æ¼š»¦µbº=·m;gŠ9çÕ)9äs <µ’;ÈE
+¼¾Wö92±ª:˜¥;Ä„à;E+Õ9ÿO+¼‚<…»ì»»œg…¼Õ†:ÀŸ;ş÷78±<:Í_:EŸ
+º„¼ëE•¼ôt°<Ppş<­â#½b‘<ïw‘;Fo'=ÉrŒ½#ÿ¼ş»<T5;“-P=ˆkƒ=ù.—½Õ{¢<0ÿ¼é^H¼ÈÒ-½¨=ÕÉÑ½¡™=ıÛ=Jçä¼¸Nü¼‹‘¾
+èğ¼²æì=ê±½ğpC:_îÁ=wö‰=•­ö»€ûw¼é½¼@¹¾İQ¾ñj½ã<¾?6¼Ö¯¼_fì¼¾Íò½n½Ïç…<ùX=JÏ=ƒ=fí½P¯=u8y¼[‘†½SC=5Bğ;¬~ì»Ó´o½'Û>c›=V„É½Æä=Ia=»ôy½õÀ¢=‹ò­½-¸v¼:y‚¼~ş¹½´>f¡d=ÿ&>èO;b9>na¼t«¼³“=a¥C=.ã=ªzT¼aI›¼Õ÷>AÈ<¹S¶»Õ/½š›=‡qù½ü¸c½ıäÉ»eì’=ßK¨=øQ¾÷0ñ¼ğOÕ<Ñ{Â½s=Öİ9=ùk=(3Ê»ÍH:=Gîı¼àk¾C½ôÄí¼pàï½áh½<ml<¿½YT¾¼?O-<s¬¾¼kCä=ÚıÄ=MHˆ½sĞ<^=80%½Ÿ<4ä>b}“»£ßÏºN§î½Ş¼Â\t=Ñ8½4Y;³Š/=•7§½Ó¨&=ˆÿó:_­¼ÆIR=í&É¼•q½/r^=¶=$ –¼$<¡œv="Ò½·|Å=;³c=¸@Ê¼}¹=KØ>îüæ¼VñH=Âi<Ñ¯½Û(½z<Ã›=!ù¼akS½• ¾Í>\zu½öJc½Ò<O(¾õ½iÅ¤½Ÿ™;!¾’M­;Là½|Ö€¾Ú½®~½ÚÛ:ÉL˜<ÇI=$~s¾•®¾v>>­50½Ê8y¾ûW9½
+?¾XúT¼?
+å½öÆt=üù>¸½ì`±=OC¾Í*ª<¼®[ºso(>×‘¼9X§=A=>R>è<iokºE£¯=>t=Q¶½<ø=È=~À½´Ø'½,›½@vd=L¦D;‡í¨<'Iÿ=Ş¾@<î>+¢»=¸ğ;¼ÛÄí<:´É;ü^½e%¨=~Õï½d¸x½Ê[½O¼mÍ“<[Ş¼â’=âèƒ=!½¢	Ï=W‰?½*@¼*. ¼;¥¼–É<Ş‡Ó¼TÏ =È00¼rî‰=îÑƒ<Z1ù»Û†=( ó9t0q¼ŒŞÃ<\t»äsI<n-»	²;FFÚ¼¥~œ¼ÆÊ½eŒŸ<éå¼	½(¼¡ù=^Sœ<>(¼9':Y/A¼kĞö;tº\¼eu&¼—(<ˆS‹<1İ3½°Eq¹œJ<`§¼9öà¼‘Ä¼È3„½Z„a½k*¼!BP½Ñ•€½á œ<a<œSŠ=Ô˜S;»bx<××½Á¼^Õ<aĞ5½R)K½^2=\ÿØ¼l¥è<Œ
+Û¼C£ö¼ÓB|=«G3½6{ë¼r>@=mW=XÀ>ÇkZ=—½ñÆ½,zİ<J–¾Dº¼Ês=~N4>p£ã=;ÖÔ=£‰K¾»xµ=ó²½a*ş=èm¸½÷#>:j=é(‹=3•Š=dx2¼ìÏ¾Ëã2½öÀd=“õ–¾ y:½˜¸=å°„=pT=È¿½M¼¶ñ;ªÌA»õÔÈ½œ2æ<Q¼ÎÉ*½Ğº¼ˆ|Ş¼ªÆ5½Ä*=ıÛ(=¤Ä–<‹Æb¼b@š=ãWx<O^<=
+Ö‹½®.»4a9;Ú±s½éù.=•ø±=š²=­ï-½ø>¬{½¸X»/~ï<n~L½„Œh=¢ì<b’<Š}	¼8À= TÜ;?ß=[ÎW=Üu2=Æ.`¼Úb‹<‘Ÿ‚½¸§—º"H©ºtà¼îö	>€Ó¹;“Á¼#¯<éñí¼±;‘»N[=
+vK=Ä¯;Ó¼¶<øÙß<ûúè<HÈ@¼úG¼<Q¡=¾Ò½ÄWû<U¥=*ì—<ô|<‰1¿=î4<ÄMB=I:>'5Œ¼\ïˆ¼œn½¥S½(ó(¾õJ¥¼à‹»=†u==$ph=.¿÷=`œZ¹Ë!¾?ÆC;Í}ç=|«B<Š4ƒ½‹Ro>¾øÕ¼å¨½2C½=D0¾2ñC=]
+`<0¿½—|¾+A'=Lü²<R
+¦:U‰Œ=Ëha»Ôò¾¶•½!6š½¾úò½"é?=àT²½Š¾I¼ÌS=‡pY½%’>ÍU»¼à½>Áºò-=‡*=§cA=Ó6>¯3h<Šp;;Íc½î2g<W8•=ÏT½ÑKØ=@âš=Šá~½Ó&=KU¸½Ø^t¼ïı`½¾­¼‚E¾”â½Üæ¼!¯Ú½’Ñõ;ê÷€<Ï®==+¾<‹<€½^.t¼#ç½9Û‹½š*²½-¼O
+u=MÉ>ÆÔi<³Ã¦½²ç:½ø½‘3½ÃŞ½6İ“=ä3š=Ax…=]l¼=kíœ=ŞW;êï›¼<¤"½g·U½Ì4x=±ËÈ¼¾&Ÿ=Öğd=yß=ÏSõ;@ºİã“=k‘Å;é¾=úec¼:Ìg½"_=ˆºF<iO¼§
+»e”ª¼¨E`½Ø‰‰¼•fÏ¼gı=ÙB²»xk<Õ‘p¼»˜»W½c
+»ì`'½‡›€<i	<Ôj=cN<0!R=u@•=›Ní»“²™¹óş½}*N½m8(¼Çi6=db<}n½Ñ{½ËÉËº	*æ<ûğg=Ìƒ ¼>6€¼ĞK±<.½Ã½Î/z¼´ÎT½ù0=İ|V<®ü½ÌE<ª1¼Å(#¼<Q½İ½Šª<ÔÙ™¼Ì~¼½Ş|¶½Î‘½ÁY9½VÍ½VË<àõ/=@½êº;gmä¼+ÿH½ï÷ë=&I¼[;¾«1'=Y™«¼pŠ¼Íì2<+K“»Ïö­½”9H½3C½	p½gz<·BË=ı¾3¼py{¼— f½©ã…<fCZ¼@Ÿ^=»ˆ–<hÏ'=©ƒC=Fº€½¼ÿ°»Ë$½R6½Îd‚½Kb¸»òq½\lß¹¡}Ö<œê/=Lb=à[Õ¼ñÏ.¼z®¼‚»{á)=ˆ²¦;à¼=+²=_µŸ=›½›êÉ=0˜;8q»7.W=9¸<°lb<Fñc=úÖv<Ëµ„<š„®½&\Ø¼È.h=§‹™<Ñ¾*;À=sI=3ï~=h[“½,Ê!¾”A%¾+ÀÙ¼:›=¤´¾“f»½„a>¼ÃÕ<&¥¾  Ğ½‡º.¾Ï¢½KİR=ô&ó<s‘8=ctT>‹“¼q}¾ø†¼i™½§á<&F¾x.#<e½><–ïJ¾kå†>Û ¾Ú >qŒf½øÖı=¢Â	¾šÕI½­Ó)9MâX¾¢-½`/§¾Ï(·>^€\½ØéE>ÿ‚½Zuå¾²¤>h›^=‹rO¾İM½>xÀ…<7@Ù½#'9>°fÊ>MÍ×=>=ÎZY>ãV>¾ør ½Ü{‡¼4P…½ Ëœ=O%=Hƒ<™ªò<„Øl=ƒío=|ï„=u=w2t½`ó<~ê8¿7ä¼r<¼Unƒ½†#;/×¼õ„y=İZ½ßRõ¼Kƒ='ê<¶b<›×»¸ßÕ< ^é»v©G½—×'¼wk»úbm=Øô·—Œ4*Ä(5ie*¹EûU³c·9E•6Ö¦Ï·Ÿ1!8dò‡¹>×9(‘¸~i5ª‡º­s	:‹{ ¼ÅRo¸Âiğ9óoJ6¼"µ¶«›%·›’÷8|¨y8k!ë9ĞÇ¹Áó;ôŠ;9+«¶ğ„P8Ú«:Á½8êXÁ9gg>ûÍ>åÁF½*ÇÃ=lØ‘>>X½Ì¼¾2ı‡>´,Š¾æ½-ö¬½òª®¾Ã½k?n¾c·Ğ¾!¹=AŞ=¬_¸¾Ã`IºÒ¸'>3Ğ½³İª½Aşp>X“W¾Hü®=İQx¾kMÃ¾˜Èw>ÀÍS¾«:R¼°I=­æS=„û€Wë€LG cM€‚W í« €¾ê	€r »¤J€K  ı{	 „ªØ« ´€, ú" »^€ë€4U€«€"û ¹@¢€îÎß,€8‚ €Ì¨€`(1 àÑ éÓ äğ€‚¯€BrpºFG»h{<ˆ$½-â^<Ï¹¤½'Š¼¢ë¼Àğ»›íG<;„»»½W;¯¼«n= ô°½üWÇ=>%8¼»‚	;¼äZç¼=)/=W¦¤<÷D½ÿã³¼C‘¼V™½¡3½¬V½=Ğ½¼à*‚·Cx=Ògâ¼Îê¯¼üT=0p¨=û½O=¯ÕÕ=MùD=—ëŸ<?Ç¼„@ü½(à/=ø¥=4=Ÿ¨½j`a>½İ;=¼S¶O<™»od>§¡¦½èö½=\=T=’a|½f2‘=Ú›Ÿ=Ğ†$»İçğ=‹q£½ÇP¾bí=wÒr½^şi=ˆœ¯»jÓò=¯!‡>î»4>2æ¼˜.?=Õì¼¤ÿ½UO½må
+½iœë½Táı½9¾=¶U]½H>Í~7><ˆ=]â½ù*¾hâÂ½vNô<W/>ıÚ»=‡Qâ=Z½h‰À½?ä>*Ÿ¸=ì	¼çÆN½å?=MyP<»Xu½+ö=]ú¦<Cë¼(Å½Ìì3>#ÖU»ÁYò=¥µƒ=/ã¼°\®½À\1=ÖA>pW–½WŞ½ñ&ö=Æ™ƒ½0ş,<N‰½§=O8’;”º´= =j½/Ë½Ë#¢=ê=¿lš½Ÿ#K='‰?½µµ1>p *œ Bgame_encoder.0.biasJ€-ê§;òb=D=Ü¼Pï<SQ¼C2µ<ÑÒ¶¼°,¿¼M—¼hê…=h¨å¼,/;7¯½£ƒI=¦¢˜<±s&=½=pBu¼°ÌR¼’F½ ¸¼o¨E=Ñ €½Ò-Í½­ØÏ¼õgÉ¼3¿½£ş¤Á ƒ<´³}=¬D½wŞ½*Ÿx@<Bpredictor.0.weightJ€xTl½î€½Bô¾Îc<™®©=ıº\½È(-½bv¹½ªŠ¾i«_½¼¤ó<â>S¯ºº£b²:ÌÁ½ÔÉO3¿ƒ E$$7‹f:ùK½ç¾¶=D€zíK;s÷<“kH¹Ç¤I¢X†¯8üİ1=‚`½’,ò»0&º O*<-m½ig=¶l„½”ÊT<ŞŞ=H@*¼`^q¼«=«]§=•‘a½E¼./m=«6'=‚â<Ğ¼0=ñÑ+<Îq9Fc ½ªs=‰`¾Ë9ïÿ™8$¾R^  Ë{W¼Bäf=I¬=Ü×<Çâ=¶™D¼£|³=˜Ö¨½È+¼§§5¼Â{Ó½²v>#Õe<D¥{;…àÃ»†/û½U¯9=<¹8£E=W‘&€ÓäH€æQ¦6šg¸Ä™É;X: ½Íp <kN:Ë “:Ri9øI"ØÌË°XÀä¼¾óî;µn ½/Ô:W:½|dí<†•©½1³‚=ê)6=+@Ò½Pæ»½‹ã:(3<ë‚½v+ú¼!»½ŞÒÎ½	Şí¼šã±º›•€½Ï@¼êo½Í&±¼ÿ_`½sâG>“½èñ1 k>Ç0 íˆ¼<…»½XÍ’½C.H½MîB½´ş¦½{Ç½P¼•œ=ş*x¼oÑ½´½œã¾Ïº½Òn½<§œ2>(“ô9í	8z½Â
+š[â'€¼Æ °8qÈ»—]£<™@,€·²V:÷1Y:…y•96ù¡@Æè²à'=“8ÙºÜĞ»Ã«6sú];·a[½$_”<“£u½Dß»D¡=³;îPº6%÷•<Veœ=
+ÊÂ¼è<aÇ.=4Ç<Ö1ö<aú<O	<Ğ¤K;û8 ¼İQ=½“¾5Aî<ÜAL6ÙÛä½5Ş6€Êì9ïÉ==ê›=Xeû;:n% 0i ¡X‡—‡2ëîB,‡À<E+œ*‹„ìÜ €P€ Ş€Ea—w>- z" ¶œ*€) zI‚3™€âã€Ü£ bEj–„„èg °o/€÷€ñ¢D õ€.! 3,€¶Æ# ¬¨€ìô* M×€ë€è ô1 ÿ5" ¥f, x: |ß
+€f)€š½€’Q€5! ˜ã€Pê èÀ ü²€›€Â€€ˆ") b¥, › ğ1D €C
+D ÌŒ  …ç kôJ 6Ï2€kø:½Äğ™½K¾íVñ<Ù¦—=yW¼™â°¼Aü¯½–¼
+¾G¦½Qæ•<U>.>d½ºTh¸™£p½9ã&p€a{J(>±	7µ=>ÈŞ¼‡¿> rä£8ÒÈò;ã‰„:Xr ¶9é³Ÿ²<CÑ×<a]1;]»²¸•ã»ëØM½ônÆ;‚T@½-®»gq¢=N6½lÉx»£»ïº¸!v=ÿ_½³˜‹<Òn=åx½
+°ï<#1÷¼ÍM<èí:ü@Â;´’=İg>¾pA1;ñ;¶Ë*¾ÿ9 Ô¤U¼â½Â¼/ß'=ÑÇ¼Y 3½xø½”Âõ½Á¸‹º-›=C`,½³'…¼,s@½ıS#¾s¢½ºÚ<7->"®7¹ïuÃ·.n½e¸§›ÇE òT@8n"¼é8; K )ğœ9¯o”;‘9Œ"w¡ªŒõ²iü!½TÁê<çN;ìx¸ĞN–¼"eo½ÇX=»8s½OéQ»[=«=ø¹ô¼YaÁ»á–»yO=’Ş+½ÉR½ûÿ#=Á U½İ2Ì<âê<ù§Ã;çİ ;nA«¼`Õ<@Y8¾©ºK¼cÅx¶È-¾…˜1€qnÕ»yè©<¥¬'=éˆ«¹ÄÑº>³–¾Æ,€>}4Á½®> c
+¼Æ”>se¶½³Ú8½ç’™»ÇäF>,ª°=lP7šú¸âäk½Á(€3§& âóF€Ù8usº;~‹<›5	€ó–µ9 ÆŠºí#YºÀ¼4 Ò}s2vªºšv¼™ÈÖ¼Oqº³W©»*…¼$¥w<>“Œ¼”µq<ü=Õ(Ñ½_*=”i=tÎÇ=”ûv¼&‰¼-½Nº‘½şì=Êæ=ªN„=\fH=Îl½±‡œ= Ìö½§Š‡=ï+6%ëğ½e" ¦C¼:IŠ<ê*>:bï<±Äœ H»dú}B€Õ¶Ø9ş£€K°ƒ¬È |É:  9%„&©Á'Ì€ûw>€Ìz€ß<€—uA€âó' ŞV€'ÁL l.€%=€lÙ.€!€%> ¶Ø€ô  Ùª 6Õ€É<" 2Ù€A*€ ¢ fR‚Ú+ É{ qT !ø$€!ş€Æ}" #İ€ó¬ ¾ ‹…€P€Ø6 ¢D' kp :)€wBA€Ş÷ Ûu€ï X¬5 ïJ ª D .á?€U‡;’Á’€-e€ßP'==Û”½âa>-U½N§\¾7°Œ=ş…‹<Æô™=” R>ê%¾7­­½ãd¾Œ*Ç9¥i/8Ø=Ar €¥©O2á¸Æ2ıº[B¼µ\ Â>õ¹Êif¸?fN¹i]¢â6‚*Ml½ô?:¼º¦º]s¥8¶=ÙP¦<h|¼-;¼§\«½-‘Ø¼Úh¡;,‰¼§½ì¼šN+¼S÷Ñ<–V¶:¿ş„½B"½jƒ€»Õü#½¡û¼BM½ĞÆá<¹Aü<®º=5ú<(”5ì/–=tf	€£Ê-½!>‘=ñù¼å >7­]<7hı½¢»>…–½Él¾qMš=S »äK=¹±>O|È½+ú¾h¾Ø8'x›¸_İĞ=ó Wº€a(+¤»N¸É‰Kº®Ûn»·F€ØÇ1º9H9wá„9îv	 Ëën.Q½Q`w<–l©»P	9=Ş<Oón¼sj;˜Ô‰½`<8½<šÓt;Í€¼{E=Ñ5³=¦’<éH”;bê<ü‘7<³}	½‘M;š~à¼F=õ"É<O¼¼K=R~h8s¼n¨L€?:\½C†§=?J²<5kë=}Wà¼S½ı¾ĞJ9<#ôp=¨›½6Xé¼ZĞn½ù2¾ß|º½7Î=†o1>ÑûÆ¸ü½İ7ÎÆ½hÆ#ÑK€ş2¬ÂÁ68}t<xC0=ïs' Ù9€ßº¨+ºŸŠŠÓ²Ş‹½/¿ <çøW¼à/7q#²<VM]½[àı»Ú Z½\h 9uÖ‚=†S†<ÃÔ';Jû*»a–G=˜Ü½éwç<·Ğ<°wx½r@—<O:¶¼f„D:j%º
+ï;@Ô=âÓ¾%ô«<
+`4«ä¾ô… ı§;µ'6»^h(=lº‘¼ºq¾¼Ü½€Ç¾t§V;˜æ¦=Û˜5½RÎ¼@ÉË½3¾_9²½N··<ùè2>^(•¹’ìÙ8hA½Å6¯™× ÓÉÑ ç•*9éÕ4=ßJä;·ñ5 H—´9E7];Æ$%:!ÎL¡`·Š2,*Á<ÓÁ<&ÃK¼"¬¸*Ó<…ïz½=Z½<ºøn½§0<Œ8=-(<¯‡0;^ıj;eeN=üÌ,<n=Úøs=íĞˆ¼´˜÷<·Gó<‹v¯;¢6@<y¤Ã<Õr=G
+¾Ğ>¼±`+6ieâ½ä#€$;—y%=?|=¹(³<YÕ‹=}a½(>¹í>¿\¾?É?>bÀ½ÿí%>)8¿=-yÁ=>
+½újµ¼8¡8,ò=¹f¦={¸gÅG ’É6b)’¹¬I#»“Çe¼x’E€@Aí¹á{Œ:xO¹š‡ù"1H3„o<wo»©J(=JiŒ¸"½/Û$=dóõ¼âÔ¼IR›½…Ç<J.=„±è»SÙ<z·6½ŒT?½3ü;İ.R½¹Ò®¼Â¢!=×g:=8pÉ;¥¢3<sğf¼æH#>Ô‰û;Xn>wãÍ7Qô=oI. /$à¼òG<d›Àºå÷3>p½hè0½5¾åòm¼äÔµ=!m½ºs	½eL‘½6
+¾lW­½O8'=•¥;>·z€¹gn7£¾U½BÉI\v) qÂ‹ó8é‰‹<&ëã<xÑ 	‚ô¹î•ëºL7d±d åØ$³d˜;r¤<0šç»c¼Ÿ¹²ñ¼„"W½¼6hV½¹Bø»åÄ«=@¿„<O“&:ï’¼áa‚=‹ƒò»rÃ½®ìh=œ=—½O’”<Ğœ€¼ÉE7<ìñËº‡è¼K®ÿ<Lp(¾'—¼yòæ5V.¾\€R¼K;°^v<=Óp=B3-<´Ç´½ˆAø==£H=ÀS©¾ ÒP=”‚v½ïÄ==Óµ½¿‹ˆ½5±ƒ=³:P¾®j–½î¬m9­¯º¸ˆ¿¼J•MC€Ò3Z7úWn¸RĞ¼ñ@¤¸±^G€|Ù³:üLº™ìv8ìÛ¤ ó«3Ú²9á«=â¡<Ë ;¹¥ğÆ=/‘Ù»®‰å=å¼k¯Q½“^g½ËrÌ¼Sô¿<KV%¼i²ğ;ç Ë=­Õy=×Ú}¼óc¸½‹‘Ú»rI¾<ô)®<ü "=ãº•U8½Úào>7~½Í·:)‡a=ä}  ­@•;¼”Y=*Ã¼¸x½“¼„‹`½,Å	¾Ç˜¼xÊ£=Ñğ‘½Œ‚€½¨•½eï¾€'o½ó^ ¼÷Ğ>"œ;·Å
+:Y¬C½Cú -ºn€2ğ5iî$ºËJ“¼ò7½> 
+€1A:^×,¼O‰C»æ¥¡îäµª™¼‹¾;”;õ¨s¹5Ñô<Ts=½ø3˜¼|œq½’Gª¼E)r=!(Y½âÖJ¼Û0ô<lƒ=ËHĞºM°¼ËıA=Æ
+ş¼4G<ì8Š;¤Ş:];öÁ<á=Í6¾7Ş=1äB·[U¾f Y’¼åËŒ½…>5=ÛY<JË=DZ½ƒ®½4[‚½ÍÈ<k:V½o½kQ*>[¦)»Äğc>sš¼~¤ƒ:	K»9ÃV8úÉ¨:ü€ˆ  X~£I¤ı¸¤è™ºè‚­¼ı¥@ Ö¼9S«Bºç9ÚÂ/#œ	˜/ P‰;¦c¼ó‹–½|ß9:Ì`®¼âêü»ÀzO=¾’¿<é^=ÖD±½†ÊV½0íX»½
+»s¾àÒ¯½3u?½Uß½­¿½Ç§½¿»=)A–¼ \ë<ÜÃ”½Ã|L½à”7>£®¼ ™u´/n>ä#0€NGÓ<T’½¯£½Â,Ÿ½8B=¢'½=2í½*Št=H}£=ªì=¨à$:¥s>,^²»8À>èA=qÀ>0xÑ7º8ø7ÎÑ»¼9 nW ô?Å)4¼/¹Sël9â¿ï;n› ½A;sØ&·×à8 Ô">»(0;Öa=Ë/á¼ôq€½‚V_:0ı;«ûã<¡
+…=èí<ú+1<²Ş;ÁK1=ãk½[Æ‹<°3)¾Ì¿y½	#¯=ã,½ÏgD½‚(½\c=ß²;KŸ=ûìË;3´=§K=É6Œ¼,nv¶}$¿<ßİ0 /z=¦Ë½Ù÷G¼é=ÍØÏ»àa2½#¤
+¾*Vî<Åwx=Iµ‹½*f¼¼rN¼¾ E¾Û•=Ù¤S>ß¤¦:'ßs8D¬‘¼½
+½'Ä† ¡&Üè6f-¼OYF:½u€Is:¬œ<ğD+º ³¢¡ã:M´Nøa=Ãû©:p¼;ö×˜¸#X=%E½²ğ•;1¼d½BÕì¹á!>ìò<»6;n?ì»ã“›=T|<RÑä<.Ñ…=×[1½ß=Ë‹¢<á¤™;2EÁ<ÆÒ¼c§Œ=ší½e‹²<9Ê7wqÓ½Öâ€¾ğĞ<mÚ=Ø7•=õaŞ<æ*9íõ6^·ÄÛ6êÎg6	EÔ5t¦7¸ûì6‚?/2ŞP'7O·”°…´ö€[ç)v•'ÁÒ Cš ˜Yiè J>±lyW·p´( ½2 È„¥Õ¦Ó˜ò KÜ( v×%ªş6öä³Ï» ±–©Ò, üâí°Qğ-€`øRõ+¶®º‹·E„€{Ê³Š =,S´bÚ7eå¼¬±@„5šµàÒ»#Ü=iÌé& >Ö ¸¯t¥i·-ĞÎµ<™)€ûSøA€§³hé·&‰´‘‘x¥«÷o¼áo½¢V¾®Cz;ÿ;D=Bkh½ ¨u½"^½	†Y¾ Ş½`™=íÈ*>~QºT·I®½¾˜+>`€[< ÄZ9œìd¼„»/½4ã	€¡L·¹I¡Ê;*O”¸jQ¢xÕ¬²™=æ_=IÜ€<‚hs¹Ë‡Ë;´ø¼‡"†¼T½•=}¼·FÑ=Hªœ»„l;]›¼­¼¤=PÉÀ<æ=˜TŒ=H½b°ñ< ÆŒ¼K½V<A£¥<¬‚½‹ßo=Í¾r9=áØ·–ï¾A4 p”Ï;ôF*:ÅW™=õk/<¦n½$‚½¨J
+¾›x;"Ï†=Ÿ[–½ô/½Ïú‡½Ë×ø½ÖE½Ô:·<À+!>‹­^:[œS¸·93½Œ¶?( &4¹Ÿ:Ó»i¶—»„Ÿ	 è;ƒ­T¼DJÏ;öI s)Š¶“lB=HÅ=¸V;&ù·şíÑ¸‘³½³úÇ¼­ğ½^Ë¼ó:=¥»<,Iéº=>½â¶!=|­©<åº=¼i{U=óù¼.„;Š­(½ĞÔŸ;¬è»Æ¨º¼ôG=Õß+¾A¿¼ĞÊ6{!¾x"€^OÇ<qö¢½LİT=zo“¼O.›½o·“>o¼†;¦v‡½=Á€=R¾Ñk\½#	¬=êş=¨g—½{>f->¶¹ï/ô7XÉ¼8"H ¡.  LÏ•8¯P…¼Òî´<¨	€¡¬M9
+š·;¼1†¸I«¢X³\8i½è½¬:æ6Ë:6O¼±’}½áçß½ö’½Tá¼ÕÏS½ÇÃ†½`Ç¼ŞÀL½1“{½ß›ª=Õ—+=’¥”¼ìh¼gİ½}z¼ĞsI½Àµº	=wÓİºhr¹½@o<öüŸ8Ó§½LåC€áLe=@ü#=n¼d=ıü>t ;ÛEŒ½B¨ï½C8¼ßÌ=Ûw1½/Ç»AH‚½Ç£,¾å™º½DÊ(=V]>&·;vâ3»Ç\F½TÙ
+¯¿´ €Å/¸ÂIÉ¹Là#=û\1=zÊ€U±š»%½T¿²;tª ¿‰¸°4¼Ù½»_;Õ§º)Ü=|@…½L=µ„½UÇG¼â|¹=5 <.,¬»øÊ=GT¿=³c½‚h<—SÊ=nÍ/½Ö@…=Ñ®µ:Æ)'<A«¼{Š[½à{=I½5¾&f¼5îĞ9N0¾Gw€WQ½[k½M9œ=íĞŒ;ùB>A@½ø¦›;¡©=Î«f¼kÑ>^E¾©¡>çŒš=…¾h>û'ª=×Òj=S·—¸_ê7Xâ9ËD€œh 3g‘³j)·L¢»ôSÉ<½Ö €íß9õÅ¸¸Y¬±8‚N£A¯/öŸì<½?$½P]-¼¨;QòU½`ç<&}½Bá<ª¤“=Ü	ºº¢•¼Wl
+¼/¨<âÖ´½AÒ½H˜½/H;½]U<ã»ê‡<¬T2¼Y” =5½¼^)ˆ=FG«=Ò=VÇp´@4 >ÄB ^üë<~û ½…õ»vó›=Ïéé½¯\š½½ >|,¾½~¾]«=ÔlI½%€w½£©+>½"³ª½1´\¾§J`·åµ«·j‚İ=Ş( ÿ¡L |GL˜"ù¶¦0½ºüƒ¼?w: ŸÏ9"‡¸«O¸³ $ø\2Ø!¼·µ~»Ua¾²8I†<!rE;gl=|j¹»åı³½z~4½º¤9½¸¾=}•í¼ş¸Å½æDc=}e¼ÙÈ¼K4¸½Æ©½<=ßˆƒ¼ºn½XÓ‹¼ÙV^=ÄU½Mk=$±5¸v1$>åT€BÁ½@˜v=ööŠ½Ç>Hı½ßx¨½dæ½$t1<¸k—=/ûÔ¼ø•¼w,	½¸Ö3¾îf•½ç‹<óÃ>w»»Ìº!K½×H1€Ì Ë¸â2»-(X½(,=NÅ 4©÷;*'½kˆÃ9tŞ ¤ƒ8!—ì<W¢i=dnÁ»8MºQ³Ê<°ÂN½­<‹½<×H<À¶=2zL½w;ÿê½9‡=Ï†Ş<Ú(Û¼%2]=@Ìá»Û^V=40;':<C™È»‰%+¼c¿=çı
+¾»z¼B±>¸{¾ – 8Í^¼@jĞ»TS=ÚŒ¼,ì¼°‹½#°½ÿê½©Š°=¦½Á2½8ğ½:€8¾»ãª½ª²<ñ#->©”¹lr$9üÄE½ÃâŒ(Šu 7ãR3c£9xYÆ<f‰¼`}€»Î¤8›<¼°°;F6S!ñ$‡4ÈÖ½…F=EiT:1Ç³¹³¼õ»şŒ9½ §<	G‘½x
+B½Ô³š=ˆy	=ª¥¼šRÁ»µÚ«=áÎ+½"®;Ây=a|†½¹L=wÇ…<¦U<;{»ø=æFW=Lj>¾|<=M'V·èh¾€Ö«<GºY½WÚ=QG<q“¾p%»=…¢¨=Äpp¾:H¼w‚½<Û)‚<Ô¬ï½£½1½xÊ½šš½³«,9ŞéØ¸Æã­½õ€†Ä`; P7ø [£¸N¢½<¥Ãc<^ÆA€ã%¾9¤<xØ¸›€e£ˆ¼4Æg¼‚OÑ<L¾Š½p ·é‡Œ=‚Ìó¸õWÀ=`kÀ¼/×½oß½¤áƒ½³h<rÄè¼ş¢½H.ó;™M=×¦¼Ùó½äèt½ÄbIº·ÂB<IÉï¼êî‹¼„§½Ô?>á_Ó; Ä7´™>Ç¬€àsÙ9ààx½B[¢¼Âcƒ½	¾æ„Æ<—å+>.µ¾c½½RLu=õ\0½Ö©ç½2'„½H<†½È|ú½ôOÕ½@¥-:ŒCÆ¸8_½2‹Õ
+ Ù[½3—º¸ûæÑ<UÛ=äÖ €yÀ—ºÎ‰Á;9ô“8ÎJ#w5e';xT<Å(í½±9C¹1=Ùƒ»XÉÔ=zß½”¾z¼—½]C­»ØÊ=Yw\½ı(¾]TP;Ÿ¥U=2ÔQ½q±¾Ìn¢½¾‘¼ù`»ûÒ5½·9†½.Ê»O)S>Òfj=Æ(4îÆf>on9€Y‰²¼ÊJğ<Ékv½+2=ĞÏ½PQ½¿à¾¿Ê;ª	º=AOW½d+½â<½–Óÿ½6~\½T„;§¸>
+£²;ÆĞ"¹¼ç¼,Ã8(€jo1G©Ö9‡©t¼eÿõ¼V®*€å:";‚ı;{Í-:G˜!ğë£¶#dc¼DÀ¼”ÖÒ;(h±¸R¼CZ/½'L;»r]½¯w ¼ã„=•²¥¼ºÙÔ»k¦<¶®€=ù2½2v>=Âg=9»Ã¼¥ˆÚ<½…=O®;2İï;QŞØ¼“Î=Ú"¾)C¼O¸= ¾‹~	 m_¼G”å;ß?=Gê;f÷ª¼tÍ=gàÅ9¸Äq¾lg»”‡½j”É¼«hV½/½ï§ş=·}‰½$Üü¼µ8
+½e8{º½º… e;€¡±±Ú	 ¹]Ğ»ˆ|@¼iö “ì¹›¼•º¹©²–#®d1ûÃ½Uî<òu@½X-t7ë.S=˜ˆ¸­©È=V39¤*š½ÀÈì½™†•½
+ÒÅ<)¼¥Î¨½M(/»=`¼T˜]½$¦¾œN½÷ò=ˆˆ»[r=÷a-½Î¸—½ëùA>…C‚½~²ö¸5“d>µE ½‰N½#¾õû¹½…¾vp€½se½g°¾J0È<Üjj=Ó	(½1L3½/Š½÷! ¾ˆ¿Ü½šÖ=f…5>ş×K;Êb½8[Ñ½V‚¦%ÒB Â®¬U±>¸Ô=QÏ ¼›F0 ~²:â’<ÜV3»Ô,R¡ÿ4«=ø¡?=¥,Ç;L	¸\-];1;½räN=Vªƒ½ó‰¼ˆß‡=?¼²v»ôï<Lÿ­=c¯¼òÇY»P|=gû¼l¸í<ã;vl<Ù5F<2‡¸»ù`=A¾7"»çx‡¶%º½ı 4a=YB=İh=^­¼<ùkk½4Œ½o>2¾&'¼ùí=$ES½Éa½‡NŸ½:¾j­½€¡<5>‰I©º6´Q99#]½Ğ’z($D  ÜÂ€±¨ò¹Ç¹Ï<Úõâ;÷z€¢Hë:fH&º}W]»<½7¡¶†šµ¤Y<.=û¹§±8¹5¼n‚{½i½èq½R’¼îI£=ŸŒÄ»~$ü9ô`Í»7+€=êåª»_\l¼úgv=Ñ¼k=)Á<pRá;‰ä¼2L½o=Çò8¾¯I£<Ò <·.¾c€û
+´¼¹:½æ/b=Wõ¶º?;¢@—¹+M8G¸°°¹¢Î7Öç9(G:´8Ë¸Acù8è= ¹pú9k4Ù¬´¸K®d++ Ø Çè°±Š¬ô.ĞºÅ,Ûº1c eò»/èá6µqG{4êz< ^X&Ç7™Ù»¤{‹·2d€$û®µ­£´œ1¸öüBŸÓ|Ò°g¶o>º8=±ı¢H¸İ@w&àñI9Ü0:»g4ÊŸ¯: ºÅI´Şí„*y­'0ı9ëz„®Ôjœ¨fzWº§y€¶·ß ~—<€GA¹? 84f¼…ª¯Ô·5½‰
+U½%¾<A<o=ˆ=º+K½Ş)½Sq½sõ¾HÒ(½wmÁ<])C>¹•Ë%7:gL½q8•°ñ e!«ğ^8{X]¼¾²¼«®€ø›e9¨×»X˜÷8byì@Û²hÿ_½ÜØÏ<Â¾»ìÛ¸Uá»M-\½ÚR:<3O½œÆÙ»m{[=ø*Ì¼Y·›A¥¼5K=`Ÿ¿¼çë¼:=(=†ùv¼×Õ;‘Õ±;×í<sH»INª¼‚?æ<š&¾»s}<`Ôˆ´şK¾%SD€œË<¼'Ÿ¼	m=”~:;z+§=EÀ(¼]eè=j¤½¼RD½²tP=×V!¾iÛN>>‰= ½eìU»6s	¾³oç7zIö6‚<1í€é€ïà¢µiÇš¸÷P;×©‡¼eŠ öªô:n˜d¹T-¹?Ï"\ğå*˜]Ï¼ÌØ’¼¦E—=×û:z:¼
+«§=EI¦½Vİ•=iÙ<Å¼ZŒ>¼p]¼¼f¡=æÅÅ¼~òÊ¼OGQ½’F=¨ ‘<í7d½ÿÜu<•¸…½È[ºİ£V½}¿k>N+½^¯­3øßg>dZ€Â ¤<k„§½SöÁ<Ä G½@s§¾ZÕ|=5sl½ys='±!¾ÑÉ|¾A½Éğ›=N%¾¶
+™=q>*hÇ=À3•¹_[85åš=^7Íœ¾ƒA £=u©×!¥8ï¤¼ç>½Îª€EBë¹-¶;ü9âv4 D¯&µ­G_½9s½õî:cß-;
+m½òa{½áã¾	è‘½dª½¨¼éZç¼zlD½®$½šÒª=7SË<Z®B½ù›ƒ<;=äÜ<Ğğü½Î¾ ¼ÓD¾ƒB¼=ş½zšÉ½ß’=;;Íƒ¸½Æ¨A C»D'‚½Ç´>íú]½7®f=…1=˜íY½„øH¾²Ôş=ÖE¾ªk=n‰=XâÔ½s4è=Ü¹ü½Ùü!<o97úN8'9½ô°é”ƒ}?€ØA5jˆ«8eY¼æ£„;[€7ĞÂ: ˜<»îë·./ë!t-2×UÛ¼µ2N¼Â•~½Å¿¹èƒ.½?x#»L:\=kq<‰S<âé	¾BÍÒ¼˜‹;Ôøô<P[û½bÄS½ZKlºˆ<±½Ò–£½˜i½çû­¼[¥·»x_<Øiq½ë½u½µ®O>Nœ0¼hµÇ¸ÓD>È$€E]h»Ué¼š‰…½ç›¬½.Lº9ÕÔ9âíF9WıŠ¸ìz;m0 º>æ¹6!+:²ó¸s&ò¸Ü»ì^ö¹p' §¼!+ŠY‰²‡,$€J­€äD©}Jg*0L½¹Ì ôºßI€¦#Ï*	ÏQ°'R¬€ò ? Ö·€­Œ¹™f2¡·‡„RµAZ:q$~9¼ìß¡Îr›¶<Pä·4ºgË=´6_¸ïÉ3´pæ·—àg¹6ÅœµtÈº^Ç67`7€/ß-ÓEÔ¯5Ë¸'p²ÂiÓ8
+Ú¼9­
+
+h`C:¥ ÅÏ‰¹¹(ºlË4A'Ÿ2*™8½W8ˆ½ÓŞ!¾nï<7Ü­=±ÿ¼p½´Ûu½Šõ¾¤Q½+æ%<$À4>	î:·‰¹ÍZ$½Ü;‡·û Nx­/³`9$š­<À(½ğ ­¥P:gYQ»QG„;çTS Û‘µøŠ<òX½P:-w7¸dÕ¥;Ï,j½nœ[¼àk½Ü–¼|Èƒ=$•<Ä=z»}Gç;[¤V=GØš¼«å*½{õ/=s½C½h=gk¼«Ä¹;«¼PØı¼@Ñ-=„Ó/¾j[ß¼˜Ø¶tl5¾)u€(…ÿ;Ò±s¼AD8=›š»yÌ>‘ÎĞ½£I<éÕ¸½…e>ã›>Is
+=^“'¾õxÙ¼ÂÖ¾úçb½l–Í=±@„¹‘&’9Œùª½Ot£Ö‰ ¿–‡&÷T18vTm¼Ãòå<áF K¡Š8‚T‡<8ÿŞ¹ó-"ªıG6+®~=šµ$=m½……¡:¸
+á;UÂg½Ã‰¿=\rú»Ô)ï=ú…$>-Ë•¼…t/=ŒYQ=ù$<9Âg½‚p<.¢<¸i½BZ=Z(£=Ò2<E¾t=*Dº½¤Ÿ=¡‡½Ñ‘»ïwè´î¬Í½ÌÎ€ïR+=OO@½uR|=ß+=£ ç½C „¼_N=n¨ò=qt¤½ÂÁ=>.„½àÍê½É¹w¼hX[½|'´=ô—…<.Ş:ƒ¶ô8úá”½@G€¥@ iÃ(‘¹ 48	kŠ:y}.=ºV Sô¹"Ë8êj8ud…#	‘ô-W„<g»½~Æ½à8q¼‰äo·N‘6=£)½^ş½ym½ñk±½şÇ;>]š¼4H¾ZÅb½çü»¡>½¯¿¾rh½ˆ0=w€¼üb2<P·‹½ÿ-%=, T>ÏX=¾E2È¬s>Íñ> ¼3<=±øø½(Ñƒ½E#¬=Á¢Š½%…;½cî2<“=š½ŒOm<à¾Yo =9cC=×T]¾L®½²9X>È\v>Ö:':áÄÅ:2F=†GŞ­jä! dåĞ¢Räú9>L’»é#<£€Ä‘8;·7<·ßç¸mß¡ºŒ¶ÎÌ<4¼%š«<4«¨¸å„”=ƒ|s½=³•<çæ–½?ö=½\Ä¯=â›ş¼›€¼„ÕA½c°=í{=ih„<N•¿;qÿí<ƒll=›Œ'½µ‰<º½ÿH<¯€ó<£
+
+¾ c£<mÖ9pbú½ö>€²¹P;Ï!è¼ê2Ô=gœÈ=’†½:úÀ¸l¿µk[µp	´ï<Ê6t‡4„.¹}Q²µ«ÄO6ø[4Já<¸,¢€ø$•Ô€@. :2€ëõ2àD '_µ`v>¸ƒT ¹9
+¾Ó19ó’‡Ş@€´e€=½/ûI¹ÅiÊ¶í¿ ›„&43 +Š-ªs<€›ß, Ô³„¶Äç†¸(	’ëè&¸~ûøˆÒ÷7šØ2¸{ÛE.ÓDù¸I9pqÄ«õ@ßï? %‘8Ü­J zà øæ 8¦¤) n¶™ä üè<·ğºp¸á_C úU/“	*ì54ò¶+r4ãœ ´³ñ²ëc0@{9ºÙÓĞ06¶q»Æ¹FÆÃº,ı¶ùQ ™®ÎZğ;€j™ §ŸF ¤%ÎØ“á•Ï3´	®·ˆÅ€¤ƒ
+ í¤€¥]«vƒÁ øl€­!…«U¤·~5Ğ±›& ªŸé¯ Á¨7«Èˆ* /12€Ï+Ø²J 5‡tÁ-â µ2  €™–s´¢$64¾á(IÒB·<|7<ñ:©K€":€*Uµş ÈÇ€6€´Ş€:/€iö> }ÂÃ´ëÿK¶‚²€A"Œ';Ö=K¼ÿ×Y=SÓ³=Ë½Å»=It%¾¥&d>ÙHÏ=.V>ª“Æ=Æa<Qí:Éh8¥%i<{Ú l€úÓ1©(ı¸&NEº|v6¼ÿû!€$ù:*c7ÌN›7 Æ1£êÄ' ê=GQ½[Šè<#L:{C4½“Ês=ïc´½“°ú<±½¼Øê¹¼,_¼ó×½vew<^jÒ¼Äİ½í´s<êI°¼lû6¼ÓÂTº}Ê½ô;a3Ë;ş”Ø¼är=`’=>&ˆ¼Û¾Ê²bˆç=Ÿá€İĞ‘=˜÷½¶½ìô<ÎË=‘Í.½4ø¸=ÒCß=ß	½
+/K=98¾,çb>f¦£=øì&=1{»=dË½¾:4W|:ˆFÖ;|¬‹ ú§'«î	¹Ó<ÚJ <%œ€.ª:5”â<Òçl:V#Á®¶>Ğ¿:³@V»Cra= Ç:]ãF½°=œrş½–ú=Æ­<¢u½$<'¼6	½çUQ»YŒ¯¼]6Á½}ø¼¯dt½<(â<m¥¢<>µ¼c;{5½¨×P;*lø¼nà?>k•;@¹¦6Ã;}>ï¦' €\I=]çÈ½üÑ¼şzš¼ $S¹Œ5\6³³(‡â,zf6Q	·–Ä·GB¼²‡\¶¾çœ«s‘’¶ÏP'€¹<$ò; ÀP kr uƒo.xÒZ>Ï=1ß°µB 2è	 H*)d& Ü0 A) t‚á˜è³Ë8F4*+(€Èbæ-q·€p³6¬á"€;0õ£#X8æ “¸ÓED z"´¯AM„ç³¡wô¸…M0ŒË“5{^yµr8§ñ!	 …Ï Ùy¸ …J f<4£â< |f  ½Î
+€¦SÕ2O“Ü817 ıF 9ì¼¨º½4`Í½¼šE½=Çâ2½À\<$J½VØ6¾-Í½cˆN=ğ‘7>$^¬;íä¹ß
+Ø¼æi&‹T€¯€¡)™Qå¹!Õµ;HÆ½à“5€9ığ¹$#šº]K»e&¾!çcU·ê;ÙØ`½ÛqL<†1º¹÷È»&b½çÒ—<ò—œ½©·°¼v…=şrJ½|<»×µU½ë=YC½ª¼+y=Qÿ¼74=¾~¼;)<Á (<šĞÂ»ÙS=Ş/)¾‘˜¼P’7;;"¾Ø6 E 7¼Î#+=7D=´§¼ ³i»êÈX¼ô7¾r(<(Ø—=Ûl½Ãş‹¼‰p½ï+:¾#R¾ÊTT=¶9>Åö¸9È5*¼HV,šŠ"! 4³Ë9^Gr¼<P± æ˜Ğ9£V]<í…‡8˜õIŠ!´`:L=Ê4l<åõÌ;“ ¹oÌü<Gê(½æ¼,=½ÇW½@„;¥¶Î=¢(‡<	<ûo’<-·=µ7	<Q©‹=İŒ=¦¨!»St=2úû<Ä+¹;—Å<Ş¨¼eA=!¾?‡D=N.U8—ÿ½@bG€¸p=@©
+½oI±=< r<+Šƒ½äæ›¼±÷ü¼½gë‹¼íı½Ë·
+=*~$=ÒåS¾lp‘½AĞi>LRW>“ı´;ªKdºkÏ»<‘…¤&Õ , ©jŸ0µ49FÙ½]‰a½£ €Qt;·)<øƒ¼©Öíê7ZC
+=2©æ¼ÓSº<Ëw9…,=y#t½îè ¼9m½ı[½ú—T=Çê<ŸU¼#s²¼'Uù=—=î]B½2¨&»_÷¼g=ŒEh½aN:Q¼½'©F½¹D?=Ëeí½Æ´…=‰9ºp«½[—€Ğ©¼ªª=Ëÿ×= j²»^FH¼Ñ—½º#è½µš"<s¼æ=ë¥Æ¼¼6½r½¤&¾âœ½3t<;Ò;>l¹7¡‡8ëS´¼%w˜˜xï1 ş˜ùµ76W<kŠ ¼{œ$€÷ç8Åå»Œ_'9À=<"Ïº³²¥/¼³/=`g;ê/Ü¸pcç<Z-n½½ë½:M‚†½5Üh;§’=I¿<5:ôé<Z†=.üº®÷š;P£=DE½¾˜İ<	À<Û¬C<şC;ÚªÊº¶J-=¿Ô¾½Z»½_¶]û¾’? çËì;ïaö»Aw==ï<á´~=×½ÓF>:&~½¸ª·½lwy=ÏŒ)¾ÊS>ÛÃ¥=R«_»ˆDŞº|¹¾‰á8îp]8V¦U=Ğ¢€q€LÅJ³îµY¸d²»:q¾¿»	Ö+ +J¸¹KÒ·V¼ı·¾uç¡m=$1ïo¼Êrß¼R^D=³T?:<
+h»	L=(Çƒ½92=ªÇ¼1ï¡¼[“ô¼ö‹¼O¸n¼<X3=À!$½Ïè½H	½Ì‘¤<ëÊş<ÜV½Í\><r3Q½,ğ¼¿`½›ÅB>—ğ÷¼,è)25>nP ÑŒ<@Qš½ë}¼'!½W®½]èŠ½,Í¾…Š+»ø×=ğ8\½³Ã²¼2İ[½†
+¾^ìH½OU!<FÅ!> æ¹ÛÌI8ÛA>½Úd¡İ jä¢¦^¶¡8'Ñ=‹ÿ<BØ) V¦9’¼—®‡9á8!¢M?´èİ<¨NÇ¼û'×»¢cÀ¸Ÿş»¯—B½÷İ×<qóf½+\¼¯ —=°$+9â¥»¡œĞ¼®ú„=O>½qV÷<Mœ4=h;½-ÍI<ã04¼>ØQ<¥nşº(xa<ãV=œ ¾?Á'<¨A¶
+Øó½†Ä€Ç…<Û‘=ÖëU=©†<;6Â½~,¼=§c‰=„Í¶¾…3=U‰½f/=çäâ½Šû½«>N=¦J¾.|…½0E 9oE68°ƒ¼±X9 ª€vÏ˜$Ë’¸İ»9”#»` JO<¹±(¸‹Oa72é¢5OC/Z@;Eéß<W¥¼üÀ9Öî¼=30¼v¹:>Ã¼½!	½;‡½'*<Lä<ª½¼ªë¼á¯¢=ªj=2ã„;Séº½¦Ü½{§E=òµÒ:¥@˜<wR< 'ö¼…1>ˆk7½¦ ½¸O‡>=Ú€h^t¼ªş<}Ì¼Ò—‹½¸FØ¼¤’½\Ì
+¾İ˜<O³“=A;î¼Z›˜¼¥Û½í¾×.Q½=£;x¥>&oºøÑU:GxO½«®FO»®’7¹Ì&sº¤(™;Š#—½ê bL}»kcF¼ö.Ô;+ìˆë07¡^½Ï6<û—İ¼ëfZ¹Fy<\ºi½K·o<k½]bå¼%Œ&=:Qk»ÓÏ#¼_Rš<aE=ú¾Á¼ë]<k›8=|±Š¼E_Ÿ<V½i’Æ;yœ:»–yC½ÕÂ~=®G#¾?½AG
+¸³¾ —- p$â<=»²ib=+½¦–t½Ñë	=(ˆW<ëa0>EX¼\™`=›^R½Úãl½?>ò<˜sŒ½Üš>ŞJé;yğØ9ñáÊ8À@½Šá½ŒÅ,D ¶#Ã›-P¸ğ»•Çx<á0)€”ëÎ¹şÚa;nî¹Õâ¨£3~d2…dæ<DpJ½®1Z½êùI7ª¸d¼¾Uº™Í§»‹çr½£¬®½k«Î½)Âá½;Ï¼'Ï¨<3è‚½©7k½úÂ€»Á[)<\NÇ½åÛ<½¨+»	9<ßz™¼Éœ½íú¼é/f>¤<y½Yú°ı=>¯‹c‚‡UF=æ+¾¬¦¼°$½^Nû½£=ñ†=ñä³=ÜE ¼ÿÍ“=D˜½fe¬½·ÛE¼:ø½†ùL=ÅÑA¼¼SÜ8ÏAš8ñ„§¼Ï]#€t£( ¢±ó™Ğ$N¸YA*<™Â=_¤/ nV:ùƒ;‘Åí¹u„£I01P­<ÛÔã¼7¿`½+£‡5j¿;ê†•µ’i=ä$½¸êÑ½‹“»¼q¯½´tÆ¼!â<íT½rzF½èè
+=ÃXf<m`ó½ ˆ¼f1¼‘lÁ;nŠ£¸üÂ(½û±<ŒXT>ø;¨:±–ğ>ïœ ˆmJ=™Ğ"¾s½öĞğ»49¾UÂ:=I	÷=Ğ Ê=æz‚½ç=á´½T¾]~Ü¼dDR½‘WR=ğ'ş¼Á\:B„8*ìr½@€YLH€n 9¬ßö·ÄÚ;~H¸¼`õ+€GÃº+F2®ıô¸sU>#À®72Êê=u(¼Ôéë½Èı8zr¼ÚO¯¶ó¾=‚È%½*ù½¥½f†½’Óş;w×®¼˜î%¾†Û½cc/=êÕ¼N¾£ T½;¤<»»^ç3;óN5½HTü<=Á>i†<=%şµ¯Mo>« ½‘<&7Õ½sn~½>ó=†Ò=ZY½îM‘=*V;™p€<÷{ğ¼h¥¾–Ğ‚>¢¹‹<Š.=½Ë=ÔÁ½r®¦9´±8{Ë<Ìõ €·¼$ # ¹³œáF¹,œ¼àµé;É” -Ò9òî
+»’H·ÇØ}!œS‰2v÷<=Ì…¼-1E½Â];ìŠD½ê’(=.¾Õ½
+U=bÏ=Xn½´\;<âJ¼ÖL<:î¼ëd…½-†½OÇ½‚e¼•ıµ¼4W½D—|»Pe½¦…~½€$Q½i&I>ŠŸĞ<)Ô+”_>o¼K€4ñ†<2N½È-6½#"½ÆñN½²½?e¾b]×;Øî™=Nâ;VöA½±œ½ë¬¾lÜz½>â=6>™íT;ÎÜ]¹Ó¯U½[[K&l³#€·iÌ"HÇ8±n!=I›Í<180€I”¹'0=;–jß:aw —¥J4Ç
+¼­×ã<¢¸;T:æ¹Ñ~<ï6F½A‘,½Îñ}½úÛ¼–Æ=D~å¼©Ç¼»Å÷Ã<n£=Ñrõ;W%;xD=ö~½h¤#= ä=&ö;L»
+º‘¼¼ö,=o1¾8Æ³¼(7z(¾­ù€$î4¼‡So¼Ïi=ŠrÃ;ŠË¥>°9¾Ğ)¡>X†½¸F#>s›¼êÈ>m‰Û½a½(J=X‹Q>.^=%‹º‰B½¹é—½RÁh!ÀŸ€‹¯ +j	9ÄÏƒ<”˜l=øG Åxç¹RÌ<yŠm:€9¤ ßF·Q„Ü¼Â»¼²¿ª<Õƒ£º5	¼µÔº¼ò¯=@Ü¼OD®¼¡Ï=.¾µ™`=3ƒZ=¨â=
+	<Öª½Uèñ¼ƒ®»¼’Â=ÈÓT=ß£Œ=¶ß=°¾½©tã=C-¾½Ë<õ^W¹W«¾™“'€¬t½™«Ô¼W>Dğ}=2 ¹=’i}½ñÂ«=¬ûÉ<>Yô;º.:‡'¾fr>Æ^=i^ı<¦á~=ŒI\½‡ÓŒ¸&ˆ8·oÖ:®˜ Hü %ñë1÷/ğ·÷@;’¼âñ ¦Ùú9İ»{C¹Ë°ø"ƒùÂ²öµé<õg½„™!½Ãõp:Ë‹½Œî¡<».¾Ør=úg=’qƒ½ı%½²è¶¼9u¼•Œ¤¼‚$İ½)ƒ½dÃ–½,¼×|Š;Ş9I½ù]¼¶é½E½±¿¼®ÚT>Vs¼œ4º³ì|z>çì i¦‚<[fâ½"p1½Â#½p *™@Bpredictor.0.biasJ€S<}<È\<öHµ«Ğ¡=6vé<+À¼ø‹º˜Ô#;67W¼åÏÁ<KœJ<ÂG|»·şÕ<zéÁ¼ÖA=­­:°M«¼YÂ><€Pº(ş#<{8=ëd.½$÷<9j;BÄq¼-Õˆ<Ö<òO¼3Z¼mæ¥<“íD:8”<yË =tbo»s¡=ğy÷;3¼›©¼MH°»Û»==û¼· ¼Î¸‡¼êª—ºy½ìºj»;)<Bı¼j£â<m{;Ëæv¼‰r<ÏJ-<½ºJ<^[Û¼B®Ü<X_à»8”Å»ÜRÀ»i4©; ¤¸<A¬¯¼ŞÎ<*@Bpredictor.3.weightJ€?>Ü™¾¦ßÔ=ù‚ |ØÑ=~yÉ=AÕ>”(–»ÖN„¾£Y ¾º=/Ó=­­¾ì,Õ=æg»¾*Û=¿C¦¾bÆ¾ìö=	Fº»ü>õïÅ=ÎnĞ>ù…>Š'ª¾§~Ñ¾Áò=qÿ=¢î¥¾Ì´¿¾‰'Ñ=JR±¾¨ß=—aç=Ÿ¤¼Ö;Æ=‰X†¾ë©>w°¾Ñ9Ù»éÒ=DÃ™>ù½¾V>l9»0i‰¼c»¾¥¾²¹ºúG>Ù>ó´6>3ƒâ=%tf¾ÜšÈ=ÖàÖ¾ÀÊ=«5«¾mŒ”¾¾È¾(q¥¾†ñì=G!ä>ª¢¾*Bpredictor.3.biasJì/À>*7Blifted_tensor_0J   €?  À?   @   @   @  @@        *7Blifted_tensor_1J   €?  À?  À?   @   @   @   @  @@*ê):Bval_8JØ)Ä	Ä°k²¤3²†òÅ´ïç5øä§
+„§ÌÂP«x'Ş4¹Td°Zå­6nø=5kl›5Ì³E´ Ë´• ¾¢UšĞ°ÏÄî´OÓ´JÑ´€cÄ¶–LË´èÑÚ´×&µÌ¡Æµ8Ù—/<e¨L68ïzªçş§6ø30rB~4”øcµ%@®4c­L6iHS°vcR8ôçŒ¶5Å¥4ëlÓ²ÄËè±È”µƒ‚6tµÒ\R´¿î6>‰¸Ëø´ÕÁµ;]µŒƒª^A©3½ïw«$®A¯eä“´‘§Ëµ¥¿D7jéó5
+4úbS5R|"6.~›8$ŒH¹1:+å›°*
+#/ñ¸Äy2AĞ¹¥y7&¢¸Sbª·HÓñ6rñ&ì4²\D6±è›·À“x7±^88nqe8æú‚8Â 94GÈ²Á¢$ºb¹ª†-[Ğ8ª˜Ù2;£e·AV8ËUï·šG“¹…ˆ3´iã¸!Ñå7&F·²‰6Œ5¹´8¢C¹òŞ8é^…7w(¤8;Ù83Í¸Æ‘Ëº_8bhë,…´8	¼ˆ.âËÓ2j¿ì7µ8K;e8KWw¹y-ö³ Ågµ4_¸÷š¹öf„9M†]«¸ckª5Oç®2àú·düd³Iø9Ÿ{§·fø¹iR>·²}·Øn¬%íM ´u´™·RÙ–7  ¸"Æ¸ŒJ¹<Ëi¹z ¸5”¹BÜÔ2à¢º¨rp83X0.°†'µºvm³ŠÃD7Läı¸âÊ7¦_×9&zƒ³}‡—8.Àî·P¿¶êYûµø"µ:çU¹ts9S,‡¹jG’·Î.Â9Ğ Ä9hü¿·]O‰#oü¸s:¶-ebñ¸¢®¾æ¼².ÛT¸Øg©¸¾üºM…9œö² Q˜1Piİ¶RÆ’·7ó\8ÁLVªÖÆ©ª‹ç­•d·É}²ª 9Ÿø¶.·µë¶Bl¶¡¤$iO³\È!·ø¹ñ5¾g·q'h¸aƒ	¸äš¸­®{·¿}¸Öîê1H8‘Nø28õ-Nõ‹·gè±è –6ÎáÏ·ô-6ÈÁ8 ˆ‹²òp5_7X$86É9µÎ51´šëı·8au8fœ8¸—™‹¶ÛÙ>¹#²9¯ˆ½¶ y®?1Ä·Cô­,u$ø·È‘Ÿ­U~e±Å	%·¹`·5³Ğ¸L382.`,°%+‹2xÛ3Şç…³q%ëfz$¡Êğ'T6ìŒ-ÌG´ØM!5à—3Ò¡±?JT³PSÇŸqv.p›·1ì¾±e„26ï¦µ~X5\‘g3^¼2ŸŞf3´J­‡~Ç‡0³ ½õ'˜×¸6Ÿ0­m†Ò±[¨33µ³±…´8{õ,ÕY6şş651ik²dó
+0Ófğ.¬@3HÔ³£œ3Ø±1W–7/¸…Á1×‘|İ3á`I'É|¶¤¸X(*†y¬ÓïŞ2•ğ4!ªô6(*³$ˆZ¬½÷?0£í]2zK”3+Äƒ³HÁ¼¤Èï#†Dù(“¡¨³½nk®ãÖo±¼˜¯Ã9ı3ôde³7e1-¨6®·­Ë72âµ°²BÕn²‹RÓ³Ñ¨‹3è“§3
+¡±}·±3FX,W†’¥é4l±Ò%
+‹4æÌB.|
+2Ùíù1}å'2’û´Û”Ò¬³èª6Ãú3Ê3Öb·¯¥‚®‹e3sğP³Õ0(3Ê°'nÀµ&9®·Ï9³@ß/‡ìC2IF(Æn4‚Ş%(¤®R-")2:=Ä2I–“´u§˜²¤l³ºúÑ³mìF·[< ¸H…Í8yßÂªÀ?ªQla®zI‹·H|×²úNb9|j…¶Š°·É)¶SÅ¶%Ğyq³*e‘·sÛ‰6ce‡·@—´f)¸A'k¸KÕİ·ó!…¸ÃhS2¬ÜY|8feŸ-Œ¸„Î²t#7nñ8¸súÿ65u-9º³»q8¤Ø·Œí6Y…µ¶¢´ä[a¸±³Ø8K¿¡¸à\÷¶»°\¹¡å¹–—·ïTó‘-¸+˜6-iS#¸W®³õ²ñ‡· ¥·¦±.¹`C³8²³°va24+È´µÏ†µ2ƒ6rÅ¨ğøƒ§¥R«‘Â”6Bî´¯è
+Ç6ºØ5Ÿá5Øù74 €PµºB4"=»°šh´BÕ4PñÇ´oAÏ·Gµ±5µ^Şµ!µ§ÿÅµÏ§”/Áı"g\Ö5VZc*nQƒ7îúÊ®$³/4©p‹µf‡
+4Äæ“6S’8°åõ¸5Ï*·šœp3³¿²Šä±fÃµ0¡P6D™¶5´./¶8ğÕ¹Ğ´[M˜œ0ˆµ{Í)Éú¶û)A«ÅL®$Êú´… 36Û95¸ ¼Ì5›ü±è¯'32åµt'‰¶ü¹U724N©ˆÊ¨v“á¬ÒA·«P±ó8ï¨•¶Rã	7±ÿ‘4ƒ¶J#6²6Í¶ê@5¿k¶]¼š7Øµz¶!9ø¶‹Ln¶TÌ·.Gç0¶IÒp<7±3,¦·f¤°h¨“5zçÃ¶sÙˆ5åÅ7““±Û,¹j4‡¶E5E´\v3³ |à¶Šk„7Ò‰'·¦†µØ’9Fûu¹%>„µ
+»¿^¸¶sŠ¢+~ˆƒ·~ã˜¬òû*°&¶yê¶-È·iY7iY×² l¤1Y•´¶¢´V·BÕ68™Z1ªå–©¬Æ­Â>È¶_ _²¢Ô8tL·º`Ì6cÒÅµË}m¶ÿa#Qá²mÂ
+·¬¹Ñ5(Êÿ¶iM}·»Ï·»Ô·­ŠL·¢'÷·çÂ1ø è:8óY-r¸P*Ì±*ëz6$ñ§·’/o6Œç8†(z²Œ079+w·=A66ãø´ c´Ÿ,Ç·\³I8i]¸ªÁc¶—T3¹ j¸®:¶şË”=#·p¨, „Âµ1ˆ†­yÙY±}®·BX·ÌQ¸Š{8´ ±çi^3&µ‰¤1¶<š6ªÚë¨Šò§ç­¦«>»µ¥C±§V‘7.Â.5§¦ç´=Àwµo¾İ´Wc4#ìv­±2Ü)µj@@´:ÈµßB=6uÄûµD¡g¶m\¶rQµ¶0x——`ì6ë Œ«:ñ¶Ò‹0+º:5é`¶bK@5D27îÁ°ye·¯ñçµÈO5gÜ—³îr©²JÔ\¶q67ÿ<µ¶ µ©úk¸ÍO$8„ãÏµù8„R¶\‰«Ì˜o¶`•è«ËÁ/½e´µGcA¶—aB·r#‰6*FØ,N‘1°çî{²«³Ä> 462$¨ªÉ£hÑ§6vì3r(È.J_Á244è³tÚ³r!{3NH²Õdôoß\-¢ñ‚²c±ñ2Î §2¡ø4œoµ;‘à³åŠ¡.l.²¦ÏB«~ù‹µgN´»¶2¦½Bµ‹`«;Ù,²uKå²lJ²)[J4Q¼
+-+m¨5K9Û³©…³”·/•ÌE/ió³Õ~3ßÂ´³-9±¾*¤60~8éFx3ƒ™xN³ e¨ïY`´ ’w(°£C­qHA²ıP#²±uÒ5,É3äâü5óBˆ¹ı²<K§=DO½C8É¬´Ÿ¯|2&3SÔê»˜İ¹âs½[wø:‚³Ç=±1½£Íè»«ìP(qÄp¶/ß2¼)$J¼áÔ»xÔ<Ø²=JEÏ=Õ9Îû}º2>¸¥Ò«ªĞ­È=î“³´½‹¸³j<Ÿüø<R„<B6Î½ –J6< ½Ïüû¼Xx=b‰¹j=Î9f!¦=Öt7½rZ”=»l;4‡à¼Áú¼*©¼«¦˜œÎ!=ÙŒÎ±úÔv=3óµü{¶”$;6ƒû»j¯=
+9½by´G¶15¨”9"f_8´È·5œ"ª$:Ÿ©B©¢®zJ6›Ê³%ç»~³ºè6	º¬ÛÖ:©ï4iÕ¦èw¶±µ2¶4Î•A8£Üô7P°8ŸƒºH‹’:f€7E²c77ci4”RÙ¤¹tº’›Ş­fëXµaß	45íq7­ío90„º…ç:(³R|ˆ8¸•3{>9uË©µXï¢6€WÛ9ÑuJ¹†h•9îmÂ5Ì"^:g·®¹Ú
+x;ü]“D<:Ğ¬Ş¬ áÊ·ø:z/!
+2¯@Æ6#Ô·7]ín; èÚ7Æ¶ß³ì=15æo7Ç--9ƒIO¹‰è¤+øœªÕF<.™?İ¸ŒÒ	4Ï„4º@5ÏˆH¹%#±8|ƒA7o¹c¦êE¡4ÿ‡8((L74O˜8Â“9³XG9#Š¨8Zg/9ÿRá9Ç×D³wmŞÌÍ±¹-ò9.eò˜7êìø2·]¸|Ù'9¼jW¸÷jî¹+6¶3Ær,¹²å=8tÉ¸²@W6RHq5SÓ9 €¹Qÿó9Æù7T“9š„À7¯7/9m$J—‰‡	9@7t+¨ç8¢‡..™NÉ1nA8ÚÃ9j#f9ó\e¹m\-,ÌI­--Ä°Ş±¼ş1Û2ƒ£¤Gí#˜¥‘&|A›0ãÂ¬æÿW2QBs²R-s1ÕFŞ±c#a¯ £ÙxZü«BÉ°æş¯ıt°šˆS±~,:°şêú°?À$±xpÃ±5Ü+…m‹L{Í1zë¦Ò$¯°äòó+:0¼dù°†0 Cç1üR+@†1¤O‚°È¹0”s­f­?gA±‚}18­±r¬¯2êĞ±~P%4+‰6°˜Èèı°ø¦³M±"«Ç$2Fª‹´H°Œëq±h³±<o-1¿Ø¸4;d9;K;SŠÄ;eú©<!N®”o®Ï\Ÿ²GXè8	R%8¸M=ôà9cÒº:=Ñt¸>Ğã©ÿäd¶Ÿ|;–2à;±¯<Ò«»;¤ò<O-e<rzÄ¸Ù´»@ÓÓ7àZ‡+HÕ¢<×²p0¹êÄí7Æ™:mçF;x§:ayk=+Q·*È¤<;‚ºDz.;Ûœ¹/ÑŠ¸k>c<¶Â<hã”<29›´<Õ‡n;’3=;ùò˜ÿı”;‡ÒÖ°f49;ù¹	2! ú5²ŒB9ÄL9jHƒ<êÏ<äzµ¹21~¸gàf»“´<ß¹u¼²Rî.¼„ˆ°T¿o2Àş€=Ğá)¸d¼
+8:ºu¶<»D|»53t;™’¦©c˜5fØİº@‰C»”ºEj‹=D¾¼ŒÏ= é;;¾<2^‘µ¨/¯ÊÀ$=S$ª³ïù—=h·ıÜh»7ºT»¶àºÅÓ ½ı5¹Ñ²0¼væ´=K÷¼‰.C»´5j·•`='‹¼~àS=	Gº1¾Z<£¡=—@»(Íæ–=¼bö±¶l¼ÌgÉ±MA\¶/ã#=N®=/@:=£J‡¼v &¤ØV¦vyŒ©‘-ªPÛ*}c[Bdc›¸4J%©4Ëõ$Ôı¾¬¨â³Uı‹ªÓÛø+^ï¦Ãéş•aÁ#ò©å§Wd+)ª·i(RN©~óUªe2äªYoô(·Ş‡)[Ù­¢vÊ¸\BW+Ã®p©*ˆ¢¢§¥š¨}‚	©-È‡*GI£¢O*ÑÂÕ¨Ü©/*¥N>.% ­j©z
+ô)5—(h¾f%…gİ(ÀIı¨ı—»)2òÔ†	­©âÔ†šîä©§G¼BŞ'£¬y¨°Ÿ5)l^ƒª-=¡(ÜU²¶5´VÎ¶úFÃ¶zpš7²©×7"(J°v­;B
+7ŠÀò±Ä/8Lú·şm¶c2Äµ>¨x6N
+£Fè>²#]¶Åä25WêQ¶	Î·
+Ìµø#(·F®¶úP·-1
+àäØ<7¡{G,&·Giê±“×ú5¼+·´Ï5¬ı7íË2ºl;¹$Ğµò6“7P´Nı{³t‘·½¯¤7äth·	 ¼µ‘qª¹)…Û8‰Ş¶¹¹”ÖF÷¶–©×+RÕ·?Ü)­Î=±Ma¶¾}Ş¶FU¸V:—7‚ƒ´,’ô1/ºĞì1k]=3º„³¶ğÀ£,z£6t¿(ÖÌ³ø–R®„:²O»04Ei3«õ³µT61ğV¥qæó«ö¬(2Å‚²×
+3²e4Ää3ÍYS3v±¬0!2§R¹ªßƒ®yŒß3Å/¦÷
+ò3œÏ+|ë¥1)t†2Ú×½1FĞŞ³‡¬ÓŒ-µ²ZO3¯F™2A_k/¹®¸ˆ3LNé²UIY3K¡¨08Ï±´º„¸çÍ³.‹hº2ÇbJ¨4ş’³h4‰§£0ğ,¨ ä12¦0Ù	µoIÂ²Ç„‹./Œò¯Qc³,ˆH´œR»37%éÀ4%†)T¾‡5&g¼.ºçI4cÕd´UœËµZ÷¶3I
+4`ÁŸ(Ö®äµ²¸x$3~Åë2*+(6ÿó26ä´É51dªğ±î’¬YbĞŒ²@´ÓpÃ(£~7X9	.Î—±¸Mä01‰²XO£4–N.7w¸%6[7Š2ùÑQ0“¬/^é$´=n4w‰´Ñ}d1Œ¾‘¸¨Æf·1¢3R+ézçŞ²4ñš'F27Mü(¾xg+™»¢³¾'d³ô¢¸!“‰³Ú%1DàÊ´1V ¶%¸9Ú¸èŒ¨ùh*Â…-y®`¶ÀT„³á4¸-ú›¶NÒP¸`‘¸ëŞ¾7gp%Üq±ç`L·…«ı¶{À…¶PJµ8ÖNĞ6şM.¶‹÷M¶.›¶–Û9±‹d¥-íC¶çÛ-wS8Ûüq³ß}Å66\Ì>5d’¸J·j9ğ
+¸Ó7‹KÎ7=7K:—3ô±n6¼¸FK·I“ª4^U¸rc¸ã'„¸•)“Ê7eã¾ªùs#¸®Ë]S±n^·F	¿7¼˜·†"=¸p *“:Bval_10J€6)26e¨+Å±·4íHd€  Æˆ&Gd\­Yâµ¦·' j!©4ĞI.K½¯Z¾Ò$ ÷èª¸û#ÃŠlÔ“İ 9S6€µ“ ¶;€røE™Áî2²Ïó€-Æ€'¿¼€+è«ª}Ì\c ¼ë5GZ#*ãÖÂ(Lè‰¼ @ $å€ÿ††±İ9¹Gäí6†&¶º‡z ªkÒµ¿Á¤¹Û7p"Rà':˜i—;WØo7§8¶á½ıÃ·†,Ï H©Ç«¶Ö‹·k¿¼{€s‰jºiAº¸³A89¤é£o©É8iJ³¼X±]µ
+¡4¾§=¦=€<ZĞl0ò_@²¢¨u°ğ.•¹Ò	 ^G)·˜Q63dÂßµJ[¼ŸñnÒªZI›ºeX¡)û)*?$,[,  ?° ùÆ –F’)jp¯ŸÔft¬É*
+ (.¯¬lF¥»X™+%Nx“ğŠ€	lu®uÛ%û‹G€¨©f®²®,€—9€ìG ä~€!ˆ(¼©VV€ ù€“a•æ]¦ŒÚ¯àè€š‰Y2n•Ñ(¯µ¦Ü[±7 ³m;€_ €-	î,_Øsu °Ë¬€x‘ 'C'•§—ÿ* I™¯˜¸&y:²?Ú¡¼³G·<¼°_½aÈ·İßÏ¦v#–0U¸;»Oÿ<J–à;§ øè¼;„»W‚;N?«§ Q›±ï²•º×í<­”wÃ01À8š€ p€¿ò€\½.Ğ*t­Ø‹´7©I u<³(:ò1šï×1¯óDE+èi7Ğïµ(´Ç4‰¢=Î‡.½÷%XÊu4ıgZ7+òÍ4Ãqºp/ 5ˆ·0ğe9àM±@A{¶1º,:}£Õ <(g	³+š´B$€2 ]|æ§ş7º	6„f…6]ß {•$0¶İÕ7êÓ±½Ñ! ¸?82ØK;½"à7Ä¹›7ï­›½´KE´Ñ ÅI§ÂI†¸C”Š8Tb1¼Ş >±õ¹+º]¹UN8ƒ>£)|E6±(½FI!­Õ€©È›w=åy ŠV! µô§KP±î'¬Ë­ì¸<P€¸#5şÕı³ÊŞæ±*âCŸdÛä® –¹âØ9ıP8lÑ»oÅõ#çÚ€èƒ ÊöÈ5Ù/X¸:$ºH/€
+ ›¶9gí8ˆC’7X5 ³€€Cä;ô"bĞ º²t©ñ`#€ãù' Y$€ZúıçI"„8Ø~ ÊÅ= /à ]È& °8{<\ƒ– ¾µæ@‚¯é°:Å
+·ç1 A PŞ&€¾º®A;<Eâw´?	€70ä²£AõT2ì	‘ õ¶5 »^­³|z´2ƒ'_5Ø$<ó€¶ ­–œ’ÿäµ/üµª0½¸ÊÁ9 6qÂµ¶\,é|6üM©¾ô[¤9ÕJ¾2?ƒ4ÊfR<T*·"C‰#âK7›Úx:°e‡ºÛçÑ9¸-ş‡§òì·Ê;—Aº¸^‰Sä|;Äù»K›‰;3¯ƒºoèê;[+n0(8¡Ÿ¼Ö¥¤•1¹ù8ˆ8è»ÎnF š<,¼©U.»Z"¯«©•Ï<|^*=÷¡L;74½¦ç‚9U„Y“za8®ËÙV<²°¼¤;@½£ÍF ú›ë¼å_D½ƒkñ;¡Å§ùFvºN=S22·›¥Y2İ§½¹šéõ€ƒı_7_M» Ğ·;©¦¼n£	€{jË¹¿_³;Ïá¨9À ¢$?»»Ÿ6=Kx8¼tÏ¸»¾SÊ½ø):5WÆ™KµÅ+Û;‘ç•<|”¦<K§“„bI9¼ßæå<=Ê¼<#Á:NSC½Ÿ®¿8L™ 9§s/¼-è*/)›ÑY¸ƒ‡$%·:—¹šaå¹ëÌ ÏÕœ:I`‰ºöAÉ7œ‘©Ÿ˜ĞÜ´»>4<Tñ‡;½Ÿ¼øJş¯<9İ(§ü•!K©¯¹/J‚»ûÄ:Îe @ÿ@»×_N¼íºJ³A!‘¢Â’Ô»ÜT¬“`ŸŸ¨ÈE7V ¶}båg°åY4çÇf29p4æ enÃ2º°c6ÉYà0ÿo£•F¦À³Çp¶^Q^'öL>×÷/óÔ8€f ´şA€H°‰ğ("íEÄ¬Å
+; a]cªV	$]³£H
+€ğ¯€K
+³8E¹·Õ 8òªÊ½âÃ%¥j€#åµƒÂ<;N”•ºèıv;«® ;¡ºû½…»‘É:÷•¨£&pº|V¼ûÈ€³ø (
+±"‰ ¾) Åi€vrƒÑo ‰Å›(Š{ Ÿ %ƒªL ¨%€
+^€±Q¸ª¼Œ}¼N…(½Î)·$ğÙ*^ó€/êØ˜;à“¼®N”¼ğ^ VC­<åÚc¼´•«º„ÄŒ¥dR›±PàN=!,%¨å¸ú7é %N=€Æö1€ĞJy$`X}%3ä™²é±€}ÏÂ+A9( ú¨^7oş¯È1¶~rW±¾õŸ#
+H¼JäD€EA »–»2Ûj›¹ÆT9âú»æª# ÎE6*tT:AZ¹$ƒš¡Øg;¶l©ßºD- 6'Û2,›ß¼9 Ç– ß)Š³ó¢ºAĞ0º˜V»›á% >†’·Œ:±î„¸
+,Ó¡™÷x;s"f»"!w5v ·4†ˆy¼¤/5–°ÿ€@Kª
+.¸xªf7w|Oº]€€$)=·)Ù39ƒ)Â6‘"Ö •Ê¸ÙÓÛ¹šlVµ«L5bØ>öo)"`Q­¤÷“6“	´ãLµ+°£º
+J Ñ‰2·æÁ7‡$	¸¶±Îõİû¯dv€»ÈqE4ï£*Nj·×xû(/€ÙÉ)€h¼Ï*#8Ï.)¶£´‚€-€}~M1;}¬2¨ö¨sè[œ(œ0 †àŠ8b;îd9UJ=ó¥¨sŞ´‘â™Ş­ğp¸}ÌŞ:„•»~j' •Ğ:Ë>n;ÇÕ†¸J©—·â­³ìÑr<Ú#å¼©ÓŠ<Eæ>½£6RÁæ ãk ©Á¡ˆ»’xj¼÷.¼2P8 øµR¼oIè<}i¦»ê”~¦X#Ç¯–CH=ŠÁ4>àÿ°¢b½@ì¥@(ƒC®84”–;¹€¥»Hò†ºhAf23¹Ø0¼‰úÚºÙBä"w¨;&øV<|F.ü6mæë¹yˆµP —|D $zÀ"¶Å¥b“§´¼ €ˆÆ)ğt-ÓÚ-R VÈ- )	(4¸øM§-6\ğ¸¸m  • zIæ3beö¶>B
+µcË¸aÊ ‹.×¯{ø„¸wµ]åŸ&"·7¦W;9×Ã¹Ì¹Lğ©½ršÜ¯sğÃß‚8…-Cº!öà9Ÿ;FÚÙò×»›¸š;a‰?»™$£æ";L}Ú¼W´:Õi›8(x}=1öq«šTH*­›ï¬~HµÎaºÄK»}À  e:å¡¦:Ÿùº<¯AŸâ&„lf¼…jê¼È„°»ña¨½¹†Ñ·»Ûx,`#²ıt¼È0=¢Aô<dñM	ÔÌ½ZÍ¯<t±»b§äJç¹zı¼Æ %W" ÔÒ,»v?€(ğ¤ÂÒG7ıŸå¸ƒ8%+9á€
+€?uÚ4Ó¹8êÀ·wñ ïXD:]_­»ä_:¯39»„¥y:8/9±SÍš'î½D´hİ¿:²”<A±¼İş ©©ö»QS»Ç£c9›Q*[99Â„s=E½'¼ı1½ş(²¶Z8¨“8'®„¾»éŸf¼Œc™<]ş€‘*=w!=ª)<Uõn£­š³Uo=üCMªÄ”Š*C=$’'€pš ÜDgœ1mÆ¯4Ï´¸2€@ÛÁ4‚4®ûÓ/Âv¨FŸÉ²T¹z]Š“¨5Dr$ Ù1€É] îÊ”,ï, @R—Œ> ‡å–aÍ ¾¤ –ö¬2 «  ùt›™:yp/Ê—9/)/½/áÉ Rûø²ÙåN;õº—ìß»9
+ ¤4‚´3¼;Û(¨¸€z–¡±Š%»6<<VÉ‘w†}úİ/Iî€L‡3€Z€€
+½ùS‚¤pÒ‰/êô!€Â£2ã˜$jSã¡eQ t× V±X3À‚Á«€Èô$$i½ê…'€fƒ Úû¡¤ÓÅ³8ÀµÓóŒ»ä(€T!µ¶êÑµ tÔ´CKW"ˆ!*2oÌ¡º$u@«‰°ª½m2§¯D€nQ€Ò5´²§$Ü¡¤., î+-®\©3§o6 .Òª”Ó\h›¬2±mì]€÷êÕ5’P  ˆ€Æ5€¨ €.Xr`¤)®ç$€Ãœx¤õ3†(åËU©Q€Y¦Â²ˆ—L<Ô*¹¡E½•i*0Ÿ¹¨‚Ì5¡2´ª¹ë¯×º¹†¸¼›#€ôÉ »D¾”<•Ğ:.M! Ì; D¢”¼p+=Wğ:ˆªL½ë6'§‡¡2©a%;U£<V™Ğ»¤Ó _w;à¨Ú<T5¼µÎX§çS¬Øº‡¼‡~<$nB¼ßÂ½•Èƒ¶ìÊÒ*pÛW7^cN¼K´û<¬½Ì:eÚ`Óì²<<=dOŠ¼W·¤_æ;Ú½±C&/&|ˆ2|=€=>f KU î^ï¡dæu°ÚU¦7”a¸x¯ b†"·ş	W¬i$6‰âŸ©Âd˜¼ó@¸p *Bval_13J        *Bval_15J       *PBval_19J@9¶÷’+µB=~;Ç€£ƒC€·ˆ, £?U4§ØÆ·£„n¹+_" WÑ<8¸ƒ´™.¶<W©½½u“/º*Bval_22J  €ÿ*Bscalar_tensor_defaultJ  €?*Bval_16J        *Bval_17J       *Bval_18Jÿÿÿÿÿÿÿÿ*Bval_28J       Zá
+team_features
+
+batch
+	players
+"=
+/pkg.torch.export.graph_signature.InputSpec.kind
+USER_INPUT"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"2
+!pkg.torch.onnx.original_node_nameteam_featuresZ×
+
+player_ids
+
+batch
+	players"=
+/pkg.torch.export.graph_signature.InputSpec.kind
+USER_INPUT"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"/
+!pkg.torch.onnx.original_node_name
+player_idsZÌ
+
+team_sizes
+	
+batch"=
+/pkg.torch.export.graph_signature.InputSpec.kind
+USER_INPUT"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"/
+!pkg.torch.onnx.original_node_name
+team_sizesZÌ
+game_ids
+
+batch
+"=
+/pkg.torch.export.graph_signature.InputSpec.kind
+USER_INPUT"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"-
+!pkg.torch.onnx.original_node_namegame_idsbŒ
+coins
+
+batch
+"?
+0pkg.torch.export.graph_signature.OutputSpec.kindUSER_OUTPUT"-
+!pkg.torch.onnx.original_node_namelinear_5jé
+player_embeddings.weight
+	
+­
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"?
+!pkg.torch.onnx.original_node_namep_player_embeddings_weightjŞ
+player_attention.bias
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"<
+!pkg.torch.onnx.original_node_namep_player_attention_biasjâ
+player_encoder.0.weight
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone">
+!pkg.torch.onnx.original_node_namep_player_encoder_0_weightjŞ
+player_encoder.0.bias
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"<
+!pkg.torch.onnx.original_node_namep_player_encoder_0_biasjŞ
+player_encoder.1.bias
+
+
+:"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"<
+!pkg.torch.onnx.original_node_namep_player_encoder_1_biasjŞ
+player_encoder.4.bias
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"<
+!pkg.torch.onnx.original_node_namep_player_encoder_4_biasjè
+game_id_embedding.weight
+
+
+ "<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"?
+!pkg.torch.onnx.original_node_namep_game_id_embedding_weightjâ
+game_encoder.0.weight
+
+ 
+ "<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"<
+!pkg.torch.onnx.original_node_namep_game_encoder_0_weightjÚ
+game_encoder.0.bias
+
+
+ "<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone":
+!pkg.torch.onnx.original_node_namep_game_encoder_0_biasjÜ
+predictor.0.weight
+
+@
+<"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"9
+!pkg.torch.onnx.original_node_namep_predictor_0_weightjÔ
+predictor.0.bias
+
+
+@"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"7
+!pkg.torch.onnx.original_node_namep_predictor_0_biasjÜ
+predictor.3.weight
+
+
+@"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"9
+!pkg.torch.onnx.original_node_namep_predictor_3_weightjÔ
+predictor.3.bias
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"7
+!pkg.torch.onnx.original_node_namep_predictor_3_biasjØ
+lifted_tensor_0
+
+
+"B
+/pkg.torch.export.graph_signature.InputSpec.kindCONSTANT_TENSOR"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"6
+!pkg.torch.onnx.original_node_namec_lifted_tensor_0jØ
+lifted_tensor_1
+
+
+"B
+/pkg.torch.export.graph_signature.InputSpec.kindCONSTANT_TENSOR"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"6
+!pkg.torch.onnx.original_node_namec_lifted_tensor_1j\
+val_8
+
+
+:"C
+$pkg.onnxscript.optimizer.folded_from['player_encoder.1.weight']j]
+val_10
+
+:
+"C
+$pkg.onnxscript.optimizer.folded_from['player_encoder.4.weight']jD
+val_13
+ "2
+$pkg.onnxscript.optimizer.folded_from
+['val_12']jD
+val_15
+ "2
+$pkg.onnxscript.optimizer.folded_from
+['val_14']j]
+val_19
+
+
+"C
+$pkg.onnxscript.optimizer.folded_from['player_attention.weight']jD
+val_22
+ "2
+$pkg.onnxscript.optimizer.folded_from
+['val_21']jS
+scalar_tensor_default
+ "2
+$pkg.onnxscript.optimizer.folded_from
+['val_31']j
+val_16
+
+
+j
+val_17
+
+
+j
+val_18
+
+
+j
+val_28
+ j
+val_3
+
+
+j
+sym_size_int_10
+ j,
+
+layer_norm
+
+batch
+	players
+j'
+val_9
+
+batch
+	players
+:j(
+linear
+
+batch
+	players
+:j&
+relu
+
+batch
+	players
+:j(
+val_11
+
+batch
+	players
+j*
+linear_1
+
+batch
+	players
+j(
+relu_1
+
+batch
+	players
+j
+arange
+
+	playersj"
+	unsqueeze
+
+
+	playersj"
+unsqueeze_1
+
+batch
+j 
+lt
+	
+batch
+	playersj-
+unsqueeze_2
+	
+batch
+	players
+j*
+_to_copy
+
+batch
+	players
+j(
+val_20
+
+batch
+	players
+j*
+linear_2
+
+batch
+	players
+j%
+squeeze
+
+batch
+	playersj'
+	squeeze_1
+
+batch
+	playersj(
+
+_to_copy_1
+	
+batch
+	playersj)
+bitwise_not
+	
+batch
+	playersj)
+masked_fill
+
+batch
+	playersj%
+softmax
+
+batch
+	playersj-
+unsqueeze_3
+
+batch
+	players
+j(
+mul_40
+
+batch
+	players
+j
+sum_1
+
+batch
+j+
+	embedding
+
+batch
+	players
+j(
+mul_49
+
+batch
+	players
+j
+sum_2
+
+batch
+j!
+
+_to_copy_2
+
+batch
+j
+div
+
+batch
+j&
+embedding_1
+
+batch
+
+ j
+val_26
+	
+batch
+j
+ne
+	
+batch
+j3
+convert_element_type_default
+
+batch
+j
+sum_3
+	
+batchj
+eq_59
+		
+batchj"
+unsqueeze_5
+	
+batch
+j
+where
+
+batch
+j!
+
+_to_copy_3
+
+batch
+j
+mul_67
+
+batch
+j&
+unsqueeze_6
+
+batch
+
+j!
+mul_72
+
+batch
+
+ j
+sum_4
+
+batch
+ j
+sum_5
+
+batch
+j
+clamp
+
+batch
+j
+div_1
+
+batch
+ j
+linear_3
+
+batch
+ j
+relu_2
+
+batch
+ j
+cat
+
+batch
+<j
+linear_4
+
+batch
+@j
+relu_3
+
+batch
+@‚Í
+
+0pkg.torch.export.ExportedProgram.graph_signature˜
+
+# inputs
+p_player_embeddings_weight: PARAMETER target='player_embeddings.weight'
+p_player_attention_weight: PARAMETER target='player_attention.weight'
+p_player_attention_bias: PARAMETER target='player_attention.bias'
+p_player_encoder_0_weight: PARAMETER target='player_encoder.0.weight'
+p_player_encoder_0_bias: PARAMETER target='player_encoder.0.bias'
+p_player_encoder_1_weight: PARAMETER target='player_encoder.1.weight'
+p_player_encoder_1_bias: PARAMETER target='player_encoder.1.bias'
+p_player_encoder_4_weight: PARAMETER target='player_encoder.4.weight'
+p_player_encoder_4_bias: PARAMETER target='player_encoder.4.bias'
+p_game_id_embedding_weight: PARAMETER target='game_id_embedding.weight'
+p_game_encoder_0_weight: PARAMETER target='game_encoder.0.weight'
+p_game_encoder_0_bias: PARAMETER target='game_encoder.0.bias'
+p_predictor_0_weight: PARAMETER target='predictor.0.weight'
+p_predictor_0_bias: PARAMETER target='predictor.0.bias'
+p_predictor_3_weight: PARAMETER target='predictor.3.weight'
+p_predictor_3_bias: PARAMETER target='predictor.3.bias'
+c_lifted_tensor_0: CONSTANT_TENSOR target='lifted_tensor_0'
+c_lifted_tensor_1: CONSTANT_TENSOR target='lifted_tensor_1'
+team_features: USER_INPUT
+player_ids: USER_INPUT
+team_sizes: USER_INPUT
+game_ids: USER_INPUT
+
+# outputs
+linear_5: USER_OUTPUT
+‚j
+2pkg.torch.export.ExportedProgram.range_constraints4{s24: VR[1, 256], s20: VR[1, 8], s98: VR[0, int_oo]}B
+ 
