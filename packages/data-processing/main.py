@@ -626,6 +626,14 @@ async def load_from_wiki():
     					els => {
     						return els
     							.filter(link => link.classList.contains('category-page__member-link'))
+                                .filter(link => {
+                                    const href = link.href;
+
+                                    // The MCC Party series awards crowns instead of coins which is a completely
+                                    // different scale so it would only serve to pollute the training data. 
+
+                                    return !href.startsWith('https://mcchampionship.fandom.com/wiki/MC_Championship_Party');
+                                })
     							.filter(link => {
     								const href = link.href;
 
