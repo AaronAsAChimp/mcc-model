@@ -30,6 +30,7 @@ MODEL_FILENAME = "packages/player-embedding/model/model.pt"
 CONFIG_FILENAME = "packages/player-embedding/model/config.json"
 OUTPUT_DIRECTORY = "packages/player-embedding/visualizations"
 LABEL_TOP_PLAYERS = 12
+UNKNOWN_COLOR = "#f0f6fc"
 
 NONMEMBER_COLOR = "#3a4150"
 GROUP_COLORS = {
@@ -332,6 +333,7 @@ class PlayerData:
     player_names: list[str]
     skills: list[float]
     coords: np.ndarray
+    unknown_coord: np.ndarray
     variance: np.ndarray
     customdata: list[list[object]]
     views: dict[str, EmbeddingView]
@@ -351,11 +353,19 @@ def load_player_data() -> PlayerData:
     model.load_state_dict(torch.load(MODEL_FILENAME, weights_only=True))
     model.eval()
 
-    player_names = [names_by_id[player_id] for player_id in range(player_count)]
-    stats = skill_stats(EXTRACTS_FILENAME)
-    skills = [float(stats[name].get("skill", 0)) for name in player_names]
-
     coords, variance = pca_2d(model.player_embeddings.weight.detach())
+
+    # The unknown id is the learned cold-start token, so keep it out of the
+    # player trace and plot it once on its own.
+    unknown_id = player_ids["unknown"]
+    player_ids_in_order = [
+        player_id for player_id in range(player_count) if player_id != unknown_id
+    ]
+    player_names = [names_by_id[player_id] for player_id in player_ids_in_order]
+    player_coords = coords[player_ids_in_order]
+
+    stats = skill_stats(EXTRACTS_FILENAME)
+    skills = [float(stats.get(name, {}).get("skill", 0)) for name in player_names]
 
     customdata = []
 
@@ -377,7 +387,8 @@ def load_player_data() -> PlayerData:
     return PlayerData(
         player_names=player_names,
         skills=skills,
-        coords=coords,
+        coords=player_coords,
+        unknown_coord=coords[unknown_id],
         variance=variance,
         customdata=customdata,
         views=views,
@@ -406,7 +417,27 @@ def build_player_figure(data: PlayerData) -> go.Figure:
                     "<extra></extra>"
                 ),
                 name="players",
-            )
+            ),
+            go.Scatter(
+                x=[float(data.unknown_coord[0])],
+                y=[float(data.unknown_coord[1])],
+                mode="markers+text",
+                marker={
+                    "size": 15,
+                    "symbol": "star",
+                    "color": UNKNOWN_COLOR,
+                    "line": {"width": 1, "color": "#0d1117"},
+                },
+                text=["Unknown token"],
+                textposition="top center",
+                textfont={"size": 11, "color": "#e6edf3"},
+                hovertemplate=(
+                    "<b>Unknown token</b><br>"
+                    "Learned cold-start embedding"
+                    "<extra></extra>"
+                ),
+                name="unknown token",
+            ),
         ]
     )
     fig.update_layout(**dark_layout("MCC Player Embeddings — Skill proxy", data.variance))
@@ -455,7 +486,8 @@ def player_switcher_script(data: PlayerData, div_id: str) -> str:
         const layout = Object.assign({{}}, graph.layout, {{
             title: {{ text: 'MCC Player Embeddings — ' + view.title }},
         }});
-        Plotly.react(graph, [trace], layout);
+        // data[1] is the separate unknown-token trace; keep it across views.
+        Plotly.react(graph, [trace, graph.data[1]], layout);
     }});
 }})();
 """

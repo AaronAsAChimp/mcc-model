@@ -29,12 +29,11 @@ sys.path.insert(0, str(ROOT / "packages" / "player-embedding"))
 
 import onnx
 import export_onnx
-from main import CONFIG_FILENAME, EXTRACTS_FILENAME, FEATURES_PER_PLAYER, PlayerDataset
+from main import CONFIG_FILENAME, EXTRACTS_FILENAME, FEATURES_PER_PLAYER, PlayerDataset, TeamPlacementPredictor
 from shared_core.data import PlayerDataFile
 
 
-def write_model() -> None:
-    model = export_onnx.load_model()
+def write_model(model: TeamPlacementPredictor) -> None:
     export_onnx.export(model, export_onnx.make_inputs())
 
     # `onnx.load` pulls external-data tensors into memory, so saving the result
@@ -52,24 +51,24 @@ def write_player_features() -> None:
     with open(CONFIG_FILENAME, "r") as fd:
         config = json.load(fd)
 
-    # Features are indexed by the same ids the embedding table uses.
+    # Features are indexed by the same ids the embedding table uses. Id 0 is the
+    # learned unknown token, not a real player, so leave it out of the player map.
     rows = dataset._players.tolist()
     ids: dict[str, int] = config["player_ids"]
 
     players: dict[str, dict[str, object]] = {}
 
     for name in sorted(ids):
+        if ids[name] == 0:
+            continue
         values = [round(value, 6) for value in rows[ids[name]]]
         players[name] = {"id": ids[name], "features": values}
 
-    # Unknown players cannot be selected in the web app, but keep a fallback so
-    # the browser has the same behavior as the Python predictor.
-    unknown = dataset._players.mean(dim=0).tolist()
-
+    # The browser sends zeros for unknown players; the model substitutes its
+    # learned unknown features internally.
     payload: dict[str, object] = {
         "generatedAt": date.today().isoformat(),
         "featureCount": FEATURES_PER_PLAYER,
-        "unknown": [round(value, 6) for value in unknown],
         "players": players,
     }
 
@@ -84,7 +83,8 @@ def write_player_features() -> None:
 def main() -> None:
     WEB_MODEL_DIR.mkdir(parents=True, exist_ok=True)
 
-    write_model()
+    model = export_onnx.load_model()
+    write_model(model)
     write_player_features()
 
 

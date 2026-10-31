@@ -14,8 +14,15 @@ from games import GAME_IDS
 
 PLAYERS_PER_TEAM = 4
 FEATURES_PER_PLAYER = 23
-COINS_SCALE = 35000
+COINS_SCALE = 35_000
 FIRST_MCC_DATE = date.fromisoformat("2019-11-17")
+
+# Stage 2 learns the unknown token on a frozen model. Every team in a training
+# batch gets its own drop rate, so the token is trained on everything from a full
+# roster to a team of unknowns.
+UNKNOWN_TOKEN_EPOCHS = 100
+UNKNOWN_TOKEN_LR = 1e-3
+UNKNOWN_TOKEN_VALIDATION_SEEDS = (0, 1, 2, 3, 4)
 
 
 def fg_color_rgb(r: int, g: int, b:int) -> str:
@@ -56,8 +63,8 @@ def jaccard_similarity(a: set, b: set) -> float:
     return len(intersection) / ((len(a) + len(b)) - len(intersection))
 
 
-def scale_coins(val: float, total_events: int) -> float:
-    return val / 35_000
+def scale_coins(val: float) -> float:
+    return val / COINS_SCALE
 
 
 @dataclass
@@ -262,17 +269,17 @@ class PlayerTracker:
 
         tensor[0] = (wins / n) if n != 0 else 0
         tensor[1] = ((wins + seconds) / n) if n != 0 else 0
-        tensor[2] = scale_coins(team_coin_stats.mean, event_count)
-        tensor[3] = scale_coins(team_coin_stats.max, event_count)
-        tensor[4] = scale_coins(team_coin_stats.min, event_count)
-        tensor[5] = math.sqrt(team_coin_stats.var)
-        tensor[6] = team_coins_slope
+        tensor[2] = scale_coins(team_coin_stats.mean)
+        tensor[3] = scale_coins(team_coin_stats.max)
+        tensor[4] = scale_coins(team_coin_stats.min)
+        tensor[5] = scale_coins(math.sqrt(team_coin_stats.var))
+        tensor[6] = scale_coins(team_coins_slope)
 
-        tensor[7] = scale_coins(player_coin_stats.mean, event_count)
-        tensor[8] = scale_coins(player_coin_stats.max, event_count)
-        tensor[9] = scale_coins(player_coin_stats.min, event_count)
-        tensor[10] = math.sqrt(player_coin_stats.var)
-        tensor[11] = player_coins_slope
+        tensor[7] = scale_coins(player_coin_stats.mean)
+        tensor[8] = scale_coins(player_coin_stats.max)
+        tensor[9] = scale_coins(player_coin_stats.min)
+        tensor[10] = scale_coins(math.sqrt(player_coin_stats.var))
+        tensor[11] = scale_coins(player_coins_slope)
 
         tensor[12] = math.log(n) if n > 0 else 0
         tensor[13] = time_since_first
@@ -295,7 +302,6 @@ class PlayerDataset(Dataset):
     _player_count: int
     _player_id_lookup: dict[str, int]
     _players: torch.Tensor
-    _unknown_player: torch.Tensor
 
     def __init__(self, extract_filename: str, config_filename: str, now: date, player_data: PlayerDataFile):
         with open(config_filename, "r") as fd:
@@ -320,7 +326,7 @@ class PlayerDataset(Dataset):
 
                 for team_name, team in teams.items():
                     placement = team.get("placement")
-                    team_coins = team.get("coins") / COINS_SCALE
+                    team_coins = team.get("coins")
                     players = team.get("players")
                     team_size = len(players)
 
@@ -336,7 +342,7 @@ class PlayerDataset(Dataset):
                         #
                         # ... or something went terribly wrong in the data
                         # processing step.
-                        player_coins = player_coin_lookup.get(player_name, 0) / COINS_SCALE
+                        player_coins = player_coin_lookup.get(player_name, 0)
 
                         if player_tracker is None:
                             player_tracker = PlayerTracker(player_name, player_data[player_name].get('island'))
@@ -350,8 +356,7 @@ class PlayerDataset(Dataset):
                             event_date,
                         )
 
-        self._players = torch.empty(self._player_count, FEATURES_PER_PLAYER)
-        self._unknown_player = self._players.mean(dim=0)
+        self._players = torch.zeros(self._player_count, FEATURES_PER_PLAYER)
 
         for [name, player] in tracker.items():
             id = self._player_id_lookup[name]
@@ -381,9 +386,9 @@ class PlayerDataset(Dataset):
                 player_tensor = self._players[player_id]
             else:
                 print(f'Missing data for player {player_name}')
-                player_tensor = self._unknown_player
-                # the default of 0 is technically a existing player, but the the
-                # is_returning_competitor should zero out everything.
+                # Id 0 is the learned cold-start token. The model replaces these
+                # features with its own unknown vector, so zeros are a placeholder.
+                player_tensor = torch.zeros(FEATURES_PER_PLAYER)
                 player_id = 0
             
             team_tensor[0][i] = player_tensor
@@ -428,7 +433,7 @@ class TeamDataset(Dataset):
 
                 for team_name, team in teams.items():
                     placement = team.get("placement")
-                    team_coins = team.get("coins") / COINS_SCALE
+                    team_coins = team.get("coins")
                     players = team.get("players")
                     team_size = len(players)
 
@@ -442,7 +447,7 @@ class TeamDataset(Dataset):
                         player_name = player_data.normalize_name(players[i])
                         player_names.append(player_name)
                         player_tracker = tracker.get(player_name)
-                        player_coins = player_coin_lookup.get(player_name) / COINS_SCALE
+                        player_coins = player_coin_lookup.get(player_name)
 
                         if player_coins is None:
                             raise Exception(f"No coins for player {player_name}")
@@ -465,9 +470,11 @@ class TeamDataset(Dataset):
                         (team_tensor, player_names, game_ids, torch.tensor(team_coins))
                     )
 
-        self._player_count = len(tracker)
-        self._player_id_lookup = {}
-        next_id = 0
+        self._player_count = len(tracker) + 1
+        self._player_id_lookup = {
+            'unknown': 0
+        }
+        next_id = 1
 
         for player_name in tracker:
             self._player_id_lookup[player_name] = next_id
@@ -475,7 +482,7 @@ class TeamDataset(Dataset):
 
         for team_tensor, player_names, game_ids, team_coins in team_data:
             player_ids = torch.tensor(
-                [self._player_id_lookup[name] for name in player_names]
+               [self._player_id_lookup[name] for name in player_names]
             )
             self._players.append((team_tensor, player_ids, game_ids, team_coins))
 
@@ -517,6 +524,13 @@ class TeamPlacementPredictor(torch.nn.Module):
         PREDICTOR_SIZE = 64
 
         self.player_embeddings = torch.nn.Embedding(player_count, PLAYER_EMBEDDING_SIZE)
+        # Learned representation for the reserved unknown id. Player dropout in
+        # the second training stage gives these a neutral, cold-start meaning
+        # without forcing them through the feature encoder.
+        self.unknown_embedding = torch.nn.Parameter(
+            torch.zeros(PLAYER_EMBEDDING_SIZE)
+        )
+        self.unknown_encoded = torch.nn.Parameter(torch.zeros(PLAYER_ATTN_SIZE))
         self.player_attention = torch.nn.Linear(PLAYER_ATTN_SIZE, 1)
         self.player_encoder = torch.nn.Sequential(
             torch.nn.LayerNorm(FEATURES_PER_PLAYER),
@@ -548,8 +562,14 @@ class TeamPlacementPredictor(torch.nn.Module):
         team_sizes: torch.Tensor,
         game_ids: torch.Tensor
     ) -> torch.Tensor:
+        unknown_mask = (player_ids == 0).unsqueeze(-1)
+
         # Encode each player's feature vector: (batch, max_players, 16)
         encoded = self.player_encoder(team_features)
+        # Unknown players use their own learned encoding instead of the
+        # feature-derived one. Padding positions also have id 0, but they are
+        # masked out below.
+        encoded = torch.where(unknown_mask, self.unknown_encoded, encoded)
 
         # Mask out padded positions for both paths
         batch_size, max_players = team_features.shape[:2]
@@ -565,6 +585,9 @@ class TeamPlacementPredictor(torch.nn.Module):
         team_encoded = (encoded * player_attention).sum(dim=1)
 
         individual_player_embeds = self.player_embeddings(player_ids)
+        individual_player_embeds = torch.where(
+            unknown_mask, self.unknown_embedding, individual_player_embeds
+        )
         team_embed = (individual_player_embeds * player_mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
 
         game_embeds = self.game_id_embedding(game_ids)
@@ -612,6 +635,25 @@ EXTRACTS_FILENAME = "data/extracts.sorted.jsonl"
 MODEL_FILENAME = "packages/player-embedding/model/model.pt"
 CONFIG_FILENAME = "packages/player-embedding/model/config.json"
 TRAINING_LOG_FILENAME = "train-log.csv"
+
+
+def drop_players(
+    player_ids: torch.Tensor,
+    generator: torch.Generator | None = None,
+) -> torch.Tensor:
+    """Replace players with the unknown id at a per-team random rate.
+
+    Each team gets its own drop probability, so a batch covers everything from a
+    full roster to a team of unknowns. Training on fully-unknown teams is what
+    teaches the token to stand in for an average player instead of a specific
+    roster. The team label still reflects the real players.
+
+    Pass a seeded generator to make validation dropout repeatable.
+    """
+    probabilities = torch.rand(player_ids.shape[0], 1, generator=generator)
+    dropped = torch.rand(player_ids.shape, generator=generator) < probabilities
+    return player_ids.masked_fill(dropped, 0)
+
 
 def train():
     num_epochs = 1000
@@ -703,6 +745,102 @@ def train():
             with open(CONFIG_FILENAME, "w") as fd:
                 json.dump(dataset.get_config(), fd)
 
+    #
+    # Stage 2: learn the unknown token on the frozen best model.
+    #
+    # Stage 1 only ever sees full rosters, so the token starts at the average
+    # player slot and is then fine-tuned with player dropout. Freezing the rest
+    # of the model keeps the clean predictions from stage 1 intact. The best
+    # checkpoint is chosen early in stage 1, long before a randomly initialized
+    # token would converge, which is why the token gets its own stage.
+    #
+    model.load_state_dict(torch.load(MODEL_FILENAME, weights_only=True))
+
+    # Average over every player slot, so frequently fielded players weigh more.
+    all_features = torch.cat([team[0] for team in dataset._players])
+    all_player_ids = torch.cat([team[1] for team in dataset._players])
+
+    with torch.no_grad():
+        model.unknown_embedding.copy_(
+            model.player_embeddings.weight[all_player_ids].mean(dim=0)
+        )
+        model.unknown_encoded.copy_(model.player_encoder(all_features).mean(dim=0))
+
+    for param in model.parameters():
+        param.requires_grad = False
+
+    model.unknown_embedding.requires_grad = True
+    model.unknown_encoded.requires_grad = True
+
+    unknown_optimizer = torch.optim.Adam(
+        [model.unknown_embedding, model.unknown_encoded], lr=UNKNOWN_TOKEN_LR
+    )
+    unknown_train_data = DataLoader(
+        train_set, batch_size=batch_size, shuffle=True, collate_fn=collate_teams
+    )
+    best_unknown_vloss = float('inf')
+    best_unknown_token = (
+        model.unknown_embedding.detach().clone(),
+        model.unknown_encoded.detach().clone(),
+    )
+
+    for _ in range(UNKNOWN_TOKEN_EPOCHS):
+        running_loss = 0
+
+        model.train(True)
+
+        for features, player_ids, team_sizes, games_multi_hot, labels in unknown_train_data:
+            player_ids = drop_players(player_ids)
+
+            unknown_optimizer.zero_grad()
+
+            outputs = model(features, player_ids, team_sizes, games_multi_hot).squeeze(-1)
+            loss = loss_fn(outputs, labels.float())
+            loss.backward()
+
+            unknown_optimizer.step()
+
+            running_loss += loss.item()
+
+        # The token only affects teams with missing players, so judge it on a
+        # dropout validation set. Several seeds keep the comparison stable.
+        model.eval()
+        running_vloss = 0.0
+
+        with torch.no_grad():
+            for seed in UNKNOWN_TOKEN_VALIDATION_SEEDS:
+                generator = torch.Generator().manual_seed(seed)
+
+                for vdata in test_data:
+                    vfeatures, vplayer_ids, vteam_sizes, vgames, vlabels = vdata
+                    vplayer_ids = drop_players(vplayer_ids, generator)
+                    voutputs = model(vfeatures, vplayer_ids, vteam_sizes, vgames).squeeze(-1)
+
+                    running_vloss += loss_fn(voutputs, vlabels.float())
+
+        avg_vloss = running_vloss / (len(UNKNOWN_TOKEN_VALIDATION_SEEDS) * total_test_batches)
+        improved = ''
+
+        if avg_vloss < best_unknown_vloss:
+            best_unknown_vloss = avg_vloss
+            best_unknown_token = (
+                model.unknown_embedding.detach().clone(),
+                model.unknown_encoded.detach().clone(),
+            )
+            improved = console_color(' ✓', fg=(0, 255, 0))
+
+        print(f"UNKNOWN train {running_loss / len(unknown_train_data)} valid {avg_vloss}{improved}")
+
+    with torch.no_grad():
+        model.unknown_embedding.copy_(best_unknown_token[0])
+        model.unknown_encoded.copy_(best_unknown_token[1])
+        # Row 0 is the unknown id. Inference reads the parameter directly, but
+        # the embedding visualization projects the table, so keep them aligned.
+        model.player_embeddings.weight[0] = model.unknown_embedding
+
+    torch.save(model.state_dict(), MODEL_FILENAME)
+    print("Unknown token trained")
+
 
 def run():
     with PlayerDataFile('data/players.json') as player_data:
@@ -752,7 +890,7 @@ def run():
 
     for i in range(len(results)):
         [team, coins] = results[i]
-        print(f"{i + 1}: { team } {coins * COINS_SCALE}")
+        print(f"{i + 1}: { team } {coins}")
 
 
 if __name__ == "__main__":

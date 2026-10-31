@@ -2,7 +2,6 @@ import type { InferenceSession } from 'onnxruntime-web';
 import wasmUrl from 'onnxruntime-web/ort-wasm-simd-threaded.wasm?url';
 import { siteUrl } from '../lib/base-url';
 
-const COINS_SCALE = 35_000;
 const MAX_GAMES = 8;
 
 interface PlayerFeatures {
@@ -13,7 +12,6 @@ interface PlayerFeatures {
 interface FeatureFile {
 	generatedAt: string;
 	featureCount: number;
-	unknown: number[];
 	players: Record<string, PlayerFeatures>;
 }
 
@@ -100,32 +98,46 @@ export async function predictEvent(input: PredictionInput): Promise<Prediction> 
 	]);
 
 	const teamCount = input.teams.length;
-	const maxPlayers = Math.max(0, ...input.teams.map(team => team.players.length));
+	const maxPlayers = Math.max(40, ...input.teams.map(team => team.players.length));
 
-	if (teamCount === 0 || maxPlayers === 0) {
-		throw new Error('Add players to every team before predicting.');
-	}
+	// if (teamCount === 0 || maxPlayers === 0) {
+	// 	throw new Error('Add players to every team before predicting.');
+	// }
 
 	const teamFeatures = new Float32Array(teamCount * maxPlayers * features.featureCount);
 	const playerIds = new BigInt64Array(teamCount * maxPlayers);
 	const teamSizes = new BigInt64Array(teamCount);
 	const gameIds = new BigInt64Array(teamCount * MAX_GAMES);
 
-	input.teams.forEach((team, teamIndex) => {
-		team.players.forEach((name, playerIndex) => {
-			const player = features.players[name] ?? { id: 0, features: features.unknown };
-			const offset = (teamIndex * maxPlayers + playerIndex) * features.featureCount;
+	// Id 0 is the model's learned unknown token, so the feature values for an
+	// unknown player are placeholders that the model replaces internally.
+	const zeroFeatures = Array.from({ length: features.featureCount }, () => 0);
+
+	for (let teamIndex = 0; teamIndex < input.teams.length; teamIndex++) {
+		const team = input.teams[teamIndex];
+		const players: (string | null)[] = Array.from(team.players);
+		const numPlayers = Math.max(4, players.length);
+
+		for (let i = players.length; i < numPlayers; i++) {
+			players[i] = null;
+		}
+
+		for (let i = 0; i < players.length; i++) {
+			const name = players[i];
+			const playerFeatures = name ? features.players[name] : null;
+			const player = playerFeatures ?? { id: 0, features: zeroFeatures };
+			const offset = (teamIndex * maxPlayers + i) * features.featureCount;
 
 			teamFeatures.set(player.features, offset);
-			playerIds[teamIndex * maxPlayers + playerIndex] = BigInt(player.id);
-		});
+			playerIds[teamIndex * maxPlayers + i] = BigInt(player.id);
+		}
 
-		teamSizes[teamIndex] = BigInt(team.players.length);
+		teamSizes[teamIndex] = BigInt(numPlayers);
 
 		for (let gameIndex = 0; gameIndex < MAX_GAMES; gameIndex += 1) {
 			gameIds[teamIndex * MAX_GAMES + gameIndex] = BigInt(input.gameIds[gameIndex] ?? 0);
 		}
-	});
+	}
 
 	const output = await session.run({
 		team_features: new ort.Tensor('float32', teamFeatures, [teamCount, maxPlayers, features.featureCount]),
@@ -143,7 +155,7 @@ export async function predictEvent(input: PredictionInput): Promise<Prediction> 
 	const teams = input.teams
 		.map((team, teamIndex) => ({
 			slug: team.slug,
-			coins: coins[teamIndex] * COINS_SCALE
+			coins: coins[teamIndex]
 		}))
 		.sort((a, b) => b.coins - a.coins)
 		.map((team, index) => ({ ...team, place: index + 1 }));

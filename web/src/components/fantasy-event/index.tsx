@@ -55,8 +55,8 @@ export function FantasyEvent() {
 
 	const selectedGameCount = games.filter(Boolean).length;
 	const selectedPlayerCount = usedPlayers.size;
-	const isComplete = selectedGameCount === GAME_COUNT
-		&& selectedPlayerCount === TEAMS.length * PLAYERS_PER_TEAM;
+	const isComplete = selectedGameCount === GAME_COUNT;
+		// && selectedPlayerCount === TEAMS.length * PLAYERS_PER_TEAM;
 
 	function clearPrediction() {
 		predictionRequest.current += 1;
@@ -197,7 +197,6 @@ export function FantasyEvent() {
 				{
 					TEAMS.map((team, teamIndex) => {
 						const teamStyle = { '--team-color': team.color } as CSSProperties;
-						const teamPrediction = predictionsByTeam.get(team.slug);
 
 						return <div key={team.slug} className={styles.team} style={teamStyle}>
 							<h3 className={styles['team-name']}>{team.name}</h3>
