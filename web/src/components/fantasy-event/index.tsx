@@ -26,13 +26,17 @@ function shuffle<T>(items: readonly T[]): T[] {
 	return result;
 }
 
+function emptyGames() {
+	return Array<GameKey | null>(GAME_COUNT).fill(null);
+}
+
+function emptyPlayers(): (PlayerKey | null)[][] {
+	return TEAMS.map(() => Array<PlayerKey | null>(PLAYERS_PER_TEAM).fill(null));
+}
+
 export function FantasyEvent() {
-	const [games, setGames] = useState<(GameKey | null)[]>(
-		() => Array<GameKey | null>(GAME_COUNT).fill(null)
-	);
-	const [teamPlayers, setTeamPlayers] = useState<(PlayerKey | null)[][]>(
-		() => TEAMS.map(() => Array<PlayerKey | null>(PLAYERS_PER_TEAM).fill(null))
-	);
+	const [games, setGames] = useState<(GameKey | null)[]>(emptyGames);
+	const [teamPlayers, setTeamPlayers] = useState<(PlayerKey | null)[][]>(emptyPlayers);
 	const [prediction, setPrediction] = useState<Prediction | null>(null);
 	const [isPredicting, setIsPredicting] = useState(false);
 	const [predictionError, setPredictionError] = useState<string | null>(null);
@@ -85,6 +89,11 @@ export function FantasyEvent() {
 		setGames(shuffle(CURRENT_GAMES).slice(0, GAME_COUNT));
 	}
 
+	function clearGames() {
+		clearPrediction();
+		setGames(emptyGames());;
+	}
+
 	function randomizePlayers() {
 		clearPrediction();
 		const picked = shuffle(PLAYERS).slice(0, TEAMS.length * PLAYERS_PER_TEAM);
@@ -94,6 +103,11 @@ export function FantasyEvent() {
 
 			return picked.slice(start, start + PLAYERS_PER_TEAM).map(player => player.key);
 		}));
+	}
+
+	function clearPlayers() {
+		clearPrediction();
+		setTeamPlayers(emptyPlayers());
 	}
 
 	async function predict() {
@@ -138,9 +152,14 @@ export function FantasyEvent() {
 						{selectedGameCount} of {GAME_COUNT} games selected
 					</p>
 				</div>
-				<button type="button" className={styles.action} onClick={randomizeGames}>
-					Randomize games
-				</button>
+				<div className={styles.actions}>
+					<button type="button" className={styles.action} onClick={randomizeGames}>
+						Randomize
+					</button>
+					<button type="button" className={styles.action} onClick={clearGames}>
+						Clear
+					</button>
+				</div>
 			</div>
 			<div className={styles.games}>
 				{
@@ -179,16 +198,10 @@ export function FantasyEvent() {
 				</div>
 				<div className={styles.actions}>
 					<button type="button" className={styles.action} onClick={randomizePlayers}>
-						Randomize players
+						Randomize
 					</button>
-					<button
-						type="button"
-						className={styles.predictAction}
-						onClick={predict}
-						disabled={!isComplete || isPredicting}
-						title={isComplete ? undefined : 'Select all 8 games and 40 players first.'}
-					>
-						{isPredicting ? 'Predicting…' : 'Predict event'}
+					<button type="button" className={styles.action} onClick={clearPlayers}>
+						Clear
 					</button>
 				</div>
 			</div>
@@ -220,6 +233,17 @@ export function FantasyEvent() {
 						</div>
 					})
 				}
+			</div>
+			<div>
+				<button
+					type="button"
+					className={styles.predictAction}
+					onClick={predict}
+					disabled={!isComplete || isPredicting}
+					title={isComplete ? undefined : 'Select all 8 games and 40 players first.'}
+				>
+					{isPredicting ? 'Predicting…' : 'Predict event'}
+				</button>
 			</div>
 			{
 				prediction && <div className={styles.results} aria-live="polite">
