@@ -256,7 +256,8 @@ export function FantasyEvent() {
 					})
 				}
 			</div>
-			<div>
+
+			<div className={styles['prediction-actions']}>
 				<button
 					type="button"
 					className={styles.predictAction}
@@ -267,6 +268,7 @@ export function FantasyEvent() {
 					{isPredicting ? 'Predicting…' : 'Predict event'}
 				</button>
 			</div>
+
 			{
 				prediction && <div className={styles.results} aria-live="polite">
 					<div className={styles.resultsHeader}>

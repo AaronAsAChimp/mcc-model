@@ -56,6 +56,11 @@
 	}
 }
 
+.prediction-actions {
+	display: flex;
+	justify-content: end;
+}
+
 .predictAction {
 	padding: 0.5rem 0.875rem;
 	border: 1px solid light-dark(#1d4ed8, #5581ff);
