@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
 import GAMES from '../../../../data/games.json';
 import { CURRENT_GAMES, GameSelect, type GameKey } from '../game-select/index.tsx';
@@ -52,15 +52,37 @@ export function FantasyEvent() {
 		[games]
 	);
 
-	const predictionsByTeam = useMemo(
-		() => new Map(prediction?.teams.map(team => [team.slug, team]) ?? []),
-		[prediction]
-	);
-
-	const selectedGameCount = games.filter(Boolean).length;
+	// const selectedGameCount = games.filter(Boolean).length;
+	const selectedGameCount = useMemo(() => games.filter(Boolean).length, [games]);
 	const selectedPlayerCount = usedPlayers.size;
 	const isComplete = selectedGameCount === GAME_COUNT;
-		// && selectedPlayerCount === TEAMS.length * PLAYERS_PER_TEAM;
+
+	function saveState() {
+		window.localStorage.setItem('mcc-model:games', JSON.stringify(games))
+		window.localStorage.setItem('mcc-model:teams', JSON.stringify(teamPlayers))
+	}
+
+	useEffect(() => {
+		if (typeof window === 'undefined') {
+			return;
+		}
+
+		const loadedGames = window.localStorage.getItem('mcc-model:games');
+
+		if (loadedGames) {
+			setGames(JSON.parse(loadedGames));
+		}
+
+		const loadedTeams = window.localStorage.getItem('mcc-model:teams');
+
+		if (loadedTeams) {
+			setTeamPlayers(JSON.parse(loadedTeams));
+		}
+	}, [])
+
+	useEffect(() => {
+		saveState();
+	}, [games, teamPlayers])
 
 	function clearPrediction() {
 		predictionRequest.current += 1;
@@ -91,7 +113,7 @@ export function FantasyEvent() {
 
 	function clearGames() {
 		clearPrediction();
-		setGames(emptyGames());;
+		setGames(emptyGames());
 	}
 
 	function randomizePlayers() {

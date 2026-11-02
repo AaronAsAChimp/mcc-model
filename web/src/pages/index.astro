@@ -10,7 +10,7 @@ import { FantasyEvent } from '../components/fantasy-event/index.tsx';
       <p>Build your own event by choosing eight games and filling the ten teams, then run the prediction model. It all runs in your browser, nothing gets set to our servers. Like... I don't even have servers.</p>
       <a href={siteUrl("about")}>How it works</a>
     </div>
-    <FantasyEvent client:load />
+    <FantasyEvent client:only />
   </main>
 </Document>
 
