@@ -3,16 +3,19 @@ import PLAYER_DATA from '../../../data/players.json';
 interface PlayerRecord {
 	ign?: string;
 	aliases?: string[];
+	uuid?: string;
 }
 
 export interface PlayerOption {
 	/** Canonical player name, as used in the event data. */
 	key: string;
+	uuid: string;
+
 	/** Searchable text built from the canonical name, IGN, and aliases. */
 	search: string;
 }
 
-const records = PLAYER_DATA as Record<string, PlayerRecord | string>;
+const records = PLAYER_DATA as Record<string, PlayerRecord>;
 
 // Every player that has appeared in an MCC event, sorted for the picker.
 export const PLAYERS: PlayerOption[] = Object.entries(records)
@@ -24,6 +27,6 @@ export const PLAYERS: PlayerOption[] = Object.entries(records)
 			.join(' ')
 			.toLowerCase();
 
-		return { key, search };
+		return { key, uuid: record.uuid, search };
 	})
 	.sort((a, b) => a.key.localeCompare(b.key));

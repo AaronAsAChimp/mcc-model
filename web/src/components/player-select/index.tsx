@@ -173,6 +173,8 @@ export function PlayerSelect({ value, options, usedValues, onChange, label }: Pl
 							onMouseEnter={() => setHighlighted(index)}
 							onClick={() => select(option.key)}
 						>
+							{ option.uuid ? <img src={`https://crafthead.net/bust/${option.uuid}/42`} /> : null}
+							
 							{option.key}
 						</button>
 					})

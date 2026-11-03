@@ -82,7 +82,7 @@
 }
 
 .item {
-	display: block;
+	display: flex;
 	width: 100%;
 	padding: 0.3125rem 0.5rem;
 	border: 0;
@@ -93,6 +93,8 @@
 	font-size: 0.8125rem;
 	text-align: left;
 	cursor: pointer;
+	align-items: center;
+	gap: 0.8rem;
 
 	&:hover:not(:disabled) {
 		background: light-dark(#f0f0f0, #333333);
