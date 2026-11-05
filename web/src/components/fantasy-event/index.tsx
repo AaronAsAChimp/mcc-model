@@ -199,11 +199,11 @@ export function FantasyEvent() {
 				{
 					games.slice(4, 8).map((game, index) => {
 						return <GameSelect
-							key={index}
+							key={index + 4}
 							value={game}
 							usedValues={usedGames}
 							label={`Game ${index + 5}`}
-							onChange={next => updateGame(index, next)}
+							onChange={next => updateGame(index + 4, next)}
 						/>
 					})
 				}
