@@ -9,7 +9,9 @@ import { TEAMS } from '../../data/teams';
 import { TEAM_ICONS } from '../team-icons';
 import styles from './styles.module.css';
 
-const GAME_COUNT = 8;
+const GAME_COUNTS = [6, 8] as const;
+type GameCount = typeof GAME_COUNTS[number];
+const DEFAULT_GAME_COUNT: GameCount = 8;
 const PLAYERS_PER_TEAM = 4;
 
 type PlayerKey = string;
@@ -26,8 +28,13 @@ function shuffle<T>(items: readonly T[]): T[] {
 	return result;
 }
 
-function emptyGames() {
-	return Array<GameKey | null>(GAME_COUNT).fill(null);
+function emptyGames(gameCount: GameCount) {
+	return Array<GameKey | null>(gameCount).fill(null);
+}
+
+/** Trim or grow a selection so it matches the chosen event format. */
+function resizeGames(games: (GameKey | null)[], gameCount: GameCount) {
+	return Array.from({ length: gameCount }, (_, index) => games[index] ?? null);
 }
 
 function emptyPlayers(): (PlayerKey | null)[][] {
@@ -35,7 +42,8 @@ function emptyPlayers(): (PlayerKey | null)[][] {
 }
 
 export function FantasyEvent() {
-	const [games, setGames] = useState<(GameKey | null)[]>(emptyGames);
+	const [gameCount, setGameCount] = useState<GameCount>(DEFAULT_GAME_COUNT);
+	const [games, setGames] = useState<(GameKey | null)[]>(() => emptyGames(DEFAULT_GAME_COUNT));
 	const [teamPlayers, setTeamPlayers] = useState<(PlayerKey | null)[][]>(emptyPlayers);
 	const [prediction, setPrediction] = useState<Prediction | null>(null);
 	const [isPredicting, setIsPredicting] = useState(false);
@@ -55,9 +63,12 @@ export function FantasyEvent() {
 	// const selectedGameCount = games.filter(Boolean).length;
 	const selectedGameCount = useMemo(() => games.filter(Boolean).length, [games]);
 	const selectedPlayerCount = usedPlayers.size;
-	const isComplete = selectedGameCount === GAME_COUNT;
+	const isComplete = selectedGameCount === gameCount;
+	// MCC splits the event around the intermission, so a 6-game event breaks after game 3.
+	const gamesBeforeIntermission = gameCount / 2;
 
 	function saveState() {
+		window.localStorage.setItem('mcc-model:game-count', String(gameCount))
 		window.localStorage.setItem('mcc-model:games', JSON.stringify(games))
 		window.localStorage.setItem('mcc-model:teams', JSON.stringify(teamPlayers))
 	}
@@ -67,11 +78,12 @@ export function FantasyEvent() {
 			return;
 		}
 
+		const storedGameCount = Number(window.localStorage.getItem('mcc-model:game-count'));
+		const loadedGameCount = GAME_COUNTS.find(count => count === storedGameCount) ?? DEFAULT_GAME_COUNT;
 		const loadedGames = window.localStorage.getItem('mcc-model:games');
 
-		if (loadedGames) {
-			setGames(JSON.parse(loadedGames));
-		}
+		setGameCount(loadedGameCount);
+		setGames(resizeGames(loadedGames ? JSON.parse(loadedGames) : [], loadedGameCount));
 
 		const loadedTeams = window.localStorage.getItem('mcc-model:teams');
 
@@ -82,7 +94,7 @@ export function FantasyEvent() {
 
 	useEffect(() => {
 		saveState();
-	}, [games, teamPlayers])
+	}, [gameCount, games, teamPlayers])
 
 	function clearPrediction() {
 		predictionRequest.current += 1;
@@ -93,6 +105,17 @@ export function FantasyEvent() {
 	function updateGame(index: number, game: GameKey | null) {
 		clearPrediction();
 		setGames(current => current.map((value, i) => (i === index ? game : value)));
+	}
+
+	function changeGameCount(next: GameCount) {
+		if (next === gameCount) {
+			return;
+		}
+
+		clearPrediction();
+		setGameCount(next);
+		// Keep the earlier games in place; the order determines their multipliers.
+		setGames(current => resizeGames(current, next));
 	}
 
 	function updatePlayer(teamIndex: number, playerIndex: number, player: PlayerKey | null) {
@@ -108,12 +131,12 @@ export function FantasyEvent() {
 
 	function randomizeGames() {
 		clearPrediction();
-		setGames(shuffle(CURRENT_GAMES).slice(0, GAME_COUNT));
+		setGames(shuffle(CURRENT_GAMES).slice(0, gameCount));
 	}
 
 	function clearGames() {
 		clearPrediction();
-		setGames(emptyGames());
+		setGames(emptyGames(gameCount));
 	}
 
 	function randomizePlayers() {
@@ -171,10 +194,27 @@ export function FantasyEvent() {
 				<div>
 					<h2>Games</h2>
 					<p className={styles.hint}>
-						{selectedGameCount} of {GAME_COUNT} games selected
+						{selectedGameCount} of {gameCount} games selected
 					</p>
 				</div>
 				<div className={styles.actions}>
+					<div className={styles.formatSwitch} role="group" aria-label="Event format">
+						{
+							GAME_COUNTS.map(count => {
+								const isActive = count === gameCount;
+
+								return <button
+									key={count}
+									type="button"
+									className={isActive ? styles.formatActive : styles.formatOption}
+									aria-pressed={isActive}
+									onClick={() => changeGameCount(count)}
+								>
+									{count} games
+								</button>
+							})
+						}
+					</div>
 					<button type="button" className={styles.action} onClick={randomizeGames}>
 						Randomize
 					</button>
@@ -185,7 +225,7 @@ export function FantasyEvent() {
 			</div>
 			<div className={styles.games}>
 				{
-					games.slice(0, 4).map((game, index) => {
+					games.slice(0, gamesBeforeIntermission).map((game, index) => {
 						return <GameSelect
 							key={index}
 							value={game}
@@ -197,13 +237,15 @@ export function FantasyEvent() {
 				}
 				<div className={styles['event-intermission']}>Intermission</div>
 				{
-					games.slice(4, 8).map((game, index) => {
+					games.slice(gamesBeforeIntermission).map((game, index) => {
+						const gameIndex = index + gamesBeforeIntermission;
+
 						return <GameSelect
-							key={index + 4}
+							key={gameIndex}
 							value={game}
 							usedValues={usedGames}
-							label={`Game ${index + 5}`}
-							onChange={next => updateGame(index + 4, next)}
+							label={`Game ${gameIndex + 1}`}
+							onChange={next => updateGame(gameIndex, next)}
 						/>
 					})
 				}
@@ -263,7 +305,7 @@ export function FantasyEvent() {
 					className={styles.predictAction}
 					onClick={predict}
 					disabled={!isComplete || isPredicting}
-					title={isComplete ? undefined : 'Select all 8 games and 40 players first.'}
+					title={isComplete ? undefined : `Select all ${gameCount} games and ${TEAMS.length * PLAYERS_PER_TEAM} players first.`}
 				>
 					{isPredicting ? 'Predicting…' : 'Predict event'}
 				</button>

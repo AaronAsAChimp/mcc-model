@@ -56,6 +56,44 @@
 	}
 }
 
+.formatSwitch {
+	display: flex;
+	gap: 0.125rem;
+	padding: 0.1875rem;
+	border: 1px solid light-dark(#c4c4c4, #4a4a4a);
+	border-radius: 999px;
+	background: light-dark(#ffffff, #242424);
+}
+
+.formatOption,
+.formatActive {
+	padding: 0.3125rem 0.75rem;
+	border: 0;
+	border-radius: 999px;
+	background: transparent;
+	color: light-dark(#5f5f5f, #a8a8a8);
+	font: inherit;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	cursor: pointer;
+
+	&:focus-visible {
+		outline: 2px solid light-dark(#2563eb, #7aa7ff);
+		outline-offset: 2px;
+	}
+}
+
+.formatOption:hover {
+	color: inherit;
+	background: light-dark(#f5f5f5, #2e2e2e);
+}
+
+.formatActive {
+	background: light-dark(#1d4ed8, #3b66d9);
+	color: #ffffff;
+	cursor: default;
+}
+
 .prediction-actions {
 	display: flex;
 	justify-content: end;
