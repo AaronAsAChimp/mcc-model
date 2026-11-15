@@ -6,8 +6,10 @@ import { PlayerSelect } from '../player-select/index.tsx';
 import { predictEvent, type Prediction } from '../../model/predict';
 import { PLAYERS } from '../../data/players';
 import { TEAMS } from '../../data/teams';
-import { TEAM_ICONS } from '../team-icons';
+import { TEAM_DISCORD_EMOTES, TEAM_ICONS } from '../team-icons';
 import styles from './styles.module.css';
+import UilCopy from '@iconscout/react-unicons/icons/uil-copy.js';
+
 
 const GAME_COUNTS = [6, 8] as const;
 type GameCount = typeof GAME_COUNTS[number];
@@ -188,6 +190,16 @@ export function FantasyEvent() {
 		}
 	}
 
+	async function copyPrediction() {
+		if (!prediction) {
+			return;
+		}
+
+		const clipboard = prediction?.teams.map((value) => `${value.place}. ${ TEAM_DISCORD_EMOTES[value.slug] }`).join('\n')
+
+		navigator.clipboard.writeText(clipboard)
+	}
+
 	return <div className={styles.fantasy}>
 		<section className={styles.section}>
 			<div className={styles.sectionHeader}>
@@ -314,8 +326,11 @@ export function FantasyEvent() {
 			{
 				prediction && <div className={styles.results} aria-live="polite">
 					<div className={styles.resultsHeader}>
-						<h3>Predicted standings</h3>
-						<span className={styles.modelNote}>player data {prediction.generatedAt}</span>
+						<div>
+							<h3>Predicted standings</h3>
+							<span className={styles.modelNote}>Based on player data from {prediction.generatedAt}</span>
+						</div>
+						<button onClick={copyPrediction} className={styles['action-icon']}>Copy <UilCopy /></button>
 					</div>
 					<ol className={styles.leaderboard}>
 						{

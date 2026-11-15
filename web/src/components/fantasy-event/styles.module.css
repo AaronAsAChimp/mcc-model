@@ -34,7 +34,7 @@
 	flex-wrap: wrap;
 }
 
-.action {
+.action, .action-icon {
 	padding: 0.5rem 0.875rem;
 	border: 1px solid light-dark(#c4c4c4, #4a4a4a);
 	border-radius: 999px;
@@ -53,6 +53,15 @@
 	&:focus-visible {
 		outline: 2px solid light-dark(#2563eb, #7aa7ff);
 		outline-offset: 2px;
+	}
+}
+
+.action-icon {
+	display: flex;
+	align-items: center;
+
+	& svg {
+		margin-left: 0.35rem;
 	}
 }
 
@@ -194,7 +203,7 @@
 
 .resultsHeader {
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 	justify-content: space-between;
 	gap: 1rem;
 	flex-wrap: wrap;
