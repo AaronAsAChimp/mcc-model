@@ -49,22 +49,35 @@ class MccIslandStats(TypedDict):
     skybattle: NotRequired[MccIslandGame | None]
 
 
+class PandoraPlayerData(TypedDict):
+    """
+    The data from the Pandora's Box Competitions
+
+    https://pandoras-box-event.fandom.com/wiki/
+    """
+    total_events: int
+    events_won: int
+    team_ranking: list[float]
+    player_ranking: list[float]
+
+
 class PlayerData(TypedDict):
     ign: NotRequired[Optional[str]]
     uuid: NotRequired[Optional[str]]
     aliases: NotRequired[list[str]]
     birthday: NotRequired[Optional[str]]
     island: NotRequired[Optional[MccIslandStats]]
+    pandora: NotRequired[Optional[PandoraPlayerData]]
 
 PlayerMapping = Mapping[str, PlayerData]
 
 class PlayerDataFile:
-    _filename: str
+    _filename: str | None
     _fd: Optional[TextIO]
     _data: PlayerMapping
     _name_lookup: dict[str, str]
 
-    def __init__(self, filename: str):
+    def __init__(self, filename: str | None = None):
         self._filename = filename
         self._fd = None
         self._name_lookup = {}
@@ -88,6 +101,9 @@ class PlayerDataFile:
         self._name_lookup = lookup
 
     def __enter__(self):
+        if self._filename is None:
+            raise Exception('To be used as a context manager, PlayerDataFile must be initialized with a file name.')
+
         self._fd = open(self._filename, "r")
 
         self._data = json.load(self._fd)
@@ -106,3 +122,12 @@ class PlayerDataFile:
 
     def normalize_name(self, name: str) -> str:
         return self._name_lookup.get(name.casefold(), name)
+
+    @classmethod
+    def from_player_mapping(cls, mapping: PlayerMapping) -> PlayerDataFile:
+        player_data = cls()
+
+        player_data._data = mapping
+        player_data._build_lookup()
+
+        return player_data

@@ -1,0 +1,1157 @@
+
+pytorch2.12.0:™¿
+õ
+
+player_idsval_3node_Shape_3"Shape*
+
+end†*
+start†JÑ
+	namespacew_empty_nn_module_stack_from_metadata_hook: _empty_nn_module_stack_from_metadata_hook/sym_size_int_10: aten.sym_size.intJd
+pkg.torch.onnx.class_hierarchyB['_empty_nn_module_stack_from_metadata_hook', 'aten.sym_size.int']Jî
+pkg.torch.onnx.fx_nodez%sym_size_int_10 : [num_users=3] = call_function[target=torch.ops.aten.sym_size.int](args = (%player_ids, 1), kwargs = {})J^
+pkg.torch.onnx.name_scopes@['_empty_nn_module_stack_from_metadata_hook', 'sym_size_int_10']Js
+pkg.torch.onnx.stack_traceUFile "torch/fx/passes/runtime_assert.py", line 24, in insert_deferred_runtime_asserts
+ê
+val_3sym_size_int_10node_sym_size_int_10"SqueezeJÑ
+	namespacew_empty_nn_module_stack_from_metadata_hook: _empty_nn_module_stack_from_metadata_hook/sym_size_int_10: aten.sym_size.intJd
+pkg.torch.onnx.class_hierarchyB['_empty_nn_module_stack_from_metadata_hook', 'aten.sym_size.int']Jî
+pkg.torch.onnx.fx_nodez%sym_size_int_10 : [num_users=3] = call_function[target=torch.ops.aten.sym_size.int](args = (%player_ids, 1), kwargs = {})J^
+pkg.torch.onnx.name_scopes@['_empty_nn_module_stack_from_metadata_hook', 'sym_size_int_10']Js
+pkg.torch.onnx.stack_traceUFile "torch/fx/passes/runtime_assert.py", line 24, in insert_deferred_runtime_asserts
+ª
+
+player_ids
+val_15eq_4	node_eq_4"EqualJ?
+	namespace2: main.TeamPlacementPredictor/eq_4: aten.eq.ScalarJS
+pkg.torch.onnx.class_hierarchy1['main.TeamPlacementPredictor', 'aten.eq.Scalar']JÜ
+pkg.torch.onnx.fx_nodel%eq_4 : [num_users=1] = call_function[target=torch.ops.aten.eq.Scalar](args = (%player_ids, 0), kwargs = {})J*
+pkg.torch.onnx.name_scopes['', 'eq_4']J¡
+pkg.torch.onnx.stack_trace¢File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 633, in forward
+    unknown_mask = (player_ids == 0).unsqueeze(-1)
+‰
+eq_4
+val_7	unsqueezenode_unsqueeze"	UnsqueezeJL
+	namespace?: main.TeamPlacementPredictor/unsqueeze: aten.unsqueeze.defaultJ[
+pkg.torch.onnx.class_hierarchy9['main.TeamPlacementPredictor', 'aten.unsqueeze.default']Jé
+pkg.torch.onnx.fx_nodet%unsqueeze : [num_users=2] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%eq_4, -1), kwargs = {})J/
+pkg.torch.onnx.name_scopes['', 'unsqueeze']J¡
+pkg.torch.onnx.stack_trace¢File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 633, in forward
+    unknown_mask = (player_ids == 0).unsqueeze(-1)
+˙
+
+team_features
+player_encoder.0.weight
+player_encoder.0.bias
+layer_normnode_layer_norm"LayerNormalization*
+
+stash_type†*
+epsilon¨≈'7†*
+axisˇˇˇˇˇˇˇˇˇ†J¿
+	namespace≤: main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.0: torch.nn.modules.normalization.LayerNorm/layer_norm: aten.layer_norm.defaultJ≤
+pkg.torch.onnx.class_hierarchyè['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.normalization.LayerNorm', 'aten.layer_norm.default']J‡
+pkg.torch.onnx.fx_node≈%layer_norm : [num_users=1] = call_function[target=torch.ops.aten.layer_norm.default](args = (%team_features, [29], %p_player_encoder_0_weight, %p_player_encoder_0_bias, 1e-05, False), kwargs = {})JV
+pkg.torch.onnx.name_scopes8['', 'player_encoder', 'player_encoder.0', 'layer_norm']Jò
+pkg.torch.onnx.stack_trace˘File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 636, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/normalization.py", line 228, in forward
+    return F.layer_norm(
+—	
+
+layer_norm
+val_10val_11node_MatMul_9"MatMulJÆ
+	namespace†: main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.1: torch.nn.modules.linear.Linear/linear: aten.linear.defaultJ§
+pkg.torch.onnx.class_hierarchyÅ['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J¡
+pkg.torch.onnx.fx_node¶%linear : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%layer_norm, %p_player_encoder_1_weight, %p_player_encoder_1_bias), kwargs = {})JR
+pkg.torch.onnx.name_scopes4['', 'player_encoder', 'player_encoder.1', 'linear']J´
+pkg.torch.onnx.stack_traceåFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 636, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+◊	
+val_11
+player_encoder.1.biaslinearnode_linear"AddJÆ
+	namespace†: main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.1: torch.nn.modules.linear.Linear/linear: aten.linear.defaultJ§
+pkg.torch.onnx.class_hierarchyÅ['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J¡
+pkg.torch.onnx.fx_node¶%linear : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%layer_norm, %p_player_encoder_1_weight, %p_player_encoder_1_bias), kwargs = {})JR
+pkg.torch.onnx.name_scopes4['', 'player_encoder', 'player_encoder.1', 'linear']J´
+pkg.torch.onnx.stack_traceåFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 636, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+˚
+linearrelu	node_relu"ReluJ¨
+	namespaceû: main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.2: torch.nn.modules.activation.ReLU/relu: aten.relu.defaultJ§
+pkg.torch.onnx.class_hierarchyÅ['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']JÉ
+pkg.torch.onnx.fx_nodei%relu : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%linear,), kwargs = {})JP
+pkg.torch.onnx.name_scopes2['', 'player_encoder', 'player_encoder.2', 'relu']J´
+pkg.torch.onnx.stack_traceåFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 636, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+Õ	
+relu
+val_12val_13node_MatMul_11"MatMulJ∞
+	namespace¢: main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.4: torch.nn.modules.linear.Linear/linear_1: aten.linear.defaultJ§
+pkg.torch.onnx.class_hierarchyÅ['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']Jæ
+pkg.torch.onnx.fx_node£%linear_1 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%clone, %p_player_encoder_4_weight, %p_player_encoder_4_bias), kwargs = {})JT
+pkg.torch.onnx.name_scopes6['', 'player_encoder', 'player_encoder.4', 'linear_1']J´
+pkg.torch.onnx.stack_traceåFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 636, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+‹	
+val_13
+player_encoder.4.biaslinear_1node_linear_1"AddJ∞
+	namespace¢: main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.4: torch.nn.modules.linear.Linear/linear_1: aten.linear.defaultJ§
+pkg.torch.onnx.class_hierarchyÅ['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']Jæ
+pkg.torch.onnx.fx_node£%linear_1 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%clone, %p_player_encoder_4_weight, %p_player_encoder_4_bias), kwargs = {})JT
+pkg.torch.onnx.name_scopes6['', 'player_encoder', 'player_encoder.4', 'linear_1']J´
+pkg.torch.onnx.stack_traceåFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 636, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+â	
+linear_1relu_1node_relu_1"ReluJÆ
+	namespace†: main.TeamPlacementPredictor/player_encoder: torch.nn.modules.container.Sequential/player_encoder.5: torch.nn.modules.activation.ReLU/relu_1: aten.relu.defaultJ§
+pkg.torch.onnx.class_hierarchyÅ['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Já
+pkg.torch.onnx.fx_nodem%relu_1 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%linear_1,), kwargs = {})JR
+pkg.torch.onnx.name_scopes4['', 'player_encoder', 'player_encoder.5', 'relu_1']J´
+pkg.torch.onnx.stack_traceåFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 636, in forward
+    encoded = self.player_encoder(team_features)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+Å
+	unsqueeze
+unknown_encoded
+relu_1where
+node_where"WhereJA
+	namespace4: main.TeamPlacementPredictor/where: aten.where.selfJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.where.self']J¢
+pkg.torch.onnx.fx_nodeá%where : [num_users=2] = call_function[target=torch.ops.aten.where.self](args = (%unsqueeze, %p_unknown_encoded, %relu_1), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'where']J’
+pkg.torch.onnx.stack_trace∂File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 640, in forward
+    encoded = torch.where(unknown_mask, self.unknown_encoded, encoded)
+ñ
+val_15
+sym_size_int_10
+val_17arangenode_arange"RangeJF
+	namespace9: main.TeamPlacementPredictor/arange: aten.arange.defaultJX
+pkg.torch.onnx.class_hierarchy6['main.TeamPlacementPredictor', 'aten.arange.default']JØ
+pkg.torch.onnx.fx_nodeî%arange : [num_users=1] = call_function[target=torch.ops.aten.arange.default](args = (%sym_size_int_10,), kwargs = {device: cpu, pin_memory: False})J,
+pkg.torch.onnx.name_scopes['', 'arange']J‘
+pkg.torch.onnx.stack_traceµFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 645, in forward
+    player_mask = torch.arange(max_players, device=device).unsqueeze(
+Ö
+arange
+val_18unsqueeze_1node_unsqueeze_1"	UnsqueezeJN
+	namespaceA: main.TeamPlacementPredictor/unsqueeze_1: aten.unsqueeze.defaultJ[
+pkg.torch.onnx.class_hierarchy9['main.TeamPlacementPredictor', 'aten.unsqueeze.default']Jë
+pkg.torch.onnx.fx_nodew%unsqueeze_1 : [num_users=1] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%arange, 0), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'unsqueeze_1']J‘
+pkg.torch.onnx.stack_traceµFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 645, in forward
+    player_mask = torch.arange(max_players, device=device).unsqueeze(
+Á
+
+team_sizes
+val_19unsqueeze_2node_unsqueeze_2"	UnsqueezeJN
+	namespaceA: main.TeamPlacementPredictor/unsqueeze_2: aten.unsqueeze.defaultJ[
+pkg.torch.onnx.class_hierarchy9['main.TeamPlacementPredictor', 'aten.unsqueeze.default']Jï
+pkg.torch.onnx.fx_node{%unsqueeze_2 : [num_users=1] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%team_sizes, 1), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'unsqueeze_2']JÆ
+pkg.torch.onnx.stack_traceèFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 647, in forward
+    ) < team_sizes.unsqueeze(1)
+’
+unsqueeze_1
+unsqueeze_2ltnode_lt"LessJ=
+	namespace0: main.TeamPlacementPredictor/lt: aten.lt.TensorJS
+pkg.torch.onnx.class_hierarchy1['main.TeamPlacementPredictor', 'aten.lt.Tensor']Jê
+pkg.torch.onnx.fx_nodev%lt : [num_users=1] = call_function[target=torch.ops.aten.lt.Tensor](args = (%unsqueeze_1, %unsqueeze_2), kwargs = {})J(
+pkg.torch.onnx.name_scopes
+['', 'lt']J‘
+pkg.torch.onnx.stack_traceµFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 645, in forward
+    player_mask = torch.arange(max_players, device=device).unsqueeze(
+Î
+lt
+val_7unsqueeze_3node_unsqueeze_3"	UnsqueezeJN
+	namespaceA: main.TeamPlacementPredictor/unsqueeze_3: aten.unsqueeze.defaultJ[
+pkg.torch.onnx.class_hierarchy9['main.TeamPlacementPredictor', 'aten.unsqueeze.default']Jé
+pkg.torch.onnx.fx_nodet%unsqueeze_3 : [num_users=1] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%lt, -1), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'unsqueeze_3']J¬
+pkg.torch.onnx.stack_trace£File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 648, in forward
+    player_mask = player_mask.unsqueeze(-1).float()
+¸
+unsqueeze_3_to_copynode__to_copy"Cast*	
+to†JJ
+	namespace=: main.TeamPlacementPredictor/_to_copy: aten._to_copy.defaultJZ
+pkg.torch.onnx.class_hierarchy8['main.TeamPlacementPredictor', 'aten._to_copy.default']J•
+pkg.torch.onnx.fx_nodeä%_to_copy : [num_users=2] = call_function[target=torch.ops.aten._to_copy.default](args = (%unsqueeze_3,), kwargs = {dtype: torch.float32})J.
+pkg.torch.onnx.name_scopes['', '_to_copy']J¬
+pkg.torch.onnx.stack_trace£File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 648, in forward
+    player_mask = player_mask.unsqueeze(-1).float()
+Æ
+where
+val_20val_21node_MatMul_19"MatMulJy
+	namespacel: main.TeamPlacementPredictor/player_attention: torch.nn.modules.linear.Linear/linear_2: aten.linear.defaultJz
+pkg.torch.onnx.class_hierarchyX['main.TeamPlacementPredictor', 'torch.nn.modules.linear.Linear', 'aten.linear.default']Jæ
+pkg.torch.onnx.fx_node£%linear_2 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%where, %p_player_attention_weight, %p_player_attention_bias), kwargs = {})JB
+pkg.torch.onnx.name_scopes$['', 'player_attention', 'linear_2']JÄ
+pkg.torch.onnx.stack_trace·File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 650, in forward
+    attn_logits = self.player_attention(encoded)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+º
+val_21
+player_attention.biaslinear_2node_linear_2"AddJy
+	namespacel: main.TeamPlacementPredictor/player_attention: torch.nn.modules.linear.Linear/linear_2: aten.linear.defaultJz
+pkg.torch.onnx.class_hierarchyX['main.TeamPlacementPredictor', 'torch.nn.modules.linear.Linear', 'aten.linear.default']Jæ
+pkg.torch.onnx.fx_node£%linear_2 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%where, %p_player_attention_weight, %p_player_attention_bias), kwargs = {})JB
+pkg.torch.onnx.name_scopes$['', 'player_attention', 'linear_2']JÄ
+pkg.torch.onnx.stack_trace·File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 650, in forward
+    attn_logits = self.player_attention(encoded)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+Å
+linear_2
+val_7squeezenode_squeeze"SqueezeJD
+	namespace7: main.TeamPlacementPredictor/squeeze: aten.squeeze.dimJU
+pkg.torch.onnx.class_hierarchy3['main.TeamPlacementPredictor', 'aten.squeeze.dim']Jä
+pkg.torch.onnx.fx_nodep%squeeze : [num_users=1] = call_function[target=torch.ops.aten.squeeze.dim](args = (%linear_2, -1), kwargs = {})J-
+pkg.torch.onnx.name_scopes['', 'squeeze']JÙ
+pkg.torch.onnx.stack_trace’File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 651, in forward
+    attn_logits = attn_logits.squeeze(-1).masked_fill(~player_mask.squeeze(-1).bool(), float('-inf'))
+ã
+_to_copy
+val_7	squeeze_1node_squeeze_1"SqueezeJF
+	namespace9: main.TeamPlacementPredictor/squeeze_1: aten.squeeze.dimJU
+pkg.torch.onnx.class_hierarchy3['main.TeamPlacementPredictor', 'aten.squeeze.dim']Jå
+pkg.torch.onnx.fx_noder%squeeze_1 : [num_users=1] = call_function[target=torch.ops.aten.squeeze.dim](args = (%_to_copy, -1), kwargs = {})J/
+pkg.torch.onnx.name_scopes['', 'squeeze_1']JÙ
+pkg.torch.onnx.stack_trace’File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 651, in forward
+    attn_logits = attn_logits.squeeze(-1).masked_fill(~player_mask.squeeze(-1).bool(), float('-inf'))
+±
+	squeeze_1
+_to_copy_1node__to_copy_1"Cast*	
+to	†JL
+	namespace?: main.TeamPlacementPredictor/_to_copy_1: aten._to_copy.defaultJZ
+pkg.torch.onnx.class_hierarchy8['main.TeamPlacementPredictor', 'aten._to_copy.default']J¢
+pkg.torch.onnx.fx_nodeá%_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%squeeze_1,), kwargs = {dtype: torch.bool})J0
+pkg.torch.onnx.name_scopes['', '_to_copy_1']JÙ
+pkg.torch.onnx.stack_trace’File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 651, in forward
+    attn_logits = attn_logits.squeeze(-1).masked_fill(~player_mask.squeeze(-1).bool(), float('-inf'))
+£
+
+_to_copy_1bitwise_notnode_bitwise_not"NotJP
+	namespaceC: main.TeamPlacementPredictor/bitwise_not: aten.bitwise_not.defaultJ]
+pkg.torch.onnx.class_hierarchy;['main.TeamPlacementPredictor', 'aten.bitwise_not.default']Jï
+pkg.torch.onnx.fx_node{%bitwise_not : [num_users=1] = call_function[target=torch.ops.aten.bitwise_not.default](args = (%_to_copy_1,), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'bitwise_not']JÙ
+pkg.torch.onnx.stack_trace’File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 651, in forward
+    attn_logits = attn_logits.squeeze(-1).masked_fill(~player_mask.squeeze(-1).bool(), float('-inf'))
+≈
+bitwise_not
+val_23
+squeezemasked_fillnode_masked_fill"WhereJO
+	namespaceB: main.TeamPlacementPredictor/masked_fill: aten.masked_fill.ScalarJ\
+pkg.torch.onnx.class_hierarchy:['main.TeamPlacementPredictor', 'aten.masked_fill.Scalar']J•
+pkg.torch.onnx.fx_nodeä%masked_fill : [num_users=1] = call_function[target=torch.ops.aten.masked_fill.Scalar](args = (%squeeze, %bitwise_not, -inf), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'masked_fill']JÙ
+pkg.torch.onnx.stack_trace’File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 651, in forward
+    attn_logits = attn_logits.squeeze(-1).masked_fill(~player_mask.squeeze(-1).bool(), float('-inf'))
+¯
+masked_fillsoftmaxnode_softmax"Softmax*
+axisˇˇˇˇˇˇˇˇˇ†JD
+	namespace7: main.TeamPlacementPredictor/softmax: aten.softmax.intJU
+pkg.torch.onnx.class_hierarchy3['main.TeamPlacementPredictor', 'aten.softmax.int']Jç
+pkg.torch.onnx.fx_nodes%softmax : [num_users=1] = call_function[target=torch.ops.aten.softmax.int](args = (%masked_fill, -1), kwargs = {})J-
+pkg.torch.onnx.name_scopes['', 'softmax']J÷
+pkg.torch.onnx.stack_trace∑File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 652, in forward
+    player_attention = torch.softmax(attn_logits, dim=-1).unsqueeze(-1)
+â
+softmax
+val_7unsqueeze_4node_unsqueeze_4"	UnsqueezeJN
+	namespaceA: main.TeamPlacementPredictor/unsqueeze_4: aten.unsqueeze.defaultJ[
+pkg.torch.onnx.class_hierarchy9['main.TeamPlacementPredictor', 'aten.unsqueeze.default']Jì
+pkg.torch.onnx.fx_nodey%unsqueeze_4 : [num_users=1] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%softmax, -1), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'unsqueeze_4']J÷
+pkg.torch.onnx.stack_trace∑File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 652, in forward
+    player_attention = torch.softmax(attn_logits, dim=-1).unsqueeze(-1)
+‘
+where
+unsqueeze_4mul_45node_mul_45"MulJB
+	namespace5: main.TeamPlacementPredictor/mul_45: aten.mul.TensorJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.mul.Tensor']Jè
+pkg.torch.onnx.fx_nodeu%mul_45 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%where, %unsqueeze_4), kwargs = {})J,
+pkg.torch.onnx.name_scopes['', 'mul_45']J…
+pkg.torch.onnx.stack_trace™File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 653, in forward
+    team_encoded = (encoded * player_attention).sum(dim=1)
+Ü
+mul_45
+val_19sum_1
+node_sum_1"	ReduceSum*
+noop_with_empty_axes †*
+keepdims †JF
+	namespace9: main.TeamPlacementPredictor/sum_1: aten.sum.dim_IntListJY
+pkg.torch.onnx.class_hierarchy7['main.TeamPlacementPredictor', 'aten.sum.dim_IntList']Jã
+pkg.torch.onnx.fx_nodeq%sum_1 : [num_users=1] = call_function[target=torch.ops.aten.sum.dim_IntList](args = (%mul_45, [1]), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'sum_1']J…
+pkg.torch.onnx.stack_trace™File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 653, in forward
+    team_encoded = (encoded * player_attention).sum(dim=1)
+Õ
+player_embeddings.weight
+
+player_ids	embeddingnode_embedding"Gather*
+axis †JÅ
+	namespacet: main.TeamPlacementPredictor/player_embeddings: torch.nn.modules.sparse.Embedding/embedding: aten.embedding.defaultJÄ
+pkg.torch.onnx.class_hierarchy^['main.TeamPlacementPredictor', 'torch.nn.modules.sparse.Embedding', 'aten.embedding.default']JÆ
+pkg.torch.onnx.fx_nodeì%embedding : [num_users=1] = call_function[target=torch.ops.aten.embedding.default](args = (%p_player_embeddings_weight, %player_ids), kwargs = {})JD
+pkg.torch.onnx.name_scopes&['', 'player_embeddings', 'embedding']Jˆ
+pkg.torch.onnx.stack_trace◊File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 655, in forward
+    individual_player_embeds = self.player_embeddings(player_ids)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/sparse.py", line 189, in forward
+    return F.embedding(
+˙
+	unsqueeze
+unknown_embedding
+	embeddingwhere_1node_where_1"WhereJC
+	namespace6: main.TeamPlacementPredictor/where_1: aten.where.selfJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.where.self']J©
+pkg.torch.onnx.fx_nodeé%where_1 : [num_users=1] = call_function[target=torch.ops.aten.where.self](args = (%unsqueeze, %p_unknown_embedding, %embedding), kwargs = {})J-
+pkg.torch.onnx.name_scopes['', 'where_1']J∫
+pkg.torch.onnx.stack_traceõFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 656, in forward
+    individual_player_embeds = torch.where(
+˛
+where_1
+_to_copymul_57node_mul_57"MulJB
+	namespace5: main.TeamPlacementPredictor/mul_57: aten.mul.TensorJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.mul.Tensor']Jé
+pkg.torch.onnx.fx_nodet%mul_57 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%where_1, %_to_copy), kwargs = {})J,
+pkg.torch.onnx.name_scopes['', 'mul_57']Jı
+pkg.torch.onnx.stack_trace÷File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 659, in forward
+    team_embed = (individual_player_embeds * player_mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
+≤
+mul_57
+val_19sum_2
+node_sum_2"	ReduceSum*
+noop_with_empty_axes †*
+keepdims †JF
+	namespace9: main.TeamPlacementPredictor/sum_2: aten.sum.dim_IntListJY
+pkg.torch.onnx.class_hierarchy7['main.TeamPlacementPredictor', 'aten.sum.dim_IntList']Jã
+pkg.torch.onnx.fx_nodeq%sum_2 : [num_users=1] = call_function[target=torch.ops.aten.sum.dim_IntList](args = (%mul_57, [1]), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'sum_2']Jı
+pkg.torch.onnx.stack_trace÷File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 659, in forward
+    team_embed = (individual_player_embeds * player_mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
+π
+unsqueeze_2
+_to_copy_2node__to_copy_2"Cast*	
+to†JL
+	namespace?: main.TeamPlacementPredictor/_to_copy_2: aten._to_copy.defaultJZ
+pkg.torch.onnx.class_hierarchy8['main.TeamPlacementPredictor', 'aten._to_copy.default']Jß
+pkg.torch.onnx.fx_nodeå%_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%unsqueeze_5,), kwargs = {dtype: torch.float32})J0
+pkg.torch.onnx.name_scopes['', '_to_copy_2']Jı
+pkg.torch.onnx.stack_trace÷File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 659, in forward
+    team_embed = (individual_player_embeds * player_mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
+Ô
+sum_2
+
+_to_copy_2divnode_div"DivJ?
+	namespace2: main.TeamPlacementPredictor/div: aten.div.TensorJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.div.Tensor']Jã
+pkg.torch.onnx.fx_nodeq%div : [num_users=1] = call_function[target=torch.ops.aten.div.Tensor](args = (%sum_2, %_to_copy_2), kwargs = {})J)
+pkg.torch.onnx.name_scopes['', 'div']Jı
+pkg.torch.onnx.stack_trace÷File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 659, in forward
+    team_embed = (individual_player_embeds * player_mask).sum(dim=1) / team_sizes.unsqueeze(1).float()
+«
+game_id_embedding.weight
+game_idsembedding_1node_embedding_1"Gather*
+axis †JÉ
+	namespacev: main.TeamPlacementPredictor/game_id_embedding: torch.nn.modules.sparse.Embedding/embedding_1: aten.embedding.defaultJÄ
+pkg.torch.onnx.class_hierarchy^['main.TeamPlacementPredictor', 'torch.nn.modules.sparse.Embedding', 'aten.embedding.default']J±
+pkg.torch.onnx.fx_nodeñ%embedding_1 : [num_users=1] = call_function[target=torch.ops.aten.embedding.default](args = (%p_game_id_embedding_weight, %game_ids, 0), kwargs = {})JF
+pkg.torch.onnx.name_scopes(['', 'game_id_embedding', 'embedding_1']JÁ
+pkg.torch.onnx.stack_trace»File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 661, in forward
+    game_embeds = self.game_id_embedding(game_ids)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/sparse.py", line 189, in forward
+    return F.embedding(
+∫
+game_ids
+val_15val_26node_Equal_24"EqualJ=
+	namespace0: main.TeamPlacementPredictor/ne: aten.ne.ScalarJS
+pkg.torch.onnx.class_hierarchy1['main.TeamPlacementPredictor', 'aten.ne.Scalar']JÇ
+pkg.torch.onnx.fx_nodeh%ne : [num_users=2] = call_function[target=torch.ops.aten.ne.Scalar](args = (%game_ids, 0), kwargs = {})J(
+pkg.torch.onnx.name_scopes
+['', 'ne']Jƒ
+pkg.torch.onnx.stack_trace•File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 662, in forward
+    game_mask = (game_ids != 0)  # (batch, max_games)
+§
+val_26nenode_ne"NotJ=
+	namespace0: main.TeamPlacementPredictor/ne: aten.ne.ScalarJS
+pkg.torch.onnx.class_hierarchy1['main.TeamPlacementPredictor', 'aten.ne.Scalar']JÇ
+pkg.torch.onnx.fx_nodeh%ne : [num_users=2] = call_function[target=torch.ops.aten.ne.Scalar](args = (%game_ids, 0), kwargs = {})J(
+pkg.torch.onnx.name_scopes
+['', 'ne']Jƒ
+pkg.torch.onnx.stack_trace•File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 662, in forward
+    game_mask = (game_ids != 0)  # (batch, max_games)
+
+neconvert_element_type_default!node_convert_element_type_default"Cast*	
+to†Jk
+	namespace^: main.TeamPlacementPredictor/convert_element_type_default: prims.convert_element_type.defaultJg
+pkg.torch.onnx.class_hierarchyE['main.TeamPlacementPredictor', 'prims.convert_element_type.default']Jª
+pkg.torch.onnx.fx_node†%convert_element_type_default : [num_users=1] = call_function[target=torch.ops.prims.convert_element_type.default](args = (%ne,), kwargs = {dtype: torch.int64})JB
+pkg.torch.onnx.name_scopes$['', 'convert_element_type_default']Jø
+pkg.torch.onnx.stack_trace†File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 666, in forward
+    num_games = game_mask.sum(dim=1)  # (batch,)
+©
+convert_element_type_default
+val_19sum_3
+node_sum_3"	ReduceSum*
+noop_with_empty_axes †*
+keepdims †JF
+	namespace9: main.TeamPlacementPredictor/sum_3: aten.sum.dim_IntListJY
+pkg.torch.onnx.class_hierarchy7['main.TeamPlacementPredictor', 'aten.sum.dim_IntList']J¢
+pkg.torch.onnx.fx_nodeá%sum_3 : [num_users=1] = call_function[target=torch.ops.aten.sum.dim_IntList](args = (%convert_element_type_default, [1]), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'sum_3']Jø
+pkg.torch.onnx.stack_trace†File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 666, in forward
+    num_games = game_mask.sum(dim=1)  # (batch,)
+ø
+sum_3
+val_28eq_68
+node_eq_68"EqualJ@
+	namespace3: main.TeamPlacementPredictor/eq_68: aten.eq.ScalarJS
+pkg.torch.onnx.class_hierarchy1['main.TeamPlacementPredictor', 'aten.eq.Scalar']JÇ
+pkg.torch.onnx.fx_nodeh%eq_68 : [num_users=1] = call_function[target=torch.ops.aten.eq.Scalar](args = (%sum_3, 6), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'eq_68']J 
+pkg.torch.onnx.stack_trace´File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 667, in forward
+    is_6_game = (num_games == 6).unsqueeze(1)  # (batch, 1)
+˘
+eq_68
+val_19unsqueeze_6node_unsqueeze_6"	UnsqueezeJN
+	namespaceA: main.TeamPlacementPredictor/unsqueeze_6: aten.unsqueeze.defaultJ[
+pkg.torch.onnx.class_hierarchy9['main.TeamPlacementPredictor', 'aten.unsqueeze.default']Jê
+pkg.torch.onnx.fx_nodev%unsqueeze_6 : [num_users=1] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%eq_68, 1), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'unsqueeze_6']J 
+pkg.torch.onnx.stack_trace´File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 667, in forward
+    is_6_game = (num_games == 6).unsqueeze(1)  # (batch, 1)
+˜
+unsqueeze_6
+lifted_tensor_0
+lifted_tensor_1where_2node_where_2"WhereJC
+	namespace6: main.TeamPlacementPredictor/where_2: aten.where.selfJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.where.self']J±
+pkg.torch.onnx.fx_nodeñ%where_2 : [num_users=1] = call_function[target=torch.ops.aten.where.self](args = (%unsqueeze_6, %c_lifted_tensor_0, %c_lifted_tensor_1), kwargs = {})J-
+pkg.torch.onnx.name_scopes['', 'where_2']J©
+pkg.torch.onnx.stack_traceäFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 668, in forward
+    weights = torch.where(
+ì
+ne
+_to_copy_3node__to_copy_3"Cast*	
+to†JL
+	namespace?: main.TeamPlacementPredictor/_to_copy_3: aten._to_copy.defaultJZ
+pkg.torch.onnx.class_hierarchy8['main.TeamPlacementPredictor', 'aten._to_copy.default']Jû
+pkg.torch.onnx.fx_nodeÉ%_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%ne,), kwargs = {dtype: torch.float32})J0
+pkg.torch.onnx.name_scopes['', '_to_copy_3']J·
+pkg.torch.onnx.stack_trace¬File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 673, in forward
+    weights = (weights * game_mask.float()).unsqueeze(-1)  # (batch, max_games, 1)
+Ó
+where_2
+
+_to_copy_3mul_75node_mul_75"MulJB
+	namespace5: main.TeamPlacementPredictor/mul_75: aten.mul.TensorJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.mul.Tensor']Jê
+pkg.torch.onnx.fx_nodev%mul_75 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%where_2, %_to_copy_3), kwargs = {})J,
+pkg.torch.onnx.name_scopes['', 'mul_75']J·
+pkg.torch.onnx.stack_trace¬File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 673, in forward
+    weights = (weights * game_mask.float()).unsqueeze(-1)  # (batch, max_games, 1)
+í
+mul_75
+val_7unsqueeze_7node_unsqueeze_7"	UnsqueezeJN
+	namespaceA: main.TeamPlacementPredictor/unsqueeze_7: aten.unsqueeze.defaultJ[
+pkg.torch.onnx.class_hierarchy9['main.TeamPlacementPredictor', 'aten.unsqueeze.default']Jí
+pkg.torch.onnx.fx_nodex%unsqueeze_7 : [num_users=2] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%mul_75, -1), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'unsqueeze_7']J·
+pkg.torch.onnx.stack_trace¬File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 673, in forward
+    weights = (weights * game_mask.float()).unsqueeze(-1)  # (batch, max_games, 1)
+˚
+embedding_1
+unsqueeze_7mul_80node_mul_80"MulJB
+	namespace5: main.TeamPlacementPredictor/mul_80: aten.mul.TensorJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.mul.Tensor']Jï
+pkg.torch.onnx.fx_node{%mul_80 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%embedding_1, %unsqueeze_7), kwargs = {})J,
+pkg.torch.onnx.name_scopes['', 'mul_80']J‰
+pkg.torch.onnx.stack_trace≈File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 675, in forward
+    game_embed = (game_embeds * weights).sum(dim=1) / weights.sum(dim=1).clamp(min=1)
+°
+mul_80
+val_19sum_4
+node_sum_4"	ReduceSum*
+noop_with_empty_axes †*
+keepdims †JF
+	namespace9: main.TeamPlacementPredictor/sum_4: aten.sum.dim_IntListJY
+pkg.torch.onnx.class_hierarchy7['main.TeamPlacementPredictor', 'aten.sum.dim_IntList']Jã
+pkg.torch.onnx.fx_nodeq%sum_4 : [num_users=1] = call_function[target=torch.ops.aten.sum.dim_IntList](args = (%mul_80, [1]), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'sum_4']J‰
+pkg.torch.onnx.stack_trace≈File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 675, in forward
+    game_embed = (game_embeds * weights).sum(dim=1) / weights.sum(dim=1).clamp(min=1)
+´
+unsqueeze_7
+val_19sum_5
+node_sum_5"	ReduceSum*
+noop_with_empty_axes †*
+keepdims †JF
+	namespace9: main.TeamPlacementPredictor/sum_5: aten.sum.dim_IntListJY
+pkg.torch.onnx.class_hierarchy7['main.TeamPlacementPredictor', 'aten.sum.dim_IntList']Jê
+pkg.torch.onnx.fx_nodev%sum_5 : [num_users=1] = call_function[target=torch.ops.aten.sum.dim_IntList](args = (%unsqueeze_7, [1]), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'sum_5']J‰
+pkg.torch.onnx.stack_trace≈File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 675, in forward
+    game_embed = (game_embeds * weights).sum(dim=1) / weights.sum(dim=1).clamp(min=1)
+Ö
+sum_5
+scalar_tensor_defaultclamp
+node_clamp"MaxJC
+	namespace6: main.TeamPlacementPredictor/clamp: aten.clamp.TensorJV
+pkg.torch.onnx.class_hierarchy4['main.TeamPlacementPredictor', 'aten.clamp.Tensor']Jõ
+pkg.torch.onnx.fx_nodeÄ%clamp : [num_users=1] = call_function[target=torch.ops.aten.clamp.Tensor](args = (%sum_5, %scalar_tensor_default), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'clamp']J‰
+pkg.torch.onnx.stack_trace≈File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 675, in forward
+    game_embed = (game_embeds * weights).sum(dim=1) / weights.sum(dim=1).clamp(min=1)
+ﬁ
+sum_4
+clampdiv_1
+node_div_1"DivJA
+	namespace4: main.TeamPlacementPredictor/div_1: aten.div.TensorJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.div.Tensor']Jà
+pkg.torch.onnx.fx_noden%div_1 : [num_users=1] = call_function[target=torch.ops.aten.div.Tensor](args = (%sum_4, %clamp), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'div_1']J‰
+pkg.torch.onnx.stack_trace≈File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 675, in forward
+    game_embed = (game_embeds * weights).sum(dim=1) / weights.sum(dim=1).clamp(min=1)
+¢
+
+div_1
+game_encoder.0.weight
+game_encoder.0.biaslinear_3node_linear_3"Gemm*
+beta  Ä?†*
+transB†*
+alpha  Ä?†*
+transA †J¨
+	namespaceû: main.TeamPlacementPredictor/game_encoder: torch.nn.modules.container.Sequential/game_encoder.0: torch.nn.modules.linear.Linear/linear_3: aten.linear.defaultJ§
+pkg.torch.onnx.class_hierarchyÅ['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J∫
+pkg.torch.onnx.fx_nodeü%linear_3 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%div_1, %p_game_encoder_0_weight, %p_game_encoder_0_bias), kwargs = {})JP
+pkg.torch.onnx.name_scopes2['', 'game_encoder', 'game_encoder.0', 'linear_3']J©
+pkg.torch.onnx.stack_traceäFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 676, in forward
+    game_embed = self.game_encoder(game_embed)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+ˇ
+linear_3relu_2node_relu_2"ReluJ™
+	namespaceú: main.TeamPlacementPredictor/game_encoder: torch.nn.modules.container.Sequential/game_encoder.1: torch.nn.modules.activation.ReLU/relu_2: aten.relu.defaultJ§
+pkg.torch.onnx.class_hierarchyÅ['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Já
+pkg.torch.onnx.fx_nodem%relu_2 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%linear_3,), kwargs = {})JN
+pkg.torch.onnx.name_scopes0['', 'game_encoder', 'game_encoder.1', 'relu_2']J©
+pkg.torch.onnx.stack_traceäFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 676, in forward
+    game_embed = self.game_encoder(game_embed)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+Î
+div
+sum_1
+relu_2catnode_cat"Concat*
+axis†J@
+	namespace3: main.TeamPlacementPredictor/cat: aten.cat.defaultJU
+pkg.torch.onnx.class_hierarchy3['main.TeamPlacementPredictor', 'aten.cat.default']Jì
+pkg.torch.onnx.fx_nodey%cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%div, %sum_1, %relu_2], 1), kwargs = {})J)
+pkg.torch.onnx.name_scopes['', 'cat']J÷
+pkg.torch.onnx.stack_trace∑File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 678, in forward
+    combined = torch.cat([team_embed, team_encoded, game_embed], dim=1)
+â
+
+cat
+predictor.0.weight
+predictor.0.biaslinear_4node_linear_4"Gemm*
+beta  Ä?†*
+transB†*
+alpha  Ä?†*
+transA †J¶
+	namespaceò: main.TeamPlacementPredictor/predictor: torch.nn.modules.container.Sequential/predictor.0: torch.nn.modules.linear.Linear/linear_4: aten.linear.defaultJ§
+pkg.torch.onnx.class_hierarchyÅ['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J≤
+pkg.torch.onnx.fx_nodeó%linear_4 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%cat, %p_predictor_0_weight, %p_predictor_0_bias), kwargs = {})JJ
+pkg.torch.onnx.name_scopes,['', 'predictor', 'predictor.0', 'linear_4']J¨
+pkg.torch.onnx.stack_traceçFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 679, in forward
+    return self.predictor(combined) / COINS_SCALE
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+ˆ
+linear_4relu_3node_relu_3"ReluJ§
+	namespaceñ: main.TeamPlacementPredictor/predictor: torch.nn.modules.container.Sequential/predictor.1: torch.nn.modules.activation.ReLU/relu_3: aten.relu.defaultJ§
+pkg.torch.onnx.class_hierarchyÅ['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Já
+pkg.torch.onnx.fx_nodem%relu_3 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%linear_4,), kwargs = {})JH
+pkg.torch.onnx.name_scopes*['', 'predictor', 'predictor.1', 'relu_3']J¨
+pkg.torch.onnx.stack_traceçFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 679, in forward
+    return self.predictor(combined) / COINS_SCALE
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+ê
+
+relu_3
+predictor.3.weight
+predictor.3.biaslinear_5node_linear_5"Gemm*
+beta  Ä?†*
+transB†*
+alpha  Ä?†*
+transA †J¶
+	namespaceò: main.TeamPlacementPredictor/predictor: torch.nn.modules.container.Sequential/predictor.3: torch.nn.modules.linear.Linear/linear_5: aten.linear.defaultJ§
+pkg.torch.onnx.class_hierarchyÅ['main.TeamPlacementPredictor', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J∂
+pkg.torch.onnx.fx_nodeõ%linear_5 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%clone_1, %p_predictor_3_weight, %p_predictor_3_bias), kwargs = {})JJ
+pkg.torch.onnx.name_scopes,['', 'predictor', 'predictor.3', 'linear_5']J¨
+pkg.torch.onnx.stack_traceçFile "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 679, in forward
+    return self.predictor(combined) / COINS_SCALE
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/Users/aaronspaulding/Sites/playground/mcc-model/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+Â
+linear_5
+scalar_tensor_default_1coins
+node_div_2"DivJA
+	namespace4: main.TeamPlacementPredictor/div_2: aten.div.TensorJT
+pkg.torch.onnx.class_hierarchy2['main.TeamPlacementPredictor', 'aten.div.Tensor']Jû
+pkg.torch.onnx.fx_nodeÉ%div_2 : [num_users=1] = call_function[target=torch.ops.aten.div.Tensor](args = (%linear_5, %scalar_tensor_default_1), kwargs = {})J+
+pkg.torch.onnx.name_scopes['', 'div_2']J¿
+pkg.torch.onnx.stack_trace°File "/Users/aaronspaulding/Sites/playground/mcc-model/packages/player-embedding/main.py", line 679, in forward
+    return self.predictor(combined) / COINS_SCALE
+main_graph*IBunknown_embeddingJ0ïªõ@&3ò¿€∂ó@É∆ò@\qò¿Ù¸ò¿áù@!pò@[:ô@≈0ö@mçö@7Ñú¿*WBunknown_encodedJ@áâG†6ãGò”åG4>åG{ˆãG¬åG·çGigåGX€ãGeôeG åG2±ãGÇ&çG˜âGæZåGØïâG*^ÆBplayer_embeddings.weightj
+locationmodel.onnx.dataj
+offset0j
+length20640p*!Bplayer_attention.biasJ·‰=*ìBplayer_encoder.0.weightJt±Ô>6…V¿ˆw”@àO@}Ôù@xÅ@ô^@Á≥8@hâ<@‘@@≥^@A@_@¡»"=[,†ø1—@õ—%Aá·êøGÜ£@-|¿?à5H@˝•]@íöU@∆ñ'@•x¿ˆ6;@%Ï_@/}ï?”p_@◊N\@*ëBplayer_encoder.0.biasJtﬁ\=¿ÍÆC¿•y>@•C@Ò"6@@çB¿9C¿`ç@¿¨gA¿⁄B¿.C¿tâB¿,B@CÈ?@ŸÏ>@•JB¿É∫B@¬∞E@'¨A¿e%B¿GMC¿EC¿ÉÖC¿§;C¿√A¿7AC¿îC¿rC¿rC¿*ZHBplayer_encoder.1.biasj
+locationmodel.onnx.dataj
+offset20640j
+length288p*]Bplayer_encoder.4.biasJ@84@Í0@0<@÷:@ÇÒ7@,^3@—6@'∫:@ôI7@≤ @ı.@}ù<@N_;@„®,@,ı0@û6@*` Bgame_id_embedding.weightj
+locationmodel.onnx.dataj
+offset20928j
+length2944p*]  Bgame_encoder.0.weightj
+locationmodel.onnx.dataj
+offset23872j
+length4096p*ú Bgame_encoder.0.biasJÄ"†¥@IN∞@o&ê@~u≥@°∑@çê∞@¬áÆ@ 2¥@ÇIØ@ÃÍ≠@≠Œ≤@X©∂@[.¥@‚1∏@7¥@ø∏@WÌ∑@¬¿ç@Úµ@«%≠@6∑∂@$£Ø@¬ò∞@Dé≥@ˇ±@Ãsµ@2¥@›¸∞@≈®Ø@Áµ@Ñaµ@µÒ∞@*[@<Bpredictor.0.weightj
+locationmodel.onnx.dataj
+offset27968j
+length15360p*ô@Bpredictor.0.biasJÄ‚∞@ŒÛ@ú	ÄñpÄ¯.+ÄÙì é?è¨næ-]OÄ’.@·˚
+@	(
+@,ÄL¿@&K@B›Ä)÷@¢JÄJg@x Ä√Z@«@ûS›u◊Är—@∫6@ºÚ?ÇNVÄ£@≤Ø	@ÿc@™Õ@sÜ@˜˚ÄŒ,/Ä¨@Ïß@öq@L?
+@-c@Éé@∑Æ@jã@À@q
+@@)ÄÄ@ +Œ¸?â«‹?såPºdÊ@˝‰@£ˇ-@r°@±ÒâÆÄYÄ(r ¿8@	@/Äım@J§@*ù@Bpredictor.3.weightJÄ•[U@`íV@™VÑ∂µÍ:∞#Ä©W⁄º–ÛMº)∂âªˇ1ºíÛV@z[@ç:V@ûWÄiŒW@GóS@ÃÕS<]_[@∑ã∫útZ@‡Z<rÔV@€¸W@t§óP'ÄËW@„ÿR@4ÖÅ“€òØ#8W@´Y@·ªV@ Û1@U@≈ôºª[ç∫7X@,MX@Á2U@&P@€ÖX@∏∏P@ﬁxS@ÊVV@]Q@õóU@◊;8;À{X@|‚±ºzU@r∫˛?T¿ºj™W@œV@â;@z≈T@©ÄØÅô‘‡<')<2V∫‘[@è∑V@L], h°R@ÜûX@*Bpredictor.3.biasJÎñ≠@*7Blifted_tensor_0J   Ä?  ¿?   @   @   @  @@        *7Blifted_tensor_1J   Ä?  ¿?  ¿?   @   @   @   @  @@*NHBval_10j
+locationmodel.onnx.dataj
+offset43328j
+length8352p*NHBval_12j
+locationmodel.onnx.dataj
+offset51680j
+length4608p*Bval_15J        *Bval_17J       *PBval_20J@-Æ∂>uË≥>‡∫>ßb∫>J†∞>Tæ{>Ûôu>	Z9?—¬=â->Äì•>Ì∏>â>¨í>R¸ÿ>üòÛ=*Bval_23J  Äˇ*Bscalar_tensor_defaultJ  Ä?*!Bscalar_tensor_default_1J ∏G*Bval_7Jˇˇˇˇˇˇˇˇ*Bval_18J        *Bval_19J       *Bval_28J       Z·
+team_features
+
+batch
+	players
+"=
+/pkg.torch.export.graph_signature.InputSpec.kind
+USER_INPUT"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"2
+!pkg.torch.onnx.original_node_nameteam_featuresZ◊
+
+player_ids
+
+batch
+	players"=
+/pkg.torch.export.graph_signature.InputSpec.kind
+USER_INPUT"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"/
+!pkg.torch.onnx.original_node_name
+player_idsZÃ
+
+team_sizes
+	
+batch"=
+/pkg.torch.export.graph_signature.InputSpec.kind
+USER_INPUT"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"/
+!pkg.torch.onnx.original_node_name
+team_sizesZÃ
+game_ids
+
+batch
+"=
+/pkg.torch.export.graph_signature.InputSpec.kind
+USER_INPUT"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"-
+!pkg.torch.onnx.original_node_namegame_idsbâ
+coins
+
+batch
+"?
+0pkg.torch.export.graph_signature.OutputSpec.kindUSER_OUTPUT"*
+!pkg.torch.onnx.original_node_namediv_2j÷
+unknown_embedding
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"8
+!pkg.torch.onnx.original_node_namep_unknown_embeddingj“
+unknown_encoded
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"6
+!pkg.torch.onnx.original_node_namep_unknown_encodedjÈ
+player_embeddings.weight
+	
+Æ
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"?
+!pkg.torch.onnx.original_node_namep_player_embeddings_weightjﬁ
+player_attention.bias
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"<
+!pkg.torch.onnx.original_node_namep_player_attention_biasj‚
+player_encoder.0.weight
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone">
+!pkg.torch.onnx.original_node_namep_player_encoder_0_weightjﬁ
+player_encoder.0.bias
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"<
+!pkg.torch.onnx.original_node_namep_player_encoder_0_biasjﬁ
+player_encoder.1.bias
+
+
+H"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"<
+!pkg.torch.onnx.original_node_namep_player_encoder_1_biasjﬁ
+player_encoder.4.bias
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"<
+!pkg.torch.onnx.original_node_namep_player_encoder_4_biasjË
+game_id_embedding.weight
+
+
+ "<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"?
+!pkg.torch.onnx.original_node_namep_game_id_embedding_weightj‚
+game_encoder.0.weight
+
+ 
+ "<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"<
+!pkg.torch.onnx.original_node_namep_game_encoder_0_weightj⁄
+game_encoder.0.bias
+
+
+ "<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone":
+!pkg.torch.onnx.original_node_namep_game_encoder_0_biasj‹
+predictor.0.weight
+
+@
+<"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"9
+!pkg.torch.onnx.original_node_namep_predictor_0_weightj‘
+predictor.0.bias
+
+
+@"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"7
+!pkg.torch.onnx.original_node_namep_predictor_0_biasj‹
+predictor.3.weight
+
+
+@"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"9
+!pkg.torch.onnx.original_node_namep_predictor_3_weightj‘
+predictor.3.bias
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"7
+!pkg.torch.onnx.original_node_namep_predictor_3_biasjÿ
+lifted_tensor_0
+
+
+"B
+/pkg.torch.export.graph_signature.InputSpec.kindCONSTANT_TENSOR"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"6
+!pkg.torch.onnx.original_node_namec_lifted_tensor_0jÿ
+lifted_tensor_1
+
+
+"B
+/pkg.torch.export.graph_signature.InputSpec.kindCONSTANT_TENSOR"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"6
+!pkg.torch.onnx.original_node_namec_lifted_tensor_1j]
+val_10
+
+
+H"C
+$pkg.onnxscript.optimizer.folded_from['player_encoder.1.weight']j]
+val_12
+
+H
+"C
+$pkg.onnxscript.optimizer.folded_from['player_encoder.4.weight']jD
+val_15
+ "2
+$pkg.onnxscript.optimizer.folded_from
+['val_14']jD
+val_17
+ "2
+$pkg.onnxscript.optimizer.folded_from
+['val_16']j]
+val_20
+
+
+"C
+$pkg.onnxscript.optimizer.folded_from['player_attention.weight']jD
+val_23
+ "2
+$pkg.onnxscript.optimizer.folded_from
+['val_22']jS
+scalar_tensor_default
+ "2
+$pkg.onnxscript.optimizer.folded_from
+['val_31']jU
+scalar_tensor_default_1
+ "2
+$pkg.onnxscript.optimizer.folded_from
+['val_32']j
+val_7
+
+
+j
+val_18
+
+
+j
+val_19
+
+
+j
+val_28
+ j
+val_3
+
+
+j
+sym_size_int_10
+ j"
+eq_4
+	
+batch
+	playersj+
+	unsqueeze
+	
+batch
+	players
+j,
+
+layer_norm
+
+batch
+	players
+j(
+val_11
+
+batch
+	players
+Hj(
+linear
+
+batch
+	players
+Hj&
+relu
+
+batch
+	players
+Hj(
+val_13
+
+batch
+	players
+j*
+linear_1
+
+batch
+	players
+j(
+relu_1
+
+batch
+	players
+j'
+where
+
+batch
+	players
+j
+arange
+
+	playersj$
+unsqueeze_1
+
+
+	playersj"
+unsqueeze_2
+
+batch
+j 
+lt
+	
+batch
+	playersj-
+unsqueeze_3
+	
+batch
+	players
+j*
+_to_copy
+
+batch
+	players
+j(
+val_21
+
+batch
+	players
+j*
+linear_2
+
+batch
+	players
+j%
+squeeze
+
+batch
+	playersj'
+	squeeze_1
+
+batch
+	playersj(
+
+_to_copy_1
+	
+batch
+	playersj)
+bitwise_not
+	
+batch
+	playersj)
+masked_fill
+
+batch
+	playersj%
+softmax
+
+batch
+	playersj-
+unsqueeze_4
+
+batch
+	players
+j(
+mul_45
+
+batch
+	players
+j
+sum_1
+
+batch
+j+
+	embedding
+
+batch
+	players
+j)
+where_1
+
+batch
+	players
+j(
+mul_57
+
+batch
+	players
+j
+sum_2
+
+batch
+j!
+
+_to_copy_2
+
+batch
+j
+div
+
+batch
+j&
+embedding_1
+
+batch
+
+ j
+val_26
+	
+batch
+j
+ne
+	
+batch
+j3
+convert_element_type_default
+
+batch
+j
+sum_3
+	
+batchj
+eq_68
+		
+batchj"
+unsqueeze_6
+	
+batch
+j
+where_2
+
+batch
+j!
+
+_to_copy_3
+
+batch
+j
+mul_75
+
+batch
+j&
+unsqueeze_7
+
+batch
+
+j!
+mul_80
+
+batch
+
+ j
+sum_4
+
+batch
+ j
+sum_5
+
+batch
+j
+clamp
+
+batch
+j
+div_1
+
+batch
+ j
+linear_3
+
+batch
+ j
+relu_2
+
+batch
+ j
+cat
+
+batch
+<j
+linear_4
+
+batch
+@j
+relu_3
+
+batch
+@j
+linear_5
+
+batch
+Ç∫
+0pkg.torch.export.ExportedProgram.graph_signatureÖ
+# inputs
+p_unknown_embedding: PARAMETER target='unknown_embedding'
+p_unknown_encoded: PARAMETER target='unknown_encoded'
+p_player_embeddings_weight: PARAMETER target='player_embeddings.weight'
+p_player_attention_weight: PARAMETER target='player_attention.weight'
+p_player_attention_bias: PARAMETER target='player_attention.bias'
+p_player_encoder_0_weight: PARAMETER target='player_encoder.0.weight'
+p_player_encoder_0_bias: PARAMETER target='player_encoder.0.bias'
+p_player_encoder_1_weight: PARAMETER target='player_encoder.1.weight'
+p_player_encoder_1_bias: PARAMETER target='player_encoder.1.bias'
+p_player_encoder_4_weight: PARAMETER target='player_encoder.4.weight'
+p_player_encoder_4_bias: PARAMETER target='player_encoder.4.bias'
+p_game_id_embedding_weight: PARAMETER target='game_id_embedding.weight'
+p_game_encoder_0_weight: PARAMETER target='game_encoder.0.weight'
+p_game_encoder_0_bias: PARAMETER target='game_encoder.0.bias'
+p_predictor_0_weight: PARAMETER target='predictor.0.weight'
+p_predictor_0_bias: PARAMETER target='predictor.0.bias'
+p_predictor_3_weight: PARAMETER target='predictor.3.weight'
+p_predictor_3_bias: PARAMETER target='predictor.3.bias'
+c_lifted_tensor_0: CONSTANT_TENSOR target='lifted_tensor_0'
+c_lifted_tensor_1: CONSTANT_TENSOR target='lifted_tensor_1'
+team_features: USER_INPUT
+player_ids: USER_INPUT
+team_sizes: USER_INPUT
+game_ids: USER_INPUT
+
+# outputs
+div_2: USER_OUTPUT
+Çj
+2pkg.torch.export.ExportedProgram.range_constraints4{s24: VR[1, 256], s20: VR[1, 8], s98: VR[0, int_oo]}B
+ 

@@ -5,15 +5,14 @@ from typing import Any, Optional
 import numpy as np
 import math
 import json
-from shared_core.data import MccIslandGame, MccIslandStats, PlayerDataFile, mcci_win_percentage
+from shared_core.data import MccIslandGame, MccIslandStats, PandoraPlayerData, PlayerDataFile, mcci_win_percentage
 import torch
 from torch.nn.functional import one_hot
 from torch.utils.data import DataLoader, Dataset, Subset
 from torch.nn.utils.rnn import pad_sequence
 from games import GAME_IDS
+from team import FEATURES_PER_PLAYER, PLAYER_EMBEDDING_SIZE
 
-PLAYERS_PER_TEAM = 4
-FEATURES_PER_PLAYER = 23
 COINS_SCALE = 35_000
 FIRST_MCC_DATE = date.fromisoformat("2019-11-17")
 
@@ -107,6 +106,63 @@ class CoinStats:
             mean=mean_team_coins, var=team_coin_variance, max=int(max), min=int(min)
         )
 
+
+@dataclass
+class RankingStats:
+    min: int
+    max: int
+    mean: float
+    var: float
+
+    @classmethod
+    def from_list(cls, all_rankings: list[float]):
+        n = len(all_rankings)
+
+        if n == 0:
+            return cls(mean=0, var=0, max=0, min=0)
+
+        sum_ranking = 0
+        max = -float("inf")
+        min = float("inf")
+
+        for ranking in all_rankings:
+            sum_ranking += ranking
+
+            if ranking < min:
+                min = ranking
+
+            if ranking > max:
+                max = ranking
+
+        mean_ranking = 0
+        ranking_variance = 0
+
+        if n > 1:
+            mean_ranking = sum_ranking / n
+            ranking_variance = sum((x - mean_ranking) ** 2 for x in all_rankings) / (
+                n - 1
+            )
+
+        return cls(
+            mean=mean_ranking, var=ranking_variance, max=int(max), min=int(min)
+        )
+
+
+class CompetitionStats:
+    team_placement: RankingStats
+    player_placement: RankingStats
+    win_percentage: float
+
+    @classmethod
+    def from_player_data(cls, event: PandoraPlayerData):
+        event_stats = cls()
+        event_stats.win_percentage = event['events_won'] / event['total_events']
+        event_stats.team_placement = RankingStats.from_list(event['team_ranking'])
+        event_stats.player_placement = RankingStats.from_list(event['player_ranking'])
+
+        return event_stats
+
+
 with open('data/players.json', 'r') as player_json:
     PLAYER_DATA = json.load(player_json)
 
@@ -122,6 +178,7 @@ class PlayerTracker:
     current_team: Optional[set[str]]
     birthday: Optional[date]
     island: MccIslandStats | None
+    pandora: CompetitionStats | None
 
     def __init__(self, name: str, island: MccIslandStats | None):
         self.event_count = 0
@@ -135,6 +192,10 @@ class PlayerTracker:
         self.island = island
 
         player_data = PLAYER_DATA.get(name, {})
+        pandora_data = player_data.get('pandora');
+
+        self.pandora = CompetitionStats.from_player_data(pandora_data) if pandora_data else None
+
         birthday = player_data.get('birthday')
 
         self.birthday = date.fromisoformat(birthday) if birthday is not None else None
@@ -294,6 +355,14 @@ class PlayerTracker:
         tensor[20] = mcci_skybattle_wins if mcci_skybattle_wins else 0
         tensor[21] = mcci_tgttos_wins if mcci_tgttos_wins else 0
         tensor[22] = 1 if mcci_battlebox_wins is not None and mcci_skybattle_wins is not None and mcci_tgttos_wins is not None else 0
+
+        # Pandora's Box
+        tensor[23] = 1 if self.pandora is not None else 0 # has participated in Pandora's Box
+        tensor[24] = self.pandora.win_percentage if self.pandora is not None else 0
+        tensor[25] = self.pandora.player_placement.max if self.pandora is not None else 0
+        tensor[26] = self.pandora.player_placement.mean if self.pandora is not None else 0
+        tensor[27] = self.pandora.player_placement.min if self.pandora is not None else 0
+        tensor[28] = self.pandora.player_placement.var if self.pandora is not None else 0
 
         return tensor
 
@@ -514,7 +583,6 @@ class TeamPlacementPredictor(torch.nn.Module):
     def __init__(self, player_count: int):
         super().__init__()
 
-        PLAYER_EMBEDDING_SIZE = 12
         PLAYER_HIDDEN_SIZE = round(FEATURES_PER_PLAYER * 2.5)
         PLAYER_ATTN_SIZE = 16
 
@@ -608,7 +676,7 @@ class TeamPlacementPredictor(torch.nn.Module):
         game_embed = self.game_encoder(game_embed)
 
         combined = torch.cat([team_embed, team_encoded, game_embed], dim=1)
-        return self.predictor(combined)
+        return self.predictor(combined) / COINS_SCALE
 
 
 def collate_teams(batch):
@@ -863,16 +931,16 @@ def run():
             ],
 
             "teams": {
-                "redrabbits": ["Feinberg", "heyGraecie", "PrinceZam", "Rendog"],
-                "orangeocelots": ["Cambam010", "DarkEyebrows", "Pangi", "ZombieCleo"],
-                "yellowyaks": ["4CVIT", "ashswag", "Mogswamp", "vGumiho"],
-                "limellamas": ["Legundo", "Shubble", "Smajor1995", "VikingPilot"],
-                "greengeckos": ["GeminiTay", "Purpled", "Roscumber", "TheOrionSound"],
-                "cyancoyotes": ["Grian", "InfiniteDrift", "PeteZahHutt", "soupforeloise"],
-                "aquaaxolotls": ["5up", "Couriway", "iJevin", "impulseSV"],
-                "bluebats": ["apokuna", "falsesymmetry", "Krinios", "Maezes"],
-                "purplepandas":  ["guqqie", "hannahxxrose", "ish13c", "Seapeekay"],
-                "pinkparrots": [ "aimsey", "jojosolos", "KatieB", "Ph1LzA"],
+                "redrabbits": ["Mogswamp", "Foolish Gamers", "PeteZahHutt", "TheOrionSound"],
+                "orangeocelots": ["hannahxxrose", "ish13c", "TinaKitten", "MinuteTech"],
+                "yellowyaks": ["aldo_geo", "Shadoune666", "iChurro", "CrystalMolly_"],
+                "limellamas": ["4CVIT", "DarkEyebrows", "NominalGravy", "Roscumber"],
+                "greengeckos": ["FitMC", "jojosolos", "Ph1LzA", "Pyroscythe"],
+                "cyancoyotes": ["bekyamon", "ClownPierce", "Smajor1995", "Tubbo"],
+                "aquaaxolotls": ["Feinberg", "InfiniteDrift", "Legundo", "ZombieCleo"],
+                "bluebats": ["Cambam010", "fruitberries", "Graecie", "millkberry"],
+                "purplepandas":  ["GeminiTay", "Grian", "impulseSV", "Purpled"],
+                "pinkparrots": [ "aimsey", "Eskay", "fWhip", "Shubble"],
             }
         }
 

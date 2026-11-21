@@ -11,7 +11,9 @@ from shared_core.data import PlayerDataFile
 import logging
 import json
 
-from data_processing.player import populate_mcc_island_data, populate_player_igns, populate_player_uuids
+from tour.mcci import populate_mcc_island_data
+from tour.mcc import populate_player_igns, populate_player_uuids
+from tour.pandoras_box import pandora_load
 
 logging.basicConfig(
     level=logging.DEBUG, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
@@ -373,7 +375,14 @@ async def extract_team_coins(page: Page) -> dict[MccTeamName, int]:
         """els => {
 
 			const rows = els.map(el => {
-				return Array.from(el.parentElement.nextElementSibling.getElementsByTagName('tbody'));
+                const headingEl = el.parentElement;
+                let tableEl = headingEl.nextElementSibling;
+
+                if (tableEl.tagName !== 'TABLE') {
+                    tableEl = tableEl.nextElementSibling;
+                }
+
+				return Array.from(tableEl.getElementsByTagName('tbody'));
 			})
 			.flat(1)
 			.map(el => {
@@ -621,6 +630,10 @@ async def load_from_wiki():
 
                     print("Getting links...")
 
+                    title = await page.title()
+
+                    print('Title', title)
+
                     links = await page.locator("a").evaluate_all(
                         """
     					els => {
@@ -722,10 +735,18 @@ def gather_player_data():
     with open("data/players.json", 'r') as player_file:
         player_mapping = json.load(player_file)
 
-    # UUIDs are looked up by IGN so populate those first.
-    # asyncio.run(populate_player_igns(player_mapping))
-    # asyncio.run(populate_player_uuids(player_mapping))
-    asyncio.run(populate_mcc_island_data(player_mapping))
+
+    async def _get_data():
+        # UUIDs are looked up by IGN so populate those first.
+        # await populate_player_igns(player_mapping)
+
+        await asyncio.gather(
+            # populate_player_uuids(player_mapping),
+            # populate_mcc_island_data(player_mapping),
+            pandora_load(player_mapping),
+        )
+
+    asyncio.run(_get_data())
 
     with open("data/players.json", 'w') as player_file:
         json.dump(player_mapping, player_file, indent='\t', sort_keys=True)

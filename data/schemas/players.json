@@ -51,6 +51,9 @@
 						"$ref": "#/$defs/islandgame"
 					}
 				}
+			},
+			"pandora": {
+				"$ref": "#/$defs/pandorastats"
 			}
 		},
 		"additionalProperties": false
@@ -68,6 +71,37 @@
 					"type": "integer",
 					"description": "The number of times the player has won this game.",
 					"minimum": 0
+				}
+			}
+		},
+		"pandorastats": {
+			"type": "object",
+			"properties": {
+				"events_won": {
+					"type": "integer",
+					"minimum": 0
+				},
+				"total_events": {
+					"type": "integer",
+					"minimum": 0
+				},
+				"player_ranking": {
+					"type": "array",
+					"items": {
+						"type": "number",
+						"description": "A number between 0 and 1 where 1 indicates they were the top player and 0 indicates they were the bottom player.",
+						"minimum": 0,
+						"maximum": 1
+					}
+				},
+				"team_ranking": {
+					"type": "array",
+					"items": {
+						"type": "number",
+						"description": "A number between 0 and 1 where 1 indicates they were on the 1st place team and 0 indicates they were on the last place team.",
+						"minimum": 0,
+						"maximum": 1
+					}
 				}
 			}
 		}

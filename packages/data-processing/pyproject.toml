@@ -10,7 +10,7 @@ dependencies = [
     "aiohttp[speedups]>=3.14.0",
     "beautifulsoup4>=4.14.3",
     "gql[all]>=4.4.0",
-    "playwright>=1.60.0",
+    "playwright>=1.65.1",
     "shared-core",
 ]
 

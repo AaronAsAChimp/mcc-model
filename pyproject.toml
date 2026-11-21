@@ -9,13 +9,13 @@ license-files = ["LICENSE"]
 dependencies = [
 	"player-embedding",
 	"data-processing",
-	"shared-core",
+	"shared-core"
 ]
 
 [tool.uv.sources]
 player-embedding = { workspace = true }
-data-processing = { workspace = true }
 shared-core = { workspace = true }
+data-processing = { workspace = true }
 
 [tool.uv.workspace]
 members = ["packages/*"]

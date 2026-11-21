@@ -18,7 +18,47 @@
 				"wins": 41
 			}
 		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.34375,
+				0.625,
+				0.5,
+				0.5
+			],
+			"team_ranking": [
+				0.875,
+				0.75,
+				0.375,
+				0.25
+			],
+			"total_events": 4
+		},
 		"uuid": "7663199ff927422da38a065b0d26121f"
+	},
+	"5pxrky": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.21875,
+				0.21875,
+				0.1875,
+				0.375,
+				0.3125,
+				0.25,
+				0.375
+			],
+			"team_ranking": [
+				0.125,
+				0.75,
+				0.125,
+				0.5,
+				0.25,
+				0.5,
+				0.375
+			],
+			"total_events": 7
+		}
 	},
 	"5up": {
 		"aliases": [
@@ -29,7 +69,37 @@
 		"island": {
 			"lastupdate": "2026-10-25T15:56:41.211823+00:00"
 		},
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.375,
+				0.09375,
+				0.15625,
+				0.25,
+				0.5625
+			],
+			"team_ranking": [
+				0.625,
+				0.0,
+				0.125,
+				0.5,
+				0.75
+			],
+			"total_events": 5
+		},
 		"uuid": "0f5e0db013a04125a97ae9f8e872d521"
+	},
+	"AJTHEBOLD": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.75
+			],
+			"team_ranking": [
+				0.25
+			],
+			"total_events": 1
+		}
 	},
 	"AQUINO": {
 		"aliases": [
@@ -48,6 +118,36 @@
 			"lastupdate": "2026-10-25T15:56:41.211823+00:00"
 		},
 		"uuid": "04971d289aa34686ae90c732c562f4f4"
+	},
+	"ActuallyNarwhal": {
+		"pandora": {
+			"events_won": 3,
+			"player_ranking": [
+				0.375,
+				0.71875,
+				0.53125,
+				0.625,
+				0.75,
+				0.46875,
+				0.40625,
+				0.15625,
+				0.4375,
+				0.125
+			],
+			"team_ranking": [
+				0.375,
+				0.75,
+				0.625,
+				0.25,
+				0.875,
+				0.5,
+				0.25,
+				0.0,
+				0.75,
+				0.125
+			],
+			"total_events": 10
+		}
 	},
 	"Aerington": {
 		"ign": "Aerington",
@@ -73,6 +173,36 @@
 		},
 		"uuid": "d83d092c0fbe4d9f8a6bd9c58eaafa62"
 	},
+	"Ameston": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.78125,
+				0.8125,
+				0.53125
+			],
+			"team_ranking": [
+				0.5,
+				0.875,
+				0.875
+			],
+			"total_events": 3
+		}
+	},
+	"Animagician": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.25,
+				0.1875
+			],
+			"team_ranking": [
+				0.25,
+				0.75
+			],
+			"total_events": 2
+		}
+	},
 	"AnsiChan": {
 		"ign": "AnsiChan",
 		"island": {
@@ -97,6 +227,18 @@
 				"wins": 0
 			}
 		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.1875,
+				0.21875
+			],
+			"team_ranking": [
+				0.25,
+				0.125
+			],
+			"total_events": 2
+		},
 		"uuid": "0c063bfd3521413da76650be1d71f00e"
 	},
 	"Antfrost": {
@@ -104,6 +246,34 @@
 		"ign": "Antfrost",
 		"island": {
 			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
+		},
+		"pandora": {
+			"events_won": 2,
+			"player_ranking": [
+				0.75,
+				0.625,
+				0.875,
+				0.84375,
+				0.6875,
+				0.875,
+				0.6875,
+				0.4375,
+				0.65625,
+				0.5625
+			],
+			"team_ranking": [
+				0.75,
+				0.625,
+				0.75,
+				0.5,
+				0.625,
+				0.625,
+				0.375,
+				0.125,
+				0.125,
+				0.375
+			],
+			"total_events": 10
 		},
 		"uuid": "0a28b1829fb34d6ebd96fabd2fe6648a"
 	},
@@ -117,12 +287,62 @@
 		},
 		"uuid": "bb9430b7e87c4128a873d1494881342b"
 	},
+	"Anthos": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.0,
+				0.03125,
+				0.09375,
+				0.0,
+				0.1875,
+				0.0625,
+				0.0625,
+				0.03125
+			],
+			"team_ranking": [
+				0.125,
+				0.75,
+				0.875,
+				0.0,
+				0.375,
+				0.25,
+				0.0,
+				0.75
+			],
+			"total_events": 8
+		}
+	},
 	"Aphmau": {
 		"ign": "Aphmau",
 		"island": {
 			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
 		},
 		"uuid": "c82906afbdcf436c80c6216e5228763b"
+	},
+	"AragonTelly": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.25
+			],
+			"team_ranking": [
+				0.375
+			],
+			"total_events": 1
+		}
+	},
+	"ArbysMeat": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.625
+			],
+			"team_ranking": [
+				0.625
+			],
+			"total_events": 1
+		}
 	},
 	"ArtemisAblaze": {
 		"ign": "ArtemisAblaze",
@@ -138,6 +358,18 @@
 		},
 		"uuid": "db334783ed1c4032b9643410d319fddf"
 	},
+	"Auzifps": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.59375
+			],
+			"team_ranking": [
+				0.875
+			],
+			"total_events": 1
+		}
+	},
 	"Ava Tyson": {
 		"aliases": [
 			"AvaKrisTyson"
@@ -148,6 +380,34 @@
 		},
 		"uuid": "96e1626019804c04892f7b57c799904e"
 	},
+	"AvaJC": {
+		"pandora": {
+			"events_won": 2,
+			"player_ranking": [
+				0.34375,
+				0.5625,
+				0.1875,
+				0.53125,
+				0.21875,
+				0.15625,
+				0.125,
+				0.3125,
+				0.1875
+			],
+			"team_ranking": [
+				0.375,
+				0.625,
+				0.75,
+				0.875,
+				0.25,
+				0.0,
+				0.125,
+				0.625,
+				0.25
+			],
+			"total_events": 9
+		}
+	},
 	"AvidMc": {
 		"aliases": [
 			"AvidMc_"
@@ -157,6 +417,37 @@
 			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
 		},
 		"uuid": "c28992ec81854c8ea22efa3f07e42af2"
+	},
+	"Awre": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.09375,
+				0.53125,
+				0.875,
+				0.9375,
+				0.71875,
+				0.90625,
+				0.78125,
+				0.84375,
+				0.78125,
+				0.59375
+			],
+			"team_ranking": [
+				0.125,
+				0.125,
+				0.5,
+				0.875,
+				0.375,
+				0.125,
+				0.0,
+				0.125,
+				0.875,
+				0.5,
+				0.25
+			],
+			"total_events": 11
+		}
 	},
 	"AyChristene": {
 		"ign": "AyChristene",
@@ -171,6 +462,24 @@
 			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
 		},
 		"uuid": "6f01a3e1252a44cb951ec28ca1455d69"
+	},
+	"Baablu": {
+		"pandora": {
+			"events_won": 2,
+			"player_ranking": [
+				0.40625,
+				0.75,
+				0.71875,
+				0.75
+			],
+			"team_ranking": [
+				0.25,
+				0.75,
+				0.25,
+				0.75
+			],
+			"total_events": 4
+		}
 	},
 	"BaboAbe": {
 		"ign": "BaboAbe",
@@ -192,6 +501,22 @@
 			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
 		},
 		"uuid": "91b4b2d607ae47bba66f13c28c3d1842"
+	},
+	"Baseballdrew": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.40625,
+				0.25,
+				0.09375
+			],
+			"team_ranking": [
+				0.25,
+				0.375,
+				0.125
+			],
+			"total_events": 3
+		}
 	},
 	"BdoubleO100": {
 		"ign": "BdoubleO100",
@@ -222,6 +547,18 @@
 		},
 		"uuid": "b992073ed13e4f0991a3a8f1305b02aa"
 	},
+	"Beauloon": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.34375
+			],
+			"team_ranking": [
+				0.25
+			],
+			"total_events": 1
+		}
+	},
 	"Bedgar": {
 		"aliases": [
 			"Bedgar_"
@@ -238,6 +575,32 @@
 			"lastupdate": "2026-10-25T15:57:48.382707+00:00"
 		},
 		"uuid": "0fce6e5fc374412baf92f4c4534f5c37"
+	},
+	"BenJeeBox": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.375
+			],
+			"team_ranking": [
+				0.625
+			],
+			"total_events": 1
+		}
+	},
+	"Benex": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.1875,
+				0.03125
+			],
+			"team_ranking": [
+				0.0,
+				0.0
+			],
+			"total_events": 2
+		}
 	},
 	"Bigbst4tz2": {
 		"aliases": [
@@ -275,6 +638,32 @@
 		},
 		"uuid": "4e222be1c83b49ff91f5a08d0c74b250"
 	},
+	"Blueskiesclub": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.5,
+				0.09375,
+				0.25,
+				0.34375,
+				0.25,
+				0.15625,
+				0.15625,
+				0.1875
+			],
+			"team_ranking": [
+				0.625,
+				0.25,
+				0.75,
+				0.75,
+				0.25,
+				0.375,
+				0.0,
+				0.375
+			],
+			"total_events": 8
+		}
+	},
 	"Blushi": {
 		"ign": "Blushi",
 		"island": {
@@ -294,6 +683,26 @@
 		"ign": "Boosfer",
 		"island": {
 			"lastupdate": "2026-10-25T15:59:49.226833+00:00"
+		},
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.40625,
+				0.59375,
+				0.5,
+				0.46875,
+				0.28125,
+				0.46875
+			],
+			"team_ranking": [
+				0.75,
+				0.5,
+				0.875,
+				0.25,
+				0.5,
+				0.5
+			],
+			"total_events": 6
 		},
 		"uuid": "4232c61f56db4d4cbdc24dbd406a3575"
 	},
@@ -341,12 +750,92 @@
 		},
 		"uuid": "6b3e42d204d04c1a9b7b955fbba5909f"
 	},
+	"BryTheGuy": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.3125
+			],
+			"team_ranking": [
+				0.0
+			],
+			"total_events": 1
+		}
+	},
 	"Bubblebrooke": {
 		"ign": "Bubblebrooke",
 		"island": {
 			"lastupdate": "2026-10-25T15:59:49.226833+00:00"
 		},
 		"uuid": "fa34ae684b3a40bfaa099b67b5500feb"
+	},
+	"C10WD": {
+		"pandora": {
+			"events_won": 2,
+			"player_ranking": [
+				0.625,
+				0.78125,
+				0.6875,
+				0.9375,
+				0.9375,
+				0.625,
+				0.90625,
+				0.9375,
+				0.75,
+				0.4375,
+				0.96875,
+				0.9375
+			],
+			"team_ranking": [
+				0.375,
+				0.5,
+				0.25,
+				0.875,
+				0.875,
+				0.25,
+				0.5,
+				0.75,
+				0.5,
+				0.0,
+				0.375,
+				0.875
+			],
+			"total_events": 12
+		}
+	},
+	"CGQ": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.78125,
+				0.9375,
+				0.8125,
+				0.78125,
+				0.71875,
+				0.84375,
+				0.75,
+				0.6875,
+				0.75,
+				0.65625,
+				0.90625,
+				0.90625
+			],
+			"team_ranking": [
+				0.75,
+				0.25,
+				0.625,
+				0.625,
+				0.375,
+				0.625,
+				0.125,
+				0.125,
+				0.25,
+				0.125,
+				0.75,
+				0.5
+			],
+			"total_events": 12
+		}
 	},
 	"Calce": {
 		"aliases": [
@@ -386,6 +875,18 @@
 		},
 		"uuid": "135cde0abe8a46a6979c3a24a5c94ade"
 	},
+	"CaptainAJX": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.28125
+			],
+			"team_ranking": [
+				0.75
+			],
+			"total_events": 1
+		}
+	},
 	"CaptainPuffy": {
 		"birthday": "1998-09-18",
 		"ign": "CaptainPuffy",
@@ -422,6 +923,36 @@
 		},
 		"uuid": "459dbceed3ea4abc903cfdcae3065dd3"
 	},
+	"Celestialrain": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.1875,
+				0.375,
+				0.125,
+				0.09375,
+				0.0625,
+				0.0,
+				0.21875,
+				0.1875,
+				0.125,
+				0.03125
+			],
+			"team_ranking": [
+				0.25,
+				0.375,
+				0.375,
+				0.5,
+				0.375,
+				0.125,
+				0.625,
+				0.75,
+				0.75,
+				0.25
+			],
+			"total_events": 10
+		}
+	},
 	"Checkpoint": {
 		"aliases": [
 			"SteveCP"
@@ -435,6 +966,18 @@
 			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
 		},
 		"uuid": "cbfecae3f24f430aad78b85973df8b26"
+	},
+	"ChiefXD": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.375
+			],
+			"team_ranking": [
+				0.75
+			],
+			"total_events": 1
+		}
 	},
 	"ChilledChaos": {
 		"aliases": [
@@ -467,6 +1010,18 @@
 		},
 		"uuid": "c435bc8c55f341dcb3b6f31a1072238e"
 	},
+	"ClownPierce": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.15625
+			],
+			"team_ranking": [
+				0.125
+			],
+			"total_events": 1
+		}
+	},
 	"CodeNeon": {
 		"ign": "CodeNeon",
 		"island": {
@@ -494,6 +1049,16 @@
 		"island": {
 			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
 		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.21875
+			],
+			"team_ranking": [
+				0.0
+			],
+			"total_events": 1
+		},
 		"uuid": "64e592bc2702494e961fa7af3af67729"
 	},
 	"Couriway": {
@@ -501,6 +1066,20 @@
 		"ign": "Couriway",
 		"island": {
 			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
+		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.40625,
+				0.875,
+				0.53125
+			],
+			"team_ranking": [
+				0.25,
+				0.625,
+				0.25
+			],
+			"total_events": 3
 		},
 		"uuid": "994f93763f8048bc9e72ee92f861911d"
 	},
@@ -510,6 +1089,32 @@
 			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
 		},
 		"uuid": "17c7d92f875f433caaba4a937be0b45e"
+	},
+	"Craftclan": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.40625,
+				0.875,
+				0.9375,
+				0.75,
+				0.8125,
+				0.6875,
+				0.75,
+				0.65625
+			],
+			"team_ranking": [
+				0.375,
+				0.625,
+				0.75,
+				0.25,
+				0.75,
+				0.0,
+				0.375,
+				0.5
+			],
+			"total_events": 8
+		}
 	},
 	"Craig Frost": {
 		"aliases": [
@@ -547,6 +1152,36 @@
 		},
 		"uuid": "5ed2a0ff69d94e4eb8f045d6d57adf26"
 	},
+	"CxrtxR": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.53125,
+				0.46875,
+				0.4375,
+				0.875,
+				0.6875,
+				0.75,
+				0.6875,
+				0.78125,
+				0.8125,
+				0.84375
+			],
+			"team_ranking": [
+				0.5,
+				0.75,
+				0.5,
+				0.75,
+				0.125,
+				0.375,
+				0.0,
+				0.75,
+				0.5,
+				0.625
+			],
+			"total_events": 10
+		}
+	},
 	"Cydonia": {
 		"aliases": [
 			"CydoniaPM"
@@ -557,6 +1192,64 @@
 			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
 		},
 		"uuid": "56d8c6a8a00c45fba853129b3ecbb681"
+	},
+	"DGc": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.40625
+			],
+			"team_ranking": [
+				0.25
+			],
+			"total_events": 1
+		}
+	},
+	"DONG FORTNITE": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.6875,
+				0.46875,
+				0.8125,
+				0.65625,
+				0.71875,
+				0.71875,
+				0.8125,
+				0.59375,
+				0.96875,
+				0.84375,
+				0.875,
+				0.625
+			],
+			"team_ranking": [
+				0.25,
+				0.125,
+				0.5,
+				0.25,
+				0.5,
+				0.5,
+				0.375,
+				0.25,
+				0.875,
+				0.5,
+				0.5,
+				0.125
+			],
+			"total_events": 12
+		}
+	},
+	"DaHouse Panda": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.28125
+			],
+			"team_ranking": [
+				0.375
+			],
+			"total_events": 1
+		}
 	},
 	"Daltos": {
 		"ign": "Daltos",
@@ -586,6 +1279,18 @@
 			"lastupdate": "2026-10-25T16:18:50.079507+00:00"
 		},
 		"uuid": "81c843aa1c2f40a490f73c87e524ffff"
+	},
+	"Derapchu": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.0
+			],
+			"team_ranking": [
+				0.375
+			],
+			"total_events": 1
+		}
 	},
 	"Dethridge": {
 		"ign": "dethridge",
@@ -635,6 +1340,18 @@
 		],
 		"ign": "Dr. Simon Clark",
 		"uuid": "unresolvable"
+	},
+	"DrDonut": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.40625
+			],
+			"team_ranking": [
+				0.375
+			],
+			"total_events": 1
+		}
 	},
 	"DrGluon": {
 		"aliases": [
@@ -701,6 +1418,18 @@
 		},
 		"uuid": "e064357d445b425ab426e3beed177ac5"
 	},
+	"ECorridor": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.0625
+			],
+			"team_ranking": [
+				0.0
+			],
+			"total_events": 1
+		}
+	},
 	"Ejzar": {
 		"ign": "Ejzar",
 		"island": {
@@ -726,6 +1455,56 @@
 			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
 		},
 		"uuid": "fe40aaa6792e418d858fbcb922f38471"
+	},
+	"Enderara": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.09375,
+				0.25
+			],
+			"team_ranking": [
+				0.25,
+				0.875
+			],
+			"total_events": 2
+		}
+	},
+	"EpicFH": {
+		"pandora": {
+			"events_won": 2,
+			"player_ranking": [
+				0.6875,
+				0.6875,
+				0.96875,
+				0.78125,
+				0.78125,
+				0.78125,
+				0.875,
+				0.875,
+				0.90625,
+				0.0625,
+				0.53125,
+				0.78125,
+				0.53125
+			],
+			"team_ranking": [
+				0.625,
+				0.25,
+				0.875,
+				0.125,
+				0.75,
+				0.75,
+				0.5,
+				0.875,
+				0.75,
+				0.375,
+				0.125,
+				0.125,
+				0.0
+			],
+			"total_events": 13
+		}
 	},
 	"Eret": {
 		"aliases": [
@@ -827,6 +1606,18 @@
 		},
 		"uuid": "87d915486f18491fa2677833caa5d7d8"
 	},
+	"Farfadox": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.3125
+			],
+			"team_ranking": [
+				0.0
+			],
+			"total_events": 1
+		}
+	},
 	"Farrantula": {
 		"aliases": [
 			"OX_Andy"
@@ -836,6 +1627,24 @@
 			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
 		},
 		"uuid": "ad383d07faf24721b4046a7f47c8c9ea"
+	},
+	"Fayewars": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.03125,
+				0.5,
+				0.65625,
+				0.71875
+			],
+			"team_ranking": [
+				0.125,
+				0.5,
+				0.875,
+				0.625
+			],
+			"total_events": 4
+		}
 	},
 	"Feinberg": {
 		"birthday": "2002-10-18",
@@ -854,6 +1663,26 @@
 				"games": 240,
 				"wins": 115
 			}
+		},
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.96875,
+				0.9375,
+				0.75,
+				0.78125,
+				0.84375,
+				0.875
+			],
+			"team_ranking": [
+				0.875,
+				0.25,
+				0.25,
+				0.625,
+				0.625,
+				0.5
+			],
+			"total_events": 6
 		},
 		"uuid": "9a8e24df4c8549d696a6951da84fa5c4"
 	},
@@ -892,6 +1721,38 @@
 				"wins": 132
 			}
 		},
+		"pandora": {
+			"events_won": 2,
+			"player_ranking": [
+				0.5625,
+				0.9375,
+				0.90625,
+				0.84375,
+				0.71875,
+				0.71875,
+				0.53125,
+				0.65625,
+				0.78125,
+				0.90625,
+				0.96875,
+				0.96875
+			],
+			"team_ranking": [
+				0.0,
+				0.5,
+				0.375,
+				0.75,
+				0.75,
+				0.125,
+				0.0,
+				0.375,
+				0.0,
+				0.625,
+				0.5,
+				0.875
+			],
+			"total_events": 12
+		},
 		"uuid": "c3ef41ce0da54a23ae9484305de8d99b"
 	},
 	"FitMC": {
@@ -903,6 +1764,18 @@
 			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
 		},
 		"uuid": "fdee323e7f0c4c158d1c0f277442342a"
+	},
+	"FlameFrags": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.375
+			],
+			"team_ranking": [
+				0.25
+			],
+			"total_events": 1
+		}
 	},
 	"FlexVega": {
 		"aliases": [
@@ -936,6 +1809,24 @@
 		"ign": "Fulham",
 		"island": {
 			"lastupdate": "2026-10-25T16:21:14.787009+00:00"
+		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.03125,
+				0.09375,
+				0.375,
+				0.53125,
+				0.09375
+			],
+			"team_ranking": [
+				0.0,
+				0.25,
+				0.5,
+				0.875,
+				0.0
+			],
+			"total_events": 5
 		},
 		"uuid": "04b71379daad40a1891fa1d49964d69d"
 	},
@@ -1100,6 +1991,34 @@
 		},
 		"uuid": "c794dc38d7e947b98f007d1c30ef7737"
 	},
+	"Gummywroms": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.875,
+				0.96875,
+				0.75,
+				0.5625,
+				0.875,
+				0.84375,
+				0.8125,
+				0.9375,
+				0.1875
+			],
+			"team_ranking": [
+				0.875,
+				0.875,
+				0.5,
+				0.0,
+				0.25,
+				0.625,
+				0.375,
+				0.125,
+				0.0
+			],
+			"total_events": 9
+		}
+	},
 	"Gussy": {
 		"aliases": [
 			"GussyGang_"
@@ -1128,6 +2047,50 @@
 		},
 		"uuid": "75144cf1514045b096387287dc53cd48"
 	},
+	"Hannahxxrose": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.34375,
+				0.3125
+			],
+			"team_ranking": [
+				0.375,
+				0.375
+			],
+			"total_events": 2
+		}
+	},
+	"Heliodor": {
+		"pandora": {
+			"events_won": 3,
+			"player_ranking": [
+				0.71875,
+				0.46875,
+				0.5,
+				0.375,
+				0.65625,
+				0.59375,
+				0.375,
+				0.34375,
+				0.03125,
+				0.53125
+			],
+			"team_ranking": [
+				0.75,
+				0.75,
+				0.625,
+				0.375,
+				0.75,
+				0.375,
+				0.0,
+				0.125,
+				0.375,
+				0.875
+			],
+			"total_events": 11
+		}
+	},
 	"HeySansi": {
 		"aliases": [
 			"heySansi"
@@ -1144,6 +2107,18 @@
 			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
 		},
 		"uuid": "015455598c144932b6a9cb0df192be18"
+	},
+	"Highkeyhateme": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.28125
+			],
+			"team_ranking": [
+				0.5
+			],
+			"total_events": 1
+		}
 	},
 	"Hrry": {
 		"aliases": [
@@ -1165,6 +2140,50 @@
 			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
 		},
 		"uuid": "262be77502414678b142976af36cfbb8"
+	},
+	"IDogmy": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.21875
+			],
+			"team_ranking": [
+				0.125
+			],
+			"total_events": 1
+		}
+	},
+	"IRONSTARR": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.84375,
+				0.65625,
+				0.84375,
+				0.6875,
+				0.75,
+				0.34375,
+				0.5,
+				0.6875,
+				0.5625,
+				0.59375,
+				0.25
+			],
+			"team_ranking": [
+				0.875,
+				0.375,
+				0.75,
+				0.5,
+				0.25,
+				0.125,
+				0.625,
+				0.75,
+				0.125,
+				0.75,
+				0.375
+			],
+			"total_events": 11
+		}
 	},
 	"Illumina": {
 		"ign": "Illumina",
@@ -1205,6 +2224,18 @@
 		},
 		"uuid": "2907928a40a0453aa95396ce40862469"
 	},
+	"InsaneOrbitzz": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.46875
+			],
+			"team_ranking": [
+				0.75
+			],
+			"total_events": 1
+		}
+	},
 	"ItsFunneh": {
 		"birthday": "1995-10-31",
 		"ign": "ItsFunneh",
@@ -1219,6 +2250,70 @@
 			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
 		},
 		"uuid": "6ef0925ce2c7410cb9d49b5c7ac0c7a5"
+	},
+	"ItsNitroTiger": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.46875,
+				0.4375,
+				0.71875,
+				0.46875,
+				0.59375,
+				0.15625,
+				0.6875,
+				0.28125,
+				0.375,
+				0.5,
+				0.28125,
+				0.125
+			],
+			"team_ranking": [
+				0.5,
+				0.0,
+				0.875,
+				0.375,
+				0.75,
+				0.125,
+				0.875,
+				0.25,
+				0.125,
+				0.875,
+				0.125,
+				0.125
+			],
+			"total_events": 12
+		}
+	},
+	"ItzIgglesPiggles": {
+		"pandora": {
+			"events_won": 3,
+			"player_ranking": [
+				0.75,
+				0.59375,
+				0.625,
+				0.96875,
+				0.78125,
+				0.9375,
+				0.78125,
+				0.8125,
+				0.90625,
+				0.84375
+			],
+			"team_ranking": [
+				0.125,
+				0.375,
+				0.5,
+				0.875,
+				0.375,
+				0.75,
+				0.0,
+				0.75,
+				0.5,
+				0.625
+			],
+			"total_events": 10
+		}
 	},
 	"ItzMasayoshi": {
 		"ign": "ItzMasayoshi",
@@ -1400,6 +2495,20 @@
 		},
 		"uuid": "e5484a19e1fa4ea394a704bb6697ad33"
 	},
+	"JumperWho": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.53125,
+				0.25
+			],
+			"team_ranking": [
+				0.75,
+				0.25
+			],
+			"total_events": 2
+		}
+	},
 	"JustNova": {
 		"aliases": [
 			"JustNova111"
@@ -1409,6 +2518,104 @@
 			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
 		},
 		"uuid": "68db77faeb4f42e88b65988f001674cf"
+	},
+	"KaNukei": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.5
+			],
+			"team_ranking": [
+				0.375
+			],
+			"total_events": 1
+		}
+	},
+	"Kaelan": {
+		"pandora": {
+			"events_won": 4,
+			"player_ranking": [
+				0.21875,
+				0.65625,
+				0.90625,
+				0.90625,
+				0.96875,
+				0.78125,
+				0.875,
+				0.96875,
+				0.9375,
+				0.90625,
+				0.96875
+			],
+			"team_ranking": [
+				0.0,
+				0.5,
+				0.625,
+				0.875,
+				0.875,
+				0.375,
+				0.625,
+				0.75,
+				0.875,
+				0.0,
+				0.75
+			],
+			"total_events": 11
+		}
+	},
+	"Kaizo": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.15625,
+				0.09375
+			],
+			"team_ranking": [
+				0.375,
+				0.0
+			],
+			"total_events": 2
+		}
+	},
+	"Kaos21a": {
+		"pandora": {
+			"events_won": 3,
+			"player_ranking": [
+				0.40625,
+				0.375,
+				0.78125,
+				0.9375,
+				0.8125,
+				0.65625,
+				0.71875,
+				0.8125,
+				0.65625,
+				0.4375,
+				0.71875,
+				0.71875,
+				0.875,
+				0.65625,
+				0.78125
+			],
+			"team_ranking": [
+				0.75,
+				0.5,
+				0.75,
+				0.75,
+				0.75,
+				0.375,
+				0.875,
+				0.625,
+				0.125,
+				0.125,
+				0.25,
+				0.75,
+				0.625,
+				0.75,
+				0.625
+			],
+			"total_events": 15
+		}
 	},
 	"Kara Corvus": {
 		"aliases": [
@@ -1429,6 +2636,18 @@
 			"lastupdate": "2026-10-25T16:23:55.189615+00:00"
 		},
 		"uuid": "014c89d5701a43ae9d0dbf5568cb5286"
+	},
+	"Katevena": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.09375
+			],
+			"team_ranking": [
+				0.25
+			],
+			"total_events": 1
+		}
 	},
 	"Katherine Elizabeth": {
 		"aliases": [
@@ -1458,6 +2677,56 @@
 		},
 		"uuid": "2568b92e78c7435fa584308064e99f60"
 	},
+	"Kelawesome": {
+		"pandora": {
+			"events_won": 2,
+			"player_ranking": [
+				0.96875,
+				0.96875,
+				0.96875,
+				0.875,
+				0.96875,
+				0.84375,
+				0.46875
+			],
+			"team_ranking": [
+				0.875,
+				0.75,
+				0.625,
+				0.625,
+				0.5,
+				0.0,
+				0.375,
+				0.0,
+				0.25
+			],
+			"total_events": 9
+		}
+	},
+	"KendallWasKilled": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.0,
+				0.28125,
+				0.125,
+				0.03125,
+				0.0625,
+				0.0,
+				0.0
+			],
+			"team_ranking": [
+				0.125,
+				0.875,
+				0.375,
+				0.25,
+				0.375,
+				0.125,
+				0.0
+			],
+			"total_events": 7
+		}
+	},
 	"KendoMurft": {
 		"ign": "KendoMurft",
 		"island": {
@@ -1475,6 +2744,18 @@
 			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
 		},
 		"uuid": "ed260cac54e44ee5b4ded289f197fa45"
+	},
+	"Keyshinx": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.15625
+			],
+			"team_ranking": [
+				0.25
+			],
+			"total_events": 1
+		}
 	},
 	"KhaosKorps": {
 		"ign": "KhaosKorps",
@@ -1536,6 +2817,16 @@
 		"island": {
 			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
 		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.625
+			],
+			"team_ranking": [
+				0.5
+			],
+			"total_events": 1
+		},
 		"uuid": "8e48e3a874e0412d9be6bcb49cb34a9e"
 	},
 	"KreekCraft": {
@@ -1589,6 +2880,26 @@
 		},
 		"uuid": "b7f04012db344f4a97458cdc5bc8132b"
 	},
+	"KyleEff": {
+		"pandora": {
+			"events_won": 2,
+			"player_ranking": [
+				0.0625,
+				0.4375,
+				0.375,
+				0.59375,
+				0.6875
+			],
+			"team_ranking": [
+				0.25,
+				0.875,
+				0.75,
+				0.375,
+				0.875
+			],
+			"total_events": 5
+		}
+	},
 	"LDShadowLady": {
 		"ign": "LDShadowLady",
 		"island": {
@@ -1609,6 +2920,55 @@
 			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
 		},
 		"uuid": "e54b429322834724ac473968e9fe8499"
+	},
+	"Lampeyre": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.8125
+			],
+			"team_ranking": [
+				0.375
+			],
+			"total_events": 1
+		}
+	},
+	"Lantastic": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.125,
+				0.21875,
+				0.59375,
+				0.3125,
+				0.3125,
+				0.34375,
+				0.40625,
+				0.28125,
+				0.125,
+				0.28125,
+				0.125,
+				0.3125,
+				0.09375,
+				0.34375
+			],
+			"team_ranking": [
+				0.0,
+				0.0,
+				0.625,
+				0.625,
+				0.25,
+				0.625,
+				0.375,
+				0.5,
+				0.75,
+				0.5,
+				0.625,
+				0.125,
+				0.875
+			],
+			"total_events": 14
+		}
 	},
 	"LaosOneView": {
 		"ign": "LaosOneView",
@@ -1649,6 +3009,16 @@
 		"island": {
 			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
 		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.09375
+			],
+			"team_ranking": [
+				0.25
+			],
+			"total_events": 1
+		},
 		"uuid": "a4cae4898554479d8dfb408366ef6781"
 	},
 	"Leozaur": {
@@ -1682,6 +3052,50 @@
 		},
 		"uuid": "7ed4675ef67a4cb99cb3e3035dec7ff1"
 	},
+	"Lihzahrd": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.25,
+				0.15625,
+				0.25,
+				0.0,
+				0.21875
+			],
+			"team_ranking": [
+				0.375,
+				0.125,
+				0.75,
+				0.125,
+				0.5
+			],
+			"total_events": 5
+		}
+	},
+	"LilKae": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.03125
+			],
+			"team_ranking": [
+				0.0
+			],
+			"total_events": 1
+		}
+	},
+	"LilithLuvsYa": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.0
+			],
+			"team_ranking": [
+				0.125
+			],
+			"total_events": 1
+		}
+	},
 	"LilyPichu": {
 		"aliases": [
 			"LilyCraftChu"
@@ -1707,6 +3121,106 @@
 		},
 		"uuid": "fd7fb38b78b543309749531b0e0a26f3"
 	},
+	"LockieNess": {
+		"pandora": {
+			"events_won": 2,
+			"player_ranking": [
+				0.0,
+				0.40625,
+				0.125,
+				0.21875,
+				0.28125,
+				0.28125,
+				0.3125
+			],
+			"team_ranking": [
+				0.5,
+				0.75,
+				0.375,
+				0.5,
+				0.875,
+				0.125,
+				0.5
+			],
+			"total_events": 7
+		}
+	},
+	"Loefars": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.75,
+				0.78125,
+				0.90625,
+				0.53125,
+				0.8125,
+				0.09375,
+				0.59375,
+				0.59375,
+				0.3125,
+				0.75,
+				0.4375
+			],
+			"team_ranking": [
+				0.375,
+				0.75,
+				0.25,
+				0.625,
+				0.625,
+				0.625,
+				0.375,
+				0.25,
+				0.125,
+				0.875,
+				0.0
+			],
+			"total_events": 11
+		}
+	},
+	"Lopsidedhead": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.0625,
+				0.125,
+				0.28125,
+				0.15625,
+				0.21875,
+				0.0625,
+				0.15625
+			],
+			"team_ranking": [
+				0.0,
+				0.0,
+				0.5,
+				0.25,
+				0.625,
+				0.5,
+				0.625
+			],
+			"total_events": 7
+		}
+	},
+	"LucarioKnight": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.09375,
+				0.25,
+				0.0625,
+				0.375,
+				0.40625
+			],
+			"team_ranking": [
+				0.0,
+				0.0,
+				0.625,
+				0.375,
+				0.75
+			],
+			"total_events": 5
+		}
+	},
 	"Lucowskyx": {
 		"aliases": [
 			"lucowskyx"
@@ -1716,6 +3230,36 @@
 			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
 		},
 		"uuid": "3cb76bfadd6d4f32800dca4a3bf30b84"
+	},
+	"LucyHexes": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.25,
+				0.5,
+				0.1875,
+				0.28125,
+				0.59375,
+				0.3125,
+				0.3125,
+				0.3125,
+				0.0625,
+				0.0625
+			],
+			"team_ranking": [
+				0.375,
+				0.25,
+				0.0,
+				0.375,
+				0.875,
+				0.0,
+				0.375,
+				0.25,
+				0.0,
+				0.0
+			],
+			"total_events": 10
+		}
 	},
 	"Ludwig": {
 		"aliases": [
@@ -1748,6 +3292,32 @@
 		},
 		"uuid": "fd12b032b849402890e4c75229e7a397"
 	},
+	"MCmorganplayz": {
+		"pandora": {
+			"events_won": 3,
+			"player_ranking": [
+				0.28125,
+				0.75,
+				0.4375,
+				0.8125,
+				0.9375,
+				0.625,
+				0.71875,
+				0.4375
+			],
+			"team_ranking": [
+				0.25,
+				0.75,
+				0.0,
+				0.875,
+				0.75,
+				0.0,
+				0.125,
+				0.0
+			],
+			"total_events": 8
+		}
+	},
 	"Maezes": {
 		"ign": "Maezes",
 		"island": {
@@ -1761,6 +3331,22 @@
 			"lastupdate": "2026-10-25T16:27:53.753783+00:00"
 		},
 		"uuid": "469fdc6056a6439ca615e53b72b4e88f"
+	},
+	"ManWithRaft": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.59375,
+				0.46875,
+				0.5625
+			],
+			"team_ranking": [
+				0.25,
+				0.0,
+				0.375
+			],
+			"total_events": 3
+		}
 	},
 	"Mara Holmes": {
 		"aliases": [
@@ -1807,6 +3393,18 @@
 		},
 		"uuid": "4c8b46f2df0c44179bc312a025fcca85"
 	},
+	"Matt Griffin": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.46875
+			],
+			"team_ranking": [
+				0.75
+			],
+			"total_events": 1
+		}
+	},
 	"MaxGGs": {
 		"aliases": [
 			"MaxTLL"
@@ -1822,6 +3420,20 @@
 		},
 		"uuid": "d867c718264b4f389c3eed5e9b1d13f8"
 	},
+	"MeichaFox": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.125,
+				0.1875
+			],
+			"team_ranking": [
+				0.5,
+				0.5
+			],
+			"total_events": 2
+		}
+	},
 	"Mejoraas": {
 		"ign": "Mejoraas",
 		"island": {
@@ -1832,7 +3444,12 @@
 	"MeowyNissi": {
 		"aliases": [
 			"meowynissi"
-		]
+		],
+		"ign": "meowynissi",
+		"island": {
+			"lastupdate": "2026-11-15T20:25:03.271986+00:00"
+		},
+		"uuid": "7546a31e700c43f8bc06249a5456b18a"
 	},
 	"Michaelmcchill": {
 		"birthday": "1996-08-04",
@@ -1890,6 +3507,18 @@
 		},
 		"uuid": "60ab22bc6d2b4f73af6873c12990a5a0"
 	},
+	"MinuteTech": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.4375
+			],
+			"team_ranking": [
+				0.375
+			],
+			"total_events": 1
+		}
+	},
 	"Mishifu": {
 		"aliases": [
 			"ElMishifu"
@@ -1900,6 +3529,42 @@
 			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
 		},
 		"uuid": "bd1e53332a234d31b150d06d037a1e11"
+	},
+	"MisticSins": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.21875,
+				0.15625,
+				0.34375,
+				0.125,
+				0.46875,
+				0.15625,
+				0.09375,
+				0.28125,
+				0.09375,
+				0.1875,
+				0.03125,
+				0.125,
+				0.15625
+			],
+			"team_ranking": [
+				0.75,
+				0.25,
+				0.5,
+				0.125,
+				0.625,
+				0.0,
+				0.125,
+				0.875,
+				0.0,
+				0.5,
+				0.125,
+				0.875,
+				0.0
+			],
+			"total_events": 13
+		}
 	},
 	"Mitzefy": {
 		"ign": "Mitzefy",
@@ -1925,6 +3590,18 @@
 			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
 		},
 		"uuid": "381bdb2c02b14ad78295d10c95dfc569"
+	},
+	"Moisteh": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.96875
+			],
+			"team_ranking": [
+				0.875
+			],
+			"total_events": 1
+		}
 	},
 	"Mousie": {
 		"aliases": [
@@ -1971,6 +3648,22 @@
 		},
 		"uuid": "968acd92e211497387c789d36f0b6816"
 	},
+	"MysteryTwins15": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.125,
+				0.03125,
+				0.125
+			],
+			"team_ranking": [
+				0.25,
+				0.0,
+				0.5
+			],
+			"total_events": 3
+		}
+	},
 	"Mysticat": {
 		"aliases": [
 			"mysticat_"
@@ -1979,6 +3672,30 @@
 		"ign": "mysticat_",
 		"island": {
 			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.4375,
+				0.53125,
+				0.28125,
+				0.65625,
+				0.375,
+				0.25,
+				0.375,
+				0.4375
+			],
+			"team_ranking": [
+				0.375,
+				0.875,
+				0.25,
+				0.625,
+				0.125,
+				0.375,
+				0.625,
+				0.625
+			],
+			"total_events": 8
 		},
 		"uuid": "569ee7f86632475b9f2ce615ea7e37b1"
 	},
@@ -2002,6 +3719,18 @@
 			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
 		},
 		"uuid": "01fac28e2ec347e0a80d691ed3b55f8d"
+	},
+	"Nerdi": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.0
+			],
+			"team_ranking": [
+				0.0
+			],
+			"total_events": 1
+		}
 	},
 	"NettyPlays": {
 		"birthday": "1987-11-07",
@@ -2062,7 +3791,45 @@
 				"wins": 40
 			}
 		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.34375
+			],
+			"team_ranking": [
+				0.25
+			],
+			"total_events": 1
+		},
 		"uuid": "d66c301e2485434ebe7cf9c5e8adcfe8"
+	},
+	"Noname4297": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.03125,
+				0.03125,
+				0.0,
+				0.0,
+				0.0625,
+				0.0,
+				0.0625,
+				0.03125,
+				0.0
+			],
+			"team_ranking": [
+				0.125,
+				0.25,
+				0.25,
+				0.0,
+				0.25,
+				0.0,
+				0.75,
+				0.375,
+				0.125
+			],
+			"total_events": 10
+		}
 	},
 	"NotNotBrock": {
 		"ign": "NotNotBrock",
@@ -2071,6 +3838,42 @@
 		},
 		"uuid": "c2ddd9791c3a4a6593982802b12d6891"
 	},
+	"NotSouls": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.625,
+				0.375,
+				0.21875,
+				0.0,
+				0.65625,
+				0.4375,
+				0.40625,
+				0.21875,
+				0.40625,
+				0.21875,
+				0.3125,
+				0.34375,
+				0.21875
+			],
+			"team_ranking": [
+				0.875,
+				0.875,
+				0.25,
+				0.0,
+				0.625,
+				0.5,
+				0.125,
+				0.125,
+				0.875,
+				0.125,
+				0.125,
+				0.75,
+				0.25
+			],
+			"total_events": 13
+		}
+	},
 	"Nukeri": {
 		"aliases": [
 			"Nukerii"
@@ -2078,6 +3881,26 @@
 		"ign": "Nukerii",
 		"island": {
 			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
+		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.5,
+				0.4375,
+				0.53125,
+				0.5625,
+				0.5,
+				0.3125
+			],
+			"team_ranking": [
+				0.375,
+				0.0,
+				0.875,
+				0.375,
+				0.625,
+				0.25
+			],
+			"total_events": 6
 		},
 		"uuid": "595497d79a254d11896e68181cc757a1"
 	},
@@ -2090,6 +3913,58 @@
 			"lastupdate": "2026-10-25T16:33:16.701623+00:00"
 		},
 		"uuid": "cc9f7b744f6440e8b223b19ffb30e0d1"
+	},
+	"OGQndres": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.40625,
+				0.5625
+			],
+			"team_ranking": [
+				0.75,
+				0.375
+			],
+			"total_events": 2
+		}
+	},
+	"OGarfield": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.34375,
+				0.3125,
+				0.4375,
+				0.90625,
+				0.71875,
+				0.84375,
+				0.125,
+				0.34375,
+				0.40625,
+				0.625,
+				0.625,
+				0.59375,
+				0.625,
+				0.6875
+			],
+			"team_ranking": [
+				0.5,
+				0.0,
+				0.5,
+				0.625,
+				0.375,
+				0.875,
+				0.625,
+				0.25,
+				0.0,
+				0.625,
+				0.375,
+				0.375,
+				0.25,
+				0.625
+			],
+			"total_events": 14
+		}
 	},
 	"OllieGamerz": {
 		"ign": "OllieGamerz",
@@ -2186,6 +4061,18 @@
 		},
 		"uuid": "e19aa539fd8a4f2d985245122badba31"
 	},
+	"Pers0nified": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.5625
+			],
+			"team_ranking": [
+				0.75
+			],
+			"total_events": 1
+		}
+	},
 	"PeteZahHutt": {
 		"birthday": "1997-03-14",
 		"ign": "PeteZahHutt",
@@ -2202,6 +4089,18 @@
 		},
 		"uuid": "84555089add149b1a26d8021270a40f0"
 	},
+	"PhazeRay": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.8125
+			],
+			"team_ranking": [
+				0.75
+			],
+			"total_events": 1
+		}
+	},
 	"Piso": {
 		"aliases": [
 			"piso4"
@@ -2211,6 +4110,32 @@
 			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
 		},
 		"uuid": "10b78948838f4cf586c39aa84074daab"
+	},
+	"Pixelcraftian": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.15625,
+				0.28125,
+				0.375,
+				0.34375,
+				0.1875,
+				0.34375,
+				0.0625,
+				0.375
+			],
+			"team_ranking": [
+				0.125,
+				0.125,
+				0.375,
+				0.625,
+				0.625,
+				0.0,
+				0.125,
+				0.625
+			],
+			"total_events": 9
+		}
 	},
 	"Pixlriffs": {
 		"ign": "Pixlriffs",
@@ -2264,6 +4189,24 @@
 		},
 		"uuid": "20748eb47d6e45ae83c2c6d262274540"
 	},
+	"President Poundcake": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.0,
+				0.1875,
+				0.21875,
+				0.0625
+			],
+			"team_ranking": [
+				0.25,
+				0.375,
+				0.625,
+				0.125
+			],
+			"total_events": 4
+		}
+	},
 	"Pressea": {
 		"ign": "Presssea",
 		"island": {
@@ -2300,6 +4243,22 @@
 				"wins": 2
 			}
 		},
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.125,
+				0.1875,
+				0.46875,
+				0.40625
+			],
+			"team_ranking": [
+				0.0,
+				0.5,
+				0.875,
+				0.25
+			],
+			"total_events": 4
+		},
 		"uuid": "cae282bbaf8e4b26822f556100c1d215"
 	},
 	"Puji2": {
@@ -2321,6 +4280,26 @@
 		"ign": "Purpled",
 		"island": {
 			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.9375,
+				0.78125,
+				0.71875,
+				0.84375,
+				0.90625,
+				0.625
+			],
+			"team_ranking": [
+				0.875,
+				0.375,
+				0.5,
+				0.5,
+				0.75,
+				0.125
+			],
+			"total_events": 6
 		},
 		"uuid": "1218cdf352bd4e18ba24d4b202ec85f3"
 	},
@@ -2385,6 +4364,20 @@
 		},
 		"uuid": "3e6835f17344435a9a23c2f2441a002c"
 	},
+	"Raddles": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.625,
+				0.28125
+			],
+			"team_ranking": [
+				0.625,
+				0.5
+			],
+			"total_events": 2
+		}
+	},
 	"Rafessor": {
 		"ign": "Rafessor",
 		"island": {
@@ -2429,6 +4422,88 @@
 		},
 		"uuid": "7f7458ef32294182885ace1efaf3c5ef"
 	},
+	"ReallyBadGamr": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.25
+			],
+			"team_ranking": [
+				0.5
+			],
+			"total_events": 1
+		}
+	},
+	"Reddoons": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.1875,
+				0.25,
+				0.625,
+				0.53125,
+				0.5,
+				0.6875,
+				0.5625,
+				0.65625,
+				0.53125,
+				0.6875,
+				0.78125,
+				0.71875
+			],
+			"team_ranking": [
+				0.125,
+				0.0,
+				0.5,
+				0.375,
+				0.25,
+				0.625,
+				0.625,
+				0.875,
+				0.625,
+				0.875,
+				0.75,
+				0.375
+			],
+			"total_events": 12
+		}
+	},
+	"RektDJ": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.1875,
+				0.53125
+			],
+			"team_ranking": [
+				0.75,
+				0.5
+			],
+			"total_events": 3
+		}
+	},
+	"RemoteBirch5": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.96875,
+				0.03125,
+				0.15625,
+				0.4375,
+				0.46875,
+				0.625
+			],
+			"team_ranking": [
+				0.625,
+				0.0,
+				0.25,
+				0.5,
+				0.625,
+				0.75
+			],
+			"total_events": 6
+		}
+	},
 	"Rendog": {
 		"aliases": [
 			"rendog",
@@ -2450,12 +4525,54 @@
 		},
 		"uuid": "a9539500b4f94f4f93c0e331b0d27e23"
 	},
+	"RiceInRealTime": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.875
+			],
+			"team_ranking": [
+				0.75
+			],
+			"total_events": 1
+		}
+	},
+	"Ricekristys": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.15625,
+				0.46875,
+				0.28125,
+				0.21875
+			],
+			"team_ranking": [
+				0.625,
+				0.75,
+				0.25,
+				0.375
+			],
+			"total_events": 4
+		}
+	},
 	"Richard Thornton": {
 		"aliases": [
 			"RichardThornton"
 		],
 		"ign": "Richard Thornton",
 		"uuid": "unresolvable"
+	},
+	"Rocket 3fps": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.65625
+			],
+			"team_ranking": [
+				0.875
+			],
+			"total_events": 1
+		}
 	},
 	"Roguskii": {
 		"ign": "Roguskii",
@@ -2515,6 +4632,26 @@
 		},
 		"uuid": "504a61571e82458aaf4490c87d8e81e7"
 	},
+	"RyanBurger": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.0625,
+				0.25,
+				0.0625,
+				0.03125,
+				0.0
+			],
+			"team_ranking": [
+				0.125,
+				0.875,
+				0.25,
+				0.25,
+				0.0
+			],
+			"total_events": 6
+		}
+	},
 	"Ryguyrocky": {
 		"aliases": [
 			"Kryguyrocky",
@@ -2540,6 +4677,38 @@
 		},
 		"uuid": "98c0bece0232485e8e86fa604d78e62f"
 	},
+	"SMK64": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.5625,
+				0.8125,
+				0.625,
+				0.6875,
+				0.59375,
+				0.15625,
+				0.625,
+				0.75,
+				0.46875,
+				0.65625,
+				0.8125
+			],
+			"team_ranking": [
+				0.25,
+				0.625,
+				0.5,
+				0.375,
+				0.25,
+				0.125,
+				0.625,
+				0.625,
+				0.125,
+				0.25,
+				0.625
+			],
+			"total_events": 11
+		}
+	},
 	"SadMilkman": {
 		"ign": "SadMilkman",
 		"island": {
@@ -2547,7 +4716,25 @@
 		},
 		"uuid": "50103f844b824b989558a566a009b6fc"
 	},
-	"Saiiren": {},
+	"Saiiren": {
+		"ign": "Saiiren",
+		"island": {
+			"lastupdate": "2026-11-15T20:25:03.271986+00:00"
+		},
+		"uuid": "aa4879628ba54fd6a89e8aab1644363d"
+	},
+	"SakuraRadio": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.03125
+			],
+			"team_ranking": [
+				0.875
+			],
+			"total_events": 1
+		}
+	},
 	"SandwichLord": {
 		"aliases": [
 			"SandwichLord_"
@@ -2568,6 +4755,24 @@
 				"games": 252,
 				"wins": 137
 			}
+		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.6875,
+				0.84375,
+				0.90625,
+				0.8125,
+				0.9375
+			],
+			"team_ranking": [
+				0.375,
+				0.875,
+				0.875,
+				0.25,
+				0.625
+			],
+			"total_events": 5
 		},
 		"uuid": "1e2bf44f122f4960a62d7da9609f52e7"
 	},
@@ -2595,6 +4800,18 @@
 		"ign": "Scot Griswold",
 		"uuid": "unresolvable"
 	},
+	"ScottoAC": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.53125
+			],
+			"team_ranking": [
+				0.25
+			],
+			"total_events": 1
+		}
+	},
 	"Scuffed_Sushi": {
 		"ign": "Scuffed_Sushi",
 		"island": {
@@ -2603,13 +4820,46 @@
 		"uuid": "355b78fc18844fe482eb35611a29a7de"
 	},
 	"SeFirox": {
-		"birthday": "2005-11-14"
+		"birthday": "2005-11-14",
+		"ign": "SeFirox",
+		"island": {
+			"battlebox": {
+				"games": 970,
+				"wins": 584
+			},
+			"lastupdate": "2026-11-15T20:25:03.271986+00:00",
+			"skybattle": {
+				"games": 1292,
+				"wins": 130
+			},
+			"tgttos": {
+				"games": 11,
+				"wins": 3
+			}
+		},
+		"uuid": "de58fa0e442d4082a0fcbf9f89794c9e"
 	},
 	"Seapeekay": {
 		"birthday": "1992-05-01",
 		"ign": "Seapeekay",
 		"island": {
 			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
+		},
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.0,
+				0.15625,
+				0.5625,
+				0.125
+			],
+			"team_ranking": [
+				0.0,
+				0.0,
+				0.875,
+				0.0
+			],
+			"total_events": 4
 		},
 		"uuid": "be0cfbc2f626483580c3924268faf27b"
 	},
@@ -2637,7 +4887,33 @@
 		"island": {
 			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
 		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.59375,
+				0.5,
+				0.59375
+			],
+			"team_ranking": [
+				0.625,
+				0.0,
+				0.625
+			],
+			"total_events": 3
+		},
 		"uuid": "f0f919e9e4e642ce8a139cdd6c33e706"
+	},
+	"ShakyBTW": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.9375
+			],
+			"team_ranking": [
+				0.875
+			],
+			"total_events": 1
+		}
 	},
 	"Shandrea": {
 		"ign": "Shandrea",
@@ -2657,6 +4933,18 @@
 		},
 		"uuid": "d79ba1cf79cf42eaa2f887cc2c5a899c"
 	},
+	"Silverrruns": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.875
+			],
+			"team_ranking": [
+				0.875
+			],
+			"total_events": 1
+		}
+	},
 	"Simon Lane": {
 		"aliases": [
 			"Honeydew"
@@ -2666,6 +4954,20 @@
 			"lastupdate": "2026-10-25T16:36:04.963551+00:00"
 		},
 		"uuid": "8f9bc2ed1bb541ed91be02625c76bd7f"
+	},
+	"SimplyFir": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.21875,
+				0.09375
+			],
+			"team_ranking": [
+				0.625,
+				0.625
+			],
+			"total_events": 2
+		}
 	},
 	"Sinnabuns": {
 		"aliases": [
@@ -2711,6 +5013,46 @@
 		},
 		"uuid": "1a4b294c6c5f49dda5df554ab3cd381e"
 	},
+	"Slimeshockey": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.8125,
+				0.46875,
+				0.8125,
+				0.34375,
+				0.875,
+				0.84375,
+				0.6875,
+				0.71875,
+				0.59375
+			],
+			"team_ranking": [
+				0.375,
+				0.625,
+				0.875,
+				0.25,
+				0.625,
+				0.375,
+				0.25,
+				0.25,
+				0.625
+			],
+			"total_events": 9
+		}
+	},
+	"SlushieVRC": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.40625
+			],
+			"team_ranking": [
+				0.125
+			],
+			"total_events": 1
+		}
+	},
 	"Smajor1995": {
 		"birthday": "1995-11-10",
 		"ign": "Smajor1995",
@@ -2737,11 +5079,37 @@
 		},
 		"uuid": "69b3107a6d034122b5677652fcc3cdb2"
 	},
+	"Snakevnm": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.71875,
+				0.5625,
+				0.5
+			],
+			"team_ranking": [
+				0.75,
+				0.375,
+				0.25
+			],
+			"total_events": 3
+		}
+	},
 	"Sneegsnag": {
 		"birthday": "1996-09-26",
 		"ign": "Sneegsnag",
 		"island": {
 			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
+		},
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.6875
+			],
+			"team_ranking": [
+				0.875
+			],
+			"total_events": 1
 		},
 		"uuid": "7c59923124d348bd936cd81560d567a0"
 	},
@@ -2752,6 +5120,38 @@
 			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
 		},
 		"uuid": "902bbee4abf842d5a74bf5fb3c3b48f5"
+	},
+	"Snoae": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.71875
+			],
+			"team_ranking": [
+				0.5
+			],
+			"total_events": 1
+		}
+	},
+	"Snsteph": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.0,
+				0.09375,
+				0.25,
+				0.03125,
+				0.03125
+			],
+			"team_ranking": [
+				0.125,
+				0.875,
+				0.75,
+				0.125,
+				0.375
+			],
+			"total_events": 5
+		}
 	},
 	"Soarinng": {
 		"ign": "Soarinng",
@@ -2801,6 +5201,18 @@
 		},
 		"uuid": "f28b81a628fe4c74ab26f33c0fbaec03"
 	},
+	"SpreenDMC": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.0625
+			],
+			"team_ranking": [
+				0.0
+			],
+			"total_events": 1
+		}
+	},
 	"Sqaishey": {
 		"ign": "Sqaishey",
 		"island": {
@@ -2827,6 +5239,64 @@
 			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
 		},
 		"uuid": "d4bb44317daf4642bb14a1f8fe9ae101"
+	},
+	"StanVee": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.4375
+			],
+			"team_ranking": [
+				0.375
+			],
+			"total_events": 1
+		}
+	},
+	"Standen05": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.78125,
+				0.5625,
+				0.875,
+				0.5625,
+				0.6875
+			],
+			"team_ranking": [
+				0.5,
+				0.25,
+				0.875,
+				0.125,
+				0.125
+			],
+			"total_events": 6
+		}
+	},
+	"Steinbulf": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.1875,
+				0.40625,
+				0.46875,
+				0.5,
+				0.34375,
+				0.46875,
+				0.53125,
+				0.59375,
+				0.5625
+			],
+			"team_ranking": [
+				0.0,
+				0.0,
+				0.5,
+				0.25,
+				0.5,
+				0.5,
+				0.625
+			],
+			"total_events": 9
+		}
 	},
 	"Stemister": {
 		"ign": "Stemister",
@@ -2866,6 +5336,18 @@
 		},
 		"uuid": "bfc4e0d052964ac7a40989aaf028697e"
 	},
+	"SupNinjaz": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.1875
+			],
+			"team_ranking": [
+				0.125
+			],
+			"total_events": 1
+		}
+	},
 	"SwitchBackMongo": {
 		"ign": "SwitchBackMongo",
 		"island": {
@@ -2889,6 +5371,36 @@
 			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
 		},
 		"uuid": "aec14d1e14e843cb89ed80d81153bc56"
+	},
+	"TSchone12": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.53125,
+				0.5625,
+				0.25
+			],
+			"team_ranking": [
+				0.875,
+				0.5,
+				0.0
+			],
+			"total_events": 3
+		}
+	},
+	"TVManGriffin": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.3125,
+				0.34375
+			],
+			"team_ranking": [
+				0.875,
+				0.125
+			],
+			"total_events": 2
+		}
 	},
 	"Taneesha": {
 		"aliases": [
@@ -2933,6 +5445,42 @@
 		},
 		"uuid": "b876ec32e396476ba1158438d83c67d4"
 	},
+	"TedsAttic": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.03125,
+				0.03125
+			],
+			"team_ranking": [
+				0.0,
+				0.625
+			],
+			"total_events": 2
+		}
+	},
+	"ThatsJ": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.1875,
+				0.53125,
+				0.71875,
+				0.5625,
+				0.65625,
+				0.34375
+			],
+			"team_ranking": [
+				0.125,
+				0.125,
+				0.875,
+				0.875,
+				0.5,
+				0.125
+			],
+			"total_events": 6
+		}
+	},
 	"TheBlazer97": {
 		"ign": "TheBlazer97",
 		"island": {
@@ -2958,6 +5506,18 @@
 		},
 		"uuid": "af38c349a46946a0b515f3d000b39ad3"
 	},
+	"TheMainMiek": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.78125
+			],
+			"team_ranking": [
+				0.625
+			],
+			"total_events": 1
+		}
+	},
 	"TheOrionSound": {
 		"aliases": [
 			"OrionSound"
@@ -2975,6 +5535,18 @@
 			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
 		},
 		"uuid": "b957f80f7cb3483aa37ebc9c66cada6e"
+	},
+	"Thisismyname": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.75
+			],
+			"team_ranking": [
+				0.5
+			],
+			"total_events": 1
+		}
 	},
 	"TibbyCaps": {
 		"aliases": [
@@ -3024,6 +5596,18 @@
 		},
 		"uuid": "3b3bd935c9bd466697cb647465b02674"
 	},
+	"Tomeroo": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.84375
+			],
+			"team_ranking": [
+				0.625
+			],
+			"total_events": 1
+		}
+	},
 	"TommyInnit": {
 		"birthday": "2004-04-09",
 		"ign": "TommyInnit",
@@ -3032,12 +5616,66 @@
 		},
 		"uuid": "e80e8194323e414298515e1bcb8a3508"
 	},
+	"Toph033": {
+		"pandora": {
+			"events_won": 3,
+			"player_ranking": [
+				0.5,
+				0.90625,
+				0.96875,
+				0.9375,
+				0.96875,
+				0.96875,
+				0.96875,
+				0.84375,
+				0.9375,
+				0.84375,
+				0.90625,
+				0.90625,
+				0.96875,
+				0.9375,
+				0.96875,
+				0.875
+			],
+			"team_ranking": [
+				0.0,
+				0.5,
+				0.75,
+				0.125,
+				0.875,
+				0.875,
+				0.5,
+				0.625,
+				0.75,
+				0.125,
+				0.125,
+				0.375,
+				0.75,
+				0.125,
+				0.875,
+				0.375
+			],
+			"total_events": 16
+		}
+	},
 	"ToxxxicSupport": {
 		"ign": "ToxxxicSupport",
 		"island": {
 			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
 		},
 		"uuid": "18428829c4824927a6b71579e26e87ac"
+	},
+	"Trualist": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.6875
+			],
+			"team_ranking": [
+				0.5
+			],
+			"total_events": 1
+		}
 	},
 	"Tubbo": {
 		"aliases": [
@@ -3050,6 +5688,42 @@
 			"lastupdate": "2026-10-25T16:40:16.503595+00:00"
 		},
 		"uuid": "06f7cd124f00434285f6956b1ca48d38"
+	},
+	"Ubhi": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.84375,
+				0.59375,
+				0.84375,
+				0.4375,
+				0.90625,
+				0.875,
+				0.84375,
+				0.84375,
+				0.84375,
+				0.84375,
+				0.9375,
+				0.875,
+				0.9375
+			],
+			"team_ranking": [
+				0.125,
+				0.5,
+				0.5,
+				0.125,
+				0.75,
+				0.75,
+				0.125,
+				0.5,
+				0.5,
+				0.375,
+				0.5,
+				0.75,
+				0.875
+			],
+			"total_events": 13
+		}
 	},
 	"Ulraf": {
 		"ign": "Ulraf",
@@ -3082,6 +5756,18 @@
 		"ign": "RedVelvetCake",
 		"island": {
 			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.03125,
+				0.34375
+			],
+			"team_ranking": [
+				0.125,
+				0.875
+			],
+			"total_events": 2
 		},
 		"uuid": "c99630c0ab2247e1a500667f0ae42b0f"
 	},
@@ -3153,6 +5839,16 @@
 		"ign": "WadeBox",
 		"island": {
 			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.125
+			],
+			"team_ranking": [
+				0.375
+			],
+			"total_events": 1
 		},
 		"uuid": "21a1c3954ac84c2fa69a4699a146fda5"
 	},
@@ -3232,6 +5928,42 @@
 				"wins": 9
 			}
 		},
+		"pandora": {
+			"events_won": 3,
+			"player_ranking": [
+				0.21875,
+				0.65625,
+				0.375,
+				0.5625,
+				0.46875,
+				0.53125,
+				0.59375,
+				0.5,
+				0.4375,
+				0.46875,
+				0.6875,
+				0.5,
+				0.5625,
+				0.65625
+			],
+			"team_ranking": [
+				0.0,
+				0.0,
+				0.125,
+				0.25,
+				0.625,
+				0.5,
+				0.625,
+				0.375,
+				0.0,
+				0.875,
+				0.625,
+				0.625,
+				0.75,
+				0.875
+			],
+			"total_events": 14
+		},
 		"uuid": "2a932fbde2454dcf89679ae596f22fb1"
 	},
 	"Wolv21": {
@@ -3250,6 +5982,70 @@
 			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
 		},
 		"uuid": "5eecd6c805634bc0a1f1b0fe9c9f4ad3"
+	},
+	"WyLL": {
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.125
+			],
+			"team_ranking": [
+				0.0
+			],
+			"total_events": 1
+		}
+	},
+	"Wylbert": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.1875,
+				0.65625,
+				0.25,
+				0.28125,
+				0.3125,
+				0.625,
+				0.3125,
+				0.3125,
+				0.375,
+				0.40625,
+				0.09375
+			],
+			"team_ranking": [
+				0.0,
+				0.625,
+				0.125,
+				0.125,
+				0.375,
+				0.75,
+				0.625,
+				0.0,
+				0.25,
+				0.25,
+				0.0
+			],
+			"total_events": 11
+		}
+	},
+	"XShatter": {
+		"pandora": {
+			"events_won": 1,
+			"player_ranking": [
+				0.5,
+				0.78125,
+				0.34375,
+				0.71875,
+				0.78125
+			],
+			"team_ranking": [
+				0.5,
+				0.75,
+				0.0,
+				0.75,
+				0.375
+			],
+			"total_events": 5
+		}
 	},
 	"Xilefian": {
 		"ign": "Xilefian",
@@ -3277,6 +6073,24 @@
 			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
 		},
 		"uuid": "ddac881340eb45e09ed8e7bd2d86e128"
+	},
+	"Yawnchamp": {
+		"pandora": {
+			"events_won": 2,
+			"player_ranking": [
+				0.34375,
+				0.28125,
+				0.1875,
+				0.3125
+			],
+			"team_ranking": [
+				0.75,
+				0.75,
+				0.0,
+				0.5
+			],
+			"total_events": 4
+		}
 	},
 	"Yeetdaisie": {
 		"ign": "yeetdaisie",
@@ -3319,6 +6133,40 @@
 		},
 		"uuid": "f9c3c385f403403cb5b7867e012e9660"
 	},
+	"ZhuRuho": {
+		"pandora": {
+			"events_won": 3,
+			"player_ranking": [
+				0.09375,
+				0.40625,
+				0.15625,
+				0.25,
+				0.625,
+				0.3125,
+				0.4375,
+				0.34375,
+				0.46875,
+				0.65625,
+				0.25,
+				0.71875
+			],
+			"team_ranking": [
+				0.0,
+				0.625,
+				0.375,
+				0.125,
+				0.875,
+				0.375,
+				0.125,
+				0.125,
+				0.875,
+				0.875,
+				0.25,
+				0.875
+			],
+			"total_events": 12
+		}
+	},
 	"Zoey Proasheck": {
 		"aliases": [
 			"Zoeya"
@@ -3357,6 +6205,16 @@
 		"ign": "acho",
 		"island": {
 			"lastupdate": "2026-10-25T16:49:36.666492+00:00"
+		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.46875
+			],
+			"team_ranking": [
+				0.875
+			],
+			"total_events": 1
 		},
 		"uuid": "562ad2cf58154fdbad94a8eabd22bd08"
 	},
@@ -3474,6 +6332,16 @@
 				"wins": 0
 			}
 		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.8125
+			],
+			"team_ranking": [
+				0.125
+			],
+			"total_events": 1
+		},
 		"uuid": "7e8a77cadaf14224ae1d2df8bab1eccb"
 	},
 	"cubfan135": {
@@ -3484,6 +6352,16 @@
 		"ign": "cubfan135",
 		"island": {
 			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.0
+			],
+			"team_ranking": [
+				0.125
+			],
+			"total_events": 1
 		},
 		"uuid": "88e2afec6f2e4a34a96ade61730bd3ca"
 	},
@@ -3521,6 +6399,24 @@
 		"island": {
 			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
 		},
+		"pandora": {
+			"events_won": 3,
+			"player_ranking": [
+				0.625,
+				0.8125,
+				0.8125,
+				0.9375,
+				0.90625
+			],
+			"team_ranking": [
+				0.0,
+				0.625,
+				0.875,
+				0.875,
+				0.75
+			],
+			"total_events": 5
+		},
 		"uuid": "4d2eb01544af45ae9a2ca6a7bcbae7a4"
 	},
 	"garlicmint": {
@@ -3551,6 +6447,24 @@
 				"wins": 2
 			}
 		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.0625,
+				0.125,
+				0.25,
+				0.1875,
+				0.5
+			],
+			"team_ranking": [
+				0.5,
+				0.0,
+				0.5,
+				0.625,
+				0.75
+			],
+			"total_events": 5
+		},
 		"uuid": "8c3d406f950e4761a7f10cf3202be59b"
 	},
 	"guqqie": {
@@ -3569,6 +6483,18 @@
 		"ign": "hannahxxrose",
 		"island": {
 			"lastupdate": "2026-10-25T17:43:18.586902+00:00"
+		},
+		"pandora": {
+			"events_won": 0,
+			"player_ranking": [
+				0.34375,
+				0.3125
+			],
+			"team_ranking": [
+				0.375,
+				0.375
+			],
+			"total_events": 2
 		},
 		"uuid": "5237b4b75eed421da43f0e4968e69207"
 	},
